@@ -1,0 +1,3 @@
+[submodule "msMozWebkit"]
+	path = msMozWebkit
+	url = git@github.com:stevedesmond-ca/msMozWebkit.js.git

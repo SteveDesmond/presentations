@@ -1,0 +1,41 @@
+.go-fullscreen {
+	top: 24px;
+	left: 42px;
+}
+
+.exit-fullscreen {
+	top: 36px;
+	left: 30px;
+}
+
+.slide-background {
+	background-size: contain !important;
+	opacity: 0.1 !important;
+	transition-duration: 1500ms !important; 
+}
+
+.slide-background .slide-background {
+	opacity: 1 !important;
+}
+
+.reveal pre {
+	background-color: transparent;
+	border: 0;
+	box-shadow: none;
+}
+
+div.down-half {
+    margin-top: 0.5em;
+}
+
+iframe {
+    width: 1024px;
+    height: 640px;
+}
+
+.oldschool {
+	font-family: "Courier New", monospace !important;
+	font-weight: normal !important;
+}
+
+
