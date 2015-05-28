@@ -1,0 +1,94 @@
+{
+    "labs": [
+        {
+            "name": "Friends 110",
+            "lat": 42.42185,
+            "lng": -76.496727,
+            "hours": [
+                "M-F: 7am-11pm",
+                "Sat-Sun: 10am-5pm"
+            ]
+        },
+        {
+            "name": "CHS Lounge",
+            "lat": 42.420013,
+            "lng": -76.498074,
+            "hours": [
+                "M-F: 9am-4pm",
+                "Sat-Sun: Closed"
+            ]
+        },
+        {
+            "name": "Williams 220",
+            "lat": 42.422816,
+            "lng": -76.495156,
+            "hours": [
+                "M-F: 8am-10pm",
+                "Sat: 9am-4pm",
+                "Sun: Closed"
+            ]
+        },
+        {
+            "name": "Library",
+            "lat": 42.421224,
+            "lng": -76.495032,
+            "hours": [
+                "M-F: 7am-11pm",
+                "Sat: 8am-9pm",
+                "Sun: 9am-7pm"
+            ]
+        }
+    ],
+    "dining": [
+        {
+            "name": "Terraces",
+            "lat": 42.419897,
+            "lng": -76.496248,
+            "hours": []
+        },
+        {
+            "name": "Towers",
+            "lat": 42.420626,
+            "lng": -76.494607,
+            "hours": []
+        },
+        {
+            "name": "Campus Center",
+            "lat": 42.422212,
+            "lng": -76.493968,
+            "hours": []
+        }
+    ],
+    "exercise": [
+        {
+            "name": "Fitness Center",
+            "lat": 42.422556,
+            "lng": -76.492367,
+            "hours": []
+        },
+        {
+            "name": "A&E Center",
+            "lat": 42.422854,
+            "lng": -76.49056,
+            "hours": []
+        },
+        {
+            "name": "Hill Center",
+            "lat": 42.420446,
+            "lng": -76.49723,
+            "hours": []
+        },
+        {
+            "name": "Cerrache Center",
+            "lat": 42.418806,
+            "lng": -76.500282,
+            "hours": []
+        },
+        {
+            "name": "Wellness Clinic",
+            "lat": 42.419858,
+            "lng": -76.498422,
+            "hours": []
+        }
+    ]
+}

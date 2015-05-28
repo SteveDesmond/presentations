@@ -1,0 +1,38 @@
+<html ng-app="nearest">
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>Find a Computer Lab</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="site.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/nearest.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKB0XG2YsBjvMXyBEzS8jwTGC8mARcGns"></script>
+    </head>
+    
+    <body>
+        <div class="container" ng-controller="labs as labs">
+            <h1>Find a Computer Lab</h1>
+            <div class="col-sm-6">
+                <div id="google-map" style="width: 100%; height: 75vh; border: 0;"></div>
+            </div>
+            <div class="col-sm-6">
+                <table class="table table-striped table-bordered">
+                    <tr ng-repeat="lab in labs.labs | orderBy:'distance'">
+                        <td>
+                            <h4>
+                                <img ng-src="http://www.googlemapsmarkers.com/v1/{{lab.name.substr(0, 1)}}/0099FF/" />&nbsp;{{lab.name}}</h4>
+                            <div ng-show="lab.distance != null">{{lab.distance | number:0}} m ({{lab.distance / 80 | number:0}} min walk)</div>
+                        </td>
+                        <td>
+                            <div ng-repeat="hours in lab.hours">{{hours}}</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </body>
+
+</html>
