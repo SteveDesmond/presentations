@@ -1,0 +1,33 @@
+<html>
+    
+    <head>
+        <title>GitHub Pull Request Selfie GIF Automator</title>
+        <script type="text/javascript" src="github-api/lib/underscore-min.js"></script>
+        <script type="text/javascript" src="github-api/github.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/prselfie.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="pagedown/Markdown.Converter.js"></script>
+        <script type="text/javascript" src="pagedown/Markdown.Editor.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" />
+    </head>
+    
+    <body ng-app="prselfie">
+        <div class="container" ng-controller="pr as pr">
+            <h1>GitHub Pull Request Selfie GIF Automator</h1>
+            <h3 ng-show="pr.repoInfo.full_name">Connected to {{pr.repoInfo.full_name}}</h3>
+            <div class="row">
+                <form class="col-sm-10 col-md-8 col-lg-6">
+                    <label for="title" class="control-label">Title</label>
+                    <input class="form-control" type="text" name="title" ng-model="pr.newPR.title" />
+                    <label for="desc" class="control-label">Description</label>
+                    <div contentEditable="true" class="form-control" ng-model="pr.newPR.description"></div>
+                </form>
+            </div>
+            <button class="btn btn-primary btn-default" ng-click="pr.submit()">Go!</button>
+        </div>
+    </body>
+
+</html>
