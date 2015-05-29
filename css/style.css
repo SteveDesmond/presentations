@@ -24,6 +24,10 @@
 	box-shadow: none;
 }
 
+.btn-default {
+    text-shadow: none;
+}
+
 div.down-half {
     margin-top: 0.5em;
 }
@@ -37,5 +41,3 @@ iframe {
 	font-family: "Courier New", monospace !important;
 	font-weight: normal !important;
 }
-
-

@@ -1,3 +1,12 @@
 [submodule "msMozWebkit"]
 	path = msMozWebkit
 	url = git@github.com:stevedesmond-ca/msMozWebkit.js.git
+[submodule "bootstrap"]
+	path = bootstrap
+	url = git@github.com:/twbs/bootstrap
+[submodule "Font-Awesome"]
+	path = font-awesome
+	url = git@github.com:/FortAwesome/Font-Awesome
+[submodule "github-api"]
+	path = github-api
+	url = git@github.com:/michael/github

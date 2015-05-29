@@ -11,8 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/theme/black.css" id="theme">
         <!-- Code syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -36,14 +36,14 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <!-- intro -->
-                <section>
-                    <a href="http://stevedesmond.ca" target="_blank">
+                <section data-background="assets/html5.svg">
+                    <section>
+                        <a href="http://stevedesmond.ca" target="_blank">
 						<img src="assets/qrcode.png" />
 					</a>
-                </section>
-                <!-- title -->
-                <section data-background="assets/html5.svg">
+                        <!-- intro -->
+                    </section>
+                    <!-- title -->
                     <section>
                         <h1>Thers's an App
                             <br/>for That</h1>
@@ -54,14 +54,31 @@
                         <br/>
                         <p>Steve Desmond</p>
                     </section>
+                    <!-- about me -->
                     <section>
-                        <h2>Why am I here again?</h2>
-                        <ul>
-                            <li>How?</li>
-                            <li>Why?</li>
-                        </uL>
+                        <h2>Steve who?</h2>
                     </section>
                     <!-- contents -->
+                    <section>
+                        <h2>Why am I here again?</h2>
+                        <ol>
+                            <li>Native in the browser</li>
+                            <ul>
+                                <li>code snippets</li>
+                                <li>live demos</li>
+                                <li>real-life examples</li>
+                            </ul>
+                            <li>Packaged apps</li>
+                            <ul>
+                                <li>step-by-step</li>
+                            </ul>
+                            <li>Why?</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>"Are you ready, kids?"</h2>
+                        <img src="assets/spongebob.jpg" />
+                    </section>
                 </section>
                 <!-- fullscreen -->
                 <section data-background="assets/imax.svg">
@@ -75,7 +92,7 @@
                     </section>
                     <section>
                         <h2>Fullscreen</h2>
-                        <pre class="fragment">
+                        <pre>
                             <code data-trim>function goFullscreen() { document.documentElement.requestFullscreen(); } function endFullscreen() { document.exitFullscreen();
                                 }</code>
                         </pre>
@@ -103,7 +120,7 @@
                             <a href="fullscreen-image.html" target="_blank">
                                 <i class="fa fa-external-link"></i>
                                 <span>Fullscreen Image Demo</span>
-                                </a>
+                            </a>
                         </small>
                     </section>
                 </section>
@@ -147,63 +164,76 @@
                     </section>
                     <section>
                         <h2>Geolocation</h2>
-                        <iframe src="http://www.ithaca.edu/"></iframe>
+                        <a href="http://www.ithaca.edu/" target="_blank">
+                            <span>Volunteer?</span>
+                            <i class="fa fa-external-link"></i>
+                        </a>
                     </section>
                     <section>
                         <h2>Geolocation</h2>
                         <h3>"There's an app for that"</h3>
-                        <a href="nearest.html" target="_blank">
-                            <i class="fa fa-external-link"></i>
+                        <a class="fragment" href="nearest.html" target="_blank">
                             <span>Find a Computer Lab</span>
+                            <i class="fa fa-external-link"></i>
                         </a>
                     </section>
                 </section>
                 <!-- the problem -->
                 <section>
-                    <h2>Q: How can I make the world a better place?</h2>
-                    <p class="fragment">A: GitHub Pull Request Selfie GIFs</p>
-                </section>
-                <!-- gifs -->
-                <section>
-                    <h2>Who GIFs?</h2>
-                    <ul>
-                        <li>Phil Haack (GitHub, Microsoft)</li>
-                        <img src="assets/phil.gif" />
-                        <li>Sara Chipps (Girl Develop It, Flatiron School)</li>
-                        <img src="assets/sara.gif" />
-                    </ul>
-                </section>
-                <!-- more gifs -->
-                <section>
-                    <h2>The Guardian</h2>
-                    <p>(yes, that The Guardian)</p>
-                    <img src="assets/will-run.gif" />
-                    <img src="assets/swap-1.gif" />
-                    <img src="assets/swap-2.gif" />
-                    <br>
-                    <img src="assets/matt-footer.gif" />
-                    <img src="assets/refactor-payment-flows.gif" />
-                    <img src="assets/ie9.gif" />
-                    </ul>
-                    <p>
-                        <small>Source:
-                            <a href="http://www.threechords.org/blog/how-animated-gif-selfies-fixed-our-teams-morale/" target="_blank">
+                    <section>
+                        <h2>Q: How can I make the world a better place?</h2>
+                        <p class="fragment">A: GitHub Pull Request Selfie GIFs</p>
+                    </section>
+                    <!-- gifs -->
+                    <section>
+                        <h2>Who GIFs?</h2>
+                        <ul>
+                            <li>Phil Haack (GitHub, Microsoft)</li>
+                            <img src="assets/phil.gif" />
+                            <li>Sara Chipps (Girl Develop It, Flatiron School)</li>
+                            <img src="assets/sara.gif" />
+                        </ul>
+                    </section>
+                    <!-- more gifs -->
+                    <section>
+                        <h2>The Guardian</h2>
+                        <p>(yes, that The Guardian)</p>
+                        <img src="assets/will-run.gif" />
+                        <img src="assets/swap-1.gif" />
+                        <img src="assets/swap-2.gif" />
+                        <br>
+                        <img src="assets/matt-footer.gif" />
+                        <img src="assets/refactor-payment-flows.gif" />
+                        <img src="assets/ie9.gif" />
+                        <p>
+                            <small>Source:
+                                <a href="http://www.threechords.org/blog/how-animated-gif-selfies-fixed-our-teams-morale/" target="_blank">
                                 <span>How animated gif selfies fixed our team’s morale</span>
                                 <i class="fa fa-external-link"></i>
                             </a>
-                        </small>
-                    </p>
-                </section>
-                <!-- automation -->
-                <section>
-                    <h2>Steps</h2>
-                    <ol>
-                        <li>fill out pull request</li>
-                        <li>record video</li>
-                        <li>convert video to GIF</li>
-                        <li>upload video</li>
-                        <li>submit pull request</li>
-                    </ol>
+                            </small>
+                        </p>
+                    </section>
+                    <!-- automation -->
+                    <section>
+                        <h2>Steps</h2>
+                        <ol>
+                            <li>fill out pull request</li>
+                            <li>record video</li>
+                            <li>convert video to GIF</li>
+                            <li>upload video</li>
+                            <li>submit pull request</li>
+                        </ol>
+                        <div class="fragment">
+                            <p>or</p>
+                            <p>Launch the
+                                <a href="prselfie.html" target="_blank">
+                                    <span>GitHub Pull Request Selfie GIF Automator</span>
+                                    <i class="fa fa-external-link"></i>                            
+                                </a>
+                            </p>
+                        </div>
+                    </section>
                 </section>
                 <!-- intermission -->
                 <section class="plain">
@@ -214,7 +244,7 @@
                 </section>
                 <!-- tools -->
                 <section>
-                    <h2>Tools are your friends</h2>
+                    <h2>Friendly, Familiar Frameworks</h2>
                     <ul>
                         <li>Bootstrap</li>
                         <li>Font Awesome</li>
@@ -237,7 +267,22 @@
                     <h2>Resources</h2>
                     <ul>
                         <li>
-                            <a href="https://developer.mozilla.org/" target="_blank">Mozilla Developer Network</a>
+                            <a href="https://github.com/stevedesmond-ca/presentations/tree/hew-ny-15" target="_blank">
+                                <span>This presentation's source code</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.mozilla.org/" target="_blank">
+                                <span>Mozilla Developer Network</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://cordova.apache.org/" target="_blank">
+                                <span>Apache Cordova</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
                         </li>
                     </ul>
                 </section>
@@ -246,28 +291,25 @@
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.js"></script>
         <script>
-            // Full list of configuration options available at:
-            				// https://github.com/hakimel/reveal.js#configuration
-            				Reveal.initialize({
-                                width: 1280,
-                                height: 720,
-            					controls: true,
-            					progress: true,
-            					history: true,
-            					center: true,
-            	
-            					backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
-            	
-            					// Optional reveal.js plugins
-            					dependencies: [
-            						{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-            						{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            						{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            						{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-            						{ src: 'plugin/zoom-js/zoom.js', async: true },
-            						{ src: 'plugin/notes/notes.js', async: true }
-            					]
-            				});
+            Reveal.initialize({
+                width: 1280,
+                height: 720,
+            	controls: true,
+            	progress: true,
+            	history: true,
+            	center: true,
+            
+                backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+            
+            	dependencies: [
+            		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            		{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            		{ src: 'plugin/zoom-js/zoom.js', async: true },
+            		{ src: 'plugin/notes/notes.js', async: true }
+            	]
+            });
         </script>
     </body>
 
