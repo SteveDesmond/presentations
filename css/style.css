@@ -32,12 +32,11 @@ div.down-half {
     margin-top: 0.5em;
 }
 
-iframe {
-    width: 1024px;
-    height: 640px;
-}
-
 .oldschool {
 	font-family: "Courier New", monospace !important;
 	font-weight: normal !important;
+}
+
+li pre {
+    overflow: hidden;
 }

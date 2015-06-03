@@ -4,29 +4,43 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>GitHub Pull Request Selfie GIF Automator</title>
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="github-api/lib/underscore-min.js"></script>
         <script type="text/javascript" src="github-api/github.js"></script>
+        <script type="text/javascript" src="msMozWebkit/msMozWebkit.js"></script>
+        <script type="text/javascript" src="gifshot/build/gifshot.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/angular.js"></script>
         <script type="text/javascript" src="js/prselfie.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="pagedown/Markdown.Converter.js"></script>
-        <script type="text/javascript" src="pagedown/Markdown.Editor.js"></script>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" />
     </head>
     
     <body ng-app="prselfie">
         <div class="container" ng-controller="pr as pr">
-            <h1>GitHub Pull Request Selfie GIF Automator</h1>
+            <h1>
+                <i class="fa fa-github"></i>
+                <span>GitHub Pull Request Selfie GIF Automator</span>
+            </h1>
             <h3 ng-show="pr.repoInfo.full_name">Connected to {{pr.repoInfo.full_name}}</h3>
             <div class="row">
                 <form class="col-sm-10 col-md-8 col-lg-6">
                     <label for="title" class="control-label">Title</label>
                     <input class="form-control" type="text" name="title" ng-model="pr.newPR.title" />
                     <label for="desc" class="control-label">Description</label>
-                    <div contentEditable="true" class="form-control" ng-model="pr.newPR.description"></div>
+                    <div contentEditable="true" class="form-control" style="height: 100px; overflow: auto;"></div>
+                    <label for="gif" class="control-label">Image to include</label>
+                    <div id="gif"></div>
                 </form>
+                <div class="well col-sm-10 col-md-8 col-lg-6 text-center">
+                    <video id="camera" width="320" height="240"></video>
+                    <br/>
+                    <button class="btn btn-default" ng-click="pr.record()">
+                        <i class="fa fa-circle alert-danger"></i>
+                        <span>REC</span>
+                    </button>
+                </div>
             </div>
             <button class="btn btn-primary btn-default" ng-click="pr.submit()">Go!</button>
         </div>
