@@ -56,22 +56,14 @@
                     </section>
                     <!-- about me -->
                     <section>
-                        <h2>Steve who?</h2>
+                        <h1>Steve who?</h1>
                     </section>
                     <!-- contents -->
                     <section>
                         <h2>Why am I here again?</h2>
                         <ol>
                             <li>Native in the browser</li>
-                            <ul>
-                                <li>code snippets</li>
-                                <li>live demos</li>
-                                <li>real-life examples</li>
-                            </ul>
                             <li>Packaged apps</li>
-                            <ul>
-                                <li>step-by-step</li>
-                            </ul>
                             <li>Why?</li>
                         </ol>
                     </section>
@@ -79,6 +71,15 @@
                         <h2>"Are you ready, kids?"</h2>
                         <img src="assets/spongebob.jpg" />
                     </section>
+                </section>
+                <!-- native -->
+                <section data-background="assets/html5.svg">
+                    <h2>What is "native"?</h2>
+                    <ul class="fragment">
+                        <li>immersive</li>
+                        <li>seamless</li>
+                        <li>performant</li>
+                    </ul>
                 </section>
                 <!-- fullscreen -->
                 <section data-background="assets/imax.svg">
@@ -253,6 +254,145 @@
                             <li>Notification</li>
                         </ol>
                     </section>
+                    <section data-background="assets/camera.svg">
+                        <h2>Camera</h2>
+                        <pre>
+                            <code data-trim>navigator.getUserMedia(options, successCallback, errorCallback);</code>
+                        </pre>
+                    </section>
+                    <section data-background="assets/youtube.svg">
+                        <h2>Video</h2>
+                        <pre>
+                            <code data-trim>
+                                <video>
+                                    <source src="movie.mp4" type="video/mp4" />
+                                    <source src="movie.webm" type="video/webm" />
+                                    <source src="movie.ogg" type="video/ogg" />
+                                </video>
+                            </code>
+                        </pre>
+                        <table class="fragment">
+                            <tr>
+                                <th>Type</th>
+                                <th>Firefox</th>
+                                <th>Chrome</th>
+                                <th>Opera</th>
+                                <th>IE</th>
+                                <th>Safari</th>
+                            </tr>
+                            <tr>
+                                <td>MP4</td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>WebM</td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-times text-danger"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-times text-danger"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ogg</td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check text-success"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-times text-danger"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-times text-danger"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Camera + Video</h2>
+                        <pre>
+                            <code data-trim>function showVideo(stream) { jQuery('#webcam').src = stream; }</code>
+                            <code data-trim>function startWebcam() { navigator.getUserMedia({ video: true }, showVideo, errorHandler); }</code>
+                        </pre>
+                        <div class="col-xs-10">
+                            <pre>
+                                <code data-trim>
+                                    <button onclick="startWebcam()">Start webcam</button>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col-xs-1 down-half">
+                            <button class="btn btn-primary btn-default" onclick="startWebcam()">Start webcam</button>
+                        </div>
+                        <video id="webcam" width="320" height="240"></video>
+                    </section>
+                    <section data-background="assets/bee.png">
+                        <h2>Worker</h2>
+                        <pre>
+                            <code data-trim>function handleWorkerMessage(event) { jQuery('#worker-response').html(event.data); } function runWorker() { var bee = new
+                                Worker("js/worker.js"); bee.onmessage = handleWorkerMessage; }</code>
+                            <code data-trim>
+                                <button onclick="runWorker()">I've been a good little worker bee</button>
+                            </code>
+                        </pre>
+                        <button class="btn btn-primary btn-default" onclick="runWorker()">I've been a good little worker bee</button>
+                        <p id="worker-response">(awaiting message...)</p>
+                    </section>
+                    <section data-background="assets/megaphone.svg">
+                        <h2>Notifications</h2>
+                        <pre>
+                            <code data-trim>Notification.requestPermission(callback);</code>
+                            <code data-trim>new Notification([title], { body: [body] });</code>
+                        </pre>
+                        <div class="row fragment">
+                            <div class="col-xs-10">
+                                <pre>
+                                    <code data-trim>
+                                        <button onclick="Notification.requestPermission(function(response) { alert(response); });">Request</button>
+                                    </code>
+                                    <code data-trim>
+                                        <button onclick="new Notification('Hi!', { body: 'How are you today?' })">Send notification</button>
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="col-xs-1 down-half">
+                                <p class="down-half">
+                                    <button class="btn btn-primary btn-default" onclick="Notification.requestPermission(function(response) { alert(response); });">Request</button>
+                                </p>
+                                <p class="down-half">
+                                    <button class="btn btn-primary btn-default" onclick="new Notification('Hi!', { body: 'How are you today?' })">Send notification</button>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                 </section>
                 <!-- intermission -->
                 <section class="plain" data-background="assets/html5.svg">
@@ -264,8 +404,8 @@
                 <!-- Cordova -->
                 <section data-background="assets/cordova.png">
                     <section>
-                        <h2>Apache Cordova</h2>
-                        <h4 class="fragment">command line utility to create native app packages</h4>
+                        <h1>Apache Cordova</h1>
+                        <h3 class="fragment">command line utility to create native app packages</h3>
                         <div class="row fragment">
                             <div class="col-xs-6">
                                 <ul>
@@ -291,44 +431,6 @@
                         </div>
                     </section>
                     <section>
-                        <h2>Apache Cordova</h2>
-                        <ol>
-                            <li>Download and install
-                                <a href="https://nodejs.org/" target="_blank">
-                                    <span>node.js</span>
-                                    <i class="fa fa-external"></i>
-                                </a>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code class="bash">~$ npm install -g cordova</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code class="bash">~$ cordova create [new project directory] --link-to=[web app directory]</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code class="bash">~$ cordova platform add [platform name]</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code class="bash">~$ cordova build</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code class="bash">~$ cordova run</code>
-                                </pre>
-                            </li>
-                    </section>
-                </section>
-                <!-- tools -->
-                <section>
-                    <section>
                         <h2>Friendly, Familiar Frameworks</h2>
                         <ul>
                             <li>Bootstrap</li>
@@ -336,6 +438,62 @@
                             <li>jQuery</li>
                             <li>Angular</li>
                         </ul>
+                    </section>
+                    <section>
+                        <h2>Apache Cordova</h2>
+                        <ol>
+                            <li>Download and install
+                                <a href="https://nodejs.org/" target="_blank">
+                                    <span>node.js</span>
+                                    <i class="fa fa-external"></i>
+                                </a>
+                                <br/>
+                                <br/>
+                            </li>
+                            <li class="fragment">
+                                <pre>
+                                    <code data-trim class="bash">~$ npm install -g cordova</code>
+                                </pre>
+                            </li>
+                            <li class="fragment">
+                                <pre>
+                                    <code data-trim class="bash">~$ cordova create [newdir] --link-to=[webapp]</code>
+                                </pre>
+                            </li>
+                            <li class="fragment">
+                                <pre>
+                                    <code data-trim class="bash">~$ cordova platform add [platform]</code>
+                                </pre>
+                            </li>
+                            <li class="fragment">
+                                <pre>
+                                    <code data-trim class="bash">~$ cordova build</code>
+                                </pre>
+                            </li>
+                            <li class="fragment">
+                                <pre>
+                                    <code data-trim class="bash">~$ cordova run</code>
+                                </pre>
+                            </li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Reasons to build a native package</h2>
+                        <div class="fragment col-sm-6">
+                            <h4>Good</h4>
+                            <ul>
+                                <li>OS integration</li>
+                                <li>Offline availability</li>
+                            </ul>
+                        </div>
+                        <div class="fragment col-sm-6">
+                            <h4>Bad</h4>
+                            <ul>
+                                <li>Marketing</li>
+                                <li>Everyone else is doing it</li>
+                                <li>Did you not see how easy that just was?</li>
+                            </ul>
+                        </div>
                     </section>
                 </section>
                 <!-- why -->
@@ -345,21 +503,20 @@
                         <ul>
                             <li>single codebase</li>
                             <li>use common technologies</li>
+                            <li>friendly, familiar frameworks</li>
                             <li>no need for "specialized" staff</li>
                             <li>minimize investment in proprietary platforms</li>
+                        </ul>
+                        <ul class="fragment">
+                            <li>freedom of choice for your users</li>
                         </ul>
                     </section>
                     <section>
                         <h2>Next Steps?</h2>
                         <ul>
-                            <li>Start integrating features</li>
-                            <ul>
-                                <li>or continue</li>
-                            </ul>
+                            <li>Download this presentation / demo</li>
+                            <li>Start integrating new web features</li>
                             <li>Build an app with Cordova</li>
-                            <ul>
-                                <li>or descendents</li>
-                            </ul>
                             <li>Contribute to msMozWebkit</li>
                             <ul>
                                 <li>better name?</li>

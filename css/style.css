@@ -28,8 +28,9 @@
     text-shadow: none;
 }
 
-div.down-half {
+div.down-half, p.down-half {
     margin-top: 0.5em;
+    display: inline-block;
 }
 
 .oldschool {
@@ -37,6 +38,12 @@ div.down-half {
 	font-weight: normal !important;
 }
 
-li pre {
+.reveal li pre {
     overflow: hidden;
+    margin: 0;
+    width: inherit;
+}
+
+.reveal li pre code {
+    margin-top: -20px;
 }

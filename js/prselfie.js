@@ -13,10 +13,18 @@
       alert(JSON.stringify(pullRequestInfo));
     }
 
-    vm.submit = function submit() {
-      
+    function requestNotificationPermission() {
+      window.Notification.requestPermission(function (permissionInfo) {
+        new window.Notification(permissionInfo);
+      });
+    }
+
+    function uploadGIF() {
       var gif = jQuery('#gif img').attr('src');
-      $http.post('')
+      $http.post('');
+    }
+
+    function createPullRequest() {
       var pr = {
         title: vm.newPR.title,
         body: jQuery('div[contenteditable]').html(),
@@ -24,6 +32,12 @@
         base: "master"
       };
       vm.repo.createPullRequest(pr, handleCreatePullRequestResponse);
+    }
+
+    vm.submit = function submit() {
+      requestNotificationPermission();
+      uploadGIF();
+      createPullRequest();
     };
 
     function updateRepoInfo(errorInfo, repoInfo) {

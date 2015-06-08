@@ -31,7 +31,10 @@
                     <label for="desc" class="control-label">Description</label>
                     <div contentEditable="true" class="form-control" style="height: 100px; overflow: auto;"></div>
                     <label for="gif" class="control-label">Image to include</label>
-                    <div id="gif"></div>
+                    <div id="gif" style="width: 320px; height: 240px; border: 1px solid silver;">&nbsp;</div>
+                    <label for="notification" class="checkbox">
+                        <input type="checkbox" name="notification" checked />Receive notification when pull request is merged/closed</label>
+                    <button class="btn btn-primary btn-default" ng-click="pr.submit()">Submit PR</button>
                 </form>
                 <div class="well col-sm-10 col-md-8 col-lg-6 text-center">
                     <video id="camera" width="320" height="240"></video>
@@ -42,7 +45,6 @@
                     </button>
                 </div>
             </div>
-            <button class="btn btn-primary btn-default" ng-click="pr.submit()">Go!</button>
         </div>
     </body>
 
