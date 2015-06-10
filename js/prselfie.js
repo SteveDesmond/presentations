@@ -9,13 +9,28 @@
     vm.newPR = {};
     vm.webcamStream = {};
 
+    function checkMergeStatus(errorInfo, pullRequest) {
+      if (pullRequest.state == 'open') {
+        setTimeout(function () { waitForMerge(pullRequest.number); }, 5000);
+      }
+      else {
+      new window.Notification('Pull Request Merged', { body: 'yay!' });
+      }
+    }
+
+    function waitForMerge(id) {
+      vm.repo.getPull(id, checkMergeStatus);
+    }
+
     function handleCreatePullRequestResponse(errorInfo, pullRequestInfo) {
-      alert(JSON.stringify(pullRequestInfo));
+      if (errorInfo) {
+        alert(JSON.stringify(errorInfo));
+      }
+      waitForMerge(pullRequestInfo.number);
     }
 
     function requestNotificationPermission() {
       window.Notification.requestPermission(function (permissionInfo) {
-        new window.Notification(permissionInfo);
       });
     }
 
@@ -48,7 +63,7 @@
 
     function getRepoInfo() {
       var github = new Github({
-        token: "8840569bae23d98594dd6ec3a1784fe481f28ade",
+        token: githubKey,
         auth: "oauth"
       });
 

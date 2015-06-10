@@ -14,6 +14,7 @@
         <script type="text/javascript" src="gifshot/build/gifshot.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/githubkey.js"></script>
         <script type="text/javascript" src="js/prselfie.js"></script>
     </head>
     
@@ -24,7 +25,7 @@
                 <span>GitHub Pull Request Selfie GIF Automator</span>
             </h1>
             <h3 ng-show="pr.repoInfo.full_name">Connected to {{pr.repoInfo.full_name}}</h3>
-            <div class="row">
+            <div id="form" class="row">
                 <div class="well col-xs-12 col-sm-6 text-center pull-right">
                     <video id="camera" width="320" height="240"></video>
                     <br/>
