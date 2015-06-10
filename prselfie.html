@@ -25,24 +25,26 @@
             </h1>
             <h3 ng-show="pr.repoInfo.full_name">Connected to {{pr.repoInfo.full_name}}</h3>
             <div class="row">
-                <form class="col-sm-10 col-md-8 col-lg-6">
-                    <label for="title" class="control-label">Title</label>
-                    <input class="form-control" type="text" name="title" ng-model="pr.newPR.title" />
-                    <label for="desc" class="control-label">Description</label>
-                    <div contentEditable="true" class="form-control" style="height: 100px; overflow: auto;"></div>
-                    <label for="gif" class="control-label">Image to include</label>
-                    <div id="gif" style="width: 320px; height: 240px; border: 1px solid silver;">&nbsp;</div>
-                    <label for="notification" class="checkbox">
-                        <input type="checkbox" name="notification" checked />Receive notification when pull request is merged/closed</label>
-                    <button class="btn btn-primary btn-default" ng-click="pr.submit()">Submit PR</button>
-                </form>
-                <div class="well col-sm-10 col-md-8 col-lg-6 text-center">
+                <div class="well col-xs-12 col-sm-6 text-center pull-right">
                     <video id="camera" width="320" height="240"></video>
                     <br/>
                     <button class="btn btn-default" ng-click="pr.record()">
                         <i class="fa fa-circle alert-danger"></i>
                         <span>REC</span>
                     </button>
+                </div>
+                <div class="col-xs-12 col-sm-6 pull-left">
+                    <form>
+                        <label for="title" class="control-label">Title</label>
+                        <input class="form-control" type="text" name="title" ng-model="pr.newPR.title" />
+                        <label for="desc" class="control-label">Description</label>
+                        <div contentEditable="true" class="form-control" style="height: 100px; overflow: auto;"></div>
+                        <label for="gif" class="control-label">Image to include</label>
+                        <div id="gif" style="width: 320px; height: 240px; border: 1px solid silver;">&nbsp;</div>
+                        <label for="notification" class="checkbox">
+                            <input type="checkbox" name="notification" checked />Receive notification when pull request is merged/closed</label>
+                        <button class="btn btn-primary btn-default" ng-click="pr.submit()">Submit PR</button>
+                    </form>
                 </div>
             </div>
         </div>

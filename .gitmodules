@@ -13,3 +13,6 @@
 [submodule "gifshot"]
 	path = gifshot
 	url = git@github.com:yahoo/gifshot.git
+[submodule "fft-ocean"]
+	path = fft-ocean
+	url = git@github.com:jbouny/fft-ocean.git

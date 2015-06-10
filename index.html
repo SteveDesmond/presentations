@@ -58,6 +58,12 @@
                     <section>
                         <h1>Steve who?</h1>
                     </section>
+                    <section>
+                        <h2>off-color joke
+                            <br/>about this being
+                            <br/>my first time</h2>
+                        <h1 class="fragment">[crickets]</h1>
+                    </section>
                     <!-- contents -->
                     <section>
                         <h2>Why am I here again?</h2>
@@ -69,17 +75,16 @@
                     </section>
                     <section>
                         <h2>"Are you ready, kids?"</h2>
-                        <img src="assets/spongebob.jpg" />
+                        <img src="assets/spongebob.jpg" height="480" />
                     </section>
-                </section>
-                <!-- native -->
-                <section data-background="assets/html5.svg">
-                    <h2>What is "native"?</h2>
-                    <ul class="fragment">
-                        <li>immersive</li>
-                        <li>seamless</li>
-                        <li>performant</li>
-                    </ul>
+                    <section>
+                        <h2>What is "native"?</h2>
+                        <ul class="fragment">
+                            <li>immersive</li>
+                            <li>seamless</li>
+                            <li>high performance</li>
+                        </ul>
+                    </section>
                 </section>
                 <!-- fullscreen -->
                 <section data-background="assets/imax.svg">
@@ -165,7 +170,7 @@
                     </section>
                     <section>
                         <h2>Geolocation</h2>
-                        <a href="http://www.ithaca.edu/" target="_blank">
+                        <a href="https://www.ithaca.edu/" target="_blank">
                             <span>Volunteer?</span>
                             <i class="fa fa-external-link"></i>
                         </a>
@@ -178,15 +183,26 @@
                             <i class="fa fa-external-link"></i>
                         </a>
                     </section>
+                    <section>
+                        <h2>Geolocation</h2>
+                        <p>Coming soon: motion / orientation via accelerometer</p>
+                        <a href="http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html"
+                        target="_blank">
+                            <span>Try it out</span>
+                            <i class="fa fa-external-link"></i>
+                        </a>
+                    </section>
                 </section>
                 <!-- the problem -->
                 <section>
                     <section>
-                        <h2>Q: Why do we do what we do?</h2>
-                        <p>A: [video]</p>
+                        <h3>Q: Why do we, as developers, do what we do?</h3>
+                        <video class="fragment" src="assets/silicon-valley.mp4" width="1024" height="576"
+                        controls="true" />
                     </section>
                     <section>
-                        <h2>Q: How can I make the world a better place?</h2>
+                        <h2>Q: How can I make the world
+                            <br/>a better place?</h2>
                         <h1 class="fragment">A: GitHub Pull Request Selfie GIF Automation</h1>
                     </section>
                     <!-- gifs -->
@@ -205,13 +221,13 @@
                         <p>(yes, that The Guardian)</p>
                         <img src="assets/will-run.gif" />
                         <img src="assets/swap-1.gif" />
-                        <img src="assets/swap-2.gif" />
+                        <img src="assets/ie9.gif" />
                         <br>
                         <img src="assets/matt-footer.gif" />
+                        <img src="assets/swap-2.gif" />
                         <img src="assets/refactor-payment-flows.gif" />
-                        <img src="assets/ie9.gif" />
                         <p>
-                            <small>Source:
+                            <small>
                                 <a href="http://www.threechords.org/blog/how-animated-gif-selfies-fixed-our-teams-morale/" target="_blank">
                                     <span>How animated gif selfies fixed our team’s morale</span>
                                     <i class="fa fa-external-link"></i>
@@ -245,19 +261,11 @@
                 </section>
                 <!-- selfie app parts -->
                 <section>
-                    <section>
-                        <h2>The pieces</h2>
-                        <ol>
-                            <li>Camera</li>
-                            <li>Video</li>
-                            <li>Worker</li>
-                            <li>Notification</li>
-                        </ol>
-                    </section>
                     <section data-background="assets/camera.svg">
                         <h2>Camera</h2>
                         <pre>
                             <code data-trim>navigator.getUserMedia(options, successCallback, errorCallback);</code>
+                            <code data-trim>function successCallback(stream) { ... }</code>
                         </pre>
                     </section>
                     <section data-background="assets/youtube.svg">
@@ -283,10 +291,10 @@
                             <tr>
                                 <td>MP4</td>
                                 <td>
-                                    <i class="fa fa-check text-success"></i>
+                                    <i class="fa fa-check text-warning"></i>
                                 </td>
                                 <td>
-                                    <i class="fa fa-check text-success"></i>
+                                    <i class="fa fa-check text-warning"></i>
                                 </td>
                                 <td>
                                     <i class="fa fa-check text-success"></i>
@@ -335,6 +343,11 @@
                                 </td>
                             </tr>
                         </table>
+                        <pre class="fragment">
+                            <code data-trim>&lt;audio/&gt;
+                                <!-- MP3, AAC/MP4 -->
+                            </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>Camera + Video</h2>
@@ -350,20 +363,29 @@
                             </pre>
                         </div>
                         <div class="col-xs-1 down-half">
-                            <button class="btn btn-primary btn-default" onclick="startWebcam()">Start webcam</button>
+                            <p>
+                                <button class="btn btn-primary btn-default" onclick="startWebcam()">Start webcam</button>
+                            </p>
                         </div>
                         <video id="webcam" width="320" height="240"></video>
                     </section>
+                    <section>
+                        <h2>Local Storage</h2>
+                        <pre>
+                            <code data-trim>localStorage.setItem('someKey', 'someValue'); var x = localStorage.getItem('someKey');</code>
+                            <code data-trim>sessionStorage.setItem('someKey', 'someValue'); var x = sessionStorage.getItem('someKey');</code>
+                        </pre>
+                    </section>
                     <section data-background="assets/bee.png">
-                        <h2>Worker</h2>
+                        <h2>Workers</h2>
                         <pre>
                             <code data-trim>function handleWorkerMessage(event) { jQuery('#worker-response').html(event.data); } function runWorker() { var bee = new
                                 Worker("js/worker.js"); bee.onmessage = handleWorkerMessage; }</code>
                             <code data-trim>
-                                <button onclick="runWorker()">I've been a good little worker bee</button>
+                                <button onclick="runWorker()">Start worker</button>
                             </code>
                         </pre>
-                        <button class="btn btn-primary btn-default" onclick="runWorker()">I've been a good little worker bee</button>
+                        <button class="btn btn-primary btn-default" onclick="runWorker()">Start worker</button>
                         <p id="worker-response">(awaiting message...)</p>
                     </section>
                     <section data-background="assets/megaphone.svg">
@@ -395,17 +417,40 @@
                     </section>
                 </section>
                 <!-- intermission -->
-                <section class="plain" data-background="assets/html5.svg">
-                    <h1>
-                        <i class="fa fa-floppy-o"></i>
-                    </h1>
-                    <h2 class="oldschool">Please Insert Disk #2</h2>
+                <section data-background="assets/html5.svg">
+                    <section>
+                        <h2>HTML5 / Web API Features</h2>
+                        <ul>
+                            <li>Fullscreen</li>
+                            <li>Geolocation</li>
+                            <li>Camera</li>
+                            <li>Audio</li>
+                            <li>Video</li>
+                            <li>Local Storage</li>
+                            <li>Workers</li>
+                            <li>Notifications</li>
+                        </ul>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">
+                                <span>Gotta catch 'em all!</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </p>
+                    </section>
+                    <section class="plain">
+                        <h1>
+                            <i class="fa fa-floppy-o"></i>
+                        </h1>
+                        <h2 class="oldschool">Please Insert Disk #2</h2>
+                    </section>
                 </section>
                 <!-- Cordova -->
                 <section data-background="assets/cordova.png">
                     <section>
                         <h1>Apache Cordova</h1>
-                        <h3 class="fragment">command line utility to create native app packages</h3>
+                        <h3 class="fragment">command line utility
+                            <br/>to create native app packages
+                            <br/>from HTML + CSS + JS</h3>
                         <div class="row fragment">
                             <div class="col-xs-6">
                                 <ul>
@@ -433,10 +478,30 @@
                     <section>
                         <h2>Friendly, Familiar Frameworks</h2>
                         <ul>
-                            <li>Bootstrap</li>
-                            <li>Font Awesome</li>
-                            <li>jQuery</li>
-                            <li>Angular</li>
+                            <li>
+                                <a href="https://getbootstrap.com/" target="_blank">
+                                    <span>Bootstrap</span>
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://fontawesome.io/" target="_blank">
+                                    <span>Font Awesome</span>
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://jquery.com/" target="_blank">
+                                    <span>jQuery</span>
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://angularjs.org/" target="_blank">
+                                    <span>Angular</span>
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </li>
                         </ul>
                     </section>
                     <section>
@@ -445,7 +510,7 @@
                             <li>Download and install
                                 <a href="https://nodejs.org/" target="_blank">
                                     <span>node.js</span>
-                                    <i class="fa fa-external"></i>
+                                    <i class="fa fa-external-link"></i>
                                 </a>
                                 <br/>
                                 <br/>
@@ -482,8 +547,9 @@
                         <div class="fragment col-sm-6">
                             <h4>Good</h4>
                             <ul>
-                                <li>OS integration</li>
+                                <li>OS / app store integration</li>
                                 <li>Offline availability</li>
+                                <li>Immediate access</li>
                             </ul>
                         </div>
                         <div class="fragment col-sm-6">
@@ -497,18 +563,17 @@
                     </section>
                 </section>
                 <!-- why -->
-                <section>
+                <section data-background="assets/html5.svg">
                     <section>
                         <h2>So, why the web?</h2>
                         <ul>
-                            <li>single codebase</li>
-                            <li>use common technologies</li>
-                            <li>friendly, familiar frameworks</li>
-                            <li>no need for "specialized" staff</li>
-                            <li>minimize investment in proprietary platforms</li>
-                        </ul>
-                        <ul class="fragment">
-                            <li>freedom of choice for your users</li>
+                            <li class="fragment">single codebase</li>
+                            <li class="fragment">use common technologies</li>
+                            <li class="fragment">friendly, familiar frameworks</li>
+                            <li class="fragment">no need for "specialized" staff</li>
+                            <li class="fragment">minimize investment in proprietary platforms</li>
+                            <li class="fragment">massive number of open source communities</li>
+                            <li class="fragment">freedom of choice for your users</li>
                         </ul>
                     </section>
                     <section>
@@ -540,6 +605,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="http://html5demos.com/" target="_blank">
+                                    <span>HTML5 Demos</span>
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="https://cordova.apache.org/" target="_blank">
                                     <span>Apache Cordova</span>
                                     <i class="fa fa-external-link"></i>
@@ -552,6 +623,24 @@
                                 </a>
                             </li>
                         </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            <i class="fa fa-question-circle"></i>
+                        </h1>
+                    </section>
+                    <section>
+                        <h2>These guys</h2>
+                        <div class="col-xs-6">
+                            <a href="https://twitter.com/DaveCameron" target="_blank">
+                                <img src="assets/dave.jpg" width="480" height="480" />
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="https://twitter.com/natedogreimer" target="_blank">
+                                <img src="assets/nate.jpg" width="480" height="480"  />
+                            </a>
+                        </div>
                     </section>
                 </section>
             </div>

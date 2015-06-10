@@ -1,1 +1,1 @@
-postMessage("I deserve a gold star");
+postMessage('{ "super": "complex", "JSON": [ "object" ] }');
