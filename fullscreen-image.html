@@ -5,17 +5,20 @@
         <meta charset="utf-8" />
         <script type="text/javascript" src="msMozWebkit/msMozWebkit.js"></script>
         <script type="text/javascript">
-            function goFullscreen()
+            function goFullscreen(id)
             {
-                document.getElementById('fsimage').requestFullscreen();
+                document.getElementById(id).requestFullscreen();
             }
         </script>
     </head>
     
     <body>
-        <img id="fsimage" src="assets/allthethings.png"/>
+        <div id="fsdiv" style="background-color: white">
+            <img id="fsimage" src="assets/allthethings.png" style="width: 100%" />
+        </div>
         <br/>
-        <button onclick="goFullscreen()">Fullscreen</img>
+        <button onclick="goFullscreen('fsimage')">Fullscreen Image</button>
+        <button onclick="goFullscreen('fsdiv')">Fullscreen Div</button>
     </body>
 
 </html>

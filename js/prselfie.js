@@ -32,15 +32,10 @@
       });
     }
 
-    function uploadGIFandSubmitPR() {
-      var gif = jQuery('#gif img').attr('src');
-      $http.post('http://gif.vtsv.ca/upload', gif).success(function(gifURL) { createPullRequest(gifURL); });
-    }
-
     function createPullRequest(gifURL) {
       var pr = {
         title: vm.newPR.title,
-        body: jQuery('div[contenteditable]').html() + '![' + gifURL + ']',
+        body: jQuery('div[contenteditable]').html() + '\n\n![](' + gifURL + ')',
         head: "pull-requests",
         base: "master"
       };
@@ -49,7 +44,7 @@
 
     vm.submit = function submit() {
       requestNotificationPermission();
-      uploadGIFandSubmitPR();x`
+      createPullRequest('http://stevedesmond.ca/steve.jpg');
     };
 
     function updateRepoInfo(errorInfo, repoInfo) {
@@ -72,13 +67,7 @@
       vm.webcamStream = stream;
       var video = jQuery('#camera')[0];
 
-      if ('mozSrcObject' in video) {
-        video.mozSrcObject = stream;
-      } else if (window.webkitURL) {
-        video.src = window.webkitURL.createObjectURL(stream);
-      } else {
-        video.src = stream;
-      }
+      video.videoSource(stream);
 
       video.play();
     }
