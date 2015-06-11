@@ -23,9 +23,7 @@
     }
 
     function handleCreatePullRequestResponse(errorInfo, pullRequestInfo) {
-      if (errorInfo) {
-        alert(JSON.stringify(errorInfo));
-      }
+      jQuery('#form').html('Thanks!');
       waitForMerge(pullRequestInfo.number);
     }
 
@@ -34,15 +32,15 @@
       });
     }
 
-    function uploadGIF() {
+    function uploadGIFandSubmitPR() {
       var gif = jQuery('#gif img').attr('src');
-      $http.post('');
+      $http.post('http://gif.vtsv.ca/upload', gif).success(function(gifURL) { createPullRequest(gifURL); });
     }
 
-    function createPullRequest() {
+    function createPullRequest(gifURL) {
       var pr = {
         title: vm.newPR.title,
-        body: jQuery('div[contenteditable]').html(),
+        body: jQuery('div[contenteditable]').html() + '![' + gifURL + ']',
         head: "pull-requests",
         base: "master"
       };
@@ -51,8 +49,7 @@
 
     vm.submit = function submit() {
       requestNotificationPermission();
-      uploadGIF();
-      createPullRequest();
+      uploadGIFandSubmitPR();x`
     };
 
     function updateRepoInfo(errorInfo, repoInfo) {
