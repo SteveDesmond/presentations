@@ -402,7 +402,7 @@ var x = sessionStorage.getItem('someKey');
                     <section data-background="assets/bee.png">
                         <h2>Workers</h2>
                         <pre>
-                            <code data-trim>
+                            <code data-trim class="fragment">
 function handleWorkerMessage(event) {
     jQuery('#worker-response').html(event.data);
 }
@@ -412,13 +412,15 @@ function runWorker() {
     bee.onmessage = handleWorkerMessage;
 }
                             </code>
-                            <code data-trim>postMessage('text');</code>
-                            <code data-trim>
+                            <code data-trim class="fragment">[worker.js]: postMessage('text');</code>
+                            <code data-trim class="fragment">
                                 <button onclick="runWorker()">Start worker</button>
                             </code>
                         </pre>
-                        <button class="btn btn-primary btn-default" onclick="runWorker()">Start worker</button>
-                        <p id="worker-response">(awaiting message...)</p>
+                        <div class="fragment">
+                            <button class="btn btn-primary btn-default" onclick="runWorker()">Start worker</button>
+                            <p id="worker-response">(awaiting message...)</p>
+                        </div>
                     </section>
                     <section data-background="assets/megaphone.svg">
                         <h2>Notifications</h2>
@@ -610,7 +612,7 @@ function runWorker() {
                         <ul class="fragment">
                             <li>polyfills</li>
                             <li>libraries/frameworks</li>
-                            <li>OS integrations</li>
+                            <li>OS/device integrations</li>
                             <li>&gt;1000</li>
                         </ul>
                         <p class="fragment">
@@ -627,7 +629,7 @@ function runWorker() {
                         <div class="fragment col-sm-6">
                             <h4>Good</h4>
                             <ul>
-                                <li>OS / app store integration</li>
+                                <li>OS / device integration</li>
                                 <li>Offline availability</li>
                                 <li>Immediate access</li>
                                 <ul>
@@ -699,7 +701,7 @@ function runWorker() {
                             </li>
                             <li>
                                 <a href="https://twitter.com/stevedesmond_ca" target="_blank">
-                                    <span>Steve</span>
+                                    <span>SteveDesmond_ca</span>
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
