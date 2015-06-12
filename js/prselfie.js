@@ -44,7 +44,7 @@
 
     vm.submit = function submit() {
       requestNotificationPermission();
-      createPullRequest('http://stevedesmond.ca/steve.jpg');
+      createPullRequest('https://cloud.githubusercontent.com/assets/195896/8129843/4dd22858-10db-11e5-86d3-cac56402ba46.gif');
     };
 
     function updateRepoInfo(errorInfo, repoInfo) {
