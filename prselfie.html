@@ -1,55 +1,68 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-    
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>GitHub Pull Request Selfie GIF Automator</title>
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css" />
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
-        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="github-api/lib/underscore-min.js"></script>
-        <script type="text/javascript" src="github-api/github.js"></script>
-        <script type="text/javascript" src="msMozWebkit/msMozWebkit.js"></script>
-        <script type="text/javascript" src="gifshot/build/gifshot.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/angular.js"></script>
-        <script type="text/javascript" src="js/githubkey.js"></script>
-        <script type="text/javascript" src="js/prselfie.js"></script>
-    </head>
-    
-    <body ng-app="prselfie">
-        <div class="container" ng-controller="pr as pr">
-            <h1>
-                <i class="fa fa-github"></i>
-                <span>GitHub Pull Request Selfie GIF Automator</span>
-            </h1>
-            <h3 ng-show="pr.repoInfo.full_name">Connected to {{pr.repoInfo.full_name}}</h3>
-            <div id="form" class="row">
-                <div class="well col-xs-12 col-sm-6 text-center pull-right">
-                    <video id="camera" width="320" height="240"></video>
-                    <br/>
-                    <button class="btn btn-default" ng-click="pr.record()">
-                        <i class="fa fa-circle alert-danger"></i>
-                        <span>REC</span>
-                    </button>
-                </div>
-                <div class="col-xs-12 col-sm-6 pull-left">
-                    <form>
-                        <label for="title" class="control-label">Title</label>
-                        <input class="form-control" type="text" name="title" ng-model="pr.newPR.title" />
-                        <label for="desc" class="control-label">Description</label>
-                        <div contentEditable="true" class="form-control" style="height: 100px; overflow: auto;"></div>
-                        <label for="gif" class="control-label">Image to include</label>
-                        <div id="gif" style="width: 320px; height: 240px; border: 1px solid silver;">&nbsp;</div>
-                        <label for="notification" class="checkbox">
-                            <input type="checkbox" name="notification" checked />Receive notification when pull request is merged/closed</label>
-                        <button class="btn btn-primary btn-default" ng-click="pr.submit()">Submit PR</button>
-                    </form>
-                </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Pull Request Selfie GIF Automator</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="github-api/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="github-api/github.js"></script>
+    <script type="text/javascript" src="msMozWebkit/msMozWebkit.js"></script>
+    <script type="text/javascript" src="gifshot/build/gifshot.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/githubkey.js"></script>
+    <script type="text/javascript" src="js/prselfie.js"></script>
+</head>
+
+<body ng-app="prselfie">
+    <div class="container" ng-controller="pr as pr">
+        <h1>
+            <i class="fa fa-github"></i>
+            <span>GitHub Pull Request Selfie GIF Automator</span>
+        </h1>
+        <h3 ng-show="pr.repoInfo.full_name">Connected to {{pr.repoInfo.full_name}}</h3>
+        <div id="form" class="row">
+            <div class="well col-xs-12 col-sm-6 text-center pull-right">
+                <video id="camera" width="320" height="240"></video>
+                <br />
+                <button class="btn btn-default" ng-click="pr.record()">
+                    <i class="fa fa-circle alert-danger"></i>
+                    <span>REC</span>
+                </button>
+            </div>
+            <div class="col-xs-12 col-sm-6 pull-left">
+                <form>
+                    <label for="title" class="control-label">Title</label>
+                    <input class="form-control" type="text" name="title" ng-model="pr.newPR.title" />
+                    <label for="desc" class="control-label">Description</label>
+                    <div contenteditable="true" class="form-control" style="height: 100px; overflow: auto;"></div>
+                    <label for="gif" class="control-label">Image to include</label>
+                    <div id="gif" style="width: 320px; height: 240px; border: 1px solid silver;">&nbsp;</div>
+                    <label for="notification" class="checkbox">
+                        <input type="checkbox" name="notification" checked />Receive notification when pull request is merged/closed
+                    </label>
+                    <button class="btn btn-primary btn-default" ng-click="pr.submit()">Submit PR</button>
+                </form>
             </div>
         </div>
-    </body>
+    </div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63008239-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
 
 </html>

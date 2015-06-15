@@ -1,750 +1,771 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-    
-    <head>
-        <meta charset="utf-8" />
-        <title>There's an App for That</title>
-        <meta name="description" content="Creating Cross-Platform Native Experiences Using Open Web Standards">
-        <meta name="author" content="Steve Desmond">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
-        <link rel="stylesheet" href="css/reveal.css" />
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css" />
-        <link rel="stylesheet" href="css/theme/black.css" id="theme" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" href="lib/css/zenburn.css" />
-        <script>
-            var link = document.createElement( 'link' );
-            			link.rel = 'stylesheet';
-            			link.type = 'text/css';
-            			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            			document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
-        <script type="text/javascript" src="msMozWebkit/msMozWebkit.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </head>
-    
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <section data-background="assets/html5.svg">
-                    <section>
-                        <a href="http://stevedesmond.ca" target="_blank">
-						<img src="assets/qrcode.png" />
-					</a>
-                    </section>
-                    <section>
-                        <h1>There's an App
-                            <br/>for That</h1>
-                        <h3>Creating
-                            <br/>Cross-Platform
-                            <br/>Native Experiences
-                            <br/>Using Open Web Standards</h3>
-                        <br/>
-                        <p>Steve Desmond</p>
-                    </section>
-                    <section>
-                        <h1>Steve who?</h1>
-                    </section>
-                    <section>
-                        <h2>off-color joke
-                            <br/>about this being
-                            <br/>my first time</h2>
-                        <h1 class="fragment">[crickets]</h1>
-                    </section>
-                    <section>
-                        <h2>Why am I here again?</h2>
-                        <ol>
-                            <li>Native in the browser</li>
-                            <li>Packaged apps</li>
-                            <li>Why?</li>
-                        </ol>
-                    </section>
-                    <section>
-                        <h2>"Are you ready, kids?"</h2>
-                        <img src="assets/spongebob.jpg" height="480" />
-                    </section>
-                    <section>
-                        <h2>What is "native"?</h2>
-                        <ul class="fragment">
-                            <li>immersive</li>
-                            <li>seamless</li>
-                            <li>high performance</li>
-                        </ul>
-                    </section>
+
+<head>
+    <meta charset="utf-8" />
+    <title>There's an App for That</title>
+    <meta name="description" content="Creating Cross-Platform Native Experiences Using Open Web Standards">
+    <meta name="author" content="Steve Desmond">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="css/theme/black.css" id="theme" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script type="text/javascript" src="msMozWebkit/msMozWebkit.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="assets/html5.svg">
+                <section>
+                    <a href="http://stevedesmond.ca" target="_blank">
+                        <img src="assets/qrcode.png" />
+                    </a>
                 </section>
-                <section data-background="assets/imax.svg">
-                    <section>
-                        <h2>Fullscreen</h2>
-                        <pre>
-                            <code data-trim class="fragment">[element].requestFullscreen();</code>
-                            <code data-trim class="fragment">document.exitFullscreen();</code>
+                <section>
+                    <h1>
+                        There's an App
+                        <br />for That
+                    </h1>
+                    <h3>
+                        Creating
+                        <br />Cross-Platform
+                        <br />Native Experiences
+                        <br />Using Open Web Standards
+                    </h3>
+                    <br />
+                    <p>Steve Desmond</p>
+                </section>
+                <section>
+                    <h1>Steve who?</h1>
+                </section>
+                <section>
+                    <h2>
+                        off-color joke
+                        <br />about this being
+                        <br />my first time
+                    </h2>
+                    <h1 class="fragment">[crickets]</h1>
+                </section>
+                <section>
+                    <h2>Why am I here again?</h2>
+                    <ol>
+                        <li>Native in the browser</li>
+                        <li>Packaged apps</li>
+                        <li>Why?</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>"Are you ready, kids?"</h2>
+                    <img src="assets/spongebob.jpg" height="480" />
+                </section>
+                <section>
+                    <h2>What is "native"?</h2>
+                    <ul class="fragment">
+                        <li>immersive</li>
+                        <li>seamless</li>
+                        <li>high performance</li>
+                    </ul>
+                </section>
+            </section>
+            <section data-background="assets/imax.svg">
+                <section>
+                    <h2>Fullscreen</h2>
+                    <pre>
+                    <code data-trim class="fragment">[element].requestFullscreen();</code>
+                    <code data-trim class="fragment">document.exitFullscreen();</code>
                         </pre>
-                        <small class="fragment pull-right">* must be called from a short-lived event handler</small>
-                    </section>
-                    <section>
-                        <h2>Fullscreen</h2>
-                        <pre>
-                            <code data-trim>
+                    <small class="fragment pull-right">* must be called from a short-lived event handler</small>
+                </section>
+                <section>
+                    <h2>Fullscreen</h2>
+                    <pre>
+                    <code data-trim>
 function goFullscreen() {
     document.documentElement.requestFullscreen();
 }
-
 function endFullscreen() {
     document.exitFullscreen();
 }
                             </code>
                         </pre>
-                        <div class="row fragment">
-                            <div class="col-xs-10">
-                                <pre>
-                                    <code data-trim>
-                                        <button onclick="goFullscreen()">Enter fullscreen</button>
+                    <div class="row fragment">
+                        <div class="col-xs-10">
+                            <pre>
+                            <code data-trim>
+                            <button onclick="goFullscreen()">Enter fullscreen</button>
                                     </code>
-                                    <code data-trim>
-                                        <button onclick="endFullscreen()">Exit fullscreen</button>
+                            <code data-trim>
+                            <button onclick="endFullscreen()">Exit fullscreen</button>
                                     </code>
                                 </pre>
-                            </div>
-                            <div class="col-xs-1 down-half">
-                                <p>
-                                    <button class="btn btn-default btn-primary" onclick="goFullscreen()">Enter fullscreen</button>
-                                </p>
-                                <p>
-                                    <button class="btn btn-default btn-primary" onclick="endFullscreen()">Exit fullscreen</button>
-                                </p>
-                            </div>
                         </div>
-                        <small class="fragment">
-                            <a href="fullscreen-image.html" target="_blank">
-                                <span>Fullscreen Image Demo</span>
+                        <div class="col-xs-1 down-half">
+                            <p>
+                                <button class="btn btn-default btn-primary" onclick="goFullscreen()">Enter fullscreen</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-default btn-primary" onclick="endFullscreen()">Exit fullscreen</button>
+                            </p>
+                        </div>
+                    </div>
+                    <small class="fragment">
+                        <a href="fullscreen-image.html" target="_blank">
+                            <span>Fullscreen Image Demo</span>
+                            <i class="fa fa-external-link"></i>
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Fullscreen</h2>
+                    <h4>Well, actually...</h4>
+                    <pre class="fragment">
+                    <code data-trim>[element].requestFullscreen();</code>
+                    <code data-trim>[element].msRequestFullscreen();</code>
+                    <code data-trim>[element].mozRequestFullScreen();</code>
+                    <code data-trim>[element].webkitRequestFullscreen();</code>
+                        </pre>
+                    <p class="fragment">
+                        <span>Enter</span>
+                        <a href="https://github.com/stevedesmond-ca/msMozWebkit.js" target="_blank">
+                            <span>msMozWebkit.js</span>
+                            <i class="fa fa-external-link"></i>
+                        </a>
+                </section>
+            </section>
+            <section data-background="assets/sandiego.svg">
+                <section>
+                    <h2>Geolocation</h2>
+                    <div class="fragment">
+                        <div class="col-xs-4">
+                            <ul>
+                                <li>GPS</li>
+                                <li>Cellular triangulation</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <ul>
+                                <li>AGPS</li>
+                                <li>Wi-Fi</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <ul>
+                                <li>Fused</li>
+                                <li>Mock</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <pre class="fragment">
+                    <code data-trim>navigator.geolocation.getCurrentPosition(someCallback);</code>
+                        </pre>
+                </section>
+                <section>
+                    <h2>Geolocation</h2>
+                    <button class="btn btn-default btn-primary" onclick="getLocation()">Get location</button>
+                    <pre>
+                    <code data-trim>navigator.geolocation.getCurrentPosition(displayPosition);</code>
+                        </pre>
+                    <div style="min-height: 320px;">
+                        <small id="geolocation-info"></small>
+                    </div>
+                </section>
+                <section>
+                    <h2>Geolocation</h2>
+                    <a class="fragment" href="https://www.ithaca.edu/" target="_blank">
+                        <span>Volunteer?</span>
+                        <i class="fa fa-external-link"></i>
+                    </a>
+                </section>
+                <section>
+                    <h2>Geolocation</h2>
+                    <h3>"There's an app for that"</h3>
+                    <a class="fragment" href="nearest.html" target="_blank">
+                        <span>Find a Computer Lab</span>
+                        <i class="fa fa-external-link"></i>
+                    </a>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>Q: Why do we, as developers, do what we do?</h3>
+                    <video class="fragment" width="1024" height="576" controls="true">
+                        <source src="assets/silicon-valley.mp4" type="video/mp4" />
+                        <source src="assets/silicon-valley.ogv" type="video/ogg" />
+                    </video>
+                </section>
+                <section>
+                    <h2>
+                        Q: How can I make the world
+                        <br />a better place?
+                    </h2>
+                    <h1 class="fragment">A: GitHub Pull Request Selfie GIF Automation</h1>
+                </section>
+                <section>
+                    <h2>Who GIFs?</h2>
+                    <ul>
+                        <li>Phil Haack (GitHub, Microsoft)</li>
+                        <img src="assets/phil.gif" />
+                        <li>Greg Franko & Chase West (Yahoo)</li>
+                        <img src="assets/yahoo.gif" />
+                    </ul>
+                </section>
+                <section>
+                    <h2>The Guardian</h2>
+                    <p>(yes, that The Guardian)</p>
+                    <img src="assets/will-run.gif" />
+                    <img src="assets/swap-2.gif" />
+                    <img src="assets/ie9.gif" />
+                    <br>
+                    <img src="assets/matt-footer.gif" />
+                    <img src="assets/swap-1.gif" />
+                    <img src="assets/refactor-payment-flows.gif" />
+                    <p>
+                        <small>
+                            <a href="http://www.threechords.org/blog/how-animated-gif-selfies-fixed-our-teams-morale/" target="_blank">
+                                <span>How animated gif selfies fixed our team’s morale</span>
                                 <i class="fa fa-external-link"></i>
                             </a>
                         </small>
-                    </section>
-                    <section>
-                        <h2>Fullscreen</h2>
-                        <h4>Well, actually...</h4>
-                        <pre class="fragment">
-                            <code data-trim>[element].requestFullscreen();</code>
-                            <code data-trim>[element].msRequestFullscreen();</code>
-                            <code data-trim>[element].mozRequestFullScreen();</code>
-                            <code data-trim>[element].webkitRequestFullscreen();</code>
-                        </pre>
-                        <p class="fragment">
-                            <span>Enter</span>
-                            <a href="https://github.com/stevedesmond-ca/msMozWebkit.js" target="_blank">
-                                <span>msMozWebkit.js</span>
+                    </p>
+                </section>
+                <section>
+                    <h2>Steps</h2>
+                    <ol>
+                        <li>fill out pull request</li>
+                        <li>record video</li>
+                        <li>convert video to GIF</li>
+                        <li>upload video</li>
+                        <li>submit pull request</li>
+                    </ol>
+                    <div class="fragment">
+                        <p>Volunteer?</p>
+                    </div>
+                    <div class="fragment">
+                        <h4>j/k! There's an app for that</h4>
+                        <p>
+                            Launch the
+                            <a href="prselfie.html" target="_blank">
+                                <span>GitHub Pull Request Selfie GIF Automator</span>
                                 <i class="fa fa-external-link"></i>
                             </a>
-                    </section>
-                </section>
-                <section data-background="assets/sandiego.svg">
-                    <section>
-                        <h2>Geolocation</h2>
-                        <div class="fragment">
-                            <div class="col-xs-4">
-                                <ul>
-                                    <li>GPS</li>
-                                    <li>Cellular triangulation</li>
-                                </ul>
-                            </div>
-                            <div class="col-xs-4">
-                                <ul>
-                                    <li>AGPS</li>
-                                    <li>Wi-Fi</li>
-                                </ul>
-                            </div>
-                            <div class="col-xs-4">
-                                <ul>
-                                    <li>Fused</li>
-                                    <li>Mock</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <pre class="fragment">
-                            <code data-trim>navigator.geolocation.getCurrentPosition(someCallback);</code>
-                        </pre>
-                    </section>
-                    <section>
-                        <h2>Geolocation</h2>
-                        <button class="btn btn-default btn-primary" onclick="getLocation()">Get location</button>
-                        <pre>
-                            <code data-trim>navigator.geolocation.getCurrentPosition(displayPosition);</code>
-                        </pre>
-                        <div style="min-height: 320px;">
-                            <small id="geolocation-info"></small>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>Geolocation</h2>
-                        <a class="fragment" href="https://www.ithaca.edu/" target="_blank">
-                            <span>Volunteer?</span>
-                            <i class="fa fa-external-link"></i>
-                        </a>
-                    </section>
-                    <section>
-                        <h2>Geolocation</h2>
-                        <h3>"There's an app for that"</h3>
-                        <a class="fragment" href="nearest.html" target="_blank">
-                            <span>Find a Computer Lab</span>
-                            <i class="fa fa-external-link"></i>
-                        </a>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h3>Q: Why do we, as developers, do what we do?</h3>
-                        <video class="fragment" width="1024" height="576" controls="true">
-                            <source src="assets/silicon-valley.mp4" type="video/mp4" />
-                            <source src="assets/silicon-valley.ogv" type="video/ogg" />
-                        </video>
-                    </section>
-                    <section>
-                        <h2>Q: How can I make the world
-                            <br/>a better place?</h2>
-                        <h1 class="fragment">A: GitHub Pull Request Selfie GIF Automation</h1>
-                    </section>
-                    <section>
-                        <h2>Who GIFs?</h2>
-                        <ul>
-                            <li>Phil Haack (GitHub, Microsoft)</li>
-                            <img src="assets/phil.gif" />
-                            <li>Greg Franko & Chase West (Yahoo)</li>
-                            <img src="assets/yahoo.gif" />
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>The Guardian</h2>
-                        <p>(yes, that The Guardian)</p>
-                        <img src="assets/will-run.gif" />
-                        <img src="assets/swap-2.gif" />
-                        <img src="assets/ie9.gif" />
-                        <br>
-                        <img src="assets/matt-footer.gif" />
-                        <img src="assets/swap-1.gif" />
-                        <img src="assets/refactor-payment-flows.gif" />
-                        <p>
-                            <small>
-                                <a href="http://www.threechords.org/blog/how-animated-gif-selfies-fixed-our-teams-morale/" target="_blank">
-                                    <span>How animated gif selfies fixed our team’s morale</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </small>
                         </p>
-                    </section>
-                    <section>
-                        <h2>Steps</h2>
-                        <ol>
-                            <li>fill out pull request</li>
-                            <li>record video</li>
-                            <li>convert video to GIF</li>
-                            <li>upload video</li>
-                            <li>submit pull request</li>
-                        </ol>
-                        <div class="fragment">
-                            <p>Volunteer?</p>
-                        </div>
-                        <div class="fragment">
-                            <h4>j/k! There's an app for that</h4>
-                            <p>Launch the
-                                <a href="prselfie.html" target="_blank">
-                                    <span>GitHub Pull Request Selfie GIF Automator</span>
-                                    <i class="fa fa-external-link"></i>                            
-                                </a>
-                            </p>
-                        </div>
-                    </section>
+                    </div>
                 </section>
-                <section>
-                    <section data-background="assets/camera.svg">
-                        <h2>Camera</h2>
-                        <pre>
-                            <code data-trim>navigator.getUserMedia(options, successCallback, errorCallback);</code>
-                            <code data-trim>function successCallback(stream) { ... }</code>
+            </section>
+            <section>
+                <section data-background="assets/camera.svg">
+                    <h2>Camera</h2>
+                    <pre>
+                    <code data-trim>navigator.getUserMedia(options, successCallback, errorCallback);</code>
+                    <code data-trim>function successCallback(stream) { ... }</code>
                         </pre>
-                    </section>
-                    <section data-background="assets/youtube.svg">
-                        <h2>Video</h2>
-                        <pre>
-                            <code data-trim>
+                </section>
+                <section data-background="assets/youtube.svg">
+                    <h2>Video</h2>
+                    <pre>
+                    <code data-trim>
 <video>
-    <source src="movie.mp4" type="video/mp4" />
-    <source src="movie.webm" type="video/webm" />
-    <source src="movie.ogg" type="video/ogg" />
+                    <source src="movie.mp4" type="video/mp4" />
+                    <source src="movie.webm" type="video/webm" />
+                    <source src="movie.ogg" type="video/ogg" />
 </video>
                             </code>
                         </pre>
-                        <table class="fragment">
-                            <tr>
-                                <th>Type</th>
-                                <th>Firefox</th>
-                                <th>Chrome</th>
-                                <th>Opera</th>
-                                <th>IE</th>
-                                <th>Safari</th>
-                            </tr>
-                            <tr>
-                                <td>MP4</td>
-                                <td>
-                                    <i class="fa fa-check text-warning"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-warning"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>WebM</td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-times text-danger"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-times text-danger"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ogg</td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-check text-success"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-times text-danger"></i>
-                                </td>
-                                <td>
-                                    <i class="fa fa-times text-danger"></i>
-                                </td>
-                            </tr>
-                        </table>
-                        <pre class="fragment">
-                            <code data-trim>
+                    <table class="fragment">
+                        <tr>
+                            <th>Type</th>
+                            <th>Firefox</th>
+                            <th>Chrome</th>
+                            <th>Opera</th>
+                            <th>IE</th>
+                            <th>Safari</th>
+                        </tr>
+                        <tr>
+                            <td>MP4</td>
+                            <td>
+                                <i class="fa fa-check text-warning"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-warning"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>WebM</td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-times text-danger"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-times text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ogg</td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-check text-success"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-times text-danger"></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-times text-danger"></i>
+                            </td>
+                        </tr>
+                    </table>
+                    <pre class="fragment">
+                    <code data-trim>
 &lt;audio/&gt; <!-- MP3, AAC/MP4 -->
                             </code>
                         </pre>
-                    </section>
-                    <section>
-                        <h2>Camera + Video</h2>
-                        <pre>
-                            <code data-trim>
+                </section>
+                <section>
+                    <h2>Camera + Video</h2>
+                    <pre>
+                    <code data-trim>
 function showVideo(stream) {
     jQuery('#webcam')[0].videoSource(stream);
 }
                             </code>
-                            <code data-trim>
+                    <code data-trim>
 function startWebcam() {
     navigator.getUserMedia({ video: true }, showVideo, errorHandler);
 }
                             </code>
                         </pre>
-                        <div class="col-xs-10">
-                            <pre>
-                                <code data-trim>
-                                    <button onclick="startWebcam()">Start webcam</button>
+                    <div class="col-xs-10">
+                        <pre>
+                        <code data-trim>
+                        <button onclick="startWebcam()">Start webcam</button>
                                 </code>
                             </pre>
-                        </div>
-                        <div class="col-xs-1 down-half">
-                            <p>
-                                <button class="btn btn-primary btn-default" onclick="startWebcam()">Start webcam</button>
-                            </p>
-                        </div>
-                        <video id="webcam" width="320" height="240"></video>
-                    </section>
-                    <section>
-                        <h2>Local Storage</h2>
-                        <pre>
-                            <code data-trim>
+                    </div>
+                    <div class="col-xs-1 down-half">
+                        <p>
+                            <button class="btn btn-primary btn-default" onclick="startWebcam()">Start webcam</button>
+                        </p>
+                    </div>
+                    <video id="webcam" width="320" height="240"></video>
+                </section>
+                <section>
+                    <h2>Local Storage</h2>
+                    <pre>
+                    <code data-trim>
 localStorage.setItem('someKey', 'someValue');
 var x = localStorage.getItem('someKey');
-
 sessionStorage.setItem('someKey', 'someValue');
 var x = sessionStorage.getItem('someKey');
                             </code>
                         </pre>
-                        <small class="fragment pull-right">* usually limited to 5-10 MB per domain</small>
-                    </section>
-                    <section data-background="assets/bee.png">
-                        <h2>Workers</h2>
-                        <pre>
-                            <code data-trim class="fragment">
+                    <small class="fragment pull-right">* usually limited to 5-10 MB per domain</small>
+                </section>
+                <section data-background="assets/bee.png">
+                    <h2>Workers</h2>
+                    <pre>
+                    <code data-trim class="fragment">
 function handleWorkerMessage(event) {
     jQuery('#worker-response').html(event.data);
 }
-
 function runWorker() {
     var bee = new Worker("js/worker.js");
     bee.onmessage = handleWorkerMessage;
 }
                             </code>
-                            <code data-trim class="fragment">[worker.js]: postMessage('text');</code>
-                            <code data-trim class="fragment">
-                                <button onclick="runWorker()">Start worker</button>
+                    <code data-trim class="fragment">[worker.js]: postMessage('text');</code>
+                    <code data-trim class="fragment">
+                    <button onclick="runWorker()">Start worker</button>
                             </code>
                         </pre>
-                        <div class="fragment">
-                            <button class="btn btn-primary btn-default" onclick="runWorker()">Start worker</button>
-                            <p id="worker-response">(awaiting message...)</p>
-                        </div>
-                    </section>
-                    <section data-background="assets/megaphone.svg">
-                        <h2>Notifications</h2>
-                        <pre>
-                            <code data-trim>Notification.requestPermission(callback);</code>
-                            <code data-trim>new Notification([title], { body: [body] });</code>
+                    <div class="fragment">
+                        <button class="btn btn-primary btn-default" onclick="runWorker()">Start worker</button>
+                        <p id="worker-response">(awaiting message...)</p>
+                    </div>
+                </section>
+                <section data-background="assets/megaphone.svg">
+                    <h2>Notifications</h2>
+                    <pre>
+                    <code data-trim>Notification.requestPermission(callback);</code>
+                    <code data-trim>new Notification([title], { body: [body] });</code>
                         </pre>
-                        <div class="row fragment">
-                            <div class="col-xs-10">
-                                <pre>
-                                    <code data-trim>
+                    <div class="row fragment">
+                        <div class="col-xs-10">
+                            <pre>
+                            <code data-trim>
 <button onclick="Notification.requestPermission(function(response) {
     alert(response); });">
     Request
 </button>
                                     </code>
-                                    <code data-trim>
+                            <code data-trim>
 <button onclick="new Notification('Hi!', { body: 'How are you today?' })">
     Send notification
 </button>
                                     </code>
                                 </pre>
-                            </div>
-                            <div class="col-xs-1 down-half">
-                                <p class="down-half">
-                                    <button class="btn btn-primary btn-default" onclick="Notification.requestPermission(function(response) { alert(response); });">Request</button>
-                                </p>
-                                <p class="down-half">&nbsp;</p>
-                                <p class="down-half">
-                                    <button class="btn btn-primary btn-default" onclick="new Notification('Hi!', { body: 'How are you today?' })">Send notification</button>
-                                </p>
-                            </div>
                         </div>
-                    </section>
+                        <div class="col-xs-1 down-half">
+                            <p class="down-half">
+                                <button class="btn btn-primary btn-default" onclick="Notification.requestPermission(function(response) { alert(response); });">Request</button>
+                            </p>
+                            <p class="down-half">&nbsp;</p>
+                            <p class="down-half">
+                                <button class="btn btn-primary btn-default" onclick="new Notification('Hi!', { body: 'How are you today?' })">Send notification</button>
+                            </p>
+                        </div>
+                    </div>
                 </section>
-                <section data-background="assets/html5.svg">
-                    <section>
-                        <h4>One more thing...</h4>
-                        <h2 class="fragment">WebGL</h2>
-                        <a class="fragment" href="fft-ocean/index.html" target="_blank">
-                            <span>A Trip Under the Moonlight</span>
+            </section>
+            <section data-background="assets/html5.svg">
+                <section>
+                    <h4>One more thing...</h4>
+                    <h2 class="fragment">WebGL</h2>
+                    <a class="fragment" href="fft-ocean/index.html" target="_blank">
+                        <span>A Trip Under the Moonlight</span>
+                        <i class="fa fa-external-link"></i>
+                    </a>
+                </section>
+                <section>
+                    <h2>HTML5 / Web API Features</h2>
+                    <ul>
+                        <li>Fullscreen</li>
+                        <li>Geolocation</li>
+                        <li>Camera</li>
+                        <li>Audio</li>
+                        <li>Video</li>
+                        <li>Local Storage</li>
+                        <li>Workers</li>
+                        <li>Notifications</li>
+                        <li>WebGL</li>
+                    </ul>
+                    <p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">
+                            <span>Gotta catch 'em all!</span>
                             <i class="fa fa-external-link"></i>
                         </a>
-                    </section>
-                    <section>
-                        <h2>HTML5 / Web API Features</h2>
-                        <ul>
-                            <li>Fullscreen</li>
-                            <li>Geolocation</li>
-                            <li>Camera</li>
-                            <li>Audio</li>
-                            <li>Video</li>
-                            <li>Local Storage</li>
-                            <li>Workers</li>
-                            <li>Notifications</li>
-                            <li>WebGL</li>
-                        </ul>
-                        <p>
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">
-                                <span>Gotta catch 'em all!</span>
-                                <i class="fa fa-external-link"></i>
-                            </a>
-                        </p>
-                    </section>
-                    <section>
-                        <h2>There's an app for that</h2>
-                        <h1 class="fragment">It's the web</h1>
-                    </section>
-                    <section class="plain">
-                        <h1>
-                            <i class="fa fa-floppy-o"></i>
-                        </h1>
-                        <h2 class="oldschool">Please Insert Disk #2</h2>
-                    </section>
+                    </p>
                 </section>
-                <section data-background="assets/cordova.png">
-                    <section>
-                        <h1>Apache Cordova</h1>
-                        <h3 class="fragment">command line utility
-                            <br/>to create native packages
-                            <br/>from HTML + CSS + JS</h3>
-                        <div class="row fragment">
-                            <div class="col-xs-6">
-                                <ul>
-                                    <li>Amazon Fire OS</li>
-                                    <li>Android</li>
-                                    <li>Bada</li>
-                                    <li>Blackberry</li>
-                                    <li>FirefoxOS</li>
-                                    <li>iOS</li>
-                                    <li>Mac OS X</li>
-                                </ul>
-                            </div>
-                            <div class="col-xs-6">
-                                <ul>
-                                    <li>Qt</li>
-                                    <li>Tizen</li>
-                                    <li>Ubuntu</li>
-                                    <li>WebOS</li>
-                                    <li>Windows (desktop)</li>
-                                    <li>Windows Phone</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>Friendly, Familiar Frameworks</h2>
-                        <ul>
-                            <li>
-                                <a href="https://getbootstrap.com/" target="_blank">
-                                    <span>Bootstrap</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://fontawesome.io/" target="_blank">
-                                    <span>Font Awesome</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://jquery.com/" target="_blank">
-                                    <span>jQuery</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://angularjs.org/" target="_blank">
-                                    <span>Angular</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                                <span>*</span>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Up and Running</h2>
-                        <ol>
-                            <li>Download and install
-                                <a href="https://nodejs.org/" target="_blank">
-                                    <span>node.js</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                                <br/>
-                                <br/>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code data-trim class="bash">~$ npm install -g cordova</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code data-trim class="bash">~$ cordova create [newdir] --link-to=[webapp]</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code data-trim class="bash">~$ cordova platform add [platform]</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code data-trim class="bash">~$ cordova build</code>
-                                </pre>
-                            </li>
-                            <li class="fragment">
-                                <pre>
-                                    <code data-trim class="bash">~$ cordova run</code>
-                                </pre>
-                            </li>
-                        </ol>
-                    </section>
-                    <section>
-                        <h2>Merges</h2>
-                        <ul class="fragment">
-                            <li>platform-specific code/style</li>
-                            <li>./merges/[platform]</li>
-                        </ul>
-                        <p class="fragment">
-                            <a href="merges-example/index.html" target="_blank">
-                                <span>Merges Example</span>
-                                <i class="fa fa-external-link"></i>
-                            </a>
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Plugins</h2>
-                        <ul class="fragment">
-                            <li>polyfills</li>
-                            <li>libraries/frameworks</li>
-                            <li>OS/device integrations</li>
-                            <li>&gt;1000</li>
-                        </ul>
-                        <p class="fragment">
-                            <a href="http://plugins.cordova.io" target="_blank">
-                                <span>Cordova Plugin Repo</span>
-                                <i class="fa fa-external-link"></i>
-                            </a>
-                        </p>
-                    </section>
+                <section>
+                    <h2>There's an app for that</h2>
+                    <h1 class="fragment">It's the web</h1>
                 </section>
-                <section data-background="assets/soapbox.jpg">
-                    <section>
-                        <h2>Reasons to build a native package</h2>
-                        <div class="fragment col-sm-6">
-                            <h4>Good</h4>
-                            <ul>
-                                <li>OS / device integration</li>
-                                <li>Offline availability</li>
-                                <li>Immediate access</li>
-                                <ul>
-                                    <li>"Home Screen Wars"</li>
-                                </ul>
-                            </ul>
-                        </div>
-                        <div class="fragment col-sm-6">
-                            <h4>Bad</h4>
-                            <ul>
-                                <li>Marketing</li>
-                                <li>Everyone else is doing it</li>
-                                <li>Did you not see how easy that just was?</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>So, why the web?</h2>
-                        <ul>
-                            <li class="fragment">single codebase</li>
-                            <li class="fragment">use common technologies</li>
-                            <li class="fragment">friendly, familiar frameworks</li>
-                            <li class="fragment">no need for "specialized" staff</li>
-                            <li class="fragment">minimize investment in proprietary platforms</li>
-                            <li class="fragment">massive number of open source communities</li>
-                            <li class="fragment">freedom of choice for your users</li>
-                        </ul>
-                    </section>
+                <section class="plain">
+                    <h1>
+                        <i class="fa fa-floppy-o"></i>
+                    </h1>
+                    <h2 class="oldschool">Please Insert Disk #2</h2>
                 </section>
-                <section data-background="assets/html5.svg">
-                    <section>
-                        <h2>Next Steps?</h2>
-                        <ul>
-                            <li>Download this presentation / demo</li>
-                            <li>Start integrating new web features</li>
-                            <li>Build an app with Cordova</li>
-                            <li>Contribute to msMozWebkit</li>
-                            <ul>
-                                <li>better name?</li>
-                            </ul>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Resources</h2>
-                        <ul>
-                            <li>
-                                <a href="https://github.com/stevedesmond-ca/presentations/tree/hew-ny-15" target="_blank">
-                                    <span>This presentation's source code</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://developer.mozilla.org/" target="_blank">
-                                    <span>Mozilla Developer Network</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://html5demos.com/" target="_blank">
-                                    <span>HTML5 Demos</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://cordova.apache.org/" target="_blank">
-                                    <span>Apache Cordova</span>
-                                    <i class="fa fa-external-link"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/stevedesmond_ca" target="_blank">
-                                    <span>SteveDesmond_ca</span>
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h1>
-                            <i class="fa fa-question-circle"></i>
-                        </h1>
-                    </section>
-                    <section>
-                        <h2>These guys</h2>
+            </section>
+            <section data-background="assets/cordova.png">
+                <section>
+                    <h1>Apache Cordova</h1>
+                    <h3 class="fragment">
+                        command line utility
+                        <br />to create native packages
+                        <br />from HTML + CSS + JS
+                    </h3>
+                    <div class="row fragment">
                         <div class="col-xs-6">
-                            <a href="https://twitter.com/DaveCameron" target="_blank">
-                                <img src="assets/dave.jpg" width="480" height="480" />
-                            </a>
+                            <ul>
+                                <li>Amazon Fire OS</li>
+                                <li>Android</li>
+                                <li>Bada</li>
+                                <li>Blackberry</li>
+                                <li>FirefoxOS</li>
+                                <li>iOS</li>
+                                <li>Mac OS X</li>
+                            </ul>
                         </div>
                         <div class="col-xs-6">
-                            <a href="https://twitter.com/natedogreimer" target="_blank">
-                                <img src="assets/nate.jpg" width="480" height="480"  />
-                            </a>
+                            <ul>
+                                <li>Qt</li>
+                                <li>Tizen</li>
+                                <li>Ubuntu</li>
+                                <li>WebOS</li>
+                                <li>Windows (desktop)</li>
+                                <li>Windows Phone</li>
+                            </ul>
                         </div>
-                    </section>
+                    </div>
                 </section>
-                <section data-background="assets/firefox.svg">
-                    <h1>There's a web for that</h1>
+                <section>
+                    <h2>Friendly, Familiar Frameworks</h2>
+                    <ul>
+                        <li>
+                            <a href="https://getbootstrap.com/" target="_blank">
+                                <span>Bootstrap</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://fontawesome.io/" target="_blank">
+                                <span>Font Awesome</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://jquery.com/" target="_blank">
+                                <span>jQuery</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://angularjs.org/" target="_blank">
+                                <span>Angular</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                            <span>*</span>
+                        </li>
+                    </ul>
                 </section>
-            </div>
+                <section>
+                    <h2>Up and Running</h2>
+                    <ol>
+                        <li>
+                            Download and install
+                            <a href="https://nodejs.org/" target="_blank">
+                                <span>node.js</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                            <br />
+                            <br />
+                        </li>
+                        <li class="fragment">
+                            <pre>
+                            <code data-trim class="bash">~$ npm install -g cordova</code>
+                                </pre>
+                        </li>
+                        <li class="fragment">
+                            <pre>
+                            <code data-trim class="bash">~$ cordova create [newdir] --link-to=[webapp]</code>
+                                </pre>
+                        </li>
+                        <li class="fragment">
+                            <pre>
+                            <code data-trim class="bash">~$ cordova platform add [platform]</code>
+                                </pre>
+                        </li>
+                        <li class="fragment">
+                            <pre>
+                            <code data-trim class="bash">~$ cordova build</code>
+                                </pre>
+                        </li>
+                        <li class="fragment">
+                            <pre>
+                            <code data-trim class="bash">~$ cordova run</code>
+                                </pre>
+                        </li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Merges</h2>
+                    <ul class="fragment">
+                        <li>platform-specific code/style</li>
+                        <li>./merges/[platform]</li>
+                    </ul>
+                    <p class="fragment">
+                        <a href="merges-example/index.html" target="_blank">
+                            <span>Merges Example</span>
+                            <i class="fa fa-external-link"></i>
+                        </a>
+                    </p>
+                </section>
+                <section>
+                    <h2>Plugins</h2>
+                    <ul class="fragment">
+                        <li>polyfills</li>
+                        <li>libraries/frameworks</li>
+                        <li>OS/device integrations</li>
+                        <li>&gt;1000</li>
+                    </ul>
+                    <p class="fragment">
+                        <a href="http://plugins.cordova.io" target="_blank">
+                            <span>Cordova Plugin Repo</span>
+                            <i class="fa fa-external-link"></i>
+                        </a>
+                    </p>
+                </section>
+            </section>
+            <section data-background="assets/soapbox.jpg">
+                <section>
+                    <h2>Reasons to build a native package</h2>
+                    <div class="fragment col-sm-6">
+                        <h4>Good</h4>
+                        <ul>
+                            <li>OS / device integration</li>
+                            <li>Offline availability</li>
+                            <li>Immediate access</li>
+                            <ul>
+                                <li>"Home Screen Wars"</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="fragment col-sm-6">
+                        <h4>Bad</h4>
+                        <ul>
+                            <li>Marketing</li>
+                            <li>Everyone else is doing it</li>
+                            <li>Did you not see how easy that just was?</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>So, why the web?</h2>
+                    <ul>
+                        <li class="fragment">single codebase</li>
+                        <li class="fragment">use common technologies</li>
+                        <li class="fragment">friendly, familiar frameworks</li>
+                        <li class="fragment">no need for "specialized" staff</li>
+                        <li class="fragment">minimize investment in proprietary platforms</li>
+                        <li class="fragment">massive number of open source communities</li>
+                        <li class="fragment">freedom of choice for your users</li>
+                    </ul>
+                </section>
+            </section>
+            <section data-background="assets/html5.svg">
+                <section>
+                    <h2>Next Steps?</h2>
+                    <ul>
+                        <li>Download this presentation / demo</li>
+                        <li>Start integrating new web features</li>
+                        <li>Build an app with Cordova</li>
+                        <li>Contribute to msMozWebkit</li>
+                        <ul>
+                            <li>better name?</li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/stevedesmond-ca/presentations/tree/hew-ny-15" target="_blank">
+                                <span>This presentation's source code</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.mozilla.org/" target="_blank">
+                                <span>Mozilla Developer Network</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://html5demos.com/" target="_blank">
+                                <span>HTML5 Demos</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://cordova.apache.org/" target="_blank">
+                                <span>Apache Cordova</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/stevedesmond_ca" target="_blank">
+                                <span>SteveDesmond_ca</span>
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>
+                        <i class="fa fa-question-circle"></i>
+                    </h1>
+                </section>
+                <section>
+                    <h2>These guys</h2>
+                    <div class="col-xs-6">
+                        <a href="https://twitter.com/DaveCameron" target="_blank">
+                            <img src="assets/dave.jpg" width="480" height="480" />
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a href="https://twitter.com/natedogreimer" target="_blank">
+                            <img src="assets/nate.jpg" width="480" height="480" />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section data-background="assets/firefox.svg">
+                <h1>There's a web for that</h1>
+            </section>
         </div>
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
-        <script>
-            Reveal.initialize({
-                width: 1280,
-                height: 720,
-            	controls: true,
-            	progress: true,
-            	history: true,
-            	center: true,
-            
-                backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
-            
-            	dependencies: [
-            		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-            		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            		{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-            		{ src: 'plugin/zoom-js/zoom.js', async: true },
-            		{ src: 'plugin/notes/notes.js', async: true }
-            	]
-            });
-        </script>
-    </body>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            width: 1280,
+            height: 720,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+            ]
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63008239-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
 
 </html>
