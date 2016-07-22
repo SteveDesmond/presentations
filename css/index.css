@@ -1,0 +1,15 @@
+.reveal .slide-background.present {
+    opacity: 0.5;
+}
+
+.reveal section img {
+    background-color: transparent;
+    border-width: 0;
+}
+
+.reveal section pre {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: 0 0;
+    width: initial;
+}

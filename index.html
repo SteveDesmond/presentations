@@ -1,41 +1,199 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Continuous Integration</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+		crossorigin="anonymous">
 
-		<!-- Printing and PDF exports -->
-		<script>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<link rel="stylesheet" href="css/index.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h1>Continuous Integration</h1>
+				<br/>
+				<h2>Steve Desmond</h2>
+				<br/>
+				<h3>Ithaca Web People</h3>
+				<h4>August 2, 2016</h4>
+			</section>
+
+			<section>
+				<h2>What?</h2>
+				<h3 class="fragment">Set of Practices</h3>
+				<ul>
+					<li class="fragment">Maintain a Single Source Repository</li>
+					<li class="fragment">Automate the Build</li>
+					<li class="fragment">Make Your Build Self-Testing</li>
+					<li class="fragment">Everyone Commits To the Mainline Every Day</li>
+					<li class="fragment">Fix Broken Builds Immediately</li>
+					<li class="fragment">Keep the Build Fast</li>
+					<li class="fragment">Test in a Clone of the Production Environment</li>
+					<li class="fragment">Make it Easy for Anyone to Get the Latest Executable</li>
+					<li class="fragment">Everyone can see what's happening</li>
+					<li class="fragment">Automate Deployment</li>
+				</ul>
+				<a class="fragment" href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">
+					<small>http://martinfowler.com/articles/continuousIntegration.html</small>
+				</a>
+			</section>
+
+			<section>
+				<h2>Why?</h2>
+			</section>
+
+			<section data-background="images/works.png" data-background-size="contain" />
+			</section>
+
+			<section>
+				<h2>Why?</h2>
+				<ul>
+					<li>Focus on quality, stability, visibility</li>
+					<li class="fragment">Always releasable</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>How?</h2>
+				<h3>Continuous Integration: Automated</h3>
+				<ol>
+					<li class="fragment">Checkout Code</li>
+					<li class="fragment">Build Application</li>
+					<li class="fragment">Run Tests</li>
+				</ol>
+			</section>
+
+			<section>
+				<h2>The bigger picture</h2>
+				<ul class="col-xs-12">
+					<li class="col-xs-4">Continuous Integration
+						<ol>
+							<li>Checkout Code</li>
+							<li>Build Application</li>
+							<li>Run Tests</li>
+						</ol>
+					</li>
+					<br/>
+					<br/>
+					<br/>
+					<li class="fragment col-xs-4">Continuous Delivery
+						<ol start="4">
+							<li>Deploy to Staging</li>
+							<li>Moar Tests</li>
+							<li>Push-Button to Prod</li>
+						</ol>
+					</li>
+					<br/>
+					<br/>
+					<li class="fragment col-xs-4">Continuous Deployment
+						<ol start="6">
+							<li>Automatic to Prod</li>
+						</ol>
+					</li>
+				</ul>
+				<a class="fragment" href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg" target="_blank">
+					<small>https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg</small>
+				</a>
+			</section>
+
+			<section>
+				<h2>Continuous Integration Tools</h2>
+				<div class="col-xs-3">
+					<img class="fragment col-xs-12" src="images/tools/appveyor.png" alt="Appveyor" />
+					<img class="fragment col-xs-12" src="images/tools/codeship.png" alt="Codeship" />
+					<img class="fragment col-xs-12" src="images/tools/cruisecontrol.png" alt="CruiseControl" />
+					<img class="fragment col-xs-12" src="images/tools/gitlab.svg" alt="GitLab" />
+				</div>
+				<div class="col-xs-3">
+					<img class="fragment col-xs-12" src="images/tools/go.svg" alt="Go" />
+					<img class="fragment col-xs-12" src="images/tools/hudson.png" alt="Hudson" />
+				</div>
+				<div class="col-xs-3">
+					<img class="fragment col-xs-12" src="images/tools/jenkins.svg" alt="Jenkins" />
+					<img class="fragment col-xs-12" src="images/tools/snap.svg" alt="Snap" />
+					<img class="fragment col-xs-12" src="images/tools/teamcity.png" alt="TeamCity" />
+				</div>
+				<div class="col-xs-3">
+					<img class="fragment col-xs-12" src="images/tools/travis.svg" alt="Travis" />
+					<img class="fragment col-xs-12" src="images/tools/vsts.png" alt="Visual Studio Team Services" />
+				</div>
+				<a class="fragment" href="https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software" target="_blank">
+					<small>https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software</small>
+				</a>
+			</section>
+
+			<section>
+				<h2>How?</h2>
+				<h3>Continuous Integration: Automated</h3>
+				<ol>
+					<li>Checkout Code</li>
+					<li>Build Application</li>
+					<li>Run Tests</li>
+				</ol>
+				<div class="col-xs-12">
+					<pre class="fragment col-xs-6">
+						<code data-trim>
+#!/bin/bash
+git clone git@github.com/user/repo
+npm install
+mocha
+					</code>
+					</pre>
+					<pre class="fragment col-xs-6">
+						<code data-trim>
+#!/bin/bash
+git clone git@github.com/user/repo
+composer install
+phpunit
+					</code>
+					</pre>
+				</div>
+			</section>
+
+			<section data-background="images/tools/travis.svg" data-background-size="contain" style="background">
+				<h2>Travis CI</h2>
+				<ul>
+					<li>SaaS web app</li>
+					<li>GitHub integration</li>
+				</ul>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
+	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				width: 1280,
+    			height: 720,
+	
 				history: true,
+				
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
@@ -46,5 +204,6 @@
 				]
 			});
 		</script>
-	</body>
+</body>
+
 </html>
