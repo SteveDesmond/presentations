@@ -7,8 +7,8 @@
 
 	<title>Continuous Integration</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-		crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fontawesome.min.css">
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css">
@@ -52,6 +52,7 @@
 					<li class="fragment">Automate the Build</li>
 					<li class="fragment">Make Your Build Self-Testing</li>
 					<li class="fragment">Everyone Commits To the Mainline Every Day</li>
+					<li class="fragment">Every Commit Should Build the Mainline on an Integration Machine</li>
 					<li class="fragment">Fix Broken Builds Immediately</li>
 					<li class="fragment">Keep the Build Fast</li>
 					<li class="fragment">Test in a Clone of the Production Environment</li>
@@ -81,45 +82,54 @@
 
 			<section>
 				<h2>How?</h2>
-				<h3>Continuous Integration: Automated</h3>
+				<h3>Maintain a Single Source Repository</h3>
+				<div class="col-xs-12 fragment">
+					<div class="col-xs-2"></div>
+					<img class="col-xs-2" src="images/tools/github.png" alt="GitHub" />
+					<div class="col-xs-1"></div>
+					<img class="col-xs-6" src="images/tools/gitlab.svg" alt="GitLab" />
+				</div>
+			</section>
+
+			<section>
+				<h2>How?</h2>
+				<h3>Automate the Build</h3>
+				<h4>Make Your Build Self-Testing</h4>
 				<ol>
 					<li class="fragment">Checkout Code</li>
 					<li class="fragment">Build Application</li>
 					<li class="fragment">Run Tests</li>
 				</ol>
+				<div class="col-xs-12">
+					<pre class="fragment col-xs-6">
+						<code data-trim>
+#!/bin/bash
+git clone git@github.com/user/repo
+npm install
+npm test
+						</code>
+					</pre>
+					<pre class="fragment col-xs-6">
+						<code data-trim>
+#!/bin/bash
+git clone git@github.com/user/repo
+composer install
+phpunit
+						</code>
+					</pre>
+				</div>
 			</section>
 
 			<section>
-				<h2>The bigger picture</h2>
-				<ul class="col-xs-12">
-					<li class="col-xs-4">Continuous Integration
-						<ol>
-							<li>Checkout Code</li>
-							<li>Build Application</li>
-							<li>Run Tests</li>
-						</ol>
-					</li>
-					<br/>
-					<br/>
-					<br/>
-					<li class="fragment col-xs-4">Continuous Delivery
-						<ol start="4">
-							<li>Deploy to Staging</li>
-							<li>Moar Tests</li>
-							<li>Push-Button to Prod</li>
-						</ol>
-					</li>
-					<br/>
-					<br/>
-					<li class="fragment col-xs-4">Continuous Deployment
-						<ol start="6">
-							<li>Automatic to Prod</li>
-						</ol>
-					</li>
-				</ul>
-				<a class="fragment" href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg" target="_blank">
-					<small>https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg</small>
-				</a>
+				<h2>How?</h2>
+				<ol>
+					<li>Automate the Build</li>
+					<li>Make Your Build Self-Testing</li>
+					<li>Make it Easy for Anyone to Get the Latest Executable</li>
+					<li>Everyone can see what's happening</li>
+					<li>Automate Deployment</li>
+				</ol>
+				<h1 class="fragment">Tools</h1>
 			</section>
 
 			<section>
@@ -149,31 +159,36 @@
 			</section>
 
 			<section>
-				<h2>How?</h2>
-				<h3>Automating the Build</h3>
-				<ol>
-					<li>Checkout Code</li>
-					<li>Build Application</li>
-					<li>Run Tests</li>
-				</ol>
-				<div class="col-xs-12">
-					<pre class="fragment col-xs-6">
-						<code data-trim>
-#!/bin/bash
-git clone git@github.com/user/repo
-npm install
-mocha
-					</code>
-					</pre>
-					<pre class="fragment col-xs-6">
-						<code data-trim>
-#!/bin/bash
-git clone git@github.com/user/repo
-composer install
-phpunit
-					</code>
-					</pre>
-				</div>
+				<h2>The bigger picture</h2>
+				<ul class="col-xs-12">
+					<li class="col-xs-4">Continuous Integration
+						<ol>
+							<li>Checkout Code</li>
+							<li>Build Application</li>
+							<li>Run Tests</li>
+						</ol>
+					</li>
+					<br/>
+					<br/>
+					<br/>
+					<li class="fragment col-xs-4">Continuous Delivery
+						<ol start="4">
+							<li>Deploy to Staging</li>
+							<li>Moar Tests</li>
+							<li>Push-Button to Prod</li>
+						</ol>
+					</li>
+					<br/>
+					<br/>
+					<li class="fragment col-xs-4">Continuous Deployment
+						<ol start="6">
+							<li>Automatic to Prod <span class="fragment">(YOLO)</span></li>
+						</ol>
+					</li>
+				</ul>
+				<a class="fragment" href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg" target="_blank">
+					<small>https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg</small>
+				</a>
 			</section>
 
 			<section data-background="images/tools/travis.svg" data-background-size="contain">
@@ -182,6 +197,37 @@ phpunit
 					<li>SaaS web app</li>
 					<li>GitHub integration</li>
 				</ul>
+			</section>
+
+			<section>
+				<h1>Steve Desmond</h1>
+				<div class="col-xs-12">
+					<div class="col-xs-2"></div>
+					<img class="col-xs-3" src="images/steve.jpg" alt="Steve" />
+					<div class="col-xs-1"></div>
+					<div class="col-xs-5 text-left">
+						<p>
+							<a class="white" href="https://stevedesmond.ca" target="_blank">
+								<i class="fa fa-globe"></i> https://stevedesmond.ca
+							</a>
+						</p>
+						<p>
+							<a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+								<i class="fa fa-github"></i> stevedesmond-ca
+							</a>
+						</p>
+						<p>
+							<a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+								<i class="fa fa-twitter"></i> stevedesmond_ca
+							</a>
+						</p>
+						<p>
+							<a class="white" href="mailto:hi@stevedesmond.ca">
+								<i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
+							</a>
+						</p>
+					</div>
+				</div>
 			</section>
 		</div>
 	</div>
