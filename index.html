@@ -41,23 +41,20 @@
 				<h4>August 2, 2016</h4>
 			</section>
 
-			<section>
-				<h2>What is Continuous Integration?</h2>
-			</section>
-
 			<section data-background="images/inigo.jpg" data-background-size="contain">
 			</section>
 
 			<section>
 				<h2>What is Continuous Integration?</h2>
+				<h3>"No One Agrees How to Define CI or CD"</h3>
 				<a href="https://blog.snap-ci.com/blog/2016/07/26/continuous-delivery-integration-devops-research/" target="_blank">
 					https://blog.snap-ci.com/blog/2016/07/26/continuous-delivery-integration-devops-research/
 				</a>
 			</section>
 
 			<section>
-				<h2>What is Continuous Integration?</h2>
-				<h3 class="fragment">A Set of Practices</h3>
+				<h2>Continuous Integration</h2>
+				<h3>A Set of Practices</h3>
 				<ul>
 					<li class="fragment">Maintain a Single Source Repository</li>
 					<li class="fragment">Automate the Build</li>
@@ -86,9 +83,12 @@
 			<section>
 				<h2>Why Do CI?</h2>
 				<ul>
-					<li class="fragment">Focus on quality, stability, visibility</li>
-					<li class="fragment">Always releasable software</li>
+					<li class="fragment">Quality</li>
+					<li class="fragment">Stability</li>
+					<li class="fragment">Visibility</li>
 				</ul>
+				<p>&nbsp;</p>
+				<h3 class="fragment">Always-releasable software</h3>
 			</section>
 
 			<section>
@@ -131,7 +131,9 @@ phpunit
 			</section>
 
 			<section>
-				<h4>Every Commit Should Build the Mainline on an Integration Machine</h4>
+				<h2>Every Commit
+					<br/> Should Build the Mainline
+					<br/> on an Integration Machine</h2>
 				<ul>
 					<li class="fragment">cron job</li>
 					<li class="fragment">server daemon</li>
@@ -169,8 +171,8 @@ phpunit
 			</section>
 
 			<section>
-				<h3>CI Tools Bonus!</h3>
-				<ul class="fragment">
+				<h3>CI Tools Cover:</h3>
+				<ul>
 					<li>Automate the Build</li>
 					<li>Make Your Build Self-Testing</li>
 					<li>Every Commit Should Build the Mainline on an Integration Machine</li>
@@ -182,7 +184,7 @@ phpunit
 			<section>
 				<h2>Travis CI</h2>
 				<div class="col-xs-12">
-				<div class="col-xs-1"></div>
+					<div class="col-xs-1"></div>
 					<img class="col-xs-4" src="images/tools/travis.svg" alt="Travis CI Logo" />
 					<ul class="col-xs-5 text-left">
 						<p>SaaS web app</p>
@@ -193,8 +195,7 @@ phpunit
 			</section>
 
 			<section>
-				<h2>How?</h2>
-				<h3>What about the others?</h3>
+				<h2>What about the others?</h2>
 				<ul class="fragment">
 					<li>Everyone Commits To the Mainline Every Day</li>
 					<li>Fix Broken Builds Immediately</li>
@@ -209,14 +210,18 @@ phpunit
 						<ol>
 							<li>Checkout Code</li>
 							<li>Build Application</li>
-							<li>Run Tests</li>
+							<li>Run Unit Tests</li>
+							<li>Deploy to Test</li>
+							<li>Run Acceptance Tests</li>
 						</ol>
 					</li>
 					<br/>
 					<br/>
 					<br/>
+					<br/>
+					<br/>
 					<li class="fragment col-xs-4">Continuous Delivery
-						<ol start="4">
+						<ol start="6">
 							<li>Deploy to Staging</li>
 							<li>Moar Tests!</li>
 							<li>Push-Button to Prod</li>
@@ -225,23 +230,48 @@ phpunit
 					<br/>
 					<br/>
 					<li class="fragment col-xs-4">Continuous Deployment
-						<ol start="6">
+						<ol start="8">
 							<li>Automatic to Prod<br/>
 								<span class="fragment">(YOLO)</span>
 							</li>
 						</ol>
 					</li>
 				</ul>
-				<a class="fragment" href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg" target="_blank">
-					<small>https://upload.wikimedia.org/wikipedia/commons/c/c3/Continuous_Delivery_process_diagram.svg</small>
+			</section>
+			<section>
+				<div class="col-xs-2"></div>
+				<img class="col-xs-8" src="images/cd.svg" alt="Continuous delivery example" style="background: white;">
+				<a href="https://en.wikipedia.org/wiki/Continuous_delivery" target="_blank">
+					<small>https://en.wikipedia.org/wiki/Continuous_delivery</small>
 				</a>
 			</section>
 
 			<section>
+				<h2>Who does CD?</h2>
 				<img class="col-xs-12" src="images/dhh.png" alt="DHH tweet" />
 				<p class="fragment">Etsy: ~50x/day</p>
 				<p class="fragment">Facebook: ~200x/day</p>
 				<p class="fragment">Amazon: ~1000x/day</p>
+			</section>
+
+			<section data-background="images/automate.jpg" data-background-size="contain">
+			</section>
+
+			<section>
+				<h1><i class="fa fa-question-circle-o"></i></h1>
+			</section>
+
+			<section>
+				<h2>Resources</h2>
+				<p>This presentation<br/>
+					<a href="https://github.com/stevedesmond-ca/presentations/tree/iwp-ci" target="_blank">https://github.com/stevedesmond-ca/presentations/tree/iwp-ci</a>
+				</p>
+				<p>Example project<br/>
+					<a href="https://github.com/stevedesmond-ca/travis-example-node" target="_blank">https://github.com/stevedesmond-ca/travis-example-node</a>
+				</p>
+				<p>Travis CI<br/>
+					<a href="https://travis-ci.org" target="_blank">https://travis-ci.org</a>
+				</p>
 			</section>
 
 			<section>
