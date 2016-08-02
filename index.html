@@ -45,22 +45,26 @@
 			</section>
 
 			<section>
-				<h2>What is Continuous Integration?</h2>
-				<h3>"No One Agrees How to Define CI or CD"</h3>
-				<a href="https://blog.snap-ci.com/blog/2016/07/26/continuous-delivery-integration-devops-research/" target="_blank">
+				<h2>No One Agrees How to Define CI or CD</h3>
+					<a href="https://blog.snap-ci.com/blog/2016/07/26/continuous-delivery-integration-devops-research/" target="_blank">
 					https://blog.snap-ci.com/blog/2016/07/26/continuous-delivery-integration-devops-research/
 				</a>
+					<p class="fragment">"It appears that the use of a CI server or tool is fairly synonymous with doing CI."</p>
+					<h1 class="fragment" style="color: red">x</h1>
 			</section>
 
 			<section>
-				<h2>Continuous Integration</h2>
+				<h2>What is Continuous Integration?</h2>
 				<h3>A Set of Practices</h3>
+				<a class="fragment" href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">
+					<small>http://martinfowler.com/articles/continuousIntegration.html</small>
+				</a>
 				<ul>
+					<li class="fragment">Everyone Commits To the Mainline Every Day</li>
+					<li class="fragment">Every Commit Should Build the Mainline on an Integration Machine</li>
 					<li class="fragment">Maintain a Single Source Repository</li>
 					<li class="fragment">Automate the Build</li>
 					<li class="fragment">Make Your Build Self-Testing</li>
-					<li class="fragment">Everyone Commits To the Mainline Every Day</li>
-					<li class="fragment">Every Commit Should Build the Mainline on an Integration Machine</li>
 					<li class="fragment">Fix Broken Builds Immediately</li>
 					<li class="fragment">Keep the Build Fast</li>
 					<li class="fragment">Test in a Clone of the Production Environment</li>
@@ -68,9 +72,6 @@
 					<li class="fragment">Everyone can see what's happening</li>
 					<li class="fragment">Automate Deployment</li>
 				</ul>
-				<a class="fragment" href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">
-					<small>http://martinfowler.com/articles/continuousIntegration.html</small>
-				</a>
 			</section>
 
 			<section>
@@ -93,17 +94,7 @@
 
 			<section>
 				<h2>How?</h2>
-				<h3>Maintain a Single Source Repository</h3>
-				<div class="col-xs-12 fragment">
-					<div class="col-xs-2"></div>
-					<img class="col-xs-2" src="images/tools/github.png" alt="GitHub" />
-					<div class="col-xs-1"></div>
-					<img class="col-xs-6" src="images/tools/gitlab.svg" alt="GitLab" />
-				</div>
-			</section>
-
-			<section>
-				<h2>Automate the Build</h2>
+				<h3>Automate the Build</h3>
 				<h4>(and Make Your Build Self-Testing)</h4>
 				<ol>
 					<li class="fragment">Checkout Code</li>
@@ -204,14 +195,14 @@ phpunit
 			</section>
 
 			<section>
-				<h2>The bigger picture</h2>
+				<h2>The Bigger Picture</h2>
 				<ul class="col-xs-12">
 					<li class="col-xs-4">Continuous Integration
 						<ol>
 							<li>Checkout Code</li>
 							<li>Build Application</li>
 							<li>Run Unit Tests</li>
-							<li>Deploy to Test</li>
+							<li>Deploy to Test Env</li>
 							<li>Run Acceptance Tests</li>
 						</ol>
 					</li>
