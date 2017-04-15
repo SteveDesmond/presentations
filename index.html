@@ -47,7 +47,13 @@
 		}
 		
 		.reveal section img {
+			background: transparent;
 			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		
+		img.fit {
 			max-height: 640px;
 		}
 	</style>
@@ -67,23 +73,19 @@
 			</section>
 
 			<section>
-				<h1>Load Testing</h1>
+				<h1>
+					Load Testing
+					<br/> and Benchmarking
+					<br/> Web Applications
+				</h1>
+				<hr/>
 				<h2>Steve Desmond</h2>
 				<h3>Ithaca Web People</h3>
 				<h4>May 2, 2017</h4>
 			</section>
 
 			<section>
-				<h3>Topics</h3>
-				<ul>
-					<li>What is it?</li>
-					<li>Why do it?</li>
-					<li>How to do it?</li>
-				</ul>
-			</section>
-
-			<section>
-				<h1>Steve Desmond</h1>
+				<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
 				<div class="col-xs-12">
 					<div class="col-xs-2"></div>
 					<img class="col-xs-3" src="images/steve.jpg" alt="Steve" />
@@ -114,78 +116,117 @@
 			</section>
 
 			<section>
-				Performance Load Testing Benchmarking Profiling
+				<h2>Topics</h2>
+				<ul>
+					<li>What is it?</li>
+					<li>Why do it?</li>
+					<li>How to do it?</li>
+					<li>"Live" demos</li>
+				</ul>
 			</section>
 
 			<section>
-				<h3>ASP.NET "SmurfLab"</h3>
-				<table style="font-size: 18pt;">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>OS</th>
-							<th>Role</th>
-							<th>CPU</th>
-							<th>RAM</th>
-							<th>NIC</th>
-							<th>Notes</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>perfsvr</td>
-							<td>Windows Server 2012 R2</td>
-							<td>Web Server</td>
-							<td><a href="http://ark.intel.com/products/64601/Intel-Xeon-Processor-E5-1650-12M-Cache-3_20-GHz-0_0-GTs-Intel-QPI">Xeon E5-1650</a></td>
-							<td>32 GB</td>
-							<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>perfsvr2</td>
-							<td>Ubuntu 14.04 LTS</td>
-							<td>Web Server &amp; Load Generator</td>
-							<td><a href="http://ark.intel.com/products/64601/Intel-Xeon-Processor-E5-1650-12M-Cache-3_20-GHz-0_0-GTs-Intel-QPI">Xeon E5-1650</a></td>
-							<td>32 GB</td>
-							<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>perf02</td>
-							<td>Windows Server 2012 R2</td>
-							<td>Load Generator</td>
-							<td><a href="http://ark.intel.com/products/39720/Intel-Xeon-Processor-W3550-8M-Cache-3_06-GHz-4_80-GTs-Intel-QPI">Xeon W3550</a></td>
-							<td>24 GB</td>
-							<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>perf03</td>
-							<td>Ubuntu 14.04 LTS</td>
-							<td>Load Generator</td>
-							<td><a href="http://ark.intel.com/products/39720/Intel-Xeon-Processor-W3550-8M-Cache-3_06-GHz-4_80-GTs-Intel-QPI">Xeon W3550</a></td>
-							<td>12 GB</td>
-							<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-				<p><small>8-port <a href="http://www.netgear.com/business/products/switches/unmanaged-plus/10g-plus-switch.aspx">Netgear XS708E</a> 10-Gigabit switch</small></p>
+				<section>
+					<h2>What are you talking about, Steve?</h2>
+					<ul>
+						<li class="fragment">Load Testing</li>
+						<blockquote class="fragment">Putting demand on a software system or computing device and measuring its response under both normal and anticipated
+							peak load conditions
+							<span class="pull-right">-<a href="https://en.wikipedia.org/wiki/Load_testing" target="_blank">Wikipedia</a></span>
+						</blockquote>
+						<li class="fragment">Benchmarking</li>
+						<blockquote class="fragment">Load testing a component or system to determine its performance characteristics
+							<span class="pull-right">-<a href="http://www.testingperformance.org/definitions/what-is-benchmark-testing"
+							 target="_blank">Testing Performance Ltd</a></span>
+						</blockquote>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Measurements</h2>
+					<ul>
+						<li class="fragment">Latency: response time in milliseconds (or μs)</li>
+						<li class="fragment">Throughput: requests per second</li>
+				</section>
+			</section>
+			
+			<section>
+				<section>
+					<h3>ASP.NET "SmurfLab"</h3>
+					<table style="font-size: 18pt;">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>OS</th>
+								<th>Role</th>
+								<th>CPU</th>
+								<th>RAM</th>
+								<th>NIC</th>
+								<th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>perfsvr</td>
+								<td>Windows Server 2012 R2</td>
+								<td>Web Server</td>
+								<td><a href="http://ark.intel.com/products/64601/Intel-Xeon-Processor-E5-1650-12M-Cache-3_20-GHz-0_0-GTs-Intel-QPI">Xeon E5-1650</a></td>
+								<td>32 GB</td>
+								<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>perfsvr2</td>
+								<td>Ubuntu 14.04 LTS</td>
+								<td>Web Server &amp; Load Generator</td>
+								<td><a href="http://ark.intel.com/products/64601/Intel-Xeon-Processor-E5-1650-12M-Cache-3_20-GHz-0_0-GTs-Intel-QPI">Xeon E5-1650</a></td>
+								<td>32 GB</td>
+								<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>perf02</td>
+								<td>Windows Server 2012 R2</td>
+								<td>Load Generator</td>
+								<td><a href="http://ark.intel.com/products/39720/Intel-Xeon-Processor-W3550-8M-Cache-3_06-GHz-4_80-GTs-Intel-QPI">Xeon W3550</a></td>
+								<td>24 GB</td>
+								<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>perf03</td>
+								<td>Ubuntu 14.04 LTS</td>
+								<td>Load Generator</td>
+								<td><a href="http://ark.intel.com/products/39720/Intel-Xeon-Processor-W3550-8M-Cache-3_06-GHz-4_80-GTs-Intel-QPI">Xeon W3550</a></td>
+								<td>12 GB</td>
+								<td><a href="http://ark.intel.com/products/58953/Intel-Ethernet-Converged-Network-Adapter-X540-T1">Intel® Ethernet Converged Network Adapter X540-T1 10GbE</a></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<p><small>8-port <a href="http://www.netgear.com/business/products/switches/unmanaged-plus/10g-plus-switch.aspx">Netgear XS708E</a> 10-Gigabit switch</small></p>
+					<p><small><a href="https://github.com/aspnet/benchmarks/" target="_blank">https://github.com/aspnet/benchmarks/</a></small></p>
+				</section>
+
+				<section>
+					<h3>ASP.NET "SmurfLab"</h3>
+					<img src="images/smurflab-aspnet.jpg" class="fit" />
+				</section>
+
+				<section>
+					<h3>Entity Framework "SmurfLab"</h3>
+					<img src="images/smurflab-ef.jpg" class="fit" />
+				</section>
+
+				<section>
+					<h3>Steve's PerfLab</h3>
+					<img src="images/perflab.jpg" class="fit" />
+				</section>
 			</section>
 
 			<section>
-				<h3>ASP.NET "SmurfLab"</h3>
-				<img src="images/smurflab-aspnet.jpg" />
-			</section>
-
-			<section>
-				<h3>Entity Framework "SmurfLab"</h3>
-				<img src="images/smurflab-ef.jpg" />
-			</section>
-
-			<section>
-				<h3>Steve's PerfLab</h3>
-				<img src="images/perflab.jpg" />
+				<h3>TechEmpower</h3>
+				<img src="images/techempower.png" />
 			</section>
 		</div>
 	</div>
