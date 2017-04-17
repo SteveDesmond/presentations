@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Load Testing</title>
+	<title>Load Testing and Benchmarking Web Applications</title>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -46,6 +46,10 @@
 			color: white;
 		}
 		
+		.reveal pre {
+			background-color: transparent;
+		}
+		
 		.reveal section img {
 			background: transparent;
 			border: 0;
@@ -62,67 +66,68 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-
-			<section data-background="images/pokeball.svg" data-background-size="contain"></section>
-
-			<section data-background="images/title.jpg">
-				<h1 class="pokemon" contenteditable="true">Pokémon</h1>
-				<h2>Steve Desmond</h2>
-				<h3>Ithaca Web People</h3>
-				<h4>May 2, 2017</h4>
-			</section>
-
 			<section>
-				<h1>
-					Load Testing
-					<br/> and Benchmarking
-					<br/> Web Applications
-				</h1>
-				<hr/>
-				<h2>Steve Desmond</h2>
-				<h3>Ithaca Web People</h3>
-				<h4>May 2, 2017</h4>
-			</section>
+				<section data-background="images/pokeball.svg" data-background-size="contain"></section>
 
-			<section>
-				<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
-				<div class="col-xs-12">
-					<div class="col-xs-2"></div>
-					<img class="col-xs-3" src="images/steve.jpg" alt="Steve" />
-					<div class="col-xs-1"></div>
-					<div class="col-xs-5 text-left">
-						<p>
-							<a class="white" href="https://stevedesmond.ca" target="_blank">
-								<i class="fa fa-globe"></i> https://stevedesmond.ca
-							</a>
-						</p>
-						<p>
-							<a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
-								<i class="fa fa-github"></i> stevedesmond-ca
-							</a>
-						</p>
-						<p>
-							<a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
-								<i class="fa fa-twitter"></i> stevedesmond_ca
-							</a>
-						</p>
-						<p>
-							<a class="white" href="mailto:hi@stevedesmond.ca">
-								<i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
-							</a>
-						</p>
+				<section data-background="images/title.jpg">
+					<h1 class="pokemon" contenteditable="true">Pokémon</h1>
+					<h2>Steve Desmond</h2>
+					<h3>Ithaca Web People</h3>
+					<h4>May 2, 2017</h4>
+				</section>
+
+				<section>
+					<h1>
+						Load Testing
+						<br/> and Benchmarking
+						<br/> Web Applications
+					</h1>
+					<hr/>
+					<h2>Steve Desmond</h2>
+					<h3>Ithaca Web People</h3>
+					<h4>May 2, 2017</h4>
+				</section>
+
+				<section>
+					<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
+					<div class="col-xs-12">
+						<div class="col-xs-2"></div>
+						<img class="col-xs-3" src="images/steve.jpg" alt="Steve" />
+						<div class="col-xs-1"></div>
+						<div class="col-xs-5 text-left">
+							<p>
+								<a class="white" href="https://stevedesmond.ca" target="_blank">
+									<i class="fa fa-globe"></i> https://stevedesmond.ca
+								</a>
+							</p>
+							<p>
+								<a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+									<i class="fa fa-github"></i> stevedesmond-ca
+								</a>
+							</p>
+							<p>
+								<a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+									<i class="fa fa-twitter"></i> stevedesmond_ca
+								</a>
+							</p>
+							<p>
+								<a class="white" href="mailto:hi@stevedesmond.ca">
+									<i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
+								</a>
+							</p>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section>
-				<h2>Topics</h2>
-				<ul>
-					<li>What is it?</li>
-					<li>Why do it?</li>
-					<li>How to do it?</li>
-					<li>"Live" demos</li>
-				</ul>
+				<section>
+					<h2>Topics</h2>
+					<ul>
+						<li>What is it?</li>
+						<li>Why do it?</li>
+						<li>How to do it?</li>
+						<li>"Live" demos</li>
+					</ul>
+				</section>
 			</section>
 
 			<section>
@@ -143,14 +148,56 @@
 				</section>
 
 				<section>
+					<h2>Browser Request Breakdown</h2>
+					<ol>
+						<li>DNS resolution</li>
+						<li>Connect</li>
+						<li>Send request</li>
+						<li>Receive response</li>
+						<li>
+							<s>Parse</s>
+						</li>
+						<li>
+							<s>Render</s>
+						</li>
+					</ol>
+				</section>
+
+				<section>
 					<h2>Measurements</h2>
-					<ul>
-						<li class="fragment">Latency: response time in milliseconds (or μs)</li>
-						<li class="fragment">Throughput: requests per second</li>
+					<div class="col-xs-3"></div>
+					<ul class="col-xs-7">
+						<li>Latency
+							<blockquote>response time in ms (or μs)</blockquote>
+						</li>
+						<li>Throughput
+							<blockquote>requests per second</blockquote>
+						</li>
+					</ul>
 				</section>
 			</section>
-			
+
 			<section>
+				<h2>But why?</h2>
+				<ul>
+					<li class="fragment">More page views and conversions</li>
+					<li class="fragment">Reduced hosting costs</li>
+					<li class="fragment">Reduced complexity</li>
+					<li class="fragment">Go green, save the world</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h2>Setting up your PerfLab</h2>
+					<p>Pretend it's a science experiment</p>
+					<ul>
+						<li>Consistent, similar to production</li>
+						<li>Minimize variables (network, CPU, etc.)</li>
+						<li>Like unit testing, isolate what you're testing</li>
+					</ul>
+				</section>
+
 				<section>
 					<h3>ASP.NET "SmurfLab"</h3>
 					<table style="font-size: 18pt;">
@@ -225,9 +272,62 @@
 			</section>
 
 			<section>
+				<h2>Tools</h2>
+				<ul>
+					<li>wrk</li>
+					<li>Apache JMeter</li>
+					<li>LoadTestToolbox</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h2>wrk</h2>
+					<ul>
+						<li>multi-threaded cross-platform CLI</li>
+						<li>HTTP GET via URL arg</li>
+						<li>other actions, cookies, etc. via lua
+					</ul>
+					<pre>
+						<code data-trim>
+							~$ wrk -t1 -c1 -d10 http://192.168.1.100:5000
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>wrk with lua</h2>
+					<pre>
+						<code data-trim>
+							wrk.method = "POST"
+							wrk.body   = "foo=bar&baz=quux"
+							wrk.headers["Content-Type"] = "application/x-www-form-urlencoded"
+						</code>
+						<code data-trim>
+							~$ wrk -t1 -c1 -d10 -s post.lua http://192.168.1.100:5000/my-form
+						</code>
+					</pre>
+
+					<small>
+						<a href="https://github.com/wg/wrk/tree/master/scripts" target="_blank">https://github.com/wg/wrk/tree/master/scripts</a>
+					</small>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Apache JMeter</h2>
+					<ul>
+						<li>"Enterprise" UI</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
 				<h3>TechEmpower</h3>
 				<img src="images/techempower.png" />
 			</section>
+
 		</div>
 	</div>
 
