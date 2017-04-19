@@ -48,6 +48,8 @@
 		
 		.reveal pre {
 			background-color: transparent;
+			border: 0;
+			box-shadow: none;
 		}
 		
 		.reveal section img {
@@ -166,12 +168,12 @@
 				<section>
 					<h2>Measurements</h2>
 					<div class="col-xs-3"></div>
-					<ul class="col-xs-7">
+					<ul class="col-xs-8">
 						<li>Latency
 							<blockquote>response time in ms (or μs)</blockquote>
 						</li>
 						<li>Throughput
-							<blockquote>requests per second</blockquote>
+							<blockquote>requests per second (or minute)</blockquote>
 						</li>
 					</ul>
 				</section>
@@ -285,8 +287,9 @@
 					<h2>wrk</h2>
 					<ul>
 						<li>multi-threaded cross-platform CLI</li>
+						<li>written in C = minimal overhead</li>
 						<li>HTTP GET via URL arg</li>
-						<li>other actions, cookies, etc. via lua
+						<li>other actions, cookies, etc. via lua scripts</li>
 					</ul>
 					<pre>
 						<code data-trim>
@@ -318,8 +321,35 @@
 				<section>
 					<h2>Apache JMeter</h2>
 					<ul>
-						<li>"Enterprise" UI</li>
+						<li>Java app with "Enterprise" UI + headless runner</li>
+						<li>Better simulation of human interaction</li>
+						<li>Visual output, flat file exports</li>
 					</ul>
+				</section>
+
+				<section>
+					<img src="images/jmeter-http.png" />
+				</section>
+
+				<section>
+					<img src="images/jmeter-graph1.png" />
+				</section>
+
+				<section>
+					<img src="images/jmeter-graph2.png" class="col-xs-12" />
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>LoadTestToolbox</h2>
+					<ul>
+						<li>.NET Core CLI w/ ChartJS + Node for graph output</li>
+						<li>Focused on latency, throughput is a variable</li>
+					</ul>
+				</section>
+				<section>
+					<img src="images/ltt-leak.png"/>
 				</section>
 			</section>
 
