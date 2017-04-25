@@ -83,6 +83,12 @@
 		pre {
 			white-space: normal;
 		}
+		
+		table.pipeline-example,
+		table.pipeline-example tr,
+		table.pipeline-example td {
+			border: 1px solid white;
+		}
 	</style>
 </head>
 
@@ -140,7 +146,8 @@
 							</p>
 						</div>
 					</div>
-					<img style="position: absolute;" class="fragment up-slow pull-right col-xs-2" src="images/charmander.png" alt="Charmander" />
+					<img style="position: absolute;" class="fragment up-slow pull-right col-xs-2" src="images/charmander.png" alt="Charmander"
+					/>
 				</section>
 
 				<section>
@@ -174,14 +181,14 @@
 				<section>
 					<h2>Browser Request Breakdown</h2>
 					<ol>
-						<li>DNS resolution</li>
-						<li>Connect</li>
-						<li>Send request</li>
-						<li>Receive response</li>
-						<li>
+						<li class="fragment">DNS resolution</li>
+						<li class="fragment">Connect</li>
+						<li class="fragment">Send request</li>
+						<li class="fragment">Receive response</li>
+						<li class="fragment">
 							<s>Parse</s>
 						</li>
-						<li>
+						<li class="fragment">
 							<s>Render</s>
 						</li>
 					</ol>
@@ -191,10 +198,10 @@
 					<h2>Measurements</h2>
 					<div class="col-xs-3"></div>
 					<ul class="col-xs-8">
-						<li>Latency
+						<li class="fragment">Latency
 							<blockquote>response time in ms (or μs)</blockquote>
 						</li>
-						<li>Throughput
+						<li class="fragment">Throughput
 							<blockquote>requests per second (or minute)</blockquote>
 						</li>
 					</ul>
@@ -205,7 +212,7 @@
 				<section>
 					<h2>But why?</h2>
 					<ul>
-						<li class="fragment">More page views and conversions</li>
+						<li class="fragment">More page views and conversions <a href="https://blog.kissmetrics.com/loading-time/" target="_blank">[1]</a></li>
 						<li class="fragment">Reduced hosting costs</li>
 						<li class="fragment">Reduced complexity</li>
 						<li class="fragment">Go green, save the world</li>
@@ -230,20 +237,33 @@
 					<h2>Pop Quiz</h2>
 					<p><b>How well do you know your web apps' latency?</b></p>
 					<ol class="col-xs-12">
+						<span class="col-xs-1"></span>
 						<li class="col-xs-6 upper-alpha">No idea</li>
-						<li class="col-xs-6 upper-alpha">General good/bad range</li>
+						<li class="col-xs-5 upper-alpha">General good/bad range</li>
+						<span class="col-xs-1"></span>
 						<li class="col-xs-6 upper-alpha">Numbers for some actions</li>
-						<li class="col-xs-6 upper-alpha">Very well</li>
+						<li class="col-xs-5 upper-alpha">Very well</li>
 					</ol>
 				</section>
 			</section>
 
 			<section>
 				<section>
+					<h2>Topics</h2>
+					<ul>
+						<li><s>What?</s></li>
+						<li><s>Why?</s></li>
+						<li><b>How?</b></li>
+						<li>Demos</li>
+					</ul>
+				</section>
+				
+				<section>
 					<h2>Setting up your PerfLab</h2>
 					<p>Pretend it's a science experiment</p>
 					<ul>
-						<li>Consistent, similar to production</li>
+						<li>Consistent environment</li>
+						<li>Similar to production</li>
 						<li>Minimize variables (network, CPU, etc.)</li>
 						<li>Like unit tests, isolate what you're testing</li>
 					</ul>
@@ -323,7 +343,7 @@
 			</section>
 
 			<section>
-				<h2>Tools</h2>
+				<h2>Software Tools</h2>
 				<ul>
 					<li>wrk</li>
 					<li>Apache JMeter</li>
@@ -345,6 +365,91 @@
 							~$ wrk {url}
 						</code>
 					</pre>
+				</section>
+
+				<section>
+					<h2>Multi-threading side-note</h2>
+
+					<p>1 thread</p>
+					<table class="pipeline-example col-xs-12">
+						<tr>
+							<td><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td><span class="pull-left">req</span><span class="pull-right">res</span></td>
+						</tr>
+					</table>
+
+					<p class="fragment">2 threads</p>
+					<table class="fragment pipeline-example col-xs-12">
+						<tr>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="1"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="1"></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+						</tr>
+					</table>
+					<p class="fragment">(juggling metaphor)</p>
+				</section>
+				<section>
+					<p>8 threads</p>
+					<table class="pipeline-example col-xs-12">
+						<tr>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="3"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="1"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="2"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="1"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="3"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+						</tr>
+						<tr>
+							<td colspan="4"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="7"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="5"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="6"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="6"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="5"><span class="pull-left">req</span></td>
+						</tr>
+						<tr>
+							<td colspan="7"></td>
+							<td colspan="8"><span class="pull-left">req</span><span class="pull-right">res</span></td>
+							<td colspan="4"><span class="pull-left">req</span></td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<img src="images/ltt-hammer.png" alt="Response Time vs Threads" />
 				</section>
 
 				<section>
@@ -372,55 +477,7 @@
 						<a href="https://github.com/wg/wrk/tree/master/scripts" target="_blank">https://github.com/wg/wrk/tree/master/scripts</a>
 					</small>
 				</section>
-			</section>
 
-			<section>
-				<section>
-					<h2>Apache JMeter</h2>
-					<ul>
-						<li>Java app with "Enterprise" UI + headless runner</li>
-						<li>Better simulation of human interaction</li>
-						<li>Visual output, flat file exports</li>
-					</ul>
-				</section>
-
-				<section>
-					<img src="images/jmeter-http.png" />
-				</section>
-
-				<section>
-					<img src="images/jmeter-graph1.png" />
-				</section>
-
-				<section>
-					<img src="images/jmeter-graph2.png" class="col-xs-12" />
-				</section>
-			</section>
-
-			<section>
-				<section>
-					<h2>Load Test Toolbox</h2>
-					<ul>
-						<li>multi-threaded cross-platform CLI</li>
-						<li>.NET Core w/ChartJS+Node for graph output</li>
-						<li>Focused on latency, throughput is a variable</li>
-					</ul>
-					<pre>
-						<code data-trim="true">
-							~$ ./drill.sh http://192.168.1.100:5000 100 10 drill-chart.png
-						</code>
-						<code data-trim="true">
-							~$ ./hammer.sh http://192.168.1.100:5000 1 500 hammer-chart.png
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<img src="images/ltt-leak.png" />
-				</section>
-			</section>
-
-			<section>
 				<section>
 					<h2>wrk demo</h2>
 					<pre class="fragment">
@@ -441,12 +498,69 @@
 							  292028 requests in 10.10s, 34.26MB read
 							Requests/sec:  28915.24
 							Transfer/sec:      3.39MB
-							>~$ </code>
+							~$ </code>
 					</pre>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Apache JMeter</h2>
+					<ul>
+						<li>Java app with "Enterprise" UI + headless runner</li>
+						<li>Better simulation of human interaction</li>
+						<li>Visual output, flat file exports</li>
+					</ul>
+					<p class="fragment"><small>Enterprise?</small></p>
 				</section>
 
 				<section>
-					<h2>JMeter demo</h2>
+					<img src="images/jmeter-http.png" />
+				</section>
+
+				<section>
+					<img src="images/jmeter-graph1.png" />
+				</section>
+
+				<section>
+					<img src="images/jmeter-graph2.png" class="col-xs-12" />
+				</section>
+
+				<section>
+					<h2>JMeter Demo</h2>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Load Test Toolbox</h2>
+					<ul>
+						<li>multi-threaded cross-platform CLI</li>
+						<li>.NET Core w/ChartJS+Node for graph output</li>
+						<li>Focused on latency, throughput is a variable</li>
+					</ul>
+					<p class="fragment text-left">2 tools</p>
+					<span class="col-xs-1"></span>
+					<ul class="col-xs-10">
+						<li class="fragment">Drill
+							<pre>
+								<code data-trim="true">
+									~$ ./drill.sh http://192.168.1.100:5000 100 10 drill-chart.png
+								</code>
+							</pre>
+						</li>
+						<li class="fragment">Hammer
+							<pre>
+								<code data-trim="true">
+									~$ ./hammer.sh http://192.168.1.100:5000 1 500 hammer-chart.png
+								</code>
+							</pre>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="images/ltt-leak.png" />
 				</section>
 
 				<section>
@@ -488,6 +602,7 @@
 					</ul>
 					<h1 class="fragment">Now what?</h1>
 					<p class="fragment"><b><i>Make it fast</i></b></p>
+					<h1 class="fragment">But how?</h1>
 				</section>
 
 				<section>
