@@ -55,6 +55,7 @@
 		.reveal section img {
 			background: transparent;
 			border: 0;
+			box-shadow: none;
 			margin: 0;
 			padding: 0;
 		}
@@ -239,6 +240,7 @@
 						</div>
 					</ol>
 					<p><small><a href="https://developers.google.com/speed/docs/insights/Server" target="_blank">https://developers.google.com/speed/docs/insights/Server</a></small></p>
+					<p><small><a href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank">https://www.nngroup.com/articles/response-times-3-important-limits/</a></small></p>
 				</section>
 
 				<section>
@@ -377,6 +379,10 @@
 							<li>i7-4770K + 32GB RAM <br/> Web server</li>
 					</div>
 				</section>
+
+				<section>
+					<img src="images/ethan-science.jpg" class="fit" />
+				</section>
 			</section>
 
 			<section>
@@ -493,9 +499,9 @@
 					<h2>wrk options</h2>
 					<ul>
 						<li>--latency: show distribution</li>
-						<li>-t{n}: threads</li>
-						<li>-c{n}: connections</li>
-						<li>-d{n}: duration</li>
+						<li>-t{n}: threads (default: 2)</li>
+						<li>-c{n}: connections (default: 10)</li>
+						<li>-d{n}: duration (default: 10s)</li>
 						<li class="fragment">-s: use lua script</li>
 					</ul>
 					<pre class="fragment">
