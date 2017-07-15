@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>Adventures in Enterprise: Lessons Learned Promoting DevOps in a Legacy Organization</title>
 
 	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
 	<link rel="stylesheet" href="lib/css/fontawesome.min.css">
@@ -30,374 +30,394 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h1>Adventures in Enterprise</h1>
-				<h2> Lessons Learned
-					<br/> Promoting DevOps
-					<br/> in a Legacy Organization
-				</h2>
-			</section>
+				<section>
+					<h1><b>Adventures in Enterprise</b></h1>
+					<h2> Lessons Learned
+						<br/> Promoting DevOps
+						<br/> in a Legacy Organization
+					</h2>
+				</section>
 
-			<section data-background-image="images/map.png">
-				<div class="col-xs-2">
-					<img src="images/devopsdayspdx.png" alt="DevOpsDays PDX" />
-				</div>
-				<div class="col-xs-7">&nbsp;</div>
-				<div class="col-xs-2">
-					<img src="images/steve.jpg" alt="Steve" />
-				</div>
-
-				<aside class="notes full-script">
-					Good morning, my name is Steve and I come from all the way across the country, from a place called Ithaca, New York. We're
-					going to start out with a little game.
-				</aside>
-			</section>
-
-			<section data-background-image="images/family-fued.png" data-background-size="contain">
-				<h1>DevOpsDays Fued</h1>
-				<h2>What is Ithaca known for?</h2>
-				<ul class="hidden">
-					<li>Gorges 55</li>
-					<li>Cornell 37</li>
-					<li>Road Trip 8</li>
-				</ul>
-
-				<aside class="notes full-script">
-					We asked 100 Ithacans what our great city is best known for. Top 3 answers are up on the board. Anybody have any ideas? Feel
-					free to just shout them out.
-				</aside>
-			</section>
-
-			<section data-background-image="images/gorge.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					#1 on that list is Gorges, due to our amazing local natural wonders.
-				</aside>
-			</section>
-
-			<section data-background-image="images/tshirt-gorges.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					Of course there's a play on words here, "Ithaca is Gorges" that's kind of our local motto. We even put it on T-shirts.
-				</aside>
-			</section>
-
-			<section data-background-image="images/tshirt-cold.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					These shirts have gone on to inspire parodies, from "Ithaca is Cold," because it snows as much there as it rains here...
-				</aside>
-			</section>
-
-			<section data-background-image="images/tshirt-gangsta.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					to "Ithaca is Gangsta," because we're the farthest thing from it.
-				</aside>
-			</section>
-
-			<section data-background-image="images/bumper-sticker.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					We have bumper stickers that declare ourselves as a socialist paradise.
-				</aside>
-			</section>
-
-			<section data-background-image="images/peace-sign.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					We held the world record for the largest human peace sign, that not even Yoko Ono could top when she tried in New York City.
-					Glastonbury just took it from us a couple months ago.
-				</aside>
-			</section>
-
-			<section data-background-image="images/farmers-market.png" data-background-size="contain">
-				<aside class="notes full-script">
-					Sorry, but we have the world's greatest farmers market.
-				</aside>
-			</section>
-
-			<section data-background-image="images/svante.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-					Our current mayor, Svante Myrick, became our youngest ever at age 24, and our first African American.
-				</aside>
-			</section>
-
-			<section>
-				<h1>DevOps</h1>
-				<ul class="fragment">
-					<li>Culture</li>
-					<li>Automation</li>
-					<li>Measurement</li>
-					<li>Sharing</li>
-				</ul>
-
-				<aside class="notes full-script">
-					So why am I telling you all this? Well as I've learned, it's important to understand the cultural background of where I'm
-					coming from. As we get into some definitions, I'm going to be speaking about DevOps in the CAMS model sense of the term:
-					Culture, Automation, Measurement, and Sharing.
-				</aside>
-			</section>
-
-			<section>
-				<h1>Enterprise</h1>
-				<blockquote class="fragment">
-					Software used to satisfy the needs of an organization rather than individual users
-					<div class="pull-right">
-						<a href="https://en.wikipedia.org/wiki/Enterprise_software" target="_blank">-Wikipedia</a>
+				<section class="map" data-background-image="images/map.png" data-background-size="contain">
+					<div class="col-xs-1">&nbsp;</div>
+					<div class="col-xs-2">
+						<img class="devopsdayspdx" src="images/devopsdayspdx.png" alt="DevOpsDays PDX" />
 					</div>
-				</blockquote>
-				<ul class="fragment">
-					<li>Payroll / HR systems</li>
-					<li>Classroom / lab computers</li>
-					<li>On-Campus LAN / Wi-Fi</li>
-				</ul>
+					<div class="col-xs-6">&nbsp;</div>
+					<div class="col-xs-2">
+						<img class="steve" src="images/steve.jpg" alt="Steve" />
+					</div>
 
-				<aside class="notes full-script">
-					When I say "enterprise," I'm going to be talking about organizations whose business is not software, or even IT, but whose
-					IT department or division is focused on supporting the business operations of the organization as a whole. In my case,
-					that means anything from the payroll and HR systems, to classroom and lab computers and printers, to the on-campus network.
-				</aside>
+					<aside class="notes full-script">
+						Good morning, my name is Steve and I come from all the way across the country, from a place called Ithaca, New York. We're
+						going to start out with a little game.
+					</aside>
+				</section>
+
+				<section class="ff" data-background-image="images/family-fued.png" data-background-size="contain">
+					<h1>DevOpsDays Fued</h1>
+					<h2>What is Ithaca known for?</h2>
+					<table>
+						<tr>
+							<td>Gorges</td>
+							<td>55</td>
+						</tr>
+						<tr>
+							<td>Cornell</td>
+							<td>37</td>
+						</tr>
+						<tr>
+							<td>Road Trip</td>
+							<td>&nbsp;&nbsp;8</td>
+						</tr>
+					</table>
+
+					<aside class="notes full-script">
+						We asked 100 Ithacans what our great city is best known for. Top 3 answers are up on the board. Anybody have any ideas? Feel
+						free to just shout them out.
+					</aside>
+				</section>
+
+				<section data-background-image="images/gorge.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						#1 on that list is Gorges, due to our amazing local natural wonders.
+					</aside>
+				</section>
+
+				<section data-background-image="images/tshirt-gorges.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						Of course there's a play on words here, "Ithaca is Gorges" that's kind of our local motto. We even put it on T-shirts.
+					</aside>
+				</section>
+
+				<section data-background-image="images/tshirt-cold.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						These shirts have gone on to inspire parodies, from "Ithaca is Cold," because it snows as much there as it rains here...
+					</aside>
+				</section>
+
+				<section data-background-image="images/tshirt-gangsta.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						to "Ithaca is Gangsta," because we're the farthest thing from it.
+					</aside>
+				</section>
+
+				<section data-background-image="images/bumper-sticker.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						We have bumper stickers that declare ourselves as a socialist paradise.
+					</aside>
+				</section>
+
+				<section data-background-image="images/peace-sign.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						We held the world record for the largest human peace sign, that not even Yoko Ono could top when she tried in New York City.
+						Glastonbury just took it from us a couple months ago.
+					</aside>
+				</section>
+
+				<section data-background-image="images/farmers-market.png" data-background-size="contain">
+					<aside class="notes full-script">
+						Sorry, but we have the world's greatest farmers market.
+					</aside>
+				</section>
+
+				<section data-background-image="images/svante.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						Our current mayor, Svante Myrick, became our youngest ever at age 24, and our first African American.
+					</aside>
+				</section>
+
+				<section>
+					<h1>DevOps</h1>
+					<ul class="fragment">
+						<li>Culture</li>
+						<li>Automation</li>
+						<li>Measurement</li>
+						<li>Sharing</li>
+					</ul>
+
+					<aside class="notes full-script">
+						So why am I telling you all this? Well as I've learned, it's important to understand the cultural background of where I'm
+						coming from. As we get into some definitions, I'm going to be speaking about DevOps in the CAMS model sense of the
+						term: Culture, Automation, Measurement, and Sharing.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Enterprise</h1>
+					<blockquote class="fragment">
+						Software used to satisfy the needs of an organization rather than individual users
+						<div class="pull-right">
+							<a href="https://en.wikipedia.org/wiki/Enterprise_software" target="_blank">-Wikipedia</a>
+						</div>
+					</blockquote>
+					<ul class="fragment">
+						<li>Payroll / HR systems</li>
+						<li>Classroom / lab computers</li>
+						<li>On-Campus LAN / Wi-Fi</li>
+					</ul>
+
+					<aside class="notes full-script">
+						When I say "enterprise," I'm going to be talking about organizations whose business is not software, or even IT, but whose
+						IT department or division is focused on supporting the business operations of the organization as a whole. In my case,
+						that means anything from the payroll and HR systems, to classroom and lab computers and printers, to the on-campus
+						network.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Legacy</h1>
+					<ul class="fragment">
+						<li>On-premises datacenters</li>
+						<li>Physical servers</li>
+						<li>Project-centric planning</li>
+						<li>Traditional org structure</li>
+					</ul>
+
+					<aside class="notes full-script">
+						When I talk about "legacy," I'm thinking of the "traditional" ways that IT organizations have operated: Things like on-prem
+						datacenters and software, physical servers, or what I like to call "pre-scaled" hardware, projet-centric planning,
+						and a traditional org structure.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Story Time</h1>
+
+					<aside class="notes full-script">
+						OK, so story time. All the way back in 2013, I was working at a small energy efficiency software company, doing some pretty
+						cool stuff. In addition to being on the dev team, I was also "the" ops guy for most of my time there, and managed to
+						get things like configuration management and automated deployments in place. Unfortunately, as is sometimes the case,
+						I outgrew that small company and decided it was time to move up. So I looked around, and found something that really
+						piqued my interest.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Opportunity</h1>
+
+					<aside class="notes full-script">
+						I saw an organization struggling to keep up with its users' expectations. Described as "backwater", with an Online Application
+						for Graduate Admission that was, and I quote, "so bad, I almost didn't apply." And I saw the potential of being able
+						to help make everything better. After all, I'd participated in and seen first-hand how things like configuration management
+						and continuous delivery could do. As my start date approached, I got myself all amped up, right? "I'm gonna turn this
+						ship around. I'm going in with guns blazing!"
+					</aside>
+				</section>
 			</section>
 
 			<section>
-				<h1>Legacy</h1>
-				<ul class="fragment">
-					<li>On-premises datacenters</li>
-					<li>Physical servers</li>
-					<li>Project-centric planning</li>
-					<li>Traditional org structure</li>
-				</ul>
+				<section>
+					<h1>Part 1</h1>
+					<h2>Do Not Go In
+						<br/> With Guns Blazing
+					</h2>
 
-				<aside class="notes full-script">
-					When I talk about "legacy," I'm thinking of the "traditional" ways that IT organizations have operated: Things like on-prem
-					datacenters and software, physical servers, or what I like to call "pre-scaled" hardware, projet-centric planning, and
-					a traditional org structure.
-				</aside>
+					<aside class="notes full-script">
+						There's a reason things are the way they are, and it's probably not by accident.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Every Org Is Different</h1>
+					<h2>Different Orgs Work Differently</h2>
+				</section>
+
+				<section>
+					<h2>Big Orgs Move Slow</h2>
+					<img src="images/typescript.png" alt="TypeScript approval at Google" style="width: 75%;" />
+					<a href="https://channel9.msdn.com/Events/Build/2017/T6006-R1" target="_blank">https://channel9.msdn.com/Events/Build/2017/T6006-R1</a>
+				</section>
+
+				<section>
+					<h1>Be Prepared
+						<br/> For More Resistance
+						<br/> Than You Can Imagine
+					</h1>
+				</section>
+
+				<section>
+					<h1>Assume Awesomeness</h1>
+					https://github.com/BeardedCoder/RealWorldRetros
+				</section>
+
+				<section>
+					<h1>PL/SQL</h1>
+					<ul>
+						<li>Filesystem I/O</li>
+						<li>LDAP management</li>
+						<li>HTTP connections</li>
+					</ul>
+
+					<aside class="notes full-script">
+						Has anyone worked with PL/SQL before? So PL/SQL is what happens when Oracle thinks it's a good idea for your database to
+						also handle all your application logic. This includes everything from filesystem I/O, to LDAP management, to HTTP connections.
+						The one thing it doesn't do, out of the box, is automated testing. So, what was one of the first things I wrote when
+						I came on board? A lightweight automated testing library so that the team could start writing tests against their code.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Don't Rock The Boat</h1>
+					<h2>(or do)</h2>
+
+					<aside class="notes full-script">
+
+					</aside>
+				</section>
+
+				<section>
+					<h1>Team Dynamics Are Important</h1>
+
+					<aside class="notes full-script">
+						The flip side of that is that team dynamics are important, and just because I didn't work well on the ERP team didn't make
+						me a bad developer, and it didn't make anyone else on the team a bad developer, it just wasn't the best fit. And I'm
+						glad that management saw that as well, because I don't know how long I would have lasted otherwise. And so, I got moved
+						to the web team, and that's when things started moving along.
+					</aside>
+				</section>
 			</section>
 
 			<section>
-				<h1>Story Time</h1>
+				<section>
+					<h1>Part 2</h1>
+					<h2>Celebrate Your Small Wins</h2>
+					<h3>(they're the only kind you'll have)</h3>
 
-				<aside class="notes full-script">
-					OK, so story time. All the way back in 2013, I was working at a small energy efficiency software company, doing some pretty
-					cool stuff. In addition to being on the dev team, I was also "the" ops guy for most of my time there, and managed to
-					get things like configuration management and automated deployments in place. Unfortunately, as is sometimes the case,
-					I outgrew that small company and decided it was time to move up. So I looked around, and found something that really
-					piqued my interest.
-				</aside>
+					<aside class="notes full-script">
+						Sort of.
+					</aside>
+				</section>
+
+				<section data-background-image="images/footprints.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+
+					</aside>
+				</section>
+
+				<section data-background-image="images/trello.png" data-background-size="contain">
+
+				</section>
+
+				<section>
+					<h1>Small Controlled Experiments</h1>
+					<ul>
+						<li>Measure everything</li>
+						<li>Deliver concrete numbers</li>
+					</ul>
+					<a href="http://verraes.net/2014/03/small-controlled-experiments/" target="_blank">http://verraes.net/2014/03/small-controlled-experiments/</a>
+				</section>
+
+				<section data-background-image="images/osxci.jpg" data-background-size="contain">
+				</section>
+
+				<section>
+					<h1>ChatOps</h1>
+				</section>
+
+				<section>
+					<h1>Todd</h1>
+				</section>
+
+				<section data-background-image="images/slack.png" data-background-size="contain">
+				</section>
+
+				<section>
+					<h1>ILIAD</h1>
+				</section>
+
+				<section>
+					<h1>Annual Budgets Do Not Promote Technical Agility</h1>
+				</section>
+
+				<section>
+					<h1>Re-Org</h1>
+				</section>
+
+				<section data-background-image="images/resignation.jpg" data-background-size="contain">
+				</section>
 			</section>
 
 			<section>
-				<h1>Opportunity</h1>
+				<section>
+					<h1>Part 3</h1>
+					<h2>Maybe DevOps Isn't Right
+						<br/> For Every Organization
+					</h2>
+				</section>
 
-				<aside class="notes full-script">
-					I saw an organization struggling to keep up with its users' expectations. Described as "backwater", with an Online Application
-					for Graduate Admission that was, and I quote, "so bad, I almost didn't apply." And I saw the potential of being able
-					to help make everything better. After all, I'd participated in and seen first-hand how things like configuration management
-					and continuous delivery could do. As my start date approached, I got myself all amped up, right? "I'm gonna turn this
-					ship around. I'm going in with guns blazing!"
-				</aside>
-			</section>
+				<section data-transition="none">
+					<h1>Part 3</h1>
+					<h2 class="red-strikethrough">
+						Maybe DevOps Isn't Right
+						<br/> For Every Organization
+					</h2>
+				</section>
 
-			<section>
-				<h1>Part 1</h1>
-				<h2>Do Not Go In
-					<br/> With Guns Blazing
-				</h2>
+				<section>
+					<h1>Part 3</h1>
+					<h2>Maybe It's Not The Right Time
+						<br/> For DevOps Yet
+					</h2>
+				</section>
 
-				<aside class="notes full-script">
-					There's a reason things are the way they are, and it's probably not by accident.
-				</aside>
-			</section>
+				<section data-transition="none">
+					<h1>Part 3</h1>
+					<h2 class="red-strikethrough">
+						Maybe It's Not The Right Time
+						<br/> For DevOps Yet
+					</h2>
+				</section>
 
-			<section>
-				<h1>Every Org Is Different</h1>
-				<h2>Different Orgs Work Differently</h2>
-			</section>
+				<section>
+					<h1>You (as an individual) Can't Change Culture</h1>
+					<ul>
+						<li>Spark change in others</li>
+						<li>Lead by example</li>
+					</ul>
+				</section>
 
-			<section>
-				<h1>Big Orgs Move Slow</h1>
-				https://channel9.msdn.com/Events/Build/2017/T6006-R1
-			</section>
+				<section>
+					<h1>Guide Your Team
+						<br/> On A Nature Hike,
+						<br/> Don't Drag Them
+						<br/> Through The Woods</h1>
+				</section>
 
-			<section>
-				<h1>Assume Awesomeness</h1>
-				https://github.com/BeardedCoder/RealWorldRetros
-			</section>
+				<section>
+					<h1>Thank You</h1>
+				</section>
 
-			<section>
-				<h1>Be Prepared
-					<br/> For More Resistance
-					<br/> Than You Can Imagine
-				</h1>
-			</section>
-
-			<section>
-				<h1>PL/SQL</h1>
-				<ul>
-					<li>Filesystem I/O</li>
-					<li>LDAP management</li>
-					<li>HTTP connections</li>
-				</ul>
-
-				<aside class="notes full-script">
-					Has anyone worked with PL/SQL before? So PL/SQL is what happens when Oracle thinks it's a good idea for your database to
-					also handle all your application logic. This includes everything from filesystem I/O, to LDAP management, to HTTP connections.
-					The one thing it doesn't do, out of the box, is automated testing. So, what was one of the first things I wrote when
-					I came on board? A lightweight automated testing library so that the team could start writing tests against their code.
-				</aside>
-			</section>
-
-			<section>
-				<h1>Don't Rock The Boat</h1>
-				<h2>(or do)</h2>
-
-				<aside class="notes full-script">
-
-				</aside>
-			</section>
-
-			<section>
-				<h1>Team Dynamics Are Important</h1>
-
-				<aside class="notes full-script">
-					The flip side of that is that team dynamics are important, and just because I didn't work well on the ERP team didn't make
-					me a bad developer, and it didn't make anyone else on the team a bad developer, it just wasn't the best fit. And I'm
-					glad that management saw that as well, because I don't know how long I would have lasted otherwise. And so, I got moved
-					to the web team, and that's when things started moving along.
-				</aside>
-			</section>
-
-			<section>
-				<h1>Part 2</h1>
-				<h2>Celebrate Your Small Wins</h2>
-				<h3>(they're the only kind you'll have)</h3>
-
-				<aside class="notes full-script">
-					Sort of.
-				</aside>
-			</section>
-
-			<section data-background-image="images/footprints.jpg" data-background-size="contain">
-				<aside class="notes full-script">
-
-				</aside>
-			</section>
-
-			<section data-background-image="images/trello.png" data-background-size="contain">
-
-			</section>
-
-			<section>
-				<h1>Small Controlled Experiments</h1>
-				<ul>
-					<li>Measure everything</li>
-					<li>Deliver concrete numbers</li>
-				</ul>
-				http://verraes.net/2014/03/small-controlled-experiments/
-			</section>
-
-			<section data-background-image="images/osxci.jpg" data-background-size="contain">
-			</section>
-
-			<section>
-				<h1>ChatOps</h1>
-			</section>
-
-			<section>
-				<h1>Todd</h1>
-			</section>
-
-			<section data-background-image="images/slack.png" data-background-size="contain">
-			</section>
-
-			<section>
-				<h1>ILIAD</h1>
-			</section>
-
-			<section>
-				<h1>Annual Budgets Do Not Promote Technical Agility</h1>
-			</section>
-
-			<section>
-				<h1>Re-Org</h1>
-			</section>
-
-			<section data-background-image="images/resignation.jpg" data-background-size="contain">
-			</section>
-
-			<section>
-				<h1>Part 3</h1>
-				<h2>Maybe DevOps Isn't Right
-					<br/> For Every Organization
-				</h2>
-			</section>
-
-			<section data-transition="none">
-				<h1>Part 3</h1>
-				<h2 class="red-strikethrough">
-					Maybe DevOps Isn't Right
-					<br/> For Every Organization
-				</h2>
-			</section>
-
-			<section>
-				<h1>Part 3</h1>
-				<h2>Maybe It's Not The Right Time
-					<br/> For DevOps Yet
-				</h2>
-			</section>
-
-			<section data-transition="none">
-				<h1>Part 3</h1>
-				<h2 class="red-strikethrough">
-					Maybe It's Not The Right Time
-					<br/> For DevOps Yet
-				</h2>
-			</section>
-
-			<section>
-				<h1>You (as an individual) Can't Change Culture</h1>
-				<ul>
-					<li>Spark change in others</li>
-					<li>Lead by example</li>
-				</ul>
-			</section>
-
-			<section>
-				<h1>Guide Your Team
-					<br/> On A Nature Hike,
-					<br/> Don't Drag Them
-					<br/> Through The Woods</h1>
-			</section>
-
-			<section>
-				<h1>Thank You</h1>
-			</section>
-
-			<section>
-				<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
-				<div class="col-xs-12">
-					<div class="col-xs-2"></div>
-					<img class="col-xs-3" src="images/steve.jpg" alt="Steve" />
-					<div class="col-xs-1"></div>
-					<div class="col-xs-5 text-left">
-						<p>
-							<a class="white" href="https://stevedesmond.ca" target="_blank">
+				<section>
+					<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
+					<div class="col-xs-12">
+						<div class="col-xs-2"></div>
+						<img class="col-xs-3" src="images/steve.jpg" alt="Steve" />
+						<div class="col-xs-1"></div>
+						<div class="col-xs-5 text-left">
+							<p>
+								<a class="white" href="https://stevedesmond.ca" target="_blank">
                                 <i class="fa fa-globe"></i> https://stevedesmond.ca
                         	</a>
-						</p>
-						<p>
-							<a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+							</p>
+							<p>
+								<a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
                                 <i class="fa fa-github"></i> stevedesmond-ca
                         	</a>
-						</p>
-						<p>
-							<a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+							</p>
+							<p>
+								<a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
                                 <i class="fa fa-twitter"></i> stevedesmond_ca
                         	</a>
-						</p>
-						<p>
-							<a class="white" href="mailto:hi@stevedesmond.ca">
+							</p>
+							<p>
+								<a class="white" href="mailto:hi@stevedesmond.ca">
                                 <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
                         	</a>
-						</p>
+							</p>
+						</div>
 					</div>
-				</div>
+				</section>
 			</section>
 		</div>
 	</div>
@@ -417,7 +437,9 @@
 				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
 			],
 			width: 1280,
-			height: 720
+			height: 720,
+			transition: 'slide',
+			backgroundTransition: 'slide'
 		});
 	</script>
 </body>
