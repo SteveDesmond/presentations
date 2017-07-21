@@ -1,6 +1,0 @@
-- office build vs software
-- grad app decoupling
-- IC Peers decoupling
-- HomerConnect decoupling
-- sharing / SharePoint
-- 3 takeaways
