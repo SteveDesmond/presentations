@@ -121,7 +121,8 @@
 
 				<section data-background-image="images/svante.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						He's no Kyle McLaughlin, but we love our mayor, Svante Myrick. Elected at 24 years old, not only is he ouryoungest ever mayor, he's also our first African American mayor.
+						He's no Kyle McLaughlin, but we love our mayor, Svante Myrick. Elected at 24 years old, not only is he ouryoungest ever mayor,
+						he's also our first African American mayor.
 					</aside>
 				</section>
 
@@ -281,7 +282,7 @@
 
 				<section>
 					<h1>PL/SQL</h1>
-					<ul>
+					<ul class="fragment">
 						<li>Filesystem I/O</li>
 						<li>LDAP management</li>
 						<li>HTTP connections</li>
@@ -359,9 +360,9 @@
 					<a href="http://verraes.net/2014/03/small-controlled-experiments/" target="_blank">http://verraes.net/2014/03/small-controlled-experiments/</a>
 
 					<aside class="notes full-script">
-						This is a post by Mathias Verraes: Student of Systems, Meddler of Models, Laborer of Legacy. He's a Belgian developer I met
-						at a conference just before this was published. In it, he goes over some steps for spending just a small amount of
-						time
+						This is an article by Mathias Verraes: Student of Systems, Meddler of Models, Laborer of Legacy. He's a Belgian developer
+						I met at a conference just before this was published. In it, he goes over some steps for spending just a small amount
+						of time
 					</aside>
 				</section>
 
@@ -384,7 +385,7 @@
 						Here's a picture of one of our first experiments: this is Go, the continuous delivery tool, running on a first-generation
 						Intel Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old. Literally
 						a spare machine, lying around, that we brought back to life to set up as a prototype CI server because it was really
-						low effort compared to going through the process of procuring a new "pre-scaled" server for the physical datacenter
+						low effort compared to going through the process of procuring a new "pre-scaled" server for the physical datacenter.
 					</aside>
 				</section>
 
@@ -419,49 +420,54 @@
 				</section>
 
 				<section>
-					<h2>Provide end-user value while maintaining back-end stability</h2>
+					<h2>Decouple from your Enterprise Systems</h2>
 					<img src="images/ic-myithaca-gradapp.png" alt="Graduate Application" />
-					
+
 					<aside class="notes full-script">
-						TODO
+						"Now wait a minute," you might be saying, "you can't just willy-nilly deploy updates to an enterprise system!" And you're
+						probably right. But we didn't do that. Remember the quote from the grad student who said that the online application
+						was so bad they almost didn't apply? We rebuilt it, with Angular and Bootstrap and REST APIs, and more importantly
+						with minimal hooks into the enterprise system.
 					</aside>
 				</section>
 
 				<section>
-					<h2>Decouple from your Enterprise Systems</h2>
+					<h2>Extend via Configuration, Don't Fork Vendor Code</h2>
 					<img src="images/ic-myithaca-icpeers.png" alt="Private Social Network" />
-					
+
 					<aside class="notes full-script">
-						TODO
+						Same with the private social network for prospective students. It was almost impossible to upgrade the underlying framework
+						because of all the customizations that were built into it. We pulled out all that custom behavior and design into modules
+						that could be plugged into the platform, and upgrades suddently became routine; boring, even. But that's the goal,
+						right?
 					</aside>
 				</section>
 
 				<section>
 					<h2>Look for Low-Hanging Fruit</h2>
-					
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
 					<img src="images/banner-self-service.png" alt="Student Self-Service" />
 
 					<aside class="notes full-script">
-						TODO
+						Sometimes small changes can have a big impact. The self-service system, where students register for classes, check their
+						grades and degree progress, even register for housing, was a specific source of pain for the campus.
 					</aside>
 				</section>
 
-				<section>
-					<img src="images/lthc.png" alt="Less Terrible" />
-
+				<section data-background-image="images/lthc.png" data-background-size="contain">
 					<aside class="notes full-script">
-						TODO
+						So much so that one student created a Chrome extension to improve the user interface.
+					</aside>
+				</section>
+
+				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						So I spent two days restyling the app to have a mobile-friendly responsive design. All this compiled into a single CSS file
+						running on a separate server, and we just configure the app to use that instead of the original.
 					</aside>
 				</section>
 
 				<section>
-					<img src="images/homerconnect2.jpg" alt="Mobile Friendly" />
+					<h1>Bimodal IT</h1>
 
 					<aside class="notes full-script">
 						TODO
@@ -500,7 +506,7 @@
 					</h2>
 
 					<aside class="notes full-script">
-						TODO
+						And so I got it in my head: maybe DevOps isn't right for every organization.
 					</aside>
 				</section>
 
@@ -512,7 +518,8 @@
 					</h2>
 
 					<aside class="notes full-script">
-						TODO
+						Except I don't believe that. And the research is starting to show that no matter what industry you're in, you can have High
+						Performance IT.
 					</aside>
 				</section>
 
@@ -523,7 +530,8 @@
 					</h2>
 
 					<aside class="notes full-script">
-						TODO
+						In talking with some of my former colleagues, it seems like inroads are continuing to be made, so maybe I was just a little
+						too early to the party.
 					</aside>
 				</section>
 
@@ -535,7 +543,7 @@
 					</h2>
 
 					<aside class="notes full-script">
-						TODO
+						Except I don't believe that either. So what happened?
 					</aside>
 				</section>
 
@@ -543,7 +551,7 @@
 					<h1>You (as an individual) Can't Change Culture</h1>
 					<ul class="fragment">
 						<li>Spark change in others</li>
-						<li>Lead by example</li>
+						<li>Lead by example (be the CAMS model!)</li>
 						<li>Be patient</li>
 					</ul>
 
@@ -555,7 +563,7 @@
 				<section>
 					<h1>Decouple, Decouple, Decouple</h1>
 
-					<ul>
+					<ul class="fragment">
 						<li>UI from Database</li>
 						<li>Front-End from Back-End</li>
 						<li>Custom Features from Vendor Software</li>
@@ -568,7 +576,11 @@
 
 				<section data-background-image="images/hike.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						TODO
+						I'm currently lucky enough to be able to take my kids on weekly hikes, and a couple weeks ago, when I took this picture,
+						I was trying to figure out how to sum all this up into a single thought. Now, sometimes, like on this day, things go
+						smoothly: everyone's in a good mood, we make good progress...other times, they're distractable, reluctant, and it takes
+						a lot more coercing to get everyone going. And it probably has somewhat to do with how I'm leading them. So if I had one
+						final piece of advice to instill today, it would be this:
 					</aside>
 				</section>
 
@@ -576,12 +588,12 @@
 					<h1>Guide Your Team
 						<br/> On A Nature Hike
 					</h1>
-					<h2> Don't Just Drag Them
+					<h2>Don't Just Drag Them
 						<br/> Through The Woods
 					</h2>
 
 					<aside class="notes full-script">
-						TODO
+						Guide your team on a nature hike, don't just drag them through the woods.
 					</aside>
 				</section>
 
@@ -605,9 +617,9 @@
 					</div>
 
 					<aside class="notes full-script">
-						Last but not least, if you see any of these fine individuals around, please give them a high five. They've done a great job
-						organizing this event for us this week, I can't even imagine the amount of planning that goes into orchestrating something
-						like this, it's fantastic, so thank you!
+						Last, but definitely not least, if you see any of these fine individuals around, please give them a huge thank you. They've
+						done a great job organizing this event for all of us this week; I can't even imagine the amount of planning that goes
+						into orchestrating something like this.
 					</aside>
 				</section>
 
@@ -642,11 +654,12 @@
 					</div>
 
 					<aside class="notes full-script">
-						The silver lining in all of this is that now I get to help more organizations build better software solutions. I'd love to
-						hear if you've had successes or failures in any of the areas that I've talked about, or even if you're looking for
-						help building better software solutions. I have all this info in physical form, if you want to bring a souvenir back
-						for your boss. If you're more of a sticker person, I've got some Scotch tape right here, so you can stick it on your
-						laptop just so. We've got a couple minutes left if anyone's got any questions.
+						The silver lining in all of this is that now I get to help other organizations improve their practices, processes, and products.
+						I'd love to hear about your successes or failures promoting DevOps at your jobs, or just talk about software or IT
+						in general. Even moreso, I'd love to help you and your team build better software solutions together. I have all this
+						info in physical form, if you want to bring a souvenir back for your boss. If you're more of a sticker person, I've
+						got some Scotch tape right here, so you can stick it on your laptop just so. We've got a couple minutes left if anyone's
+						got any questions.
 					</aside>
 				</section>
 			</section>
