@@ -223,7 +223,30 @@
 					<h2>Different Orgs Work Differently</h2>
 
 					<aside class="notes full-script">
-						TODO
+						I'm gonna start with some real easy ones. I wish it were that obvious at the time, but I'll pretend I was young and naive.
+					</aside>
+				</section>
+
+				<section>
+					<h1>By the Numbers</h1>
+					<ul class="fragment">
+						<li>1,800 employees</li>
+						<li>7,000 students</li>
+						<li>10,000 prospects</li>
+						<li>100,000 alumni</li>
+						<li>300,000 www visitors</li>
+						<br/>
+						<li>70 IT Department</li>
+						<li>8 developers</li>
+						<li>9 admins</li>
+					</ul>
+
+					<aside class="notes full-script">
+						Some numbers for this specific institution, and keep in mind these are all different types of users, with different needs,
+						that all need to be supported: 1800 employees, that includes both faculty and staff; about 7000 students at any given
+						time; 10000 prospective students a year; more than 100000 alumni; and about 300000 annual visitors to the public website.
+						The IT department had about 70 people at the time, including 8 developers, and 9 on what we would traditionally consider
+						"ops."
 					</aside>
 				</section>
 
@@ -233,15 +256,51 @@
 					<a href="https://channel9.msdn.com/Events/Build/2017/T6006-R1" target="_blank">https://channel9.msdn.com/Events/Build/2017/T6006-R1</a>
 
 					<aside class="notes full-script">
-						TODO
+						So, not that we were *that* big, but big enough that it was a culture shock for me, coming from a smaller company prior.
+						Continuing along the company size spectrum, Rob Wormald from Google's Angular team gave a talk at Microsoft Build a
+						couple months back, and he mentioned how it took them two years to get TypeScript approved as a language that could
+						be used company-wide. So if you're part of a big org, and things are moving slow, you're not alone, it's apparently
+						just the nature of the beast.
 					</aside>
 				</section>
 
 				<section>
 					<h1>Why?</h1>
+					<ul class="fragment">
+						<li>Stability over innovation</li>
+						<li>Physical scaling limitations</li>
+						<li>Project-centric planning</li>
+					</ul>
 
 					<aside class="notes full-script">
-						TODO
+						But why though? Well, with legacy enterprise organizations, and by that I mean enterprise organizations who haven't really
+						embraced "the new way" yet, it's because they value stability over innovation, and in some cases with good cause. How
+						many of you would be upset if you didn't get your paycheck because the payroll system crashed? Obviously things like
+						the State of DevOps Report and what DORA is doing are proving that you can do both, but it's hard, and so stability
+						wins and innovation languishes. Similarly, when setting up a new system means budgeting for new hardware, you're limited
+						in how fast you can roll things out. I also mentioned the project-centric nature of legacy organizations, and this
+						is another contributor to the falling behind.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Software is not a Building</h1>
+					<h2>Don't construct them the same way</h2>
+
+					<aside class="notes full-script">
+						Projects, by definition, have a beginning and an end. Software, as many are still discovering, is constantly evolving. Yes,
+						new software is created, and it eventually is sunset, but in that time it can grow tremendously, and as such, should
+						not be constrained to the limitations of the physical world. While this may be easy for you to grasp, many still don't
+						see it that way, so here's an example I like to use.
+					</aside>
+				</section>
+
+				<section data-background-image="images/office.jpg" data-background-size="contain">
+					<aside class="notes full-script">
+						This is my home office. Things had to be done in a very specific order. For the ceiling alone, electical wiring, lights,
+						insulation, resilient channel, A/V wiring (it's also a home theater) drywall, taping, primer, paint, crown molding.
+						If I forgot a step and moved on, it would be difficult and expensive to remedy. And so you do the planning up-front
+						to make sure you have all your ducks in a row. This is waterfall development, right?
 					</aside>
 				</section>
 
@@ -260,21 +319,6 @@
 					<h1>Assume Awesomeness</h1>
 					<a href="https://github.com/BeardedCoder/RealWorldRetros" target="_blank">https://github.com/BeardedCoder/RealWorldRetros</a>
 
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
-					<h1>Software is not a Building</h1>
-					<h2>Don't construct them the same way</h2>
-
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section data-background-image="images/office.jpg" data-background-size="contain">
 					<aside class="notes full-script">
 						TODO
 					</aside>
@@ -421,7 +465,7 @@
 
 				<section>
 					<h2>Decouple from your Enterprise Systems</h2>
-					<img src="images/ic-myithaca-gradapp.png" alt="Graduate Application" />
+					<img src="images/ic-myithaca-gradapp.png" alt="Graduate Application" style="width: 75%;" />
 
 					<aside class="notes full-script">
 						"Now wait a minute," you might be saying, "you can't just willy-nilly deploy updates to an enterprise system!" And you're
@@ -433,7 +477,7 @@
 
 				<section>
 					<h2>Extend via Configuration, Don't Fork Vendor Code</h2>
-					<img src="images/ic-myithaca-icpeers.png" alt="Private Social Network" />
+					<img src="images/ic-myithaca-icpeers.png" alt="Private Social Network" style="width: 75%;" />
 
 					<aside class="notes full-script">
 						Same with the private social network for prospective students. It was almost impossible to upgrade the underlying framework
@@ -445,7 +489,7 @@
 
 				<section>
 					<h2>Look for Low-Hanging Fruit</h2>
-					<img src="images/banner-self-service.png" alt="Student Self-Service" />
+					<img src="images/banner-self-service.png" alt="Student Self-Service" style="width: 75%;" />
 
 					<aside class="notes full-script">
 						Sometimes small changes can have a big impact. The self-service system, where students register for classes, check their
@@ -579,8 +623,8 @@
 						I'm currently lucky enough to be able to take my kids on weekly hikes, and a couple weeks ago, when I took this picture,
 						I was trying to figure out how to sum all this up into a single thought. Now, sometimes, like on this day, things go
 						smoothly: everyone's in a good mood, we make good progress...other times, they're distractable, reluctant, and it takes
-						a lot more coercing to get everyone going. And it probably has somewhat to do with how I'm leading them. So if I had one
-						final piece of advice to instill today, it would be this:
+						a lot more coercing to get everyone going. And it probably has somewhat to do with how I'm leading them. So if I had
+						one final piece of advice to instill today, it would be this:
 					</aside>
 				</section>
 
