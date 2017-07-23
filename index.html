@@ -136,7 +136,7 @@
 					</ul>
 
 					<aside class="notes full-script">
-						So why am I telling you all this? Well as I've learned, it's important to understand the cultural background of where someone
+						Why am I telling you all this? Well as I've learned, it's important to understand the cultural background of where someone
 						comes from. As we get into some definitions, I'm going to be speaking about DevOps in the CAMS model sense of the term:
 						Culture, Automation, Measurement, and Sharing. And I'd say that it's a culture *of* automation, measurement, and sharing
 						that makes it truly successful.
@@ -437,23 +437,19 @@
 
 				<section data-background-image="images/osxci.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						Here's a picture of one of our first experiments: this is Go, the continuous delivery tool, running on a first-generation
-						Intel Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old. Literally
-						a spare machine, lying around, that we brought back to life to set up as a prototype CI server because it was really
-						low effort compared to going through the process of procuring a new "pre-scaled" server for the physical datacenter.
+						Here's a picture of one of our experiments: this is Go, the continuous delivery tool, running on a first-generation Intel
+						Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given when
+						they were discontinued. Literally a spare machine, lying around, that we brought back to life to set up as a prototype
+						CI server because it was really low effort compared to going through the process of procuring a new "pre-scaled" server
+						for the physical datacenter. We eventually found a Mac Mini that was more powerful, which was good because we continued
+						adding more pipelines, and eventually, when we realized this was what we wanted to do, we got a real server for it.
 					</aside>
 				</section>
 
 				<section>
 					<h1>ChatOps</h1>
-
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
-					<h1>Todd</h1>
+					<h2 class="fragment">with
+						<br/>Todd</h2>
 
 					<aside class="notes full-script">
 						TODO
@@ -468,6 +464,18 @@
 
 				<section>
 					<h1>ILIAD</h1>
+
+					<aside class="notes full-script">
+						TODO
+					</aside>
+				</section>
+
+				<section>
+					<h1>Lead Times</h1>
+					<ul class="fragment">
+						<li>ERP: 2-5 days</li>
+						<li>Web: 5-20 minutes</li>
+					</ul>
 
 					<aside class="notes full-script">
 						TODO
@@ -516,8 +524,9 @@
 
 				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						So I spent two days restyling the app to have a mobile-friendly responsive design. All this compiled into a single CSS file
-						running on a separate server, and we just configure the app to use that instead of the original.
+						I ended up spending two days restyling the app to have a mobile-friendly responsive design. All this compiled into a single
+						CSS file running on a separate server, and we just configure the app to use that instead of the original. Low-risk
+						because the database code didn't need to get touched, high value because we knew that this was a big issue for students.
 					</aside>
 				</section>
 
@@ -530,10 +539,23 @@
 				</section>
 
 				<section>
+					<h1>DevOps Strategy Presentation</h1>
+					<ul class="fragment">
+						<li>Define DevOps</li>
+						<li>Give examples</li>
+						<li>Show numbers</li>
+					</ul>
+
+					<aside class="notes full-script">
+						TODO
+					</aside>
+				</section>
+
+				<section>
 					<h1>Re-Org</h1>
 
 					<aside class="notes full-script">
-						And then came the dreaded R word. TODO
+						And then came the dreaded R word. The ops team got pulled further away from the dev team, TODO
 					</aside>
 				</section>
 
@@ -598,7 +620,9 @@
 					</h2>
 
 					<aside class="notes full-script">
-						Except I don't believe that either. So what happened?
+						Except I don't believe that either. The longer you hold off, the further behind you're going to be. Yes, those who are risk-averse
+						might save some time by letting others do the trail blazing, but that time has long come and gone. So if DevOps is
+						the right move, and now's the time, what happened?
 					</aside>
 				</section>
 
@@ -611,7 +635,10 @@
 					</ul>
 
 					<aside class="notes full-script">
-						TODO
+						I think it all comes back to this. I couldn't make the organization want to change any more than I could make our town's
+						culture change. So what *can* you do? You can spark change in others, and I'd like to think I at least did that. You
+						can lead by example, share your wins, pair with others to show them the benefits first-hand. And lastly, be patient.
+						Did I just not stick around long enough? Maybe. Are they ever going to figure it out? Maybe.
 					</aside>
 				</section>
 
@@ -625,7 +652,11 @@
 					</ul>
 
 					<aside class="notes full-script">
-						TODO
+						The successes that we did have all seemed to stem from the idea of decoupling. Decouple the UI from the database so the code
+						is more modular. Decouple the front-end from the back-end, and by this I mean the offices: the users completing their
+						graduate application are using a completely different system from the admissions teams reviewing them. Decouple your
+						custom features from the vendor software or platform they run on. Creating decoupled systems means smaller, less-risky
+						changes, allowing for greater agility moving forward.
 					</aside>
 				</section>
 
