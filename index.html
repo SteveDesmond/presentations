@@ -168,16 +168,16 @@
 				<section>
 					<h1>Legacy</h1>
 					<ul class="fragment">
-						<li>On-premises datacenters</li>
-						<li>Physical servers</li>
+						<li>On-premises datacenters with physical servers</li>
+						<li>Days of downtime</li>
 						<li>Project-centric planning</li>
 						<li>Traditional org structure</li>
 					</ul>
 
 					<aside class="notes full-script">
 						When I talk about "legacy," I'm thinking of the "traditional" ways that IT organizations have operated: Things like on-prem
-						datacenters and software, physical servers, or what I like to call "pre-scaled" hardware, projet-centric planning,
-						and a traditional org structure.
+						datacenters and software, physical servers, or what I like to call "pre-scaled" hardware, upgrades that can take systems
+						down for days at a time, projet-centric planning, and a traditional org structure.
 					</aside>
 				</section>
 
@@ -417,32 +417,43 @@
 					<aside class="notes full-script">
 						This is an article by Mathias Verraes: Student of Systems, Meddler of Models, Laborer of Legacy. He's a Belgian developer
 						I met at a conference just before this was published. In it, he goes over some steps for spending just a small amount
-						of time
+						of time each day experimenting and improving. It's along the same lines as Deming's PDCA cycle, or Toyota's Improvement
+						Kata, but on a much smaller scale. Low-cost, low-risk, easy to implement or easy to revert. Kaizen, continuous improvement,
+						should be at the heart of these experiments.
 					</aside>
 				</section>
 
 				<section data-background-image="images/footprints.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						This is Footprints. It's your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! And all those
-						tabs that probably have just as many fields on them! This is where our work was tracked. So what did we do?
+						This is Footprints. It's your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! I count 24 on
+						just this tab, and look at all those other tabs! This is where all our work was tracked. It took minutes to lookup,
+						add, or edit a task, it had minimal visualization options, and had terrible cross-browser compatibility. So what did
+						we do?
 					</aside>
 				</section>
 
 				<section data-background-image="images/trello.png" data-background-size="contain">
 					<aside class="notes full-script">
 						We tried an experiment. We kept our customer communication in Footprints, but switched to Trello for our day-to-day task
-						management.
+						management. The first step we tried was making a Kanban board in Footprints, but it was still too clunky and not configurable
+						enough, so we went to Trello. It was a little bit to get used to, having to manage multiple tracking systems and keep
+						certain information in sync, but the daily workflow improvements were well worth it. I heard someone in the peanut
+						gallery just shout "show me the metrics!" Good thing I've got those! Weekly sprint planning, for example, we'd have
+						about a dozen tasks. In Footprints, marking each of those as planned for the current sprint took 10 seconds. Trello,
+						a 2 second drag-and-drop. So an 8 second difference times 12 tasks is a minute and a half. Not that much, but do that
+						for a year, and you've wasted an hour of 3 or 4 people's time literally waiting for the browser to reload. Not to mention
+						it breaking the flow of the weekly planning meeting.
 					</aside>
 				</section>
 
 				<section data-background-image="images/osxci.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						Here's a picture of one of our experiments: this is Go, the continuous delivery tool, running on a first-generation Intel
-						Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given when
-						they were discontinued. Literally a spare machine, lying around, that we brought back to life to set up as a prototype
-						CI server because it was really low effort compared to going through the process of procuring a new "pre-scaled" server
-						for the physical datacenter. We eventually found a Mac Mini that was more powerful, which was good because we continued
-						adding more pipelines, and eventually, when we realized this was what we wanted to do, we got a real server for it.
+						Here's a picture of another one of our experiments: this is Go, the continuous delivery tool, running on a first-generation
+						Intel Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given
+						when they were discontinued. Literally a spare machine, lying around, brought back to life to live again as a prototype
+						CI server, because it was less effort than procuring a new "pre-scaled" server for the physical datacenter. We later
+						found a Mac Mini that was more powerful, which was good because we continued adding more pipelines, and eventually,
+						when we were able to show the value, we got a real server for it.
 					</aside>
 				</section>
 
@@ -457,26 +468,6 @@
 				</section>
 
 				<section data-background-image="images/slack.png" data-background-size="contain">
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
-					<h1>ILIAD</h1>
-
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
-					<h1>Lead Times</h1>
-					<ul class="fragment">
-						<li>ERP: 2-5 days</li>
-						<li>Web: 5-20 minutes</li>
-					</ul>
-
 					<aside class="notes full-script">
 						TODO
 					</aside>
@@ -531,31 +522,69 @@
 				</section>
 
 				<section>
-					<h1>Bimodal IT</h1>
-
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
-					<h1>DevOps Strategy Presentation</h1>
+					<h1>Lead Times</h1>
 					<ul class="fragment">
-						<li>Define DevOps</li>
-						<li>Give examples</li>
-						<li>Show numbers</li>
+						<li>ERP: 2-7 days</li>
+						<li>Web: 5-20 minutes</li>
 					</ul>
 
 					<aside class="notes full-script">
-						TODO
 					</aside>
 				</section>
 
 				<section>
-					<h1>Re-Org</h1>
+					<h1>Bimodal IT</h1>
+					<ul class="fragment">
+						<li>Mode 1: Slow and Steady</li>
+						<li>Mode 2: Fast and Agile</li>
+					</ul>
+					<div class="fragment">
+						<p>It doesn't need to be one or the other!</p>
+						<p>You can have your cake and eat it too!</p>
+					</div>
 
 					<aside class="notes full-script">
-						And then came the dreaded R word. The ops team got pulled further away from the dev team, TODO
+						It was around this time that the term "Bimodal IT" found its way to our organization. "Bimodal IT" comes from Gartner, and
+						is the idea that in order to succeed in the new world of user expectations, your IT organization neds to operate two
+						different ways in parallel. Mode 1 is for your traditional, predictable service requests, Mode 2 is for when there
+						are more unknowns and iteration is necessary. This immediately raised two red flags for me. Number one: while this
+						seems reasonable for a legacy organization, but for me, coming from the other direction, I was like "hold up, why isn't
+						everything mode 2? If it's predictable, it should be automated, and then becomes an exploration of how best to automate."
+						Number two is the false dichotomy that speed and stability are a trade-off. This is becoming clearer now, with the
+						State of DevOps Report, etc. While Bimodal IT may be a good first step for those just getting started, it seemed like
+						a step backwards from my past experience, and I tried to be vocal about that.
+					</aside>
+				</section>
+
+				<section>
+					<h1>DevOps Strategy Team</h1>
+					<ul class="fragment">
+						<li>Succinctly define DevOps</li>
+						<li>Give examples (milestones even!)</li>
+						<li>Show metrics</li>
+					</ul>
+
+					<aside class="notes full-script">
+						A series of mishaps led to the creation of a "DevOps Strategy Team," whose charge was to deliver a presentation to senior
+						management about why it was worth investing in DevOps. Now, set aside the fact that we were already off on the wrong
+						foot by having a "DevOps Team," I was at least glad to see management opening up to the idea of some fundamental change.
+						Unfortunately, there was no clear direction, and everyone had a different idea of what DevOps meant and the problems
+						is was supposed to solve. If I were to go back and do this again, I would make sure everyone is on the same page about
+						what we're trying to accomplish, with a very succinct definition, examples even, and metrics to show how to tell if
+						we're on the right track. We didn't have any of these, and so the whole initiative fell apart.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Time to shake things up!</h2>
+					<h1>The Re-Org</h1>
+
+					<aside class="notes full-script">
+						And then came the dreaded R word. It was clear to me, and everyone, that the organization needed some big changes. Unfortunately
+						they were not what I was expecting. Or maybe deep down they were. The ops team got pulled further away from the dev
+						team, and it became clear that the focus of the organization was shifting from service provider to service broker.
+						This meant less of an emphasis on software development and more of an emphasis on off-the-shelf configuration and administration.
+						Obviously not the thing a developer wants to hear.
 					</aside>
 				</section>
 
