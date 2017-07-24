@@ -275,11 +275,12 @@
 					<aside class="notes full-script">
 						But why though? Well, with legacy enterprise organizations, and by that I mean enterprise organizations who haven't really
 						embraced "the new way" yet, it's because they value stability over innovation, and in some cases with good cause. How
-						many of you would be upset if you didn't get your paycheck because the payroll system crashed? Obviously things like
-						the State of DevOps Report and what DORA is doing are proving that you can do both, but it's hard, and so stability
-						wins and innovation languishes. Similarly, when setting up a new system means budgeting for new hardware, you're limited
-						in how fast you can roll things out. I also mentioned the project-centric nature of legacy organizations, and this
-						is another contributor to the falling behind.
+						many of you would be upset if you didn't get your paycheck because the payroll system crashed on payday after an upgrade?
+						Obviously things like the State of DevOps Report and what DORA are doing are proving that you can do both, but it's
+						hard, and so stability wins and innovation languishes. Similarly, when setting up a new system means budgeting for
+						new hardware, you're limited in how fast you can roll new things out. I also mentioned the project-centric nature of
+						legacy organizations, and this is another contributor to the falling behind: if it's not on the project timeline, it
+						largely gets ignored.
 					</aside>
 				</section>
 
@@ -291,7 +292,7 @@
 						Projects, by definition, have a beginning and an end. Software, as many are still discovering, is constantly evolving. Yes,
 						new software is created, and it eventually is sunset, but in that time it can grow tremendously, and as such, should
 						not be constrained to the limitations of the physical world. While this may be easy for you to grasp, many still don't
-						see it that way, so here's an example I like to use.
+						see it that way, so here's an example I like to use:
 					</aside>
 				</section>
 
@@ -352,19 +353,16 @@
 				</section>
 
 				<section>
-					<h1>Sharing</h1>
-
-					<aside class="notes full-script">
-						TODO
-					</aside>
-				</section>
-
-				<section>
 					<h1>Don't Rock The Boat</h1>
-					<h2>(or do)</h2>
+					<h2>(too much)</h2>
+					<h3>(or do)</h3>
 
 					<aside class="notes full-script">
-						TODO
+						One day pretty early on, definitely within my first year there, I found out I was being moved to a different team. While
+						most of me was thrilled to be working with coworkers I was closer with on technology I was more familiar with, a part
+						of me knew that I had probably rocked the boat a little too much, and that this was a contributing factor. While I
+						wore my "young hotshot" badge with pride -- yes, I actually got called that; I was the youngest on the team by several
+						years -- I probably could have treaded a little more lightly.
 					</aside>
 				</section>
 
@@ -372,9 +370,9 @@
 					<h1>Team Dynamics Are Important</h1>
 
 					<aside class="notes full-script">
-						The flip side of that is that team dynamics are important, and just because I didn't work well on the ERP team didn't make
-						me a bad developer, and it didn't make anyone else on the team a bad developer, it just wasn't the best fit. And I'm
-						glad that management saw that as well, because I don't know how long I would have lasted otherwise. And so, I got moved
+						At a higher level, team dynamics are important, and just because I didn't work well on the ERP team didn't make me a bad
+						developer, and it didn't make anyone else on the team a bad developer, it just clearly wasn't the best fit. I'm glad
+						that management saw that as well, because I don't know how long I would have lasted otherwise. And so, I got moved
 						to the web team, and that's when things started moving along.
 					</aside>
 				</section>
@@ -387,7 +385,9 @@
 					<h3>(they're the only kind you'll have)</h3>
 
 					<aside class="notes full-script">
-						Sort of.
+						Sort of. The subtitle there is a little tongue-in-cheek because there were a couple great releases that we had, but at the
+						time they were really drowned out by everything else that was going on. I guess what I'm trying to say is, "recognize
+						your victories." This is the kind of snark, by the way, that got me in trouble in the first place.
 					</aside>
 				</section>
 
@@ -448,7 +448,7 @@
 
 				<section data-background-image="images/osxci.jpg" data-background-size="contain">
 					<aside class="notes full-script">
-						Here's a picture of another one of our experiments: this is Go, the continuous delivery tool, running on a first-generation
+						Here's a photo of another one of our experiments: this is Go, the continuous delivery tool, running on a first-generation
 						Intel Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given
 						when they were discontinued. Literally a spare machine, lying around, brought back to life to live again as a prototype
 						CI server, because it was less effort than procuring a new "pre-scaled" server for the physical datacenter. We later
@@ -458,18 +458,39 @@
 				</section>
 
 				<section>
+					<h2 class="fragment" data-fragment-index="2">Manual</h2>
 					<h1>ChatOps</h1>
-					<h2 class="fragment">with
+					<h2 class="fragment" data-fragment-index="1">with
 						<br/>Todd</h2>
 
 					<aside class="notes full-script">
-						TODO
+						ChatOps was becoming all the rage around this time, and everyone was coming up with cool names for their deploy bots. Ours
+						was named Todd. Also, Todd is a human.
 					</aside>
 				</section>
 
 				<section data-background-image="images/slack.png" data-background-size="contain">
 					<aside class="notes full-script">
-						TODO
+						Here's an example exchange. This was a real deploy, slightly redacted. As you can see, I give him the application, environment,
+						and tag. The release branch was already pushed to a QA environment by the CI server after unit tests passes, and I
+						confirmed that all browser tests passed on QA, and tagged the release. It was then deployed it to a staging environment
+						the same way as production, so we know exactly what's going to happen in prod. There's a diff summary included so we
+						can see if ther's anything unexpected being deployed, usually from committing to the wrong branch. Once we confirm
+						things look good in prod, we're all set.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Lead Times</h1>
+					<ul>
+						<li>ERP: 2-7 days</li>
+						<li>Web: 5-20 minutes</li>
+					</ul>
+
+					<aside class="notes full-script">
+						By doing all of these things -- automated testing, continuous integration, constant communication with ops -- we can achieve
+						lead times that are orders of magnitude smaller than the process for ERP changes, which were historically more of the
+						traditional "over-the-wall" approach.
 					</aside>
 				</section>
 
@@ -478,10 +499,12 @@
 					<img src="images/ic-myithaca-gradapp.png" alt="Graduate Application" style="width: 75%;" />
 
 					<aside class="notes full-script">
-						"Now wait a minute," you might be saying, "you can't just willy-nilly deploy updates to an enterprise system!" And you're
-						probably right. But we didn't do that. Remember the quote from the grad student who said that the online application
-						was so bad they almost didn't apply? We rebuilt it, with Angular and Bootstrap and REST APIs, and more importantly
-						with minimal hooks into the enterprise system.
+						"Now wait a minute," you might be saying, "you can't just willy-nilly deploy updates to an enterprise system over Slack!"
+						And you're probably right. But we didn't do that. Remember the quote from the grad student who said that the online
+						application was so bad they almost didn't apply? We rebuilt it, with Angular and Bootstrap and REST APIs, and most
+						importantly, with minimal hooks into the enterprise system. By decoupling the front-end app from the underlying data
+						storage, we minimized risk, abstracted away the complexity into a more understandable API, and were able to use a more
+						modern approach.
 					</aside>
 				</section>
 
@@ -522,17 +545,6 @@
 				</section>
 
 				<section>
-					<h1>Lead Times</h1>
-					<ul class="fragment">
-						<li>ERP: 2-7 days</li>
-						<li>Web: 5-20 minutes</li>
-					</ul>
-
-					<aside class="notes full-script">
-					</aside>
-				</section>
-
-				<section>
 					<h1>Bimodal IT</h1>
 					<ul class="fragment">
 						<li>Mode 1: Slow and Steady</li>
@@ -549,7 +561,7 @@
 						different ways in parallel. Mode 1 is for your traditional, predictable service requests, Mode 2 is for when there
 						are more unknowns and iteration is necessary. This immediately raised two red flags for me. Number one: while this
 						seems reasonable for a legacy organization, but for me, coming from the other direction, I was like "hold up, why isn't
-						everything mode 2? If it's predictable, it should be automated, and then becomes an exploration of how best to automate."
+						everything Mode 2? If it's predictable, it should be automated, and then becomes an exploration of how best to automate."
 						Number two is the false dichotomy that speed and stability are a trade-off. This is becoming clearer now, with the
 						State of DevOps Report, etc. While Bimodal IT may be a good first step for those just getting started, it seemed like
 						a step backwards from my past experience, and I tried to be vocal about that.
@@ -576,15 +588,34 @@
 				</section>
 
 				<section>
+					<h1>Sharing</h1>
+					<div class="fragment">
+						<p>Not everyone's going to care</p>
+						<p>You can't force them to</p>
+					</div>
+
+					<aside class="notes full-script">
+						All this time, there had been an internal discussion forum where everyone in the department could share ideas, post links
+						to cool things in tech, always on-topic and relevant to what we were doing. Now, obviously, I love talking about all
+						of this, that's why I'm here. I surround myself online with people who love to share as well. It's who we are. One
+						thing I learned the hard way, not everyone's going to care, and you can't force them to. That doesn't mean they're
+						bad at their jobs or their heart's not in it the same as yours, it just means that sharing isn't part of the culture.
+						But it was so demoralizing to be so full of ideas, like I had a rainbow shooting out of my belly, and to just hear
+						crickets on the receiving end.
+					</aside>
+				</section>
+
+				<section>
 					<h2>Time to shake things up!</h2>
 					<h1>The Re-Org</h1>
 
 					<aside class="notes full-script">
-						And then came the dreaded R word. It was clear to me, and everyone, that the organization needed some big changes. Unfortunately
-						they were not what I was expecting. Or maybe deep down they were. The ops team got pulled further away from the dev
-						team, and it became clear that the focus of the organization was shifting from service provider to service broker.
-						This meant less of an emphasis on software development and more of an emphasis on off-the-shelf configuration and administration.
-						Obviously not the thing a developer wants to hear.
+						And then came the dreaded R word. It was clear to me, and everyone I think, that the organization needed some big changes.
+						Unfortunately they were not what I was expecting. Or maybe deep down they were. The ops team got pulled further away
+						from the dev team, and it became clear that the focus of the organization was shifting from service provider to service
+						broker. This meant less of an emphasis on software development and more of an emphasis on off-the-shelf solutions.
+						Absolutely a valid direction for the department to take, it's just not not the type of thing a developer like myself
+						wants to hear.
 					</aside>
 				</section>
 
@@ -625,7 +656,7 @@
 
 					<aside class="notes full-script">
 						Except I don't believe that. And the research is starting to show that no matter what industry you're in, you can have High
-						Performance IT.
+						Performance IT, and that DevOps is the way there.
 					</aside>
 				</section>
 
@@ -668,6 +699,21 @@
 						culture change. So what *can* you do? You can spark change in others, and I'd like to think I at least did that. You
 						can lead by example, share your wins, pair with others to show them the benefits first-hand. And lastly, be patient.
 						Did I just not stick around long enough? Maybe. Are they ever going to figure it out? Maybe.
+					</aside>
+				</section>
+
+				<section>
+					<h1>Experiment</h1>
+					<ul class="fragment">
+						<li>Low-cost</li>
+						<li>Low-risk</li>
+						<li>Goal = Kaizen</li>
+					</ul>
+
+					<aside class="notes full-script">
+						So many of the improvements that we made during my time there started out not in a meeting room, but as a small, informal
+						experiment. In trying to continuously improve, in a low-cost and low-risk way, we were able to see compounding increases
+						in the value we provided, whether that was reducing costs or increasing quality.
 					</aside>
 				</section>
 
