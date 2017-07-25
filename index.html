@@ -399,20 +399,21 @@
 				</section>
 			</section>
 
+			<!-- 10:00 -->
 			<section>
-				<section>
+				<section data-timing="25">
 					<h1>Part 2</h1>
 					<h2>Celebrate Your Small Wins</h2>
 					<h3>(they're the only kind you'll have)</h3>
 
 					<aside class="notes full-script">
-						Sort of. The subtitle there is a little tongue-in-cheek because there were a couple great releases that we had, but at the
-						time they were really drowned out by everything else that was going on. I guess what I'm trying to say is, "recognize
-						your victories." This is the kind of snark, by the way, that got me in trouble in the first place.
+						Sort of. The subtitle here is a little tongue-in-cheek because we had a couple of great major releases, but at the time they
+						were really drowned out by everything else that was going on. I guess what I'm trying to say is, "recognize your victories."
+						This is the kind of snark, by the way, that got me into trouble in the first place.
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="25">
 					<h2>Manifesto for Agile Software Development</h2>
 					<p>We are uncovering better ways of developing software by doing it and helping others do it.</p>
 					<p>Through this work we have come to value:</p>
@@ -431,7 +432,7 @@
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="45">
 					<h1>Small Controlled Experiments</h1>
 					<a href="http://verraes.net/2014/03/small-controlled-experiments/" target="_blank">http://verraes.net/2014/03/small-controlled-experiments/</a>
 
@@ -444,41 +445,59 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/footprints.jpg" data-background-size="contain">
+				<section data-background-image="images/footprints.jpg" data-background-size="contain" data-timing="30">
 					<aside class="notes full-script">
 						This is Footprints. It's your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! I count 24 on
-						just this tab, and look at all those other tabs! This is where all our work was tracked. It took minutes to lookup,
+						this tab alone, and look at all those other tabs! This is where all our work was tracked. It took minutes to lookup,
 						add, or edit a task, it had minimal visualization options, and had terrible cross-browser compatibility. So what did
 						we do?
 					</aside>
 				</section>
 
-				<section data-background-image="images/trello.png" data-background-size="contain">
+				<section data-background-image="images/trello.png" data-background-size="contain" data-timing="25">
 					<aside class="notes full-script">
 						We tried an experiment. We kept our customer communication in Footprints, but switched to Trello for our day-to-day task
 						management. The first step we tried was making a Kanban board in Footprints, but it was still too clunky and not configurable
 						enough, so we went to Trello. It was a little bit to get used to, having to manage multiple tracking systems and keep
 						certain information in sync, but the daily workflow improvements were well worth it. I heard someone in the peanut
-						gallery just shout "show me the metrics!" Good thing I've got those! Weekly sprint planning, for example, we'd have
-						about a dozen tasks. In Footprints, marking each of those as planned for the current sprint took 10 seconds. Trello,
-						a 2 second drag-and-drop. So an 8 second difference times 12 tasks is a minute and a half. Not that much, but do that
-						for a year, and you've wasted an hour of 3 or 4 people's time literally waiting for the browser to reload. Not to mention
-						it breaking the flow of the weekly planning meeting.
+						gallery just shout "show me the metrics!"
 					</aside>
 				</section>
 
-				<section data-background-image="images/osxci.jpg" data-background-size="contain">
+				<section data-timing="35">
+					<h1>Prove It</h1>
+					<ul>
+						<li>Footprints: 10 seconds</li>
+						<li>Trello: 2 seconds</li>
+						<br/>
+						<li>10 - 2 = 8 seconds per card</li>
+						<li>12 cards per week</li>
+						<li>8 * 12 = 1.5 minutes</li>
+						<li>1.5 minutes * 4 developers = 6 person minutes
+							<br/>
+							<li>6 * 48 weeks = 4.5 person hours</li>
+					</ul>
+
 					<aside class="notes full-script">
-						Here's a photo of another one of our experiments: this is Go, the continuous delivery tool, running on a first-generation
-						Intel Power Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given
-						when they were discontinued. Literally a spare machine, lying around, brought back to life to live again as a prototype
-						CI server, because it was less effort than procuring a new "pre-scaled" server for the physical datacenter. We later
-						found a Mac Mini that was more powerful, which was good because we continued adding more pipelines, and eventually,
-						when we were able to show the value, we got a real server for it.
+						Good thing I've got those! Weekly sprint planning, for example, we'd have about a dozen tasks. In Footprints, marking each
+						of those as planned for the current sprint took 10 seconds. Trello, a 2 second drag-and-drop. So an 8 second difference
+						times 12 tasks is a minute and a half. Not that much, but do that for a year, and you've wasted an hour of 3 or 4 people's
+						time literally waiting for the browser to reload. Not to mention it breaking the flow of the weekly planning meeting.
 					</aside>
 				</section>
 
-				<section>
+				<section data-background-image="images/osxci.jpg" data-background-size="contain" data-timing="60">
+					<aside class="notes full-script">
+						Here's another one of our experiments: this is Go, the continuous delivery tool, running on a first-generation Intel Power
+						Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given when they
+						were discontinued. Literally a spare machine, lying around, brought back to life to live again as a prototype CI server,
+						because it was less effort than procuring a new "pre-scaled" server for the physical datacenter. We later found a Mac
+						Mini that was more powerful, which was good because we continued adding more pipelines, and eventually, when we were
+						able to show the value, we got a real server for it.
+					</aside>
+				</section>
+
+				<section data-timing="20">
 					<h2 class="fragment" data-fragment-index="2">Manual</h2>
 					<h1>ChatOps</h1>
 					<h2 class="fragment" data-fragment-index="1">with
@@ -490,7 +509,7 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/slack.png" data-background-size="contain">
+				<section data-background-image="images/slack.png" data-background-size="contain" data-timing="60">
 					<aside class="notes full-script">
 						Here's an example exchange. This was a real deploy, slightly redacted. As you can see, I give him the application, environment,
 						and tag. The release branch was already pushed to a QA environment by the CI server after unit tests passes, and I
@@ -501,7 +520,7 @@
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="30">
 					<h1>Lead Times</h1>
 					<ul>
 						<li>ERP: 2-7 days</li>
@@ -509,13 +528,14 @@
 					</ul>
 
 					<aside class="notes full-script">
-						By doing all of these things -- automated testing, continuous integration, constant communication with ops -- we can achieve
-						lead times that are orders of magnitude smaller than the process for ERP changes, which were historically more of the
-						traditional "over-the-wall" approach.
+						By doing all of these things -- automated testing, continuous integration, constant communication with ops -- and the compound
+						interest we earn when combining them, we achieved lead times that were orders of magnitude smaller than the process
+						for ERP changes, which were historically more of the traditional "over-the-wall" approach. And they all started as
+						experiments.
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="60">
 					<h2>Decouple from your Enterprise Systems</h2>
 					<img src="images/ic-myithaca-gradapp.png" alt="Graduate Application" style="width: 75%;" />
 
@@ -524,12 +544,12 @@
 						And you're probably right. But we didn't do that. Remember the quote from the grad student who said that the online
 						application was so bad they almost didn't apply? We rebuilt it, with Angular and Bootstrap and REST APIs, and most
 						importantly, with minimal hooks into the enterprise system. By decoupling the front-end app from the underlying data
-						storage, we minimized risk, abstracted away the complexity into a more understandable API, and were able to use a more
-						modern approach.
+						storage, we minimized risk, we abstracted away the complexity into a more understandable API, and we were able to use
+						a more modern development approach.
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="30">
 					<h2>Extend via Configuration, Don't Fork Vendor Code</h2>
 					<img src="images/ic-myithaca-icpeers.png" alt="Private Social Network" style="width: 75%;" />
 
@@ -541,7 +561,7 @@
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="15">
 					<h2>Look for Low-Hanging Fruit</h2>
 					<img src="images/banner-self-service.png" alt="Student Self-Service" style="width: 75%;" />
 
@@ -551,21 +571,23 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/lthc.png" data-background-size="contain">
+				<section data-background-image="images/lthc.png" data-background-size="contain" data-timing="10">
 					<aside class="notes full-script">
-						So much so that one student created a Chrome extension to improve the user interface.
+						So much so that one student, a freshman at the time, Aaron Zufall, created a Chrome extension to improve the user interface.
 					</aside>
 				</section>
 
-				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain">
+				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain" data-timing="45">
 					<aside class="notes full-script">
-						I ended up spending two days restyling the app to have a mobile-friendly responsive design. All this compiled into a single
-						CSS file running on a separate server, and we just configure the app to use that instead of the original. Low-risk
-						because the database code didn't need to get touched, high value because we knew that this was a big issue for students.
+						Unfortunately a Chrome extension doesn't scale to 10,000 users running a dozen different browsers. So I ended up spending
+						two days restyling the app to have a mobile-friendly responsive design. All this compiled into a single CSS file running
+						on a separate server, and we just configured the app to use that instead of the original stylesheet. Low-risk because
+						the database code didn't need to get touched, low-cost because it was just a couple days of Sass, and high-value because
+						we knew that this was a big issue for students.
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="60">
 					<h1>Bimodal IT</h1>
 					<ul class="fragment">
 						<li>Mode 1: Slow and Steady</li>
@@ -581,7 +603,7 @@
 						is the idea that in order to succeed in the new world of user expectations, your IT organization neds to operate two
 						different ways in parallel. Mode 1 is for your traditional, predictable service requests, Mode 2 is for when there
 						are more unknowns and iteration is necessary. This immediately raised two red flags for me. Number one: while this
-						seems reasonable for a legacy organization, but for me, coming from the other direction, I was like "hold up, why isn't
+						seems reasonable for a legacy organization, for me, coming from the other direction, I was like "hold up, why isn't
 						everything Mode 2? If it's predictable, it should be automated, and then becomes an exploration of how best to automate."
 						Number two is the false dichotomy that speed and stability are a trade-off. This is becoming clearer now, with the
 						State of DevOps Report, etc. While Bimodal IT may be a good first step for those just getting started, it seemed like
@@ -589,7 +611,7 @@
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="60">
 					<h1>DevOps Strategy Team</h1>
 					<ul class="fragment">
 						<li>Succinctly define DevOps</li>
@@ -598,17 +620,18 @@
 					</ul>
 
 					<aside class="notes full-script">
-						A series of mishaps led to the creation of a "DevOps Strategy Team," whose charge was to deliver a presentation to senior
-						management about why it was worth investing in DevOps. Now, set aside the fact that we were already off on the wrong
-						foot by having a "DevOps Team," I was at least glad to see management opening up to the idea of some fundamental change.
-						Unfortunately, there was no clear direction, and everyone had a different idea of what DevOps meant and the problems
-						is was supposed to solve. If I were to go back and do this again, I would make sure everyone is on the same page about
-						what we're trying to accomplish, with a very succinct definition, examples even, and metrics to show how to tell if
-						we're on the right track. We didn't have any of these, and so the whole initiative fell apart.
+						This is probably what landed me on the DevOps Strategy Team. A series of mishaps led to the creation of a "DevOps Strategy
+						Team," whose charge was to deliver a presentation to senior management about why it was worth investing in DevOps.
+						Now, set aside the fact that we were already off on the wrong foot by having a "DevOps Team," I was at least glad to
+						see management opening up to the idea of some fundamental change. Unfortunately, there was no clear direction, and
+						everyone had a different idea of what DevOps meant and the problems it was supposed to solve. If I were to go back
+						and do this again, I would make sure everyone is on the same page about what we're trying to accomplish, with a very
+						succinct definition, examples even, and metrics to show how to tell if we're on the right track. We didn't have any
+						of these, and so the whole initiative fell apart.
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="60">
 					<h1>Sharing</h1>
 					<div class="fragment">
 						<p>Not everyone's going to care</p>
@@ -617,16 +640,16 @@
 
 					<aside class="notes full-script">
 						All this time, there had been an internal discussion forum where everyone in the department could share ideas, post links
-						to cool things in tech, always on-topic and relevant to what we were doing. Now, obviously, I love talking about all
+						to cool things in tech; always on-topic and relevant to what we were doing. Now, obviously, I love talking about all
 						of this, that's why I'm here. I surround myself online with people who love to share as well. It's who we are. One
-						thing I learned the hard way, not everyone's going to care, and you can't force them to. That doesn't mean they're
+						thing I learned the hard way is that not everyone's going to care, and you can't force them to. That doesn't mean they're
 						bad at their jobs or their heart's not in it the same as yours, it just means that sharing isn't part of the culture.
-						But it was so demoralizing to be so full of ideas, like I had a rainbow shooting out of my belly, and to just hear
-						crickets on the receiving end.
+						But it was so demoralizing to be so full of ideas, like I had a Care Bears rainbow shooting out of my belly, raining
+						DevOps awesomeness down on everyone, and to just hear crickets on the receiving end.
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="45">
 					<h2>Time to shake things up!</h2>
 					<h1>The Re-Org</h1>
 
@@ -640,14 +663,14 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/resignation.jpg" data-background-size="contain">
+				<section data-background-image="images/resignation.jpg" data-background-size="contain" data-timing="30">
 					<aside class="notes full-script">
 						And so, inevitably, one day, I gave up. When I looked back at all the time and effort that had gone into me trying to improve
 						things, and what the relative outcome was, I realized something:
 					</aside>
 				</section>
 
-				<section>
+				<section data-timing="10">
 					<h1>You (as an individual) Can't Change Culture</h1>
 
 					<aside class="notes full-script">
