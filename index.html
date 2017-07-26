@@ -38,6 +38,7 @@
 						<br/> Promoting DevOps
 						<br/> in a Legacy Organization
 					</h2>
+					<br/>
 					<h3>Steve Desmond</h3>
 
 					<aside class="notes full-script">
@@ -62,18 +63,19 @@
 				</section>
 
 				<section class="ff" data-background-image="images/family-fued.png" data-background-size="contain" data-timing="60">
+					<img id="ff-x" style="opacity: 0;" src="images/family-fued-x.png" alt="X" />
 					<h1>DevOpsDays Fued</h1>
 					<h2>What is Ithaca known for?</h2>
-					<table class="fragment">
-						<tr>
+					<table>
+						<tr id="ff-g">
 							<td>Gorges</td>
 							<td>54</td>
 						</tr>
-						<tr>
+						<tr id="ff-c">
 							<td>Cornell</td>
 							<td>39</td>
 						</tr>
-						<tr>
+						<tr id="ff-r">
 							<td>Road Trip</td>
 							<td>&nbsp;&nbsp;7</td>
 						</tr>
@@ -171,7 +173,8 @@
 				<section data-timing="25">
 					<h1>Legacy</h1>
 					<ul class="fragment">
-						<li>On-premises datacenters with physical servers</li>
+						<li>On-premises datacenters</li>
+						<li>Physical servers</li>
 						<li>Weekend downtime</li>
 						<li>Project-centric planning</li>
 						<li>Traditional org structure</li>
@@ -234,7 +237,7 @@
 
 				<section data-timing="15">
 					<h1>By the Numbers</h1>
-					<ul class="col-xs-6">
+					<ul class="col-xs-5">
 						<li>80 employees</li>
 						<li>1,000 users</li>
 						<br/>
@@ -865,9 +868,16 @@
 	<script src="js/reveal.js"></script>
 
 	<script>
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
+		function toggle(id) {
+			var element = document.getElementById(id);
+			if (element.getAttribute('style') == 'opacity: 1;') {
+				element.setAttribute('style', 'opacity: 0;');
+			}
+			else {
+				element.setAttribute('style', 'opacity: 1;');
+			}
+		}
+
 		Reveal.initialize({
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
@@ -880,7 +890,13 @@
 			controls: false,
 			transition: 'none',
 			backgroundTransition: 'none',
-			defaultTiming: 30
+			defaultTiming: 30,
+			keyboard: {
+				/* C */ 67: function() { toggle('ff-c'); },
+				/* G */ 71: function() { toggle('ff-g'); },
+				/* R */ 82: function() { toggle('ff-r'); },
+				/* X */ 88: function() { toggle('ff-x'); }
+			}
 		});
 	</script>
 </body>
