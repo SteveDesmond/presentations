@@ -38,8 +38,11 @@
 						<br/> Promoting DevOps
 						<br/> in a Legacy Organization
 					</h2>
-					<br/>
+					<hr width="25%" style="margin: 1em auto;" />
 					<h3>Steve Desmond</h3>
+					<h4>@stevedesmond_ca
+						<br/> #devopsdays
+					</h4>
 
 					<aside class="notes full-script">
 						Good morning, thanks for coming!
@@ -95,7 +98,7 @@
 
 				<section data-background-image="images/tshirt-gorges.jpg" data-background-size="contain" data-timing="10">
 					<aside class="notes full-script">
-						Of course there's a play on words here, "Ithaca is Gorges" that's kind of our local motto. We even put it on T-shirts.
+						Of course there's a play on words there, "Ithaca is Gorges," that's kind of our local motto. We even put it on T-shirts.
 					</aside>
 				</section>
 
@@ -475,18 +478,15 @@
 						<li>Trello: 2 seconds</li>
 						<br/>
 						<li>10 - 2 = 8 seconds per card</li>
-						<li>12 cards per week</li>
-						<li>8 * 12 = 1.5 minutes</li>
-						<li>1.5 minutes * 4 developers = 6 person minutes
-							<br/>
-							<li>6 * 48 weeks = 4.5 person hours</li>
+						<li>12 cards per week, each moved 4 times</li>
+						<li>8 * 12 * 4 = 6 minutes</li>
+						<li>6 * 48 weeks = 4.5 hours/year</li>
 					</ul>
 
 					<aside class="notes full-script">
-						Good thing I've got those! Weekly sprint planning, for example, we'd have about a dozen tasks. In Footprints, marking each
-						of those as planned for the current sprint took 10 seconds. Trello, a 2 second drag-and-drop. So an 8 second difference
-						times 12 tasks is a minute and a half. Not that much, but do that for a year, and you've wasted an hour of 3 or 4 people's
-						time literally waiting for the browser to reload. Not to mention it breaking the flow of the weekly planning meeting.
+						Good thing I've got those! In Footprints, changing the status of a task took 10 seconds, 4 clicks, and 2 browser windows.
+						In Trello, it's a 2 second drag-and-drop. So doing the math, you're wasting more than 4 hours a year literally waiting
+						for the browser to reload. Not to mention it breaking the flow of planning meetings, where a quarter of this happens.
 					</aside>
 				</section>
 
@@ -534,8 +534,9 @@
 					<aside class="notes full-script">
 						By doing all of these things -- automated testing, continuous integration, constant communication with ops -- and the compound
 						interest we earn when combining them, we achieved lead times that were orders of magnitude smaller than the process
-						for ERP changes, which were historically more of the traditional "over-the-wall" approach. And they all started as
-						experiments.
+						for ERP changes, which were historically more of the traditional "over-the-wall" approach. In doing so, we were also
+						able to deploy multiple times per day, compared to the couple times a week others experienced. This all started out
+						as experiments.
 					</aside>
 				</section>
 
@@ -583,11 +584,11 @@
 
 				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain" data-timing="45">
 					<aside class="notes full-script">
-						Unfortunately a Chrome extension doesn't scale to 10,000 users running a dozen different browsers. So I ended up spending
+						Unfortunately a Chrome extension doesn't scale to 10,000 users running a dozen different browsers. So we ended up spending
 						two days restyling the app to have a mobile-friendly responsive design. All this compiled into a single CSS file running
 						on a separate server, and we just configured the app to use that instead of the original stylesheet. Low-risk because
-						the database code didn't need to get touched, low-cost because it was just a couple days of Sass, and high-value because
-						we knew that this was a big issue for students.
+						the database code didn't need to get touched, low-cost because it was just a couple days of Sass work, and high-value
+						because we knew that this was a big issue for students.
 					</aside>
 				</section>
 
@@ -892,10 +893,10 @@
 			backgroundTransition: 'none',
 			defaultTiming: 30,
 			keyboard: {
-				/* C */ 67: function() { toggle('ff-c'); },
-				/* G */ 71: function() { toggle('ff-g'); },
-				/* R */ 82: function() { toggle('ff-r'); },
-				/* X */ 88: function() { toggle('ff-x'); }
+				/* C */ 67: function () { toggle('ff-c'); },
+				/* G */ 71: function () { toggle('ff-g'); },
+				/* R */ 82: function () { toggle('ff-r'); },
+				/* X */ 88: function () { toggle('ff-x'); }
 			}
 		});
 	</script>
