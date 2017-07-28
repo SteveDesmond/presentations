@@ -12,11 +12,8 @@
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css">
 	<link rel="stylesheet" href="css/index.css">
-
-	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement('link');
 		link.rel = 'stylesheet';
@@ -30,9 +27,8 @@
 	<div class="reveal">
 		<div class="slides">
 
-			<!-- 6:00 -->
 			<section>
-				<section data-timing="10">
+				<section data-timing="5">
 					<h1><b>Adventures in Enterprise</b></h1>
 					<h2> Lessons Learned
 						<br/> Promoting DevOps
@@ -49,7 +45,7 @@
 					</aside>
 				</section>
 
-				<section class="map" data-background-image="images/map.png" data-background-size="contain" data-timing="15">
+				<section class="map" data-background-image="images/map.png" data-background-size="contain" data-timing="10">
 					<div class="col-xs-1">&nbsp;</div>
 					<div class="col-xs-2">
 						<img class="devopsdayspdx" src="images/devopsdayspdx.png" alt="DevOpsDays PDX" />
@@ -103,11 +99,12 @@
 
 				<section data-background-image="images/tshirt-cold.jpg" data-background-size="contain" data-timing="10">
 					<aside class="notes full-script">
-						These shirts have gone on to inspire parodies, like "Ithaca is Cold," because snow is to Ithaca as rain is to Portland
+						These shirts have gone on to inspire parodies, such as "Ithaca is Cold," because snow is to Ithaca as rain is to Portland,
+						except this week apparently!
 					</aside>
 				</section>
 
-				<section data-background-image="images/peace-sign.jpg" data-background-size="contain" data-timing="20">
+				<section data-background-image="images/peace-sign.jpg" data-background-size="contain" data-timing="15">
 					<aside class="notes full-script">
 						Up until a couple months ago, we held the record for the world's largest human peace sign, with so many hippies that not
 						even Yoko Ono could top it when she tried in New York City a few years back.
@@ -120,14 +117,14 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/svante.jpg" data-background-size="contain" data-timing="20">
+				<section data-background-image="images/svante.jpg" data-background-size="contain" data-timing="15">
 					<aside class="notes full-script">
 						He's no Kyle McLaughlin, but we love our mayor, Svante Myrick. Elected at 24 years old, not only is he our youngest ever
 						mayor, he's also our first African American mayor.
 					</aside>
 				</section>
 
-				<section data-timing="45">
+				<section data-timing="30">
 					<h1>DevOps</h1>
 					<ul>
 						<li>Culture</li>
@@ -145,14 +142,14 @@
 						</ul>
 
 						<small class="full-script">
-							Why am I telling you all this? Well, I've learned it's important to understand the cultural background of where someone comes
-							from. And indeed, culture is the first item in DevOps' CAMS model: Culture, Automation, Measurement, and Sharing. And
-							it's a culture *of* automation, measurement, and sharing that makes it truly successful.
+							Why am I telling you all this? Well, I've learned it's important to understand the cultural background of where someone
+							comes from. And indeed, culture is the first item in DevOps' CAMS model: Culture, Automation, Measurement, and Sharing.
+							And it's a culture *of* automation, measurement, and sharing that makes it truly successful.
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="40">
+				<section data-timing="30">
 					<h1>Enterprise</h1>
 					<blockquote>
 						Software used to satisfy the needs of an organization rather than individual users
@@ -170,20 +167,19 @@
 					<aside class="notes">
 						<ul>
 							<li>business is not software, or even IT</li>
-							<li>focused on supporting the business operations</li>
+							<li>IT supports business</li>
 							<li>(fragment: examples)</li>
 						</ul>
 
 						<small class="full-script">
 							When I say "enterprise," I'm going to be talking about organizations whose business is not software, or even IT, but whose
-							IT department or division is focused on supporting the business operations of the organization as a whole. In the case
-							of this talk, that means anything from the payroll and HR systems, to classroom and lab computers and printers, to
-							the on-campus network of a post-secondary education institution.
+							IT department supports the business. In the case of this talk, that means anything from the payroll and HR systems,
+							to classroom and lab computers and printers, to the on-campus network of a post-secondary education institution.
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="45">
+				<section data-timing="30">
 					<h1>Legacy</h1>
 					<ul>
 						<li>On-premises datacenters</li>
@@ -200,14 +196,14 @@
 						</ul>
 
 						<small class="full-script">
-							When I talk about "legacy," I'm thinking of the "traditional" ways that IT organizations have operated: Things like on-prem
-							datacenters and software; physical servers, or "pre-scaled" hardware; planned major upgrades that take systems down
+							When I talk about "legacy," I'm thinking of the "traditional" ways that IT organizations have operated: things like on-prem
+							datacenters and software; physical, or "pre-scaled," servers; planned major upgrades that take systems offline
 							for entire weekends; project-centric planning; and a more traditional org structure.
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="40">
+				<section data-timing="45">
 					<h1>Story Time</h1>
 
 					<aside class="notes">
@@ -228,7 +224,7 @@
 					</aside>
 				</section>
 
-				<section data-timing="40">
+				<section data-timing="45">
 					<h1>Opportunity</h1>
 
 					<aside class="notes">
@@ -242,18 +238,16 @@
 
 						<small class="full-script">
 							I saw an organization struggling to keep up with its users' expectations. Self-described as "backwater", with an Online Application
-							for Graduate Admission that was, and I quote, "so bad, I almost didn't apply." And I saw the potential of being able
-							to help make everything better. After all, I had first-hand experience in how things like configuration management
-							and continuous delivery to improve software quality and team performance. And as my start date approached, I got myself more and
-							more amped up. I was all like "Yeah! I'm gonna turn this ship around! I'm going in with guns blazing!"
+							for Graduate Admission that was, and I quote, "so bad, I almost didn't apply." And I saw the potential of being able to help make
+							everything better. After all, I had first-hand experience in how to improve software quality and team performance. And as my start
+							date approached, I got myself more and more amped up. I was all like "Yeah! I'm gonna turn this ship around! I'm going in with guns blazing!"
 						</small>
 					</aside>
 				</section>
 			</section>
 
-			<!-- 10:00 -->
 			<section>
-				<section data-timing="15">
+				<section data-timing="10">
 					<h1>Part 1</h1>
 					<h2>Do Not Go In
 						<br/> With Guns Blazing
@@ -264,51 +258,7 @@
 					</aside>
 				</section>
 
-				<section data-timing="20">
-					<h1>Every Org Is Different</h1>
-					<h2>Different Orgs Work Differently</h2>
-
-					<aside class="notes">
-						<ul>
-							<li>start w/easy ones, young + naive</li>
-							<li>well somewhere != at all anywhere else</li>
-						</ul>
-
-						<small class="full-script">
-							I'm gonna start with some easy ones. I wish it were that obvious at the time, but I'll pretend I was young and naive
-							then. Just because something works well somewhere, doesn't mean it will work at all anywhere else.
-						</small>
-					</aside>
-				</section>
-
-				<section data-timing="30">
-					<h1>By the Numbers</h1>
-					<ul class="col-xs-5">
-						<li>80 employees</li>
-						<li>1,000 users</li>
-						<br/>
-						<li>6 developers</li>
-						<li>2 admins</li>
-					</ul>
-					<ul class="col-xs-6">
-						<li>1,800 employees</li>
-						<li>7,000 students</li>
-						<li>10,000 prospects</li>
-						<li>100,000 alumni</li>
-						<li>300,000 www visitors</li>
-						<br/>
-						<li>70 IT Department</li>
-						<li>8 developers</li>
-						<li>9 admins</li>
-					</ul>
-
-					<aside class="notes full-script">
-						Just the numbers alone are so staggeringly different, to the point where things that worked at my previous company obviously
-						wouldn't "scale" here. But there was something I didn't realize at the time, because I hadn't experienced the culture:
-					</aside>
-				</section>
-
-				<section data-timing="40">
+				<section data-timing="45">
 					<h2>Big Orgs Move Slow</h2>
 					<img src="images/typescript.png" alt="TypeScript approval at Google" style="width: 75%;" />
 					<a href="https://channel9.msdn.com/Events/Build/2017/T6006-R1" target="_blank">https://channel9.msdn.com/Events/Build/2017/T6006-R1</a>
@@ -324,7 +274,7 @@
 
 						<small class="full-script">
 							So, not that we were *that* big, but it was still a culture shock for me that things moved so slowly. Obviously
-							we weren't Google, but even Google has this problem. Rob Wormald from their Angular team gave a talk at Microsoft Build
+							we weren't Google, but even Google has this problem. Rob Wormald, from their Angular team, gave a talk at Microsoft Build
 							a couple months back, and he mentioned how it took them two years to get TypeScript approved as a language that could
 							be used company-wide. So if you're part of a big org, and things are moving slow, you're not alone, it's apparently
 							just the nature of the beast.
@@ -357,34 +307,32 @@
 							after an upgrade? Research is starting to show that you can have both stability and innovation, but it's hard to get there,
 							and so stability wins and innovation languishes. Similarly, when setting up a new system means budgeting for new hardware,
 							you're limited in how fast you can roll new things out. I also mentioned the project-centric nature of legacy organizations,
-							and this is another contributor to the falling behind: if it's not a capital P project, it doesn't have the priority.
+							and this is another contributor: if it's not a capital P project, it doesn't have the priority.
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="60">
+				<section data-timing="30">
 					<h1>Software is not a Building</h1>
 					<h2>Don't construct them the same way</h2>
 
 					<aside class="notes">
 						<ul>
 							<li>projects by def have start and end</li>
-							<li>software, still discovering, constantly evolving</li>
-							<li>yes, created, sunset, change tremendously</li>
-							<li>shouldn't be constrained by same rules</li>
+							<li>software, still discovering, organic, constantly evolving, like garden</li>
+							<li>shouldn't be constrained by same rules as construction</li>
 							<li>easy for some to grasp, many still don't see it</li>
 						</ul>
 
 						<small class="full-script">
-							Projects, by definition, have a beginning and an end. Software, as many are still discovering, is constantly evolving. Yes,
-							new software is created, and it eventually is sunset, but in that time it can change tremendously in that time, and as such,
-							should not be constrained to the limitations of the physical world. While this may be easy for some to grasp, many still don't
-							see it that way, so here's an example I like to use:
+							Projects, by definition, have a beginning and an end. Software, as many are still discovering, is organic, constantly evolving,
+							like a garden, and as such, should not be constrained to the same rules as construction. While this may be easy for some to grasp,
+							many still don't see it that way, so here's an example I like to use:
 						</small>
 					</aside>
 				</section>
 
-				<section data-background-image="images/office.jpg" data-background-size="contain" data-timing="60">
+				<section data-background-image="images/office.jpg" data-background-size="contain" data-timing="75">
 					<aside class="notes">
 						<ul>
 							<li>electical wiring, lights, insulation, resilient channel, A/V wiring, drywall, taping, primer, paint, crown molding</li>
@@ -392,20 +340,24 @@
 							<li>planning up front to get ducks in row</li>
 							<li>waterfall development, shrinkwrapped software, physically shipped</li>
 							<li>not that time anymore, processes need to adjust</li>
+							<li>moved in, added floor, painted when time, no drywall dust?</li>
+							<li>how different process?</li>
 						</ul>
 
 						<small class="full-script">
 							This is my home office. Things had to be done in a very specific order. For the ceiling alone, that meant electical wiring,
 							followed by lights, then insulation, resilient channel, A/V wiring, drywall, taping, primer, paint, crown molding.
 							If I forgot a step and moved on, it would be very difficult and expensive to remedy. And so you do the planning up-front
-							to make sure you have all your ducks in a row and do things right the first time. This is waterfall development, right?
-							And in the days of shrinkwrapped software, that's how it had to be done, because once you physically shipped, there
-							was no turning back. But we're not in that time anymore, and so we need our processes to adjust accordingly.
+							to make sure you have all your ducks in a row and do things right the first time. This is waterfall software development,
+							and in the days of shrinkwrapped software, that's how it was done, because the cost to ship -- physically ship -- was so high,
+							and once you shipped, there was no turning back. But we're not in that time anymore, and so we need our processes to adjust accordingly.
+							What if I could have moved in right away, been able to work, slid the floor in under my desk, painted the walls when I had time, not had
+							to deal with any drywall dust? How different would my process have been?
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="60">
+				<section data-timing="45">
 					<h1>PL/SQL</h1>
 					<ul class="fragment">
 						<li>Filesystem I/O</li>
@@ -415,19 +367,18 @@
 
 					<aside class="notes">
 						<ul>
-							<li>hadn't either till hired as EAD on ERP team</li>
+							<li>hadn't either till hiredhere</li>
 							<li>Oracle thinks DB should also handle all code</li>
 							<li>(fragment: examples)</li>
 							<li>no testing, so created lightweight library for me and team</li>
 						</ul>
 
 						<small class="full-script">
-							Has anyone worked with PL/SQL before? I hadn't either, before being hired as an Enterprise Application Developer for the
-							Enterpise Resource Planning (or ERP) team. So PL/SQL is what happens when Oracle thinks it's a good idea for your database
-							to also handle all your application code. This includes everything from filesystem I/O, to LDAP management, to HTTP
-							connections. The one thing it doesn't do, out of the box, is automated testing. So, what was the first thing I wrote
-							when I came on board? A lightweight automated testing library so that I, and the whole ERP team could start writing
-							tests against our code.
+							Has anyone worked with PL/SQL before? I hadn't either, before being hired here. So PL/SQL is what happens when Oracle
+							thinks it's a good idea for your database to also handle all your application code. This includes everything from filesystem
+							I/O, to LDAP management, to HTTP connections. The one thing it doesn't do, out of the box, is automated testing. So, what was
+							the first thing I wrote when I came on board? A lightweight automated testing library so that I, and the whole ERP team could
+							start writing tests against our code.
 						</small>
 					</aside>
 				</section>
@@ -448,11 +399,10 @@
 						</ul>
 
 						<small class="full-script">
-							I get it. Right out of college, 2007, I didn't see the point of spending more time writing more code for something I could
-							check quicker by hand. This is one of the most common arguments against automated testing, and for me at least, it
-							wasn't until I saw that first failing test in unrelated code, that the value really hit me. Now, this resistance doesn't
-							usually come in the form of active refusal so much as it does apathy towards being forced to change long-lived habits.
-							So how do you convince others?
+							No one used it... I get it. Right out of college, 2007, I didn't see the point of spending double the time writing code for something I could
+							check quicker by hand. This is one of the most common arguments against automated testing, and for me at least, it wasn't until I saw that first
+							failing test in unrelated code, that the value really hit me. Now, this resistance doesn't usually come in the form of active refusal so much as
+							it does apathy towards being forced to change long-lived habits. So how do you convince others?
 						</small>
 					</aside>
 				</section>
@@ -472,8 +422,7 @@
 						<small class="full-script">
 							The first thing to remember that your colleagues probably aren't being purposely malicious or defiant. You need to "assume
 							awesomeness" -- that, whatever their current situation is, they're trying their hardest to do the best job they can.
-							Everyone on your team is. This is something I heard from a presentation by a Canadian developer named Sean Yo, and
-							it has really stuck with me through the years.
+							Everyone on your team is. This is something I heard from a developer named Sean Yo, and it has really stuck with me through the years.
 						</small>
 					</aside>
 				</section>
@@ -498,26 +447,26 @@
 					</aside>
 				</section>
 
-				<section data-timing="60">
+				<section data-timing="45">
 					<h1>Don't Rock The Boat</h1>
 					<h2>(too much)</h2>
 					<h3>(or do)</h3>
 
 					<aside class="notes">
 						<ul>
-							<li>record scratch</li>
+							<li>also be careful</li>
 							<li>early on, w/in 1st yr, being moved teams</li>
 							<li>mostly thrilled, part of me knew why</li>
 							<li>young hotshot</li>
 						</ul>
 
 						<small class="full-script">
-							Except, record scratch. One day pretty early on, definitely within my first year there, I found out I was being moved to
-							a different team. While most of me was thrilled to be working with coworkers I was closer with, and on technology I
-							was more familiar with, a part of me knew that I had rocked the boat, and that this was probably a contributing factor
-							to the decision. While I continued to wear my "young hotshot" badge with pride -- yes, I actually got called that;
-							I was the youngest on the team by at least a decade -- I realize in hindsight that I maybe could have tread a little
-							more lightly.
+							Also be careful. One day pretty early on, definitely within my first year there, I found out I was being moved
+							to a different team. While most of me was thrilled to be working with coworkers I was closer with, and on technology
+							I was more familiar with, a part of me knew that I had rocked the boat, maybe stepped on some toes, and that this
+							was probably a contributing factor to the decision. While I continued to wear my "young hotshot" badge with pride
+							-- yes, I actually got called that; I was the youngest on the team by at least a decade -- I realize in hindsight
+							that I maybe could have tread a little more lightly.
 						</small>
 					</aside>
 				</section>
@@ -545,31 +494,29 @@
 				</section>
 			</section>
 
-			<!-- 11:00 -->
 			<section>
 				<section data-timing="30">
 					<h1>Part 2</h1>
 					<h2>Celebrate Your Small Wins</h2>
-					<h3>(they're the only kind you'll have)</h3>
+					<h3 class="fragment">Recognize Your Victories</h3>
 
 					<aside class="notes">
 						<ul>
 							<li>sort of</li>
-							<li>subtitle tongue-in-cheek, couple great major releases, overshadowed</li>
-							<li>trying to say "recognize your victories"</li>
-							<li>snark = trouble</li>
+							<li>rebuilding city 1 brick at time</li>
+							<li>*are* making a difference</li>
+							<li>(fragment)trying to say "recognize your victories"</li>
 						</ul>
 
 						<small class="full-script">
-							Sort of. The subtitle here is a little tongue-in-cheek because we had a couple of really great major releases, but at the time
-							they felt overshadowed by everything else that was going on. I guess what I'm trying to say is, "recognize your victories."
-							This is the kind of snark, by the way, that got me into trouble in the first place.
+							Sort of. It's really hard to feel like you're actually having an impact, when you're rebuilding an entire city one brick at a time.
+							But you *are* making a difference. I guess what I'm trying to say is, "recognize your victories."
 						</small>
 					</aside>
 				</section>
 
 				<section data-timing="30">
-					<h2>Manifesto for Agile Software Development</h2>
+					<h3><b>Manifesto for Agile Software Development</b></h3>
 					<p>We are uncovering better ways of developing software by doing it and helping others do it.</p>
 					<p>Through this work we have come to value:</p>
 					<ul>
@@ -595,7 +542,7 @@
 					</aside>
 				</section>
 
-				<section data-timing="45">
+				<section data-timing="30">
 					<h1>Small Controlled Experiments</h1>
 					<a href="http://verraes.net/2014/03/small-controlled-experiments/" target="_blank">http://verraes.net/2014/03/small-controlled-experiments/</a>
 
@@ -608,10 +555,9 @@
 						</ul>
 
 						<small class="full-script">
-							Here's an article by Mathias Verraes, a Belgian developer I met at a conference just before this was published. In it, he
-							talks about spending just a small amount of time each day experimenting and improving. It's along the same lines
-							as Deming's PDCA cycle, or Toyota's Improvement Kata, but on a much smaller scale. Low-cost, low-risk, easy to implement or
-							easy to revert. Kaizen, continuous improvement, should be at the heart of these experiments.
+							Mathias Verraes wrote an article that discusses spending just a small amount of time each day experimenting and improving. It's
+							along the same lines as Deming's PDCA cycle, or Toyota's Improvement Kata, but on a much smaller scale. Low-cost, low-risk, easy
+							to implement or easy to revert. Kaizen, continuous improvement, should be at the heart of these experiments.
 						</small>
 					</aside>
 				</section>
@@ -627,7 +573,7 @@
 						</ul>
 
 						<small class="full-script">
-							This is Footprints. It's your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! I count 24 on
+							Footprints is your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! I count 24 on
 							this tab alone, and look at all those other tabs! This is where all our work was tracked. It took minutes to lookup,
 							add, or edit a task, it had minimal data visualization options, and had terrible cross-browser compatibility. So what did
 							we do?
@@ -635,37 +581,37 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/trello.png" data-background-size="contain" data-timing="40">
+				<section data-background-image="images/trello.png" data-background-size="contain" data-timing="30">
 					<aside class="notes">
 						<ul>
 							<li>small, controlled experiment</li>
 							<li>kept customer communication in Footprints</li>
 							<li>switched to Trello for our day-to-day task management</li>
 							<li>extra overhead in certain circumstances, daily workflow improvements worth it</li>
+							<li>metrics to back it up</li>
 						</ul>
 
 						<small class="full-script">
 							We tried a small, controlled experiment. We kept our customer communication in Footprints, but switched to Trello for our day-to-day
-							task management. The first step we tried was making a Kanban board in Footprints, but it was still too clunky and not configurable
-							enough, so we went to Trello. There was extra overhead in certain circumstances, but the daily workflow improvements were well worth
-							it. What was that? I think I just heard someone in the peanut gallery just shout "show me the metrics!"
+							task management. We first tried making a Kanban board in Footprints, but it was still too clunky and not configurable enough, so we moved
+							to Trello. There was extra overhead in certain circumstances, but the daily workflow improvements were well worth it, and we had the
+							metrics to back that up.
 						</small>
 					</aside>
 				</section>
 
-				<section data-background-image="images/osxci.jpg" data-background-size="contain" data-timing="60">
+				<section data-background-image="images/osxci.jpg" data-background-size="contain" data-timing="45">
 					<aside class="notes">
 						<ul>
-							<li>Go.CD, 1st gen Intel Power Mac (photo = late '14, >4 years old)</li>
+							<li>Go.CD, 1st gen Intel Power Mac</li>
 							<li>spare machine, lying around, brought back to life as prototype CI</li>
 							<li>less cost and effort than procuring "pre-scaled" server</li>
 							<li>eventually upgraded to Mac Mini as grew, finally real server once value shown</li>
 						</ul>
 
 						<small class="full-script">
-							Here's another one of our experiments: this is Go, the continuous delivery tool, running on a first-generation Intel Power
-							Mac under my desk. This photo was taken in late 2014, which means the Mac was at least 4 years old, given when they
-							were discontinued. Literally a spare machine, lying around, brought back to life to live again as a prototype CI server,
+							This is Go, not the language but the continuous delivery tool, running on a first-generation Intel Power
+							Mac under my desk. Literally a spare machine, lying around, brought back to life to live again as a prototype CI server,
 							because it was less effort than procuring a new "pre-scaled" server for the physical datacenter. We later found a Mac
 							Mini that was more powerful, which was good because we continued adding more pipelines, and eventually, when we were
 							able to show the value, we got a real server for it.
@@ -701,8 +647,8 @@
 							and tag. What you don't see is all the stuff that already happened automatically that led up to this point. The release branch
 							was already pushed to a QA environment by the CI server after unit tests passes, and I confirmed that all browser tests passed
 							on QA, and tagged the release. It was then deployed it to a staging environment the same way as production, so we know exactly
-							what's going to happen in prod. There's a diff summary included so we can see if ther's anything unexpected being deployed,
-							usually from committing to the wrong branch. Once we confirm things look good in prod, we're all set.
+							what's going to happen in prod. There's a diff summary included so we can see if ther's anything unexpected being changed.
+							Once we confirm things look good in prod, we're all set.
 						</small>
 					</aside>
 				</section>
@@ -716,23 +662,22 @@
 
 					<aside class="notes">
 						<ul>
-							<li>By doing all these things (3) + compound interest earned, achieved lead times orders of magnitude smaller than ERP
-								(over the wall)</li>
+							<li>By doing all these things to improve workflow (4) + compound interest earned</li>
+							<li>achieved lead times orders of magnitude faster than ERP (over the wall)</li>
 							<li>Also able to deploy multiple times per day, compared to couple times a week</li>
-							<li>All started as experiments</li>
+							<li>All started with experiments</li>
 						</ul>
 
 						<small class="full-script">
-							By doing all of these things -- automated testing, continuous integration, constant communication with ops -- and the compound
-							interest we earn when combining them, we achieved lead times that were orders of magnitude smaller than the process
-							for ERP changes, which were historically more of the traditional "over-the-wall" approach. In doing so, we were also
-							able to deploy multiple times per day, compared to the couple times a week others experienced. This all started out
-							as experiments.
+							By doing all of these things that improved our workflow -- Kanban, automated testing, continuous integration, constant communication
+							with ops -- and the compound interest we earned when combining them, we achieved lead times that were orders of magnitude faster
+							than the process for ERP changes, which were historically more of the traditional "over-the-wall" approach. In doing so, we were
+							also able to deploy multiple times per day, compared to a couple times a week. This all started out with experiments.
 						</small>
 					</aside>
 				</section>
 
-				<section data-background-image="images/fox-in-socks.jpg" data-background-size="contain" data-timing="20">
+				<section data-background-image="images/fox-in-socks.jpg" data-background-size="contain" data-timing="15">
 					<aside class="notes full-script">
 						"Now wait a minute, Mr. Socks Fox" you might be saying, "you can't just willy-nilly deploy updates to an enterprise system
 						over Slack!" And you're probably right. But we didn't do that.
@@ -747,19 +692,18 @@
 						<ul>
 							<li>remember grad app quote?</li>
 							<li>rebuilt it, Angular, Bootstrap, REST, minimal DB hooks</li>
-							<li>by decoupling, minimized risk, abstracted complexity, more modern dev approach</li>
+							<li>by decoupling, minimized risk, abstracted complexity, able to develop with agility</li>
 						</ul>
 
 						<small class="full-script">
 							Remember the quote from the grad student who said that the online application was so bad they almost didn't apply? We rebuilt it, with
-							Angular and Bootstrap and REST APIs, and most importantly, with minimal hooks into the enterprise system. By decoupling the front-end app
-							from the underlying data storage, we minimized risk, we abstracted away the complexity into a more understandable API, and we were able
-							to use a more modern development approach.
+							Angular and Bootstrap and REST APIs, and most importantly, with minimal hooks into the enterprise system. By decoupling the application
+							from the underlying database, we minimized risk, we abstracted away the complexity into a more modern API, and we were able to develop with agility.
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="45">
+				<section data-timing="30">
 					<h2>Extend via Configuration,
 						<br/> Don't Fork Vendor Code
 					</h2>
@@ -775,14 +719,13 @@
 
 						<small class="full-script">
 							Same with the private social network for prospective students. It was almost impossible to upgrade the underlying framework
-							because of all the customizations that were built into it. We pulled out all that custom behavior and design into modules
-							that could be plugged into the platform, and upgrades suddently became routine; boring, even. But that's the goal,
-							right?
+							because of all the customization that was built into it. We pulled all that custom behavior and design out into configurable modules
+							that could be plugged into the platform, and upgrades suddently became routine; boring, even. But that's the goal, right?
 						</small>
 					</aside>
 				</section>
 
-				<section data-timing="30">
+				<section data-timing="20">
 					<h2>Look for Low-Hanging Fruit</h2>
 					<img src="images/banner-self-service.png" alt="Student Self-Service" style="width: 75%;" />
 
@@ -800,7 +743,7 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain" data-timing="45">
+				<section data-background-image="images/homerconnect2.jpg" data-background-size="contain" data-timing="30">
 					<aside class="notes">
 						<ul>
 							<li>2 days restyling to mobile-friendly, responsive design</li>
@@ -824,20 +767,18 @@
 					<aside class="notes">
 						<ul>
 							<li>dreaded R word</li>
-							<li>clear to me, everyone, org needed big changes</li>
-							<li>not what I was expecting (or maybe were)</li>
+							<li>despite victories, clear to me, everyone, org needed big changes</li>
+							<li>not what I was expecting</li>
 							<li>ops got pulled further away from dev</li>
-							<li>service provider -> broker (less dev, more COTS)</li>
+							<li>less dev, more off-the-shelf</li>
 							<li>absolutely valid direction, just not what a dev wants to hear</li>
 						</ul>
 
 						<small class="full-script">
-							And then came the dreaded R word. It was clear to me, and everyone I think, that the organization needed some big changes.
-							Unfortunately they were not what I was expecting. Or maybe deep down they were. The ops team got pulled further away
-							from the dev team, and it became clear that the focus of the organization was shifting from service provider to service
-							broker. This meant less of an emphasis on software development and more of an emphasis on off-the-shelf solutions.
-							Absolutely a valid direction for the department to take, it's just not not the type of thing a developer like myself
-							wants to hear.
+							And then came the dreaded R word. Despite our victories on the web team, it was clear to me, and everyone I think, that the
+							organization needed some big changes. Unfortunately they were not what I was expecting. The ops team got pulled further away from
+							the dev team, and it became clear that the focus was shifting from software development to off-the-shelf solutions. Absolutely a
+							valid direction for the department to take, just not what a developer like myself wants to hear.
 						</small>
 					</aside>
 				</section>
@@ -860,9 +801,8 @@
 				</section>
 			</section>
 
-			<!-- 6:30 -->
 			<section>
-				<section data-timing="15">
+				<section data-timing="10">
 					<h1>Part 3</h1>
 					<h2>Maybe DevOps Isn't Right
 						<br/> For Every Organization
@@ -881,7 +821,7 @@
 					</h2>
 
 					<aside class="notes full-script">
-						Except I don't believe that, and I hope you don't either. Agagin, the research shows that no matter what industry you're
+						Except I don't believe that, and I hope you don't either. Again, the research is showing that no matter what industry you're
 						in, you can have High Performance IT, and we know that DevOps is the way there.
 					</aside>
 				</section>
