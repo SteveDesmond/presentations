@@ -565,44 +565,6 @@
 					</aside>
 				</section>
 
-				<section data-background-image="images/footprints.jpg" data-background-size="contain" data-timing="30">
-					<aside class="notes">
-						<ul>
-							<li>Footprints, run-of-the-mill legacy/enterprise ticketing system</li>
-							<li>look at fields, 24 on tab, other tabs</li>
-							<li>where all work tracked</li>
-							<li>minutes to lookup, add, or edit a task</li>
-							<li>minimal data visualization, terrible cross-browser compat</li>
-						</ul>
-
-						<small class="full-script">
-							Footprints is your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! I count 24 on
-							this tab alone, and look at all those other tabs! This is where all our work was tracked. It took minutes to lookup,
-							add, or edit a task, it had minimal data visualization options, and had terrible cross-browser compatibility. So what did
-							we do?
-						</small>
-					</aside>
-				</section>
-
-				<section data-background-image="images/trello.png" data-background-size="contain" data-timing="30">
-					<aside class="notes">
-						<ul>
-							<li>small, controlled experiment</li>
-							<li>kept customer communication in Footprints</li>
-							<li>switched to Trello for our day-to-day task management</li>
-							<li>extra overhead in certain circumstances, daily workflow improvements worth it</li>
-							<li>metrics to back it up</li>
-						</ul>
-
-						<small class="full-script">
-							We tried a small, controlled experiment. We kept our customer communication in Footprints, but switched to Trello for our day-to-day
-							task management. We first tried making a Kanban board in Footprints, but it was still too clunky and not configurable enough, so we moved
-							to Trello. There was extra overhead in certain circumstances, but the daily workflow improvements were well worth it, and we had the
-							metrics to back that up.
-						</small>
-					</aside>
-				</section>
-
 				<section data-background-image="images/osxci.jpg" data-background-size="contain" data-timing="45">
 					<aside class="notes">
 						<ul>
@@ -622,6 +584,24 @@
 					</aside>
 				</section>
 
+				<section data-background-image="images/footprints.jpg" data-background-size="contain" data-timing="30">
+					<aside class="notes">
+						<ul>
+							<li>Footprints, run-of-the-mill legacy/enterprise ticketing system</li>
+							<li>look at fields, 24 on tab, other tabs</li>
+							<li>where all work tracked, as well as change control process</li>
+							<li>minutes to lookup, add, or edit a task</li>
+							<li>minimal data visualization, terrible cross-browser compat</li>
+						</ul>
+
+						<small class="full-script">
+							Footprints is your run-of-the-mill legacy/enterprise ticketing system. Look at all those fields! I count 24 on
+							this tab alone, and look at all those other tabs! This is where all our work was tracked, as well as where the
+							change control process started. Just filling out the form was a whole ordeal in itself. So what did we do?
+						</small>
+					</aside>
+				</section>
+
 				<section data-timing="20">
 					<h2 class="fragment" data-fragment-index="2">Manual</h2>
 					<h1>ChatOps</h1>
@@ -629,8 +609,8 @@
 						<br/>Todd</h2>
 
 					<aside class="notes full-script">
-						ChatOps was becoming all the rage around this time, and everyone was coming up with cool names for their deploy bots. Ours
-						was named Todd. Also, Todd is a human.
+						ChatOps, of course! ChatOps was becoming all the rage around this time, and everyone was coming up with cool names
+						for their deploy bots. Ours was named Todd. Also, Todd is a human.
 					</aside>
 				</section>
 
@@ -638,44 +618,21 @@
 					<aside class="notes">
 						<ul>
 							<li>example exchange: real deploy, slightly redacted</li>
-							<li>give app, env, tag</li>
-							<li>don't see everything automatically up to this point</li>
-							<li>release branch pushed to QA, tests run, tagged once confirmed</li>
-							<li>tag pushed to staging same way, know exactly what prod will do</li>
-							<li>diff for anything unexpected, e.g. committing to wrong branch</li>
+							<li>don't see everything happened behind scenes</li>
+							<li>release branch pushed to QA, browser tests run</li>
+							<li>release tagged, deployed to staging</li>
+							<li>previously manual, automated 1 by 1</li>
+							<li>experimenting how, while maint auditing reqs</li>
+							<li>sowing seeds for CD</li>
 						</ul>
 
 						<small class="full-script">
-							Here's an example exchange. This was a real deploy, slightly redacted. As you can see, I give him the application, environment,
-							and tag. What you don't see is all the stuff that already happened automatically that led up to this point. The release branch
-							was already pushed to a QA environment by the CI server after unit tests passes, and I confirmed that all browser tests passed
-							on QA, and tagged the release. It was then deployed it to a staging environment the same way as production, so we know exactly
-							what's going to happen in prod. There's a diff summary included so we can see if ther's anything unexpected being changed.
-							Once we confirm things look good in prod, we're all set.
-						</small>
-					</aside>
-				</section>
-
-				<section data-timing="45">
-					<h1>Lead Times</h1>
-					<ul>
-						<li>ERP: 2-7 days</li>
-						<li>Web: 5-20 minutes</li>
-					</ul>
-
-					<aside class="notes">
-						<ul>
-							<li>By doing all these things to improve workflow (4) + compound interest earned</li>
-							<li>achieved lead times orders of magnitude faster than ERP (over the wall)</li>
-							<li>Also able to deploy multiple times per day, compared to couple times a week</li>
-							<li>All started with experiments</li>
-						</ul>
-
-						<small class="full-script">
-							By doing all of these things that improved our workflow -- Kanban, automated testing, continuous integration, constant communication
-							with ops -- and the compound interest we earned when combining them, we achieved lead times that were orders of magnitude faster
-							than the process for ERP changes, which were historically more of the traditional "over-the-wall" approach. In doing so, we were
-							also able to deploy multiple times per day, compared to a couple times a week. This all started out with experiments.
+							Here's an example exchange. This was a real deploy, slightly redacted. I simply ask Todd to update an app to a given tag
+							and it gets deployed. What you don't see is everything that already happened that led up to this point. All of these steps --
+							the release branch being pushed to QA by the CI server after unit tests pass, automated browser testing against QA, tagging the
+							release for staging, deploying to a staging environment identical to production -- previously done manually, starting to be automated
+							one by one, by experimenting how to best do it while still maintaining things like auditing requirements, at the same time
+							sowing the seeds for continuous delivery.
 						</small>
 					</aside>
 				</section>
@@ -760,6 +717,30 @@
 							single CSS file running on a separate server, and we just configured the app to use that instead of the original stylesheet.
 							Low-risk because the database code didn't need to get touched, low-cost because it was just a couple days of Sass work,
 							and high-value because we knew that this was a big issue for students.
+						</small>
+					</aside>
+				</section>
+
+				<section data-timing="45">
+					<h1>Lead Times</h1>
+					<ul>
+						<li>ERP: 2-7 days</li>
+						<li>Web: 5-20 minutes</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>By doing all these things (list) + compound interest earned</li>
+							<li>achieved lead times orders of magnitude faster than ERP (over the wall)</li>
+							<li>Also able to deploy multiple times per day, compared to couple times a week</li>
+							<li>things looking good in web team bubble</li>
+						</ul>
+
+						<small class="full-script">
+							By doing all of these things -- decoupling our apps, continuous integration, constant communication with ops -- and the compound
+							interest we earned when combining them, we achieved lead times that were orders of magnitude faster than the process for ERP
+							changes, which were historically more of the traditional "over-the-wall" approach. In doing so, we were also able to deploy multiple
+							times per day, compared to a couple times a week. Things were looking pretty good in our little web team bubble!
 						</small>
 					</aside>
 				</section>
