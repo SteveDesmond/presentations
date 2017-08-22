@@ -14,7 +14,8 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<script>at
+	<script>
+		at
 		var link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
@@ -27,7 +28,7 @@
 	<div class="reveal">
 		<div class="slides">
 
-			<section data-timing="5">
+			<section>
 				<h1><b>Adventures in Enterprise</b></h1>
 				<h2> Lessons Learned
 					<br/> Promoting DevOps
@@ -44,166 +45,7 @@
 				</aside>
 			</section>
 
-			<section class="map" data-background-image="images/map.png" data-background-size="contain" data-timing="10">
-				<div class="col-xs-3">
-					<img class="devopsdayspdx" src="images/devopsdayspdx.png" alt="DevOpsDays PDX" />
-				</div>
-				<div class="col-xs-7">&nbsp;</div>
-				<div class="col-xs-2">
-					<img class="steve" src="images/steve.jpg" alt="Steve" />
-				</div>
-
-				<aside class="notes full-script">
-					My name is Steve, and I'm here all the way from Ithaca, New York. We're going to start out with a little game this morning.
-				</aside>
-			</section>
-
-			<section class="ff" data-background-image="images/family-fued.png" data-background-size="contain" data-timing="60">
-				<img id="ff-x" style="opacity: 0;" src="images/family-fued-x.png" alt="X" />
-				<h1>DevOpsDays Fued</h1>
-				<h2>What is Ithaca known for?</h2>
-				<table>
-					<tr id="ff-g">
-						<td>Gorges</td>
-						<td>54</td>
-					</tr>
-					<tr id="ff-c">
-						<td>Cornell</td>
-						<td>39</td>
-					</tr>
-					<tr id="ff-r">
-						<td>Road Trip</td>
-						<td>&nbsp;&nbsp;7</td>
-					</tr>
-				</table>
-
-				<aside class="notes full-script">
-					We asked 100 Ithacans what our great city is best known for. Top 3 answers are up on the board. Anybody have any ideas? Feel
-					free to just shout them out.
-				</aside>
-			</section>
-
-			<section data-background-image="images/gorge.jpg" data-background-size="contain" data-timing="10">
-				<aside class="notes full-script">
-					#1 on that list is Gorges, due to our amazing natural wonders.
-				</aside>
-			</section>
-
-			<section data-background-image="images/tshirt-gorges.jpg" data-background-size="contain" data-timing="10">
-				<aside class="notes full-script">
-					There's a play on words that's kind of our local motto, "Ithaca is Gorges" -- we even put it on T-shirts.
-				</aside>
-			</section>
-
-			<section data-background-image="images/tshirt-cold.jpg" data-background-size="contain" data-timing="10">
-				<aside class="notes full-script">
-					These shirts have gone on to inspire parodies, such as "Ithaca is Cold," because snow is to Ithaca as rain is to Portland,
-					except this week apparently!
-				</aside>
-			</section>
-
-			<section data-background-image="images/peace-sign.jpg" data-background-size="contain" data-timing="15">
-				<aside class="notes full-script">
-					Up until a couple months ago, we held the record for the world's largest human peace sign, with so many hippies that not
-					even Yoko Ono could top it when she tried in New York City a few years back.
-				</aside>
-			</section>
-
-			<section data-background-image="images/farmers-market.jpg" data-background-size="contain" data-timing="10">
-				<aside class="notes full-script">
-					Sorry, but we have the world's greatest farmers market.
-				</aside>
-			</section>
-
-			<section data-background-image="images/svante.jpg" data-background-size="contain" data-timing="15">
-				<aside class="notes full-script">
-					He's no Kyle McLaughlin, but we love our mayor, Svante Myrick. Elected at 24 years old, not only is he our youngest ever
-					mayor, he's also our first African American mayor.
-				</aside>
-			</section>
-
-			<section data-timing="30">
-				<h1>DevOps</h1>
-				<ul>
-					<li>Culture</li>
-					<li>Automation</li>
-					<li>Measurement</li>
-					<li>Sharing</li>
-				</ul>
-
-				<aside class="notes">
-					<ul>
-						<li>Why?</li>
-						<li>important to understand the cultural background</li>
-						<li>also hard to discern without being a part of</li>
-						<li>first item in CAMS</li>
-						<li>culture *of*</li>
-					</ul>
-
-					<small class="full-script">
-							Why am I telling you all this? Well, I've learned it's important to understand the cultural background of where someone
-							comes from. It's also hard to discern without being a part of it. And indeed, culture is the first item in DevOps' CAMS
-							model: Culture, Automation, Measurement, and Sharing. And it's a culture *of* automation, measurement, and sharing that
-							makes it truly successful.
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="30">
-				<h1>Enterprise</h1>
-				<blockquote>
-					Software used to satisfy the needs of an organization rather than individual users
-					<br/>
-					<div class="pull-right">
-						<a href="https://en.wikipedia.org/wiki/Enterprise_software" target="_blank">-Wikipedia</a>
-					</div>
-				</blockquote>
-				<ul class="fragment">
-					<li>Payroll / HR systems</li>
-					<li>Classroom / lab computers</li>
-					<li>On-Campus LAN / Wi-Fi</li>
-				</ul>
-
-				<aside class="notes">
-					<ul>
-						<li>business is not software, or even IT</li>
-						<li>IT supports business</li>
-						<li>(fragment: examples)</li>
-					</ul>
-
-					<small class="full-script">
-							When I say "enterprise," I'm going to be talking about organizations whose business is not software, or even IT, but whose
-							IT department supports the business. In the case of this talk, that means anything from the payroll and HR systems,
-							to classroom and lab computers and printers, to the on-campus network of a post-secondary education institution.
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="30">
-				<h1>Legacy</h1>
-				<ul>
-					<li>On-premises datacenters</li>
-					<li>Physical servers</li>
-					<li>Weekend downtime</li>
-					<li>Project-centric planning</li>
-					<li>Traditional org structure</li>
-				</ul>
-
-				<aside class="notes">
-					<ul>
-						<li>"traditional" ways</li>
-						<li>(list examples)</li>
-					</ul>
-
-					<small class="full-script">
-							When I talk about "legacy," I'm thinking of the "traditional" ways that IT organizations have operated: things like on-prem
-							datacenters and software; physical, or "pre-scaled," servers; planned major upgrades that take systems offline
-							for entire weekends; project-centric planning; and a more traditional org structure.
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="45">
+			<section>
 				<h1>Story Time</h1>
 
 				<aside class="notes">
@@ -224,7 +66,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h1>Opportunity</h1>
 
 				<aside class="notes">
@@ -245,18 +87,17 @@
 				</aside>
 			</section>
 
-			<section data-timing="10">
-				<h1>Part 1</h1>
-				<h2>Do Not Go In
+			<section>
+				<h1>Do Not Go In
 					<br/> With Guns Blazing
-				</h2>
+				</h1>
 
 				<aside class="notes full-script">
 					There's a reason things are the way they are, and it's probably not by accident.
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h2>Big Orgs Move Slow</h2>
 				<img src="images/typescript.png" alt="TypeScript approval at Google" style="width: 75%;" />
 				<a href="https://channel9.msdn.com/Events/Build/2017/T6006-R1" target="_blank">https://channel9.msdn.com/Events/Build/2017/T6006-R1</a>
@@ -280,7 +121,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="75">
+			<section>
 				<h1>Why?</h1>
 				<ul>
 					<li>Stability over innovation</li>
@@ -313,7 +154,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="30">
+			<section>
 				<h1>Software is not a Building</h1>
 				<h2>Don't construct them the same way</h2>
 
@@ -333,7 +174,7 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/office.jpg" data-background-size="contain" data-timing="75">
+			<section data-background-image="images/office.jpg" data-background-size="contain">
 				<aside class="notes">
 					<ul>
 						<li>electical wiring, lights, insulation, resilient channel, A/V wiring, drywall, taping, primer, paint, crown molding</li>
@@ -358,7 +199,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h1>PL/SQL</h1>
 				<ul class="fragment">
 					<li>Filesystem I/O</li>
@@ -384,50 +225,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
-				<h1>Be Prepared
-					<br/> For More Resistance
-					<br/> Than You Can Imagine
-				</h1>
-
-				<aside class="notes">
-					<ul>
-						<li>no one used it</li>
-						<li>org didn't have culture of sharing</li>
-						<li>everyone did own thing to get job done</li>
-						<li>not active refusal, apathy towards being forced to change long-lived habits</li>
-						<li>so how to convince?</li>
-					</ul>
-
-					<small class="full-script">
-							No one used it. The organization didn't have a culture of sharing. Everyone just kind of did their
-							own thing to get the job done. The resistance didn't come in the form of active refusal so much as
-							apathy towards being forced to change long-lived habits. So how do you convince others?
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="30">
-				<h1>Assume Awesomeness</h1>
-				<a href="https://github.com/BeardedCoder/RealWorldRetros" target="_blank">https://github.com/BeardedCoder/RealWorldRetros</a>
-
-				<aside class="notes">
-					<ul>
-						<li>not malicious or defiant</li>
-						<li>assume awesomeness (define)</li>
-						<li>everyone is</li>
-						<li>Sean Yo, really stuck w/me</li>
-					</ul>
-
-					<small class="full-script">
-							The first thing to remember that your colleagues probably aren't being purposely malicious or defiant. You need to "assume
-							awesomeness" -- that, whatever their current situation is, they're trying their hardest to do the best job they can.
-							Everyone on your team is. This is something I heard from a developer named Sean Yo, and it has really stuck with me through the years.
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="30">
+			<section>
 				<h1>Lead By Example</h1>
 				<h2>"Be the CAMS model!"</h2>
 
@@ -447,7 +245,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h1>Don't Rock The Boat</h1>
 				<h2>(too much)</h2>
 				<h3>(or do)</h3>
@@ -471,7 +269,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h1>Team Dynamics Are Paramount</h1>
 
 				<aside class="notes">
@@ -493,28 +291,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="30">
-				<h1>Part 2</h1>
-				<h2>Celebrate Your Small Wins</h2>
-				<h3 class="fragment">Recognize Your Victories</h3>
-
-				<aside class="notes">
-					<ul>
-						<li>sort of</li>
-						<li>giant ball of mud / little plastic kiddie shovel</li>
-						<li>*are* making a difference</li>
-						<li>(fragment)trying to say "recognize your victories"</li>
-					</ul>
-
-					<small class="full-script">
-							Sort of. It's really hard to feel like you're actually having an impact, when there's this giant
-							ball of mud in front of you, and all you've got is this little plastic kiddie shovel.
-							But you *are* making a difference. I guess what I'm trying to say is, "recognize your victories."
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="30">
+			<section>
 				<h3><b>Manifesto for Agile Software Development</b></h3>
 				<p>We are uncovering better ways of developing software by doing it and helping others do it.</p>
 				<p>Through this work we have come to value:</p>
@@ -541,27 +318,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="30">
-				<h1>Small Controlled Experiments</h1>
-				<a href="http://verraes.net/2014/03/small-controlled-experiments/" target="_blank">http://verraes.net/2014/03/small-controlled-experiments/</a>
-
-				<aside class="notes">
-					<ul>
-						<li>Mathias Verraes, small amt of time every day experimenting and improving</li>
-						<li>Deming's PDCA cycle, Toyota's Improvement Kata, smaller scale</li>
-						<li>Low-cost, low-risk, easy to implement, easy to revert</li>
-						<li>Kaizen -- continuous improvement -- at the heart of them</li>
-					</ul>
-
-					<small class="full-script">
-							Mathias Verraes wrote an article that discusses spending just a small amount of time each day experimenting and improving. It's
-							along the same lines as Deming's PDCA cycle, or Toyota's Improvement Kata, but on a much smaller scale. Low-cost, low-risk, easy
-							to implement or easy to revert. Kaizen, continuous improvement, should be at the heart of these experiments.
-						</small>
-				</aside>
-			</section>
-
-			<section data-background-image="images/osxci.jpg" data-background-size="contain" data-timing="45">
+			<section data-background-image="images/osxci.jpg" data-background-size="contain">
 				<aside class="notes">
 					<ul>
 						<li>Go.CD, 1st gen Intel Power Mac</li>
@@ -580,7 +337,7 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/footprints.jpg" data-background-size="contain" data-timing="30">
+			<section data-background-image="images/footprints.jpg" data-background-size="contain">
 				<aside class="notes">
 					<ul>
 						<li>Footprints, run-of-the-mill legacy/enterprise ticketing system</li>
@@ -597,7 +354,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="20">
+			<section>
 				<h2 class="fragment" data-fragment-index="2">Manual</h2>
 				<h1>ChatOps</h1>
 				<h2 class="fragment" data-fragment-index="1">with
@@ -609,7 +366,7 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/slack.png" data-background-size="contain" data-timing="60">
+			<section data-background-image="images/slack.png" data-background-size="contain">
 				<aside class="notes">
 					<ul>
 						<li>example exchange: real deploy, slightly redacted</li>
@@ -632,14 +389,14 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/fox-in-socks.jpg" data-background-size="contain" data-timing="15">
+			<section data-background-image="images/fox-in-socks.jpg" data-background-size="contain">
 				<aside class="notes full-script">
 					"Now wait a minute, Mr. Socks Fox" you might be saying, "you can't just willy-nilly deploy updates to an enterprise system
 					over Slack!" And you're probably right. But we didn't do that.
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h2>Decouple from your Enterprise Systems</h2>
 				<img src="images/ic-myithaca-gradapp.png" alt="Graduate Application" style="width: 75%;" />
 
@@ -658,7 +415,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="30">
+			<section>
 				<h2>Extend via Configuration,
 					<br/> Don't Fork Vendor Code
 				</h2>
@@ -680,7 +437,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="20">
+			<section>
 				<h2>Look for Low-Hanging Fruit</h2>
 				<img src="images/banner-self-service.png" alt="Student Self-Service" style="width: 75%;" />
 
@@ -690,7 +447,7 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/lthc.png" data-background-size="contain" data-timing="20">
+			<section data-background-image="images/lthc.png" data-background-size="contain">
 				<aside class="notes full-script">
 					So much so that one student, a freshman at the time, Aaron Zufall, created a Chrome extension to improve the user interface.
 					I thought this was great, though unfortunately a Chrome extension doesn't scale to 10,000 users running a dozen different
@@ -698,7 +455,7 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/homerconnect2.jpg" data-background-size="contain" data-timing="30">
+			<section data-background-image="images/homerconnect2.jpg" data-background-size="contain">
 				<aside class="notes">
 					<ul>
 						<li>2 days restyling to mobile-friendly, responsive design</li>
@@ -716,7 +473,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h1>Lead Times</h1>
 				<ul>
 					<li>ERP: 2-7 days</li>
@@ -740,7 +497,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="45">
+			<section>
 				<h1>Re-Org</h1>
 
 				<aside class="notes">
@@ -762,74 +519,7 @@
 				</aside>
 			</section>
 
-			<section data-background-image="images/resignation.png" data-background-size="contain" data-timing="30">
-				<aside class="notes full-script">
-					And so, inevitably, one day, I gave up. When I looked back at all the time and effort that had gone into me trying to improve
-					things, and what the relative outcome was, I realized something:
-				</aside>
-			</section>
-
-			<section data-timing="10">
-				<h1>You (as an individual)
-					<br/> Can't Change Culture
-				</h1>
-
-				<aside class="notes full-script">
-					I couldn't change the culture.
-				</aside>
-			</section>
-
-			<section data-timing="10">
-				<h1>Part 3</h1>
-				<h2>Maybe DevOps Isn't Right
-					<br/> For Every Organization
-				</h2>
-
-				<aside class="notes full-script">
-					And so I got it in my head: maybe DevOps isn't right for every organization.
-				</aside>
-			</section>
-
-			<section data-timing="20">
-				<h1>Part 3</h1>
-				<h2 class="red-strikethrough">
-					Maybe DevOps Isn't Right
-					<br/> For Every Organization
-				</h2>
-
-				<aside class="notes full-script">
-					Except I don't believe that, and I hope you don't either. Again, the research is showing that no matter what industry you're
-					in, you can have High Performance IT, and we know that DevOps is the way there.
-				</aside>
-			</section>
-
-			<section data-timing="15">
-				<h1>Part 3</h1>
-				<h2>Maybe It's Not The Right Time
-					<br/> For DevOps Yet
-				</h2>
-
-				<aside class="notes full-script">
-					In talking with some of my former colleagues, it seems like inroads are continuing to be made, so maybe I was just a little
-					too early to the party?
-				</aside>
-			</section>
-
-			<section data-timing="30">
-				<h1>Part 3</h1>
-				<h2 class="red-strikethrough">
-					Maybe It's Not The Right Time
-					<br/> For DevOps Yet
-				</h2>
-
-				<aside class="notes full-script">
-					Except I don't believe that either. The longer you hold off, the further behind you're going to be. Yes, those who are risk-averse
-					might save some time by letting others do the trail blazing, but that time has long come and gone. So if DevOps is the
-					right move, and now's the time, what happened?
-				</aside>
-			</section>
-
-			<section data-timing="60">
+			<section>
 				<h2>You (as an individual)
 					<br/> Can't Change Culture
 				</h2>
@@ -856,7 +546,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="30">
+			<section>
 				<h1>Experiment</h1>
 				<ul>
 					<li>Low-cost</li>
@@ -871,7 +561,7 @@
 				</aside>
 			</section>
 
-			<section data-timing="60">
+			<section>
 				<h2>Decouple, Decouple, Decouple</h2>
 
 				<ul>
@@ -890,70 +580,16 @@
 					</ul>
 
 					<small class="full-script">
-							The software successes that we did have all seemed to stem from the idea of decoupling. Decouple the UI from the database
-							so the code is more maintainable. Decouple the front-end from the back-office: the users completing
-							their graduate application are on a completely different system from the admissions teams reviewing them. Decouple
-							your custom features from the vendor software or platform they run on. Creating decoupled systems means smaller, less-risky
-							changes, allowing for greater agility moving forward.
-						</small>
+						The software successes that we did have all seemed to stem from the idea of decoupling. Decouple the UI from the database
+						so the code is more maintainable. Decouple the front-end from the back-office: the users completing
+						their graduate application are on a completely different system from the admissions teams reviewing them. Decouple
+						your custom features from the vendor software or platform they run on. Creating decoupled systems means smaller, less-risky
+						changes, allowing for greater agility moving forward.
+					</small>
 				</aside>
 			</section>
 
-			<section data-background-image="images/hike.jpg" data-background-size="contain" data-timing="60">
-				<aside class="notes">
-					<ul>
-						<li>lucky</li>
-						<li>trying to sum up</li>
-						<li>sometimes great (examples) others not (examples)</li>
-						<li>can't imagine effort involved</li>
-						<li>made connection</li>
-					</ul>
-
-					<small class="full-script">
-							I'm currently lucky enough to be able to take my kids on weekly hikes, and a couple weeks ago, right around when I took this
-							picture, I was trying to figure out how to sum all this up into a single thought. Now, sometimes, like on this day,
-							things are going great: everyone's in a good mood, we making good progress, things feel easy. Other times, I feel like I can't
-							get through to anyone, the whole thing is a struggle, it's just not working. But this was a good day. And I obviously made the
-							connection, as I was thinking about this talk. If I had one final piece of advice to instill today, it would be this:
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="10">
-				<h1>Guide Your Team
-					<br/> On A Nature Hike
-				</h1>
-				<h2>Don't Just Drag Them
-					<br/> Through The Woods
-				</h2>
-
-				<aside class="notes full-script">
-					Guide your team on a nature hike, don't just drag them through the woods.
-				</aside>
-			</section>
-
-			<section data-timing="45">
-				<h1>High Fives</h1>
-
-				<aside class="notes">
-					<ul>
-						<li>Eric, partner in crime on web team</li>
-						<li>Todd, ops guy, voice of DevOps on that side</li>
-						<li>organizers, huge thank you</li>
-						<li>can't imagine effort involved</li>
-					</ul>
-
-					<small class="full-script">
-							Speaking of woods, thank you to Eric Woods, my partner in crime on the web team, for putting up with me all these years.
-							Thanks to Todd, our ops guy, for being the voice of DevOps on the ops side of the house. Last, but definitely not least,
-							if you see anyone with an organizer badge on, please give them a huge thank you. They've done a great job organizing
-							this event for all of us this week; I can't even imagine the amount of planning that goes into orchestrating something
-							like this. So thank you!
-						</small>
-				</aside>
-			</section>
-
-			<section data-timing="45">
+			<section>
 				<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
 				<div class="col-xs-12">
 					<div class="col-xs-2"></div>
@@ -1021,13 +657,8 @@
 			controls: false,
 			transition: 'none',
 			backgroundTransition: 'none',
-			defaultTiming: 30,
-			keyboard: {
-				/* C */ 67: function () { toggle('ff-c'); },
-				/* G */ 71: function () { toggle('ff-g'); },
-				/* R */ 82: function () { toggle('ff-r'); },
-				/* X */ 88: function () { toggle('ff-x'); }
-			}
+			defaultTiming: 15,
+			autoSlide: 15000
 		});
 	</script>
 </body>

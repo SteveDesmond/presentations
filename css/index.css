@@ -17,39 +17,3 @@
 .reveal a.white {
     color: white; 
 }
-
-.red-strikethrough {
-    text-decoration:  red line-through;
-}
-
-.reveal section.map img.devopsdayspdx {
-    margin-top: -200px;
-}
-
-.reveal section.map img.steve {
-    margin-top: -50px;
-}
-
-.reveal section.ff * {
-    text-shadow: 0 0 16px black;
-}
-
-.reveal section.ff #ff-x {
-    position: absolute;
-    height: 640px;
-    margin-left: -25%;
-}
-
-.reveal section.ff h2 {
-    margin-top: 50px;
-}
-
-.reveal section.ff tr {
-    opacity: 0;
-}
-
-.reveal section.ff td {
-    font-size: 70px;
-    font-weight: 900;
-    margin-top: 20px;
-}
