@@ -43,8 +43,8 @@
 				</h4>
 
 				<aside class="notes">
-					Good afternoon! I'm Steve, and I'm here to tell you a story about how I promoted DevOps in a legacy organization, legacy
-					meaning the traditional, over-the-wall interactions between dev and ops.
+					Good afternoon, happy Hacktoberfest! I'm Steve, and I'm going to tell you a story about how I helped promote DevOps to improve
+					an IT department's performace.
 				</aside>
 			</section>
 
@@ -52,8 +52,9 @@
 				<h1>Story Time</h1>
 
 				<aside class="notes">
-					Many years ago, after doing some cool DevOps-y stuff at a small SaaS company, it was time to look for a new job. One position
-					in particular cauight my eye, and I saw something:
+					Many years ago, after doing some cool DevOps-y stuff at a small company, it was time to look for a new job. One position
+					in particular cauight my eye, not because of the cool stuff they were doing, but because I saw an organization struggling
+					to keep up with expectations.
 				</aside>
 			</section>
 
@@ -61,8 +62,8 @@
 				<h1>Opportunity</h1>
 
 				<aside class="notes">
-					I saw an organization struggling to keep up with expectations. And I saw the potential of using my first-hand DevOps experience
-					make everything better. I was all like "Yeah! I'm gonna turn this ship around! I'm going in with guns blazing!"
+					And I saw the potential of using my first-hand DevOps experience make everything better. I was all like "Yeah! I'm gonna
+					turn this ship around! I'm going in with guns blazing!"
 				</aside>
 			</section>
 
@@ -78,14 +79,13 @@
 			</section>
 
 			<section>
-				<ul>
-					<li>Stability over Innovation</li>
-					<li>Control change vs embrace it</li>
-				</ul>
+				<h2>Stability
+					<s>over</s> Innovation</h2>
+				<h1>&amp;</h1>
 
 				<aside class="notes">
-					One way they do this is by controlling change, rather than embracing it. In some cases, that's with good cause, because I
-					know how many of you would be upset if you didn't get your paycheck due to a bad patch.
+					But we're learning that you can have both stability and innovation, and that a culture of automation, metrics, and sharing
+					is the way to get there.
 				</aside>
 			</section>
 
@@ -94,9 +94,9 @@
 				<h2>"Be the CAMS model!"</h2>
 
 				<aside class="notes">
-					But we're learning that you can do both, and that DevOps culture is the way to do that. Exhibit what you'd like the culture
-					to grow to. Automate all the things. Measure the gains you're making. Most imporantly, share your successes, and your
-					failures. Be the CAMS model!
+					We talk a lot obout DevOps, but sometimes talk isn't enough to spark change. So exhibit what you'd like the culture to grow
+					to. Automate all the things. Measure the gains you're making. Most imporantly, share your successes, and your failures.
+					Be the CAMS model!
 				</aside>
 			</section>
 
@@ -123,9 +123,8 @@
 
 			<section data-background-image="images/osxci.jpg" data-background-size="contain">
 				<aside class="notes">
-					This is Go the CD tool, running on a spare machine under my desk, brought back to life as a prototype CI server, because
-					it was less effort than procuring a new server for the physical datacenter. Once we were able to show its value, we
-					got a real server for it.
+					Here's one such experiment: I found a spare machine, literally sitting in an empty office, and turned it into our first CI
+					server. As our number of pipelines grew, we were able to show its value, and eventually got a real server for it.
 				</aside>
 			</section>
 
@@ -138,16 +137,15 @@
 
 			<section data-background-image="images/slack.png" data-background-size="contain">
 				<aside class="notes">
-					ChatOps, of course! I ask Todd, our ops guy, to update an app to a given tag, and it gets deployed. What you don't see is
-					all the automated behind-the-scenes stuff, from tests running to notifications for auditing. All this is sowing the
-					seeds for continuous delivery.
+					ChatOps, of course! We experiemented and automated our way to even include things like notifications for auditing, sowing
+					the seeds for continuous delivery.
 				</aside>
 			</section>
 
 			<section data-background-image="images/fox-in-socks.jpg" data-background-size="contain">
 				<aside class="notes">
 					"Now wait a minute, Mr. Socks Fox" you might be saying, "you can't just willy-nilly deploy updates to an enterprise system
-					over Slack!" And you're probably right. But we didn't do that.
+					over Slack!" And you're probably right, but we didn't do that.
 				</aside>
 			</section>
 
@@ -186,16 +184,15 @@
 
 			<section data-background-image="images/lthc.png" data-background-size="contain">
 				<aside class="notes">
-					So much so that one student, a freshman at the time, Aaron Zufall, created a Chrome extension to improve the UI. I thought
-					this was great, though unfortunately a Chrome extension doesn't scale to 10,000 users running a dozen different browsers.
+					So much so that a student created a Chrome extension to improve the UI. I thought this was great, though unfortunately a
+					Chrome extension doesn't scale to 10,000 users running a dozen different browsers.
 				</aside>
 			</section>
 
 			<section data-background-image="images/homerconnect2.jpg" data-background-size="contain">
 				<aside class="notes">
-					So I spent two days restyling the app to have a mobile-friendly responsive design. The CSS lived on a separate server, so
-					this was low-risk because the database code didn't need to get touched, low-cost because it was just a couple days,
-					and high-value because we knew that this was a big issue for students.
+					So I spent two days restyling the app to have a mobile-friendly responsive design. The new CSS lived on a separate server,
+					so the enterprise code didn't need to get touched.
 				</aside>
 			</section>
 
@@ -207,34 +204,30 @@
 				</ul>
 
 				<aside class="notes">
-					By doing all of these things -- decoupling our apps, continuous integration, constant communication with ops -- we achieved
-					crazy fast lead times compared to the traditional "over-the-wall" approach, which also meant we could deploy multiple
-					times per day, compared to just a couple times a week.
+					By doing all of these things, we achieved crazy fast lead times compared to the traditional "over-the-wall" approach, which
+					also meant we could now deploy multiple times per day.
 				</aside>
 			</section>
 
 			<section>
-				<ol>
-					<li>Lead by example (be the CAMS model!)</li>
-					<li>Experiment</li>
-					<li>Decouple, Decouple, Decouple</li>
-				</ol>
+				<h2>Lead by example (be the CAMS model!)</h2>
+				<h2>Experiment</h2>
+				<h2>Decouple, Decouple, Decouple</h2>
 
 				<aside class="notes">
-					A quick review of things you can do to promote DevOps at your legacy org: exhibit the culture you want to see evolve; experiment,
-					even if that means needing to do it under the radar; and decouple as much as you can to make changes easier and less
-					risky.
+					So exhibit the culture you want to see evolve; experiment, even if that means needing to do it under the radar; and decouple
+					as much as you can to make changes easier and less risky.
 				</aside>
 			</section>
 
 			<section>
-				<img src="images/devopsdayspdx.png" alt="DevOpsDays PDX" />
+				<img src="images/devopsdayspdx.png" alt="DevOpsDays PDX" style="max-width: 50%;" />
 				<p>
 					<a href="https://stevedesmond.ca/talks" target="_blank">https://stevedesmond.ca/talks</a>
 				</p>
 				<aside class="notes">
-					Whew! This was the Cliff Notes version of a talk I gave at DevOpsDays Portland this past summer. If you're interested, you
-					can get to it using the link at the bottom.
+					This was the Cliff Notes version of a talk I gave at DevOpsDays Portland this past summer. If you're interested, you can
+					get to it using the link at the bottom.
 				</aside>
 			</section>
 
@@ -269,9 +262,8 @@
 				</div>
 
 				<aside class="notes">
-					Again, I'm Steve, I help teams build better software. I have all this in physical form, if you want to bring a souvenir back
-					for your boss. If you're more of a sticker person, I've got some Scotch tape, so you can stick it on your laptop, like
-					this. Thank you!
+					Again, I'm Steve, I help teams build better software. I'm around the rest of the day, or here's how to find me online. I'd
+					love to hear how you've succeeded with DevOps, or if you need any help succeeding. Thanks!
 				</aside>
 			</section>
 
