@@ -1,0 +1,32 @@
+ul.acronym {
+    font-size: 150%;
+    line-height: 150%;
+    list-style: none;
+  }
+  
+  ul.acronym li {
+    padding-left: 2em;
+    text-indent: -2em;
+  }
+  
+  ul.acronym li:before {
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+  }
+
+  li.s:before{
+    content: "S";
+  }
+  li.o:before{
+    content: "O";
+  }
+  li.l:before{
+    content: "L";
+  }
+  li.i:before{
+    content: "I";
+  }
+  li.d:before{
+    content: "D";
+  }
