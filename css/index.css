@@ -15,18 +15,55 @@ ul.acronym {
     text-align: center;
   }
 
-  li.s:before{
-    content: "S";
-  }
-  li.o:before{
-    content: "O";
-  }
-  li.l:before{
-    content: "L";
-  }
-  li.i:before{
-    content: "I";
-  }
-  li.d:before{
-    content: "D";
-  }
+    ul.acronym li.s:before{
+      content: "S";
+    }
+
+    ul.acronym li.o:before{
+      content: "O";
+    }
+    
+    ul.acronym li.l:before{
+      content: "L";
+    }
+    
+    ul.acronym li.i:before{
+      content: "I";
+    }
+
+    ul.acronym li.d:before{
+      content: "D";
+    }
+
+p {
+  text-align: left;
+}
+
+.split {
+  float: left;
+  width: 48%;
+  padding: 1% !important;
+}
+
+pre {
+  box-shadow: none !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+code {
+  max-height: none !important;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer small {
+  width: 10em;
+}

@@ -16,7 +16,7 @@
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css" id="theme">
-	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/index.css" />
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -47,11 +47,12 @@
 				</h2>
 			</section>
 			<section>
-				<h1>SOLID
+				<h1>SOLID</h1>
+				<h3>
 					<span class="fragment">!</span>
 					<span class="fragment">!</span>
 					<span class="fragment">!</span>
-				</h1>
+				</h3>
 				<h2>
 					<span class="fragment">What</span>
 					<span class="fragment">is</span>
@@ -66,6 +67,42 @@
 			</section>
 
 			<section>
+				<h2>Principles vs Patterns</h2>
+				<p>
+					<b>Principle:</b>
+				</p>
+				<ul>
+					<li>
+						a fundamental truth or proposition that serves as the foundation for a system of belief or behavior or for a
+						chain of reasoning
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Principles vs Patterns</h2>
+				<p>
+					<b>Pattern:</b>
+				</p>
+				<ul>
+					<li>
+						a general, reusable solution to a commonly occurring problem within a given context in software design
+					</li>
+					<li class="fragment">
+						a description or template for how to solve a problem that can be used in many different situations
+					</li>
+					<li class="fragment">
+						not a finished design that can be transformed directly into source or machine code
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Principles vs Patterns</h2>
+				<h3>Pattern = how</h3>
+				<h3>Principle = why</h3>
+			</section>
+
+			<section>
+				<h2>SOLID Principles</h2>
 				<ul class="acronym">
 					<li class="s">Single responsibility</li>
 					<li class="o">Open / closed</li>
@@ -76,24 +113,192 @@
 			</section>
 
 			<section>
-				<h2>Single Responsibility Principle</h1>
+				<h2>Single Responsibility Principle</h2>
+				<p>"Every module or class should have responsibility over a single part of the functionality provided by the
+					software, and that responsibility should be entirely encapsulated by the class."</p>
+
+				<table class="fragment">
+					<tr>
+						<th>Pattern</th>
+						<td class="fragment">Model-View-Controller</td>
+					</tr>
+					<tr>
+						<th>Anti-Pattern</th>
+						<td class="fragment">Active Record</td>
+					</tr>
+				</table>
+			</section>
+			<section>
+				<h2>SRP Example</h2>
+				<div class="split">
+					<pre>
+						<code data-trim>
+							class User
+							{
+								int ID;
+								string Username;
+								string Email;
+								string PasswordHash;
+
+								static User get(id)
+								{ 
+									return [user from DB];
+								}
+							}
+
+							var user = User::get(123);
+						</code>
+					</pre>
+				</div>
+				<div class="split fragment">
+					<pre>
+						<code data-trim>
+							class User
+							{
+								int ID;
+								string Username;
+								string Email;
+								string PasswordHash;
+							}
+
+							class UserRepository
+							{
+								static User get(id)
+								{ 
+									return [user from DB];
+								}
+							}
+
+							var user = UserRepository::get(123);
+						</code>
+					</pre>
+				</div>
 			</section>
 
 			<section>
-				<h2>Open/Closed Principle</h1>
+				<h2>Open/Closed Principle</h2>
+				<p>"Software entities should be open for extension, but closed for modification."</p>
+			</section>
+			<section>
+				<h2>OCP Example</h2>
+				<div class="split">
+					<pre>
+						<code data-trim>
+							class Animal
+							{
+								int LegCount()
+								{
+									return 4;
+								}
+							}
+
+							class Human : Animal
+							{
+								int LegCount()
+								{
+									return 2;
+								}
+							}
+						</code>
+					</pre>
+				</div>
+				<div class="split fragment">
+					<pre>
+						<code data-trim>
+							interface Animal
+							{
+								int LegCount();
+							}
+
+							class Human : Animal
+							{
+								int LegCount()
+								{
+									return 2;
+								}
+							}
+
+							abstract class FourLeggedAnimal : Animal
+							{
+								int LegCount()
+								{
+									return 4;
+								}
+							}
+						</code>
+					</pre>
+				</div>
 			</section>
 
 			<section>
-				<h2>Liskov Substitution Principle</h1>
+				<h2>Liskov Substitution Principle</h2>
+				<p>"if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering
+					correctness."</p>
+				<h3 class="fragment">aka "Strong Behavioral Subtyping"</h3>
+			</section>
+			<section>
+				<h2>LSP Example</h2>
+				<div class="split">
+					<pre>
+						<code data-trim>
+							abstract class Vehicle
+							{
+								void StartEngine() { ... }
+								...
+							}
+
+							class Car : Vehicle { ... }
+							
+							void GoSomewhere(Vehicle vehicle)
+							{
+								vehicle.StartEngine();
+								...
+							}
+
+							class Bicycle : Vehicle { ... }
+						</code>
+					</pre>
+				</div>
+				<div class="split fragment">
+					<pre>
+						<code data-trim>
+							abstract class Vehicle
+							{
+								...
+							}
+
+							abstract class MotorVehicle : Vehicle
+							{
+								void StartEngine() { ... }
+							}
+
+							class Car : MotorVehicle { ... }
+							class Bicycle : Vehicle { ... }
+							
+							void GoSomewhere(Vehicle vehicle)
+							{
+								if(vehicle is MotorVehicle)
+									vehicle.StartEngine();
+								...
+							}
+						</code>
+					</pre>
+				</div>
 			</section>
 
 			<section>
-				<h2>Interface Segregation Principle</h1>
+				<h2>Interface Segregation Principle</h2>
 			</section>
 
 			<section>
-				<h2>Dependency Inversion Principle</h1>
+				<h2>Dependency Inversion Principle</h2>
 			</section>
+
+			<footer>
+				<small>@stevedesmond_ca</small>
+				<small>#Ithaca Web People</small>
+				<small></small>
+			</footer>
 		</div>
 	</div>
 
