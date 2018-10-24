@@ -1,27 +1,15 @@
 {
-  "name": "reveal.js",
-  "version": "3.7.0",
-  "main": [
-    "js/reveal.js",
-    "css/reveal.css"
-  ],
-  "homepage": "http://revealjs.com",
-  "license": "MIT",
-  "description": "The HTML Presentation Framework",
+  "name": "SOLID",
+  "description": "What Is It Good For?",
+  "main": "index.html",
   "authors": [
-    "Hakim El Hattab <hakim.elhattab@gmail.com>"
+    "Steve Desmond"
   ],
+  "license": "MIT",
+  "homepage": "https://github.com/stevedesmond-ca/presentations/tree/iwp-solid",
+  "private": true,
   "dependencies": {
-    "headjs": "~1.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
-  },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test"
-  ]
+    "bootstrap": "^4.1.3",
+    "font-awesome": "fontawesome#4"
+  }
 }

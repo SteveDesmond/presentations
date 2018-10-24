@@ -1,8 +1,12 @@
+[hidden] {
+  display: inherit !important;
+}
+  
 ul.acronym {
-    font-size: 150%;
-    line-height: 150%;
-    list-style: none;
-  }
+  font-size: 150%;
+  line-height: 150%;
+  list-style: none;
+}
   
   ul.acronym li {
     padding-left: 2em;
@@ -53,6 +57,15 @@ pre {
 
 code {
   max-height: none !important;
+}
+
+img {
+  background: transparent !important;
+  border: none !important;
+}
+
+a.white {
+  color: white;
 }
 
 footer {
