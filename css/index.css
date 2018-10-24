@@ -1,43 +1,43 @@
 [hidden] {
   display: inherit !important;
 }
-  
+
 ul.acronym {
   font-size: 150%;
   line-height: 150%;
   list-style: none;
 }
-  
-  ul.acronym li {
-    padding-left: 2em;
-    text-indent: -2em;
-  }
-  
-  ul.acronym li:before {
-    font-weight: bold;
-    position: absolute;
-    text-align: center;
-  }
 
-    ul.acronym li.s:before{
-      content: "S";
-    }
+ul.acronym li {
+  padding-left: 2em;
+  text-indent: -2em;
+}
 
-    ul.acronym li.o:before{
-      content: "O";
-    }
-    
-    ul.acronym li.l:before{
-      content: "L";
-    }
-    
-    ul.acronym li.i:before{
-      content: "I";
-    }
+ul.acronym li:before {
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+}
 
-    ul.acronym li.d:before{
-      content: "D";
-    }
+ul.acronym li.s:before {
+  content: "S";
+}
+
+ul.acronym li.o:before {
+  content: "O";
+}
+
+ul.acronym li.l:before {
+  content: "L";
+}
+
+ul.acronym li.i:before {
+  content: "I";
+}
+
+ul.acronym li.d:before {
+  content: "D";
+}
 
 p {
   text-align: left;
@@ -46,12 +46,13 @@ p {
 .split {
   float: left;
   width: 48%;
-  padding: 1% !important;
+  padding: 0 1% !important;
 }
 
 pre {
   box-shadow: none !important;
   margin: 0 !important;
+  overflow: hidden !important;
   width: 100% !important;
 }
 

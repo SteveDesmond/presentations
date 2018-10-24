@@ -1,394 +1,516 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-	<title>SOLID: What is it good for?</title>
+        <title>SOLID: What is it good for?</title>
 
-	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-	<meta name="author" content="Steve Desmond">
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Steve Desmond">
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/black.css" id="theme">
-	<link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="css/index.css" />
 
-	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-		document.getElementsByTagName('head')[0].appendChild(link);
-	</script>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
 
-	<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-</head>
+        <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    </head>
 
-<body>
+    <body>
 
-	<div class="reveal">
-		<audio id="war" src="war.m4a"></audio>
+        <div class="reveal">
+            <audio id="war" src="war.m4a"></audio>
 
-		<!-- Any section element inside of this container is displayed as a slide -->
-		<div class="slides">
-			<section>
-				<h3>Follow along with the example (later) @</h3>
-				<a href="https://github.com/stevedesmond-ca/solid-example" target="_blank">
-					git hub .com
-					<br />
-					/ steve desmond - ca
-					<br />
-					/ solid - example
-				</a>
-			</section>
-			<section>
-				<h1>SOLID</h1>
-				<h3>
-					<span id="start-audio" class="fragment">!</span>
-					<span class="fragment">!</span>
-					<span class="fragment">!</span>
-					<span class="fragment">(yeah)</span>
-				</h3>
-				<h2>
-					<span class="fragment">What</span>
-					<span class="fragment">is</span>
-					<span class="fragment">it</span>
-					<span class="fragment">good</span>
-					<span class="fragment">for?</span>
-				</h2>
-			</section>
-			<section>
-				<h1>Absolutely</h1>
-				<h1 class="fragment">Everything</h1>
-			</section>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h3>Follow along with the example (later) @</h3>
+                    <a href="https://github.com/stevedesmond-ca/solid-example" target="_blank">
+                        git hub .com
+                        <br />
+                        / steve desmond - ca
+                        <br />
+                        / solid - example
+                    </a>
+                </section>
+                <section>
+                    <h1>SOLID</h1>
+                    <h3>
+                        <span id="start-audio" class="fragment">!</span>
+                        <span class="fragment">!</span>
+                        <span class="fragment">!</span>
+                        <span class="fragment">(yeah)</span>
+                    </h3>
+                    <h2>
+                        <span class="fragment">What</span>
+                        <span class="fragment">is</span>
+                        <span class="fragment">it</span>
+                        <span class="fragment">good</span>
+                        <span class="fragment">for?</span>
+                    </h2>
+                </section>
+                <section>
+                    <h1>Absolutely</h1>
+                    <h1 class="fragment">Everything</h1>
+                </section>
 
-			<section>
-				<h1>SOLID</h1>
-				<ol class="fragment">
-					<li>Principles vs Patterns</li>
-					<li>SOLID Principles</li>
-					<li>Example Refactoring</li>
-				</ol>
-			</section>
+                <section>
+                    <h1>SOLID</h1>
+                    <ol class="fragment">
+                        <li>Principles vs Patterns</li>
+                        <li>SOLID Principles</li>
+                        <li>Example Refactoring</li>
+                    </ol>
+                </section>
 
-			<section>
-				<h2>Principles vs Patterns</h2>
-				<p>
-					<b>Principle:</b>
-				</p>
-				<ul>
-					<li>
-						a fundamental truth or proposition that serves as the foundation for a system of belief or behavior or for a
-						chain of reasoning
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Principles vs Patterns</h2>
-				<p>
-					<b>Pattern:</b>
-				</p>
-				<ul>
-					<li>
-						a general, reusable solution to a commonly occurring problem within a given context in software design
-					</li>
-					<li class="fragment">
-						a description or template for how to solve a problem that can be used in many different situations
-					</li>
-					<li class="fragment">
-						not a finished design that can be transformed directly into source or machine code
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Principles vs Patterns</h2>
-				<h3>Pattern = how</h3>
-				<h3>Principle = why</h3>
-			</section>
+                <section>
+                    <h1>Disclaimer</h1>
+                    <h2>Facts vs Opinions</h2>
+                </section>
 
-			<section>
-				<h2>SOLID Principles</h2>
-				<ul class="acronym">
-					<li class="s">Single responsibility</li>
-					<li class="o">Open / closed</li>
-					<li class="l">Liskov substitution</li>
-					<li class="i">Interface segregation</li>
-					<li class="d">Dependency inversion</li>
-				</ul>
-			</section>
+                <section>
+                    <h2>Principles vs Patterns</h2>
+                    <p>
+                        <b>Principle:</b>
+                    </p>
+                    <ul>
+                        <li>
+                            a fundamental truth or proposition that serves as the foundation for a system of belief or
+                            behavior or for a chain of reasoning
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Principles vs Patterns</h2>
+                    <p>
+                        <b>Pattern:</b>
+                    </p>
+                    <ul>
+                        <li>
+                            a general, reusable solution to a commonly occurring problem within a given context in
+                            software design
+                        </li>
+                        <li class="fragment">
+                            a description or template for how to solve a problem that can be used in many different
+                            situations
+                        </li>
+                        <li class="fragment">
+                            not a finished design that can be transformed directly into source or machine code
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Principles vs Patterns</h2>
+                    <div class="split">
+                        <ul>
+                            <li>Pattern = how</li>
+                            <li>Principle = why</li>
+                        </ul>
+                    </div>
+                    <div class="split">
+                        <ul>
+                            <li>Principle = interface</li>
+                            <li>Pattern = abstract class</li>
+                        </ul>
+                    </div>
+                    <h3>Principles => Patterns => Frameworks</h3>
+                </section>
 
-			<section>
-				<h2>Single Responsibility Principle</h2>
-				<p>"Every module or class should have responsibility over a single part of the functionality provided by the
-					software, and that responsibility should be entirely encapsulated by the class."</p>
+                <section>
+                    <h2>SOLID Principles</h2>
+                    <ul class="acronym">
+                        <li class="s">Single responsibility</li>
+                        <li class="o">Open / closed</li>
+                        <li class="l">Liskov substitution</li>
+                        <li class="i">Interface segregation</li>
+                        <li class="d">Dependency inversion</li>
+                    </ul>
+                </section>
 
-				<table class="fragment">
-					<tr>
-						<th>Pattern</th>
-						<td class="fragment">Model-View-Controller</td>
-					</tr>
-					<tr>
-						<th>Anti-Pattern</th>
-						<td class="fragment">Active Record</td>
-					</tr>
-				</table>
-			</section>
-			<section>
-				<h2>SRP Example</h2>
-				<div class="split">
-					<pre>
-						<code data-trim>
-							class User
-							{
-								int ID;
-								string Username;
-								string Email;
-								string PasswordHash;
+                <section>
+                    <h2>Single Responsibility Principle</h2>
+                    <p>"Every module or class should have responsibility over a single part of the functionality
+                        provided by the software, and that responsibility should be entirely encapsulated by the
+                        class."</p>
+                </section>
+                <section>
+                    <h2>SRP Example</h2>
+                    <div class="split">
+                        <pre>
+                            <code data-trim>
+                                class User
+                                {
+                                    int ID;
+                                    string Username;
+                                    string Email;
+                                    string PasswordHash;
 
-								static User get(id)
-								{ 
-									return [user from DB];
-								}
-							}
+                                    static User get(id)
+                                    { 
+                                        return [user from DB];
+                                    }
+                                }
 
-							var user = User::get(123);
-						</code>
-					</pre>
-				</div>
-				<div class="split fragment">
-					<pre>
-						<code data-trim>
-							class User
-							{
-								int ID;
-								string Username;
-								string Email;
-								string PasswordHash;
-							}
+                                var user = User::get(123);
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="split fragment">
+                        <pre>
+                            <code data-trim>
+                                class User
+                                {
+                                    int ID;
+                                    string Username;
+                                    string Email;
+                                    string PasswordHash;
+                                }
 
-							class UserRepository
-							{
-								static User get(id)
-								{ 
-									return [user from DB];
-								}
-							}
+                                class UserRepository
+                                {
+                                    static User get(id)
+                                    { 
+                                        return [user from DB];
+                                    }
+                                }
 
-							var user = UserRepository::get(123);
-						</code>
-					</pre>
-				</div>
-			</section>
+                                var user = UserRepository::get(123);
+                            </code>
+                        </pre>
+                    </div>
+                </section>
 
-			<section>
-				<h2>Open/Closed Principle</h2>
-				<p>"Software entities should be open for extension, but closed for modification."</p>
-			</section>
-			<section>
-				<h2>OCP Example</h2>
-				<div class="split">
-					<pre>
-						<code data-trim>
-							class Animal
-							{
-								int LegCount()
-								{
-									return 4;
-								}
-							}
+                <section>
+                    <h2>Open/Closed Principle</h2>
+                    <p>"Software entities should be open for extension, but closed for modification."</p>
+                </section>
+                <section>
+                    <h2>OCP Example</h2>
+                    <div class="split">
+                        <pre>
+                            <code data-trim>
+                                class Animal
+                                {
+                                    int LegCount()
+                                    {
+                                        return 4;
+                                    }
+                                }
 
-							class Human : Animal
-							{
-								int LegCount()
-								{
-									return 2;
-								}
-							}
-						</code>
-					</pre>
-				</div>
-				<div class="split fragment">
-					<pre>
-						<code data-trim>
-							interface Animal
-							{
-								int LegCount();
-							}
+                                class Human : Animal
+                                {
+                                    int LegCount()
+                                    {
+                                        return 2;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="split fragment">
+                        <pre>
+                            <code data-trim>
+                                interface Animal
+                                {
+                                    int LegCount();
+                                }
 
-							class Human : Animal
-							{
-								int LegCount()
-								{
-									return 2;
-								}
-							}
+                                class Human : Animal
+                                {
+                                    int LegCount()
+                                    {
+                                        return 2;
+                                    }
+                                }
 
-							abstract class FourLeggedAnimal : Animal
-							{
-								int LegCount()
-								{
-									return 4;
-								}
-							}
-						</code>
-					</pre>
-				</div>
-			</section>
+                                abstract class FourLeggedAnimal : Animal
+                                {
+                                    int LegCount()
+                                    {
+                                        return 4;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </section>
 
-			<section>
-				<h2>Liskov Substitution Principle</h2>
-				<p>"if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering
-					correctness."</p>
-				<h3 class="fragment">aka "Strong Behavioral Subtyping"</h3>
-			</section>
-			<section>
-				<h2>LSP Example</h2>
-				<div class="split">
-					<pre>
-						<code data-trim>
-							abstract class Vehicle
-							{
-								void StartEngine() { ... }
-								...
-							}
+                <section>
+                    <h2>Liskov Substitution Principle</h2>
+                    <p>"if S is a subtype of T, then objects of type T may be replaced with objects of type S without
+                        altering correctness."</p>
+                    <h3 class="fragment">aka "Strong Behavioral Subtyping"</h3>
+                </section>
+                <section>
+                    <h2>LSP Example</h2>
+                    <div class="split">
+                        <pre>
+                            <code data-trim>
+                                abstract class Vehicle
+                                {
+                                    void StartEngine() { ... }
+                                    ...
+                                }
 
-							class Car : Vehicle { ... }
-							
-							void GoSomewhere(Vehicle vehicle)
-							{
-								vehicle.StartEngine();
-								...
-							}
+                                class Car : Vehicle { ... }
+                                
+                                void GoSomewhere(Vehicle vehicle)
+                                {
+                                    vehicle.StartEngine();
+                                    ...
+                                }
 
-							class Bicycle : Vehicle { ... }
-						</code>
-					</pre>
-				</div>
-				<div class="split fragment">
-					<pre>
-						<code data-trim>
-							abstract class Vehicle
-							{
-								...
-							}
+                                class Bicycle : Vehicle { ... }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="split fragment">
+                        <pre>
+                            <code data-trim>
+                                abstract class Vehicle
+                                {
+                                    ...
+                                }
 
-							abstract class MotorVehicle : Vehicle
-							{
-								void StartEngine() { ... }
-							}
+                                abstract class MotorVehicle : Vehicle
+                                {
+                                    void StartEngine() { ... }
+                                }
 
-							class Car : MotorVehicle { ... }
-							class Bicycle : Vehicle { ... }
-							
-							void GoSomewhere(Vehicle vehicle)
-							{
-								if(vehicle is MotorVehicle)
-									vehicle.StartEngine();
-								...
-							}
-						</code>
-					</pre>
-				</div>
-			</section>
+                                class Car : MotorVehicle { ... }
+                                class Bicycle : Vehicle { ... }
+                                
+                                void GoSomewhere(Vehicle vehicle)
+                                {
+                                    if (vehicle is MotorVehicle)
+                                        vehicle.StartEngine();
+                                    ...
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </section>
 
-			<section>
-				<h2>Interface Segregation Principle</h2>
-			</section>
+                <section>
+                    <h2>Interface Segregation Principle</h2>
+                    <p>"No client should be forced to depend on methods it does not use."</p>
+                </section>
+                <section>
+                    <h2>ISP Example</h2>
+                    <div class="split">
+                        <pre>
+                            <code data-trim>
+                                interface UserRepository
+                                {
+                                    User get(id);
+                                    void save(user);
+                                }
 
-			<section>
-				<h2>Dependency Inversion Principle</h2>
-			</section>
+                                class UserServiceClient : UserRepository
+                                {
+                                    User get(id)
+                                    {
+                                        return [user from microservice];
+                                    }
 
-			<section>
-				<h1>
-					Special thanks
-					<br />
-					to IWP's
-					<br />
-					solid organizers
-				</h1>
-			</section>
+                                    void save(user)
+                                    {
+                                        [???]
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="split fragment">
+                        <pre>
+                            <code data-trim>
+                                interface UserReader
+                                {
+                                    User get(id);
+                                }
 
-			<section>
-				<img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
-				<div class="row">
-					<div class="col-2"></div>
-					<img class="col-3" src="images/steve.jpg" alt="Steve" />
-					<div class="col-1"></div>
-					<div class="col-5 text-left">
-						<p>
-							<a class="white" href="https://stevedesmond.ca" target="_blank">
-								<i class="fa fa-globe"></i> stevedesmond.ca
-							</a>
-						</p>
-						<p>
-							<a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
-								<i class="fa fa-github"></i> stevedesmond-ca
-							</a>
-						</p>
-						<p>
-							<a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
-								<i class="fa fa-twitter"></i> stevedesmond_ca
-							</a>
-						</p>
-						<p>
-							<a class="white" href="mailto:hi@stevedesmond.ca">
-								<i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
-							</a>
-						</p>
-					</div>
-				</div>
-			</section>
+                                class UserServiceReader : UserReader
+                                {
+                                    User get(id)
+                                    {
+                                        return [user from microservice];
+                                    }
+                                }
 
-			<footer>
-				<small>@stevedesmond_ca</small>
-				<small>#Ithaca Web People</small>
-				<small></small>
-			</footer>
-		</div>
-	</div>
+                                interface UserWriter
+                                {
+                                    void save(user);
+                                }
 
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.js"></script>
+                                interface UserRepository : UserReader,
+                                                            UserWriter
+                            </code>
+                        </pre>
+                    </div>
+                </section>
 
-	<script>
+                <section>
+                    <h2>Dependency Inversion Principle</h2>
+                    <p>"High-level modules should not depend on low-level modules. Both should depend on abstractions."</p>
+                    <p>"Abstractions should not depend on details. Details should depend on abstractions.</p>
+                </section>
+                <section>
+                    <h2>DI Example</h2>
+                    <div class="split">
+                        <pre>
+                            <code data-trim>
+                                class UserRepository
+                                {
+                                    DB db;
 
-		Reveal.initialize({
-			controls: true,
-			history: true,
-			progress: false,
+                                    new()
+                                    {
+                                        db = new DB(Global.ConnString);
+                                    }
 
-			width: 1280,
-			height: 720,
+                                    User get(id)
+                                    {
+                                        return [user from db];
+                                    }
+                                }
 
-			transition: 'slide',
+                                var user_repo = new UserRepository();
+                                var user = user_repo.get(123);
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="split fragment">
+                        <pre>
+                            <code data-trim>
+                                class UserRepository
+                                {
+                                    DB db;
 
-			dependencies: [
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-			]
-		});
+                                    new(DB injected_db)
+                                    {
+                                        db = injected_db;
+                                    }
 
-		Reveal.addEventListener('fragmentshown', function (event) {
-			if (event.fragment.id == 'start-audio') {
-				const audio_element = document.getElementById('war');
-				audio_element.play();
-			}
-		});
+                                    User get(id)
+                                    {
+                                        return [user from db];
+                                    }
+                                }
 
-	</script>
-</body>
+                                var db = new DB(Global.ConnString);
+                                var user_repo = new UserRepository(db);
+                                var user = user_repo.get(123);
+                            </code>
+                        </pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>
+                        Refactoring
+                        <br/>
+                        Example
+                    </h1>
+                </section>
+
+                <section>
+                    <h1>
+                        Special thanks
+                        <br />
+                        to IWP's
+                        <br />
+                        solid organizers
+                    </h1>
+                </section>
+
+                <section>
+                    <img src="images/sdsd.svg" alt="Steve Desmond Software Development" />
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <img class="col-3" src="images/steve.jpg" alt="Steve" />
+                        <div class="col-1"></div>
+                        <div class="col-5 text-left">
+                            <p>
+                                <a class="white" href="https://stevedesmond.ca" target="_blank">
+                                    <i class="fa fa-globe"></i> stevedesmond.ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+                                    <i class="fa fa-github"></i> stevedesmond-ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+                                    <i class="fa fa-twitter"></i> stevedesmond_ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="mailto:hi@stevedesmond.ca">
+                                    <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <small>@stevedesmond_ca</small>
+                    <small>#Ithaca Web People</small>
+                    <small></small>
+                </footer>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                history: true,
+                progress: false,
+
+                width: 1280,
+                height: 720,
+
+                transition: 'slide',
+
+                dependencies: [
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
+
+            Reveal.addEventListener('fragmentshown', function (event) {
+                if (event.fragment.id == 'start-audio') {
+                    const audio_element = document.getElementById('war');
+                    audio_element.play();
+                }
+            });
+
+        </script>
+    </body>
 
 </html>
