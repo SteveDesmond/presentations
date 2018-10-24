@@ -38,6 +38,7 @@
 <body>
 
 	<div class="reveal">
+		<audio id="war" src="war.m4a"></audio>
 
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
@@ -49,9 +50,10 @@
 			<section>
 				<h1>SOLID</h1>
 				<h3>
+					<span id="start-audio" class="fragment">!</span>
 					<span class="fragment">!</span>
 					<span class="fragment">!</span>
-					<span class="fragment">!</span>
+					<span class="fragment">(yeah)</span>
 				</h3>
 				<h2>
 					<span class="fragment">What</span>
@@ -320,6 +322,14 @@
 			dependencies: [
 				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 			]
+		});
+
+		Reveal.addEventListener('fragmentshown', function (event) {
+			if(event.fragment.id == 'start-audio');
+				{
+					const audio_element = document.getElementById('war');
+					audio_element.play();
+				}
 		});
 
 	</script>
