@@ -61,8 +61,15 @@ code {
 }
 
 img {
-  background: transparent !important;
   border: none !important;
+}
+
+.transparent {
+  background: transparent !important;
+}
+
+.padded {
+  padding: 1em;
 }
 
 a.white {
