@@ -62,6 +62,7 @@ code {
 
 img {
   border: none !important;
+  margin: 0 !important;
 }
 
 .transparent {

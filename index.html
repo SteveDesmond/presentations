@@ -77,10 +77,10 @@
 
                 <section>
                     <h1>SOLID</h1>
-                    <ol class="fragment">
+                    <ol>
                         <li>Principles vs Patterns</li>
                         <li>SOLID Principles</li>
-                        <li>Example Refactoring</li>
+                        <li>Refactoring Example</li>
                     </ol>
                 </section>
 
@@ -99,6 +99,7 @@
                             a fundamental truth or proposition that serves as the foundation for a system of belief or
                             behavior or for a chain of reasoning
                         </li>
+                        <li>aka the reason why we do things</li>
                     </ul>
                 </section>
                 <section>
@@ -134,12 +135,21 @@
                             <li>Pattern = abstract class</li>
                         </ul>
                     </div>
-                    <h3>Principles => Patterns => Frameworks</h3>
+                    <p class="clearfix">&nbsp;</p>
+                    <h3 class="fragment">Principles => Patterns => Frameworks</h3>
                 </section>
                 <section>
                     <h1>Anti-Patterns</h1>
-                    <p>"A common response to a recurring problem that is usually ineffective and risks being highly
-                        counterproductive."</p>
+                    <ul>
+                        <li>
+                            a common response to a recurring problem that is usually ineffective and risks being highly
+                            counterproductive
+                        </li>
+                    </ul>
+                    <div class="fragment">
+                        <h3>Pattern = fact</h3>
+                        <h4>Anti-pattern = opinion</h4>
+                    </div>
                 </section>
 
                 <section>
@@ -155,9 +165,12 @@
 
                 <section>
                     <h2>Single Responsibility Principle</h2>
-                    <p>"Every module or class should have responsibility over a single part of the functionality
+                    <p>
+                        "Every module or class should have responsibility over a single part of the functionality
                         provided by the software, and that responsibility should be entirely encapsulated by the
-                        class."</p>
+                        class."
+                    </p>
+                    <h3 class="fragment">aka "Do one thing and do it well"</h3>
                 </section>
                 <section>
                     <h2>SRP Example</h2>
@@ -209,6 +222,7 @@
                 <section>
                     <h2>Open/Closed Principle</h2>
                     <p>"Software entities should be open for extension, but closed for modification."</p>
+                    <h3 class="fragment">aka "Don't override base/parent members"</h3>
                 </section>
                 <section>
                     <h2>OCP Example</h2>
@@ -308,8 +322,8 @@
                                 
                                 void GoSomewhere(Vehicle vehicle)
                                 {
-                                    if (vehicle is MotorVehicle)
-                                        vehicle.StartEngine();
+                                    if (vehicle is MotorVehicle mv)
+                                        mv.StartEngine();
                                     ...
                                 }
                             </code>
@@ -320,6 +334,7 @@
                 <section>
                     <h2>Interface Segregation Principle</h2>
                     <p>"No client should be forced to depend on methods it does not use."</p>
+                    <h3 class="fragment">aka "Many simple interfaces are better than one complex one"</h3>
                 </section>
                 <section>
                     <h2>ISP Example</h2>
@@ -379,6 +394,7 @@
                     <h2>Dependency Inversion Principle</h2>
                     <p>"High-level modules should not depend on low-level modules. Both should depend on abstractions."</p>
                     <p>"Abstractions should not depend on details. Details should depend on abstractions.</p>
+                    <h3 class="fragment">aka "Dependency Injection"</h3>
                 </section>
                 <section>
                     <h2>DI Example</h2>
@@ -429,6 +445,17 @@
                             </code>
                         </pre>
                     </div>
+                </section>
+
+                <section>
+                    <h2>SOLID Principles</h2>
+                    <ul class="acronym">
+                        <li class="s">Single responsibility</li>
+                        <li class="o">Open / closed</li>
+                        <li class="l">Liskov substitution</li>
+                        <li class="i">Interface segregation</li>
+                        <li class="d">Dependency inversion</li>
+                    </ul>
                 </section>
 
                 <section>
