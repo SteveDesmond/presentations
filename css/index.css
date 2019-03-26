@@ -1,0 +1,70 @@
+[hidden] {
+  display: inherit !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none !important;
+}
+
+p {
+  text-align: left;
+}
+
+.small {
+  font-size: 60% !important;
+}
+
+.split {
+  float: left;
+  width: 48%;
+  padding: 0 1% !important;
+}
+
+pre {
+  box-shadow: none !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+code {
+  max-height: none !important;
+}
+
+img {
+  border: none !important;
+  margin: 0 !important;
+}
+
+.transparent {
+  background: transparent !important;
+}
+
+.padded {
+  padding: 1em;
+}
+
+a.white {
+  color: white;
+}
+
+.reveal table td {
+  border: 0;
+}
+
+.reveal ol[type="I"] {
+  list-style-type: upper-roman;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer small {
+  width: 10em;
+}

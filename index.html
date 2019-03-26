@@ -1,49 +1,217 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <title>12 Factor Apps</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/index.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
+    </head>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Twelve-Factor Apps</h1>
+                    <h2>Steve Desmond</h2>
+                    <h3>Ithaca Web People</h3>
+                    <h4>June 4, 2019</h4>
+                </section>
+
+                <section>
+                    <h2>The Twelve-Factor App</h2>
+                    <h3>
+                        <a href="https://12factor.net">https://12factor.net</a>
+                        (Heroku, ~2011)
+                    </h3>
+                    <h4>A methodology for building software-as-a-service apps</h4>
+                    <table>
+                        <tr class="fragment">
+                            <td class="small">Declarative formats for setup automation</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Minimizes time and cost for new developers</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td class="small">Clean contract with the OS</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Maximizes portability</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td class="small">Deployable on modern cloud platforms</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Minimizes servers and sysadmins</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td class="small">Repeatable builds/deployments</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Minimizes diff between dev and prod, enables CD</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td colspan="3" class="small">
+                                Scalable without significant changes to tooling, architecture, or practices
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>The Twelve Factors</h2>
+                    <ol type="I" class="split">
+                        <li>Codebase</li>
+                        <li>Dependencies</li>
+                        <li>Config</li>
+                        <li>Backing services</li>
+                        <li>Build, release, run</li>
+                        <li>Processes</li>
+                    </ol>
+                    <ol type="I" start="7">
+                        <li>Port binding</li>
+                        <li>Concurrency</li>
+                        <li>Disposability</li>
+                        <li>Dev/prod parity</li>
+                        <li>Logs</li>
+                        <li>Admin processes</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>I. Codebase</h2>
+                    <h4>One codebase tracked in revision control, many deploys</h4>
+                </section>
+
+                <section>
+                    <h2>II. Dependencies</h2>
+                    <h4>Explicitly declare and isolate dependencies</h4>
+                </section>
+
+                <section>
+                    <h2>III. Config</h2>
+                    <h4>Store config in the environment</h4>
+                </section>
+
+                <section>
+                    <h2>IV. Backing services</h2>
+                    <h4>Treat backing services as attached resources</h4>
+                </section>
+
+                <section>
+                    <h2>V. Build, release, run</h2>
+                    <h4>Strictly separate build and run stages</h4>
+                </section>
+
+                <section>
+                    <h2>VI. Processes</h2>
+                    <h4>Execute the app as one or more stateless processes</h4>
+                </section>
+
+                <section>
+                    <h2>VII. Port binding</h2>
+                    <h4>Export services via port binding</h4>
+                </section>
+
+                <section>
+                    <h2>VIII. Concurrency</h2>
+                    <h4>Scale out via the process model</h4>
+                </section>
+
+                <section>
+                    <h2>IX. Disposability</h2>
+                    <h4>Maximize robustness with fast startup and graceful shutdown</h4>
+                </section>
+
+                <section>
+                    <h2>X. Dev/prod parity</h2>
+                    <h4>Keep development, staging, and production as similar as possible</h4>
+                </section>
+
+                <section>
+                    <h2>XI. Logs</h2>
+                    <h4>Treat logs as event streams</h4>
+                </section>
+
+                <section>
+                    <h2>XII. Admin processes</h2>
+                    <h4>Run admin/management tasks as one-off processes</h4>
+                </section>
+
+                <section>
+                    <img src="images/sdsd.svg" class="transparent" alt="Steve Desmond Software Development" />
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <img class="col-3" src="images/steve.jpg" alt="Steve" />
+                        <div class="col-1"></div>
+                        <div class="col-5 text-left">
+                            <p>
+                                <a class="white" href="https://stevedesmond.ca" target="_blank">
+                                    <i class="fa fa-globe"></i> stevedesmond.ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+                                    <i class="fa fa-github"></i> stevedesmond-ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+                                    <i class="fa fa-twitter"></i> stevedesmond_ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="mailto:hi@stevedesmond.ca">
+                                    <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <small>@stevedesmond_ca</small>
+                    <small>#IthacaWebPeople</small>
+                    <small></small>
+                </footer>
+
+                <script src="lib/js/head.min.js"></script>
+                <script src="js/reveal.js"></script>
+
+                <script>
+
+                    Reveal.initialize({
+                        controls: true,
+                        history: true,
+                        progress: false,
+
+                        width: 1280,
+                        height: 720,
+
+                        transition: 'slide',
+
+                        dependencies: [
+                            { src: 'plugin/markdown/marked.js' },
+                            { src: 'plugin/markdown/markdown.js' },
+                            { src: 'plugin/notes/notes.js', async: true },
+                            { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+                        ]
+                    });
+                </script>
+    </body>
+
 </html>
