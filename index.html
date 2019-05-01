@@ -95,7 +95,7 @@
             <section>
                 <h2>I. Codebase</h2>
                 <h4>One codebase tracked in revision control, many deploys</h4>
-                <ul>
+                <ul class="fragment">
                     <li>1:1 Codebase : App</li>
                     <ul>
                         <li>Multiple codebases?</li>
@@ -111,38 +111,121 @@
 
             <section>
                 <h2>I. Codebase</h2>
-                <h4>Dev / Staging / Prod branches?</h4>
-                <i class="fa fa-5x fa-times text-danger"></i>
-                <p class="text-center">All environments from trunk / master</p>
+                <h4>Dev / Staging / QA / Prod branches?</h4>
+                <i class="fragment fa fa-5x fa-times text-danger"></i>
+                <p class="fragment text-center">All environments from trunk / master</p>
             </section>
 
             <section>
                 <h2>II. Dependencies</h2>
                 <h4>Explicitly declare and isolate dependencies</h4>
-                <blockquote>"A twelve-factor app never relies on implicit existence of system-wide packages"</blockquote>
-                <p class="text-center">Use your package manager!</p>
+                <blockquote class="fragment">A twelve-factor app never relies on implicit existence of system-wide
+                    packages</blockquote>
+                <p class="fragment text-center">Use your package manager!</p>
             </section>
 
             <section>
                 <h2>II. Dependencies</h2>
-                <blockquote>"Twelve-factor apps also do not rely on the implicit existence of any system tools."</blockquote>
-                <blockquote>"If the app needs to shell out to a system tool, that tool should be vendored into the
-                    app."</blockquote>
+                <blockquote>Twelve-factor apps also do not rely on the implicit existence of any system tools.</blockquote>
+                <blockquote>If the app needs to shell out to a system tool, that tool should be vendored into the app.</blockquote>
+                <p class="fragment text-center">Docker?</p>
             </section>
 
             <section>
                 <h2>III. Config</h2>
                 <h4>Store config in the environment</h4>
+                <blockquote>Config is everything that is likely to vary between deploys</blockquote>
+                <ul>
+                    <li>Connection strings</li>
+                    <li>Credentials</li>
+                    <li>URLs</li>
+                </ul>
+            </section>
+            <section>
+                <h2>III. Config</h2>
+                <blockquote>Does not include internal application config, such as <kbd>config/routes.rb</kbd> in Rails</blockquote>
+                <h4>Config that does not vary between deploys is best done in the code</h4>
+            </section>
+
+            <section>
+                <h2>III. Config</h2>
+                <blockquote>The twelve-factor app stores config in environment variables</blockquote>
+                <ul>
+                    <li>granular</li>
+                    <li>orthogonal</li>
+                    <li>never grouped together as “environments”</li>
+                    <ul>
+                        <li>independently managed for each deploy</li>
+                    </ul>
+                </ul>
+                <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.</blockquote>
             </section>
 
             <section>
                 <h2>IV. Backing services</h2>
                 <h4>Treat backing services as attached resources</h4>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                        <ul>
+                            <li>datastores (MySQL)</li>
+                            <li>messaging/queueing (RabbitMQ)</li>
+                            <li>SMTP (Postfix)
+                            <li>caching (Memcached)</li>
+                        </ul>
+                    </div>
+                    <div class="col-5 fragment">
+                        <ul>
+                            <li>metrics (New Relic, Loggly)</li>
+                            <li>assets (S3)</li>
+                            <li>public APIs (Twitter, Google Maps)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>IV. Backing services</h2>
+                <blockquote>The code for a twelve-factor app makes no distinction between local and third party
+                    services</blockquote>
+                <h4>Swap local/third-party services without code changes</h4>
+            </section>
+
+            <section>
+                <h2>IV. Backing services</h2>
+                <img src="images/services.png" alt="Example of backing services as attached resources" class="bg-white" />
             </section>
 
             <section>
                 <h2>V. Build, release, run</h2>
                 <h4>Strictly separate build and run stages</h4>
+                <ol>
+                    <li>
+                        <b>Build</b>
+                        <ul>
+                            <li>converts a code repo into an executable bundle</li>
+                            <li>fetches vendors dependencies and compiles binaries and assets</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Release</b>
+                        <ul>
+                            <li>combines it with the deploy’s current config</li>
+                            <li>ready for immediate execution in the execution environment</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Run</b>
+                        <ul>
+                            <li>runs the app in the execution environment</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>V. Build, release, run</h2>
+                <img src="images/build.png" alt="Diagram of build and release steps" class="bg-white" />
             </section>
 
             <section>
