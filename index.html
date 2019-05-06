@@ -143,7 +143,8 @@
             </section>
             <section>
                 <h2>III. Config</h2>
-                <blockquote>Does not include internal application config, such as <kbd>config/routes.rb</kbd> in Rails</blockquote>
+                <blockquote>Does not include internal application config, such as <code>config/routes.rb</code> in
+                    Rails</blockquote>
                 <h4>Config that does not vary between deploys is best done in the code</h4>
             </section>
 
@@ -231,11 +232,45 @@
             <section>
                 <h2>VI. Processes</h2>
                 <h4>Execute the app as one or more stateless processes</h4>
+                <blockquote>Twelve-factor processes are stateless and share-nothing. Any data that needs to persist
+                    must be stored in a stateful backing service, typically a database.</blockquote>
+            </section>
+
+            <section>
+                <h2>VI. Processes</h2>
+                <img src="images/services.png" alt="Example of backing services as attached resources" class="bg-white" />
+            </section>
+
+            <section>
+                <h2>VI. Processes</h2>
+                <blockquote>Sticky sessions are a violation of twelve-factor and should never be used or relied upon.</blockquote>
             </section>
 
             <section>
                 <h2>VII. Port binding</h2>
                 <h4>Export services via port binding</h4>
+                <blockquote>The twelve-factor app is completely self-contained and does not rely on runtime injection
+                    of a webserver into the execution environment to create a web-facing service. The web app exports
+                    HTTP as a service by binding to a port, and listening to requests coming in on that port.</blockquote>
+            </section>
+
+            <section>
+                <h2>VII. Port binding</h2>
+                <ul>
+                    <li>
+                        <code>node --port 5000</code>
+                    </li>
+                    <li>
+                        <code>rails server -p 5000</code>
+                    </li>
+                    <li>
+                        <code>php -S http://localhost:5000</code>
+                    </li>
+                    <li>
+                        <code>dotnet --urls http://*:5000</code>
+                    </li>
+                </ul>
+                <h4 class="fragment">But...(again)...Docker!</h4>
             </section>
 
             <section>
@@ -244,8 +279,22 @@
             </section>
 
             <section>
+                <h2>VIII. Concurrency</h2>
+                <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white" />
+            </section>
+
+            <section>
                 <h2>IX. Disposability</h2>
                 <h4>Maximize robustness with fast startup and graceful shutdown</h4>
+                <ul>
+                    <li>started or stopped at a moment’s notice</li>
+                    <li>minimize startup time</li>
+                    <ul>
+                        <li>a few seconds from launch until ready for requests</li>
+                    </ul>
+                    <li>shut down gracefully when they receive a SIGTERM</li>
+                    <li>robust against sudden death</li>
+                </ul>
             </section>
 
             <section>
