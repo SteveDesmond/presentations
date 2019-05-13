@@ -1,386 +1,466 @@
 <!doctype html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>12 Factor Apps</title>
 
-    <title>12 Factor Apps</title>
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/index.css">
 
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
-    <link rel="stylesheet" href="css/index.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
+    </head>
 
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-</head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Twelve-Factor Apps: A DevOps Olive Branch</h1>
+                    <h2>Steve Desmond</h2>
+                    <h3>Ithaca Web People</h3>
+                    <h4>June 4, 2019</h4>
+                </section>
 
-<body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h1>Twelve-Factor Apps</h1>
-                <h2>Steve Desmond</h2>
-                <h3>Ithaca Web People</h3>
-                <h4>June 4, 2019</h4>
-            </section>
+                <section>
+                    <h1>DevOps</h1>
+                    <img src="images/inigo.jpg" alt="Inigo Montoya saying &quot;You keep using that word. I do not think it means what you think it means.&quot;" />
+                </section>
 
-            <section>
-                <h2>"The Twelve-Factor App"</h2>
-                <h3>
-                    <a href="https://12factor.net">https://12factor.net</a>
-                    (Heroku, ~2011)
-                </h3>
-                <h4>A methodology for building software-as-a-service apps</h4>
-                <table>
-                    <tr class="fragment">
-                        <td class="small">Declarative formats for setup automation</td>
-                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                        <td class="small">Minimizes time and cost for new developers</td>
-                    </tr>
-                    <tr class="fragment">
-                        <td class="small">Clean contract with the OS</td>
-                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                        <td class="small">Maximizes portability</td>
-                    </tr>
-                    <tr class="fragment">
-                        <td class="small">Deployable on modern cloud platforms</td>
-                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                        <td class="small">Minimizes servers and sysadmins</td>
-                    </tr>
-                    <tr class="fragment">
-                        <td class="small">Repeatable builds/deployments</td>
-                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                        <td class="small">Minimizes diff between dev and prod, enables CD</td>
-                    </tr>
-                    <tr class="fragment">
-                        <td colspan="3" class="small">
-                            Scalable without significant changes to tooling, architecture, or practices
-                        </td>
-                    </tr>
-                </table>
-            </section>
+                <section>
+                    <img src="images/iwp-ci.png"
+                        alt="Steve talking at Ithaca Web People about Continuous Integration" />
+                </section>
 
-            <section>
-                <h2>The Twelve Factors</h2>
-                <ol type="I" class="col-4">
-                    <li>Codebase</li>
-                    <li>Dependencies</li>
-                    <li>Config</li>
-                    <li>Backing services</li>
-                    <li>Build, release, run</li>
-                    <li>Processes</li>
-                </ol>
-                <ol type="I" start="7" class="col-3">
-                    <li>Port binding</li>
-                    <li>Concurrency</li>
-                    <li>Disposability</li>
-                    <li>Dev/prod parity</li>
-                    <li>Logs</li>
-                    <li>Admin processes</li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>I. Codebase</h2>
-                <h4>One codebase tracked in revision control, many deploys</h4>
-                <ul class="fragment">
-                    <li>1:1 Codebase : App</li>
-                    <ul>
-                        <li>Multiple codebases?</li>
-                        <ul>
-                            <li>Not an app, but a distributed system</li>
-                        </ul>
-                        <li>Multiple apps?</li>
-                        <ul>
-                            <li>Split common code out into standalone libraries</li>
-                        </ul>
+                <section>
+                    <h2>DevOps</h2>
+                    <ul class="acronym">
+                        <li class="C">Culture</li>
+                        <li class="A">Automation</li>
+                        <li class="M">Measurement</li>
+                        <li class="S">Sharing</li>
                     </ul>
-            </section>
-
-            <section>
-                <h2>I. Codebase</h2>
-                <h4>Dev / Staging / QA / Prod branches?</h4>
-                <i class="fragment fa fa-5x fa-times text-danger"></i>
-                <p class="fragment text-center">All environments from trunk / master</p>
-            </section>
-
-            <section>
-                <h2>II. Dependencies</h2>
-                <h4>Explicitly declare and isolate dependencies</h4>
-                <blockquote class="fragment">A twelve-factor app never relies on implicit existence of system-wide
-                    packages</blockquote>
-                <p class="fragment text-center">Use your package manager!</p>
-            </section>
-
-            <section>
-                <h2>II. Dependencies</h2>
-                <blockquote>Twelve-factor apps also do not rely on the implicit existence of any system tools.</blockquote>
-                <blockquote>If the app needs to shell out to a system tool, that tool should be vendored into the app.</blockquote>
-                <p class="fragment text-center">Docker?</p>
-            </section>
-
-            <section>
-                <h2>III. Config</h2>
-                <h4>Store config in the environment</h4>
-                <blockquote>Config is everything that is likely to vary between deploys</blockquote>
-                <ul>
-                    <li>Connection strings</li>
-                    <li>Credentials</li>
-                    <li>URLs</li>
-                </ul>
-            </section>
-            <section>
-                <h2>III. Config</h2>
-                <blockquote>Does not include internal application config, such as <code>config/routes.rb</code> in
-                    Rails</blockquote>
-                <h4>Config that does not vary between deploys is best done in the code</h4>
-            </section>
-
-            <section>
-                <h2>III. Config</h2>
-                <blockquote>The twelve-factor app stores config in environment variables</blockquote>
-                <ul>
-                    <li>granular</li>
-                    <li>orthogonal</li>
-                    <li>never grouped together as “environments”</li>
-                    <ul>
-                        <li>independently managed for each deploy</li>
-                    </ul>
-                </ul>
-                <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.</blockquote>
-            </section>
-
-            <section>
-                <h2>IV. Backing services</h2>
-                <h4>Treat backing services as attached resources</h4>
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-5">
-                        <ul>
-                            <li>datastores (MySQL)</li>
-                            <li>messaging/queueing (RabbitMQ)</li>
-                            <li>SMTP (Postfix)
-                            <li>caching (Memcached)</li>
-                        </ul>
-                    </div>
-                    <div class="col-5 fragment">
-                        <ul>
-                            <li>metrics (New Relic, Loggly)</li>
-                            <li>assets (S3)</li>
-                            <li>public APIs (Twitter, Google Maps)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>IV. Backing services</h2>
-                <blockquote>The code for a twelve-factor app makes no distinction between local and third party
-                    services</blockquote>
-                <h4>Swap local/third-party services without code changes</h4>
-            </section>
-
-            <section>
-                <h2>IV. Backing services</h2>
-                <img src="images/services.png" alt="Example of backing services as attached resources" class="bg-white" />
-            </section>
-
-            <section>
-                <h2>V. Build, release, run</h2>
-                <h4>Strictly separate build and run stages</h4>
-                <ol>
-                    <li>
-                        <b>Build</b>
-                        <ul>
-                            <li>converts a code repo into an executable bundle</li>
-                            <li>fetches vendors dependencies and compiles binaries and assets</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>Release</b>
-                        <ul>
-                            <li>combines it with the deploy’s current config</li>
-                            <li>ready for immediate execution in the execution environment</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>Run</b>
-                        <ul>
-                            <li>runs the app in the execution environment</li>
-                        </ul>
-                    </li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>V. Build, release, run</h2>
-                <img src="images/build.png" alt="Diagram of build and release steps" class="bg-white" />
-            </section>
-
-            <section>
-                <h2>VI. Processes</h2>
-                <h4>Execute the app as one or more stateless processes</h4>
-                <blockquote>Twelve-factor processes are stateless and share-nothing. Any data that needs to persist
-                    must be stored in a stateful backing service, typically a database.</blockquote>
-            </section>
-
-            <section>
-                <h2>VI. Processes</h2>
-                <img src="images/services.png" alt="Example of backing services as attached resources" class="bg-white" />
-            </section>
-
-            <section>
-                <h2>VI. Processes</h2>
-                <blockquote>Sticky sessions are a violation of twelve-factor and should never be used or relied upon.</blockquote>
-            </section>
-
-            <section>
-                <h2>VII. Port binding</h2>
-                <h4>Export services via port binding</h4>
-                <blockquote>The twelve-factor app is completely self-contained and does not rely on runtime injection
-                    of a webserver into the execution environment to create a web-facing service. The web app exports
-                    HTTP as a service by binding to a port, and listening to requests coming in on that port.</blockquote>
-            </section>
-
-            <section>
-                <h2>VII. Port binding</h2>
-                <ul>
-                    <li>
-                        <code>node --port 5000</code>
-                    </li>
-                    <li>
-                        <code>rails server -p 5000</code>
-                    </li>
-                    <li>
-                        <code>php -S http://localhost:5000</code>
-                    </li>
-                    <li>
-                        <code>dotnet --urls http://*:5000</code>
-                    </li>
-                </ul>
-                <h4 class="fragment">But...(again)...Docker!</h4>
-            </section>
-
-            <section>
-                <h2>VIII. Concurrency</h2>
-                <h4>Scale out via the process model</h4>
-            </section>
-
-            <section>
-                <h2>VIII. Concurrency</h2>
-                <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white" />
-            </section>
-
-            <section>
-                <h2>IX. Disposability</h2>
-                <h4>Maximize robustness with fast startup and graceful shutdown</h4>
-                <ul>
-                    <li>started or stopped at a moment’s notice</li>
-                    <li>minimize startup time</li>
-                    <ul>
-                        <li>a few seconds from launch until ready for requests</li>
-                    </ul>
-                    <li>shut down gracefully when they receive a SIGTERM</li>
-                    <li>robust against sudden death</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>X. Dev/prod parity</h2>
-                <h4>Keep development, staging, and production as similar as possible</h4>
-            </section>
-
-            <section>
-                <h2>XI. Logs</h2>
-                <h4>Treat logs as event streams</h4>
-            </section>
-
-            <section>
-                <h2>XII. Admin processes</h2>
-                <h4>Run admin/management tasks as one-off processes</h4>
-            </section>
-
-            <section>
-                <img src="images/sdsd.svg" class="transparent" alt="Steve Desmond Software Development" />
-                <div class="row">
-                    <div class="col-2"></div>
-                    <img class="col-3" src="images/steve.jpg" alt="Steve" />
-                    <div class="col-1"></div>
-                    <div class="col-5 text-left">
-                        <p>
-                            <a class="white" href="https://stevedesmond.ca" target="_blank">
-                                <i class="fa fa-globe"></i> stevedesmond.ca
-                            </a>
-                        </p>
-                        <p>
-                            <a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
-                                <i class="fa fa-github"></i> stevedesmond-ca
-                            </a>
-                        </p>
-                        <p>
-                            <a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
-                                <i class="fa fa-twitter"></i> stevedesmond_ca
-                            </a>
-                        </p>
-                        <p>
-                            <a class="white" href="mailto:hi@stevedesmond.ca">
-                                <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <footer>
-                <small>
-                    <a href="https://twitter.com/stevedesmond_ca" class="white" target="_blank">
-                        @stevedesmond_ca
+                    <hr class="bg-white" />
+                    <a href="https://stevedesmond.ca/talks/devopsdayspdx" target="_blank">
+                        Steve Desmond .ca / talks / Dev Ops Days PDX
                     </a>
-                </small>
-                <small>
-                    <a href="https://twitter.com/hashtag/IthacaWebPeople" class="white" target="_blank">
-                        #Ithaca Web People
-                    </a>
-                </small>
-                <small></small>
-            </footer>
+                </section>
+
+                <section>
+                    <h2>"The Twelve-Factor App"</h2>
+                    <h3>
+                        <a href="https://12factor.net">https://12factor.net</a>
+                        (Heroku, ~2011)
+                    </h3>
+                    <h4>A methodology for building software-as-a-service apps</h4>
+                    <table>
+                        <tr class="fragment">
+                            <td class="small">Declarative formats for setup automation</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Minimizes time and cost for new developers</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td class="small">Clean contract with the OS</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Maximizes portability</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td class="small">Deployable on modern cloud platforms</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Minimizes servers and sysadmins</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td class="small">Repeatable builds/deployments</td>
+                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                            <td class="small">Minimizes diff between dev and prod, enables CD</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td colspan="3" class="small">
+                                Scalable without significant changes to tooling, architecture, or practices
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>The Twelve Factors</h2>
+                    <ol type="I" class="col-4">
+                        <li>Codebase</li>
+                        <li>Dependencies</li>
+                        <li>Config</li>
+                        <li>Backing services</li>
+                        <li>Build, release, run</li>
+                        <li>Processes</li>
+                    </ol>
+                    <ol type="I" start="7" class="col-3">
+                        <li>Port binding</li>
+                        <li>Concurrency</li>
+                        <li>Disposability</li>
+                        <li>Dev/prod parity</li>
+                        <li>Logs</li>
+                        <li>Admin processes</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>I. Codebase</h2>
+                    <h4>One codebase tracked in revision control, many deploys</h4>
+                    <ul class="fragment">
+                        <li>1:1 Codebase : App</li>
+                        <ul>
+                            <li>Multiple codebases?</li>
+                            <ul>
+                                <li>Not an app, but a distributed system</li>
+                            </ul>
+                            <li>Multiple apps?</li>
+                            <ul>
+                                <li>Split common code out into standalone libraries</li>
+                            </ul>
+                        </ul>
+                </section>
+
+                <section>
+                    <h2>I. Codebase</h2>
+                    <h4>Dev / Staging / QA / Prod branches?</h4>
+                    <i class="fragment fa fa-5x fa-times text-danger"></i>
+                    <p class="fragment text-center">All environments from trunk / master</p>
+                </section>
+
+                <section>
+                    <h2>II. Dependencies</h2>
+                    <h4>Explicitly declare and isolate dependencies</h4>
+                    <blockquote class="fragment">A twelve-factor app never relies on implicit existence of system-wide
+                        packages</blockquote>
+                    <p class="fragment text-center">Use your package manager!</p>
+                </section>
+
+                <section>
+                    <h2>II. Dependencies</h2>
+                    <blockquote>Twelve-factor apps also do not rely on the implicit existence of any system tools.
+                    </blockquote>
+                    <blockquote>If the app needs to shell out to a system tool, that tool should be vendored into the
+                        app.</blockquote>
+                    <p class="fragment text-center">Docker?</p>
+                </section>
+
+                <section>
+                    <h2>III. Config</h2>
+                    <h4>Store config in the environment</h4>
+                    <blockquote>Config is everything that is likely to vary between deploys</blockquote>
+                    <ul>
+                        <li>Connection strings</li>
+                        <li>Credentials</li>
+                        <li>URLs</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>III. Config</h2>
+                    <blockquote>Does not include internal application config, such as <code>config/routes.rb</code> in
+                        Rails</blockquote>
+                    <h4>Config that does not vary between deploys is best done in the code</h4>
+                </section>
+
+                <section>
+                    <h2>III. Config</h2>
+                    <blockquote>The twelve-factor app stores config in environment variables</blockquote>
+                    <ul>
+                        <li>granular</li>
+                        <li>orthogonal</li>
+                        <li>never grouped together as “environments”</li>
+                        <ul>
+                            <li>independently managed for each deploy</li>
+                        </ul>
+                    </ul>
+                    <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>IV. Backing services</h2>
+                    <h4>Treat backing services as attached resources</h4>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5">
+                            <ul>
+                                <li>datastores (MySQL)</li>
+                                <li>messaging/queueing (RabbitMQ)</li>
+                                <li>SMTP (Postfix)
+                                <li>caching (Memcached)</li>
+                            </ul>
+                        </div>
+                        <div class="col-5 fragment">
+                            <ul>
+                                <li>metrics (New Relic, Loggly)</li>
+                                <li>assets (S3)</li>
+                                <li>public APIs (Twitter, Google Maps)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>IV. Backing services</h2>
+                    <blockquote>A twelve-factor app makes no distinction between local and third party services
+                    </blockquote>
+                    <h4>Swap local/third-party services without code changes</h4>
+                </section>
+
+                <section>
+                    <h2>IV. Backing services</h2>
+                    <img src="images/services.png" alt="Example of backing services as attached resources"
+                        class="bg-white" />
+                </section>
+
+                <section>
+                    <h2>V. Build, release, run</h2>
+                    <h4>Strictly separate build and run stages</h4>
+                    <ol>
+                        <li>
+                            <b>Build</b>
+                            <ul>
+                                <li>converts a code repo into an executable bundle</li>
+                                <li>fetches vendors dependencies and compiles binaries and assets</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Release</b>
+                            <ul>
+                                <li>combines it with the deploy’s current config</li>
+                                <li>ready for immediate execution in the execution environment</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Run</b>
+                            <ul>
+                                <li>runs the app in the execution environment</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>V. Build, release, run</h2>
+                    <img src="images/build.png" alt="Diagram of build and release steps" class="bg-white" />
+                </section>
+
+                <section>
+                    <h2>VI. Processes</h2>
+                    <h4>Execute the app as one or more stateless processes</h4>
+                    <blockquote>Twelve-factor processes are stateless and share-nothing. Any data that needs to persist
+                        must be stored in a stateful backing service, typically a database.</blockquote>
+                </section>
+
+                <section>
+                    <h2>VI. Processes</h2>
+                    <img src="images/services.png" alt="Example of backing services as attached resources"
+                        class="bg-white" />
+                </section>
+
+                <section>
+                    <h2>VI. Processes</h2>
+                    <blockquote>Sticky sessions are a violation of twelve-factor and should never be used or relied
+                        upon.</blockquote>
+                </section>
+
+                <section>
+                    <h2>VII. Port binding</h2>
+                    <h4>Export services via port binding</h4>
+                    <blockquote>The twelve-factor app is completely self-contained and does not rely on runtime
+                        injection
+                        of a webserver into the execution environment to create a web-facing service. The web app
+                        exports
+                        HTTP as a service by binding to a port, and listening to requests coming in on that port.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>VII. Port binding</h2>
+                    <ul>
+                        <li>
+                            <code>node --port 5000</code>
+                        </li>
+                        <li>
+                            <code>rails server -p 5000</code>
+                        </li>
+                        <li>
+                            <code>php -S http://localhost:5000</code>
+                        </li>
+                        <li>
+                            <code>dotnet --urls http://*:5000</code>
+                        </li>
+                    </ul>
+                    <h4 class="fragment">But...(again)...Docker!</h4>
+                </section>
+
+                <section>
+                    <h2>VIII. Concurrency</h2>
+                    <h4>Scale out via the process model</h4>
+                </section>
+
+                <section>
+                    <h2>VIII. Concurrency</h2>
+                    <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white" />
+                </section>
+
+                <section>
+                    <h2>IX. Disposability</h2>
+                    <h4>Maximize robustness with fast startup and graceful shutdown</h4>
+                    <ul>
+                        <li>started or stopped at a moment’s notice</li>
+                        <li>minimize startup time</li>
+                        <ul>
+                            <li>a few seconds from launch until ready for requests</li>
+                        </ul>
+                        <li>shut down gracefully when they receive a SIGTERM</li>
+                        <li>robust against sudden death</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>X. Dev/prod parity</h2>
+                    <h4>Keep development, staging, and production as similar as possible</h4>
+                    <ul>
+                        <li>Time gap: weeks down to hours</li>
+                        <li>Personnel gap: no specializations</li>
+                        <li>Tools gap: same environments</li>
+                    </ul>
+                    <blockquote>resist the urge to use different backing services between development and production
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>XI. Logs</h2>
+                    <h4>Treat logs as event streams</h4>
+                    <ul>
+                        <li>never concerns itself with routing or storage of its output stream</li>
+                        <li>should not attempt to write to or manage logfiles</li>
+                        <li>each running process writes its event stream, unbuffered, to <code>stdout</code></li>
+                        <li>each process’ stream will be captured by the execution environment</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>XII. Admin processes</h2>
+                    <h4>Run admin/management tasks as one-off processes</h4>
+                    <ul>
+                        <li>run in an identical environment</li>
+                        <li>must ship with application code</li>
+                        <li>same dependency isolation techniques</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>XII. Admin processes</h2>
+                    <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white" />
+                </section>
+
+                <section>
+                    <h2>The Twelve Factors</h2>
+                    <ol type="I" class="col-4">
+                        <li>Codebase</li>
+                        <li>Dependencies</li>
+                        <li>Config</li>
+                        <li>Backing services</li>
+                        <li>Build, release, run</li>
+                        <li>Processes</li>
+                    </ol>
+                    <ol type="I" start="7" class="col-3">
+                        <li>Port binding</li>
+                        <li>Concurrency</li>
+                        <li>Disposability</li>
+                        <li>Dev/prod parity</li>
+                        <li>Logs</li>
+                        <li>Admin processes</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <img src="images/sdsd.svg" class="transparent" alt="Steve Desmond Software Development" />
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <img class="col-3" src="images/steve.jpg" alt="Steve" />
+                        <div class="col-1"></div>
+                        <div class="col-5 text-left">
+                            <p>
+                                <a class="white" href="https://stevedesmond.ca" target="_blank">
+                                    <i class="fa fa-globe"></i> stevedesmond.ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+                                    <i class="fa fa-github"></i> stevedesmond-ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+                                    <i class="fa fa-twitter"></i> stevedesmond_ca
+                                </a>
+                            </p>
+                            <p>
+                                <a class="white" href="mailto:hi@stevedesmond.ca">
+                                    <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>
+                        <i class="fa fa-question-circle-o"></i>s
+                    </h1>
+                </section>
+
+                <footer>
+                    <small>
+                        <a href="https://twitter.com/stevedesmond_ca" class="white" target="_blank">
+                            @stevedesmond_ca
+                        </a>
+                    </small>
+                    <small>
+                        <a href="https://twitter.com/hashtag/IthacaWebPeople" class="white" target="_blank">
+                            #Ithaca Web People
+                        </a>
+                    </small>
+                    <small></small>
+                </footer>
+            </div>
         </div>
-    </div>
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-    <script>
+        <script>
 
-        Reveal.initialize({
-            controls: true,
-            history: true,
-            progress: false,
+            Reveal.initialize({
+                controls: true,
+                history: true,
+                progress: false,
 
-            width: 1280,
-            height: 720,
+                width: 1280,
+                height: 720,
 
-            transition: 'slide',
+                transition: 'slide',
 
-            dependencies: [
-                { src: 'plugin/markdown/marked.js' },
-                { src: 'plugin/markdown/markdown.js' },
-                { src: 'plugin/notes/notes.js', async: true },
-                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-            ]
-        });
-    </script>
-</body>
-
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
 </html>

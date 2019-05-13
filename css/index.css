@@ -68,3 +68,36 @@ footer {
 footer small {
   width: 10em;
 }
+
+ul.acronym {
+  font-size: 150%;
+  line-height: 150%;
+  list-style: none;
+}
+
+ul.acronym li {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+ul.acronym li:before {
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+}
+
+ul.acronym li.C:before {
+  content: "C";
+}
+
+ul.acronym li.A:before {
+  content: "A";
+}
+
+ul.acronym li.M:before {
+  content: "M";
+}
+
+ul.acronym li.S:before {
+  content: "S";
+}
