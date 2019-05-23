@@ -143,7 +143,9 @@
                         </ul>
                     </ul>
                 </ul>
-                <i class="fragment fa fa-5x fa-github"></i>
+                <h5>
+                    <i class="fragment fa fa-5x fa-github"></i>
+                </h5>
             </section>
 
             <section>
@@ -167,7 +169,12 @@
                 </blockquote>
                 <blockquote>If the app needs to shell out to a system tool, that tool should be vendored into the
                     app.</blockquote>
-                <p class="fragment text-center">Docker?</p>
+                <div class="row">
+                    <div class="col-4">&nbsp;</div>
+                    <div class="col-4">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
             </section>
 
             <section>
@@ -180,7 +187,7 @@
                     <li>URLs</li>
                 </ul>
             </section>
-            
+
             <section>
                 <h2>III. Config</h2>
                 <blockquote>Does not include internal application config, such as <code>config/routes.rb</code> in
@@ -201,6 +208,19 @@
                 </ul>
                 <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.
                 </blockquote>
+            </section>
+
+            <section>
+                <h2>III. Config</h2>
+                <ul>
+                    <li>Dev</li>
+                    <li>QA</li>
+                    <li>Staging</li>
+                    <li>Production</li>
+                    <li class="fragment">Demo</li>
+                </ul>
+                <p class="fragment text-center">12 Factor says nothing about <b><i>how</i></b> environment variables
+                    get set</h5>
             </section>
 
             <section>
@@ -271,6 +291,11 @@
             </section>
 
             <section>
+                <h2>V. Build, release, run</h2>
+                <img src="images/deploy.png" alt="Diagram of deploy steps" class="bg-white" />
+            </section>
+
+            <section>
                 <h2>VI. Processes</h2>
                 <h4>Execute the app as one or more stateless processes</h4>
                 <blockquote>Twelve-factor processes are stateless and share-nothing. Any data that needs to persist
@@ -315,16 +340,17 @@
                         <code>dotnet --urls http://*:5000</code>
                     </li>
                 </ul>
-                <h4 class="fragment">But...(again)...Docker!</h4>
+                <div class="row">
+                    <div class="col-4">&nbsp;</div>
+                    <div class="col-4">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
             </section>
 
             <section>
                 <h2>VIII. Concurrency</h2>
                 <h4>Scale out via the process model</h4>
-            </section>
-
-            <section>
-                <h2>VIII. Concurrency</h2>
                 <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white" />
             </section>
 
@@ -373,11 +399,19 @@
                     <li>must ship with application code</li>
                     <li>same dependency isolation techniques</li>
                 </ul>
+                <code>rake db:migrate</code>
             </section>
 
             <section>
                 <h2>XII. Admin processes</h2>
-                <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white" />
+                <h4>Run admin/management tasks as one-off processes</h4>
+                <p class="text-center">
+                    <i class="fa fa-5x fa-times text-danger"></i>
+                </p>
+                <ul>
+                    <li>Do not shell into production</li>
+                    <li>Make it a feature of your app</li>
+                </ul>
             </section>
 
             <section>
