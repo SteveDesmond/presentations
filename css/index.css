@@ -33,6 +33,7 @@ code {
 
 img {
   border: none !important;
+  box-shadow: none !important;
   margin: 0 !important;
 }
 
@@ -58,11 +59,11 @@ a.white {
 
 footer {
   position: absolute;
-  bottom: 0;
+  bottom: 12px;
   width: 100%;
   display: flex !important;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 footer small {
