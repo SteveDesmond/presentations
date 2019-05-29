@@ -49,6 +49,21 @@
 
                 <section>
                     <h2>DevOps</h2>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <img src="images/WallOfConfusion.png" alt="Dev and Ops want different things" class="col-3" />
+                        <div class="col-2"></div>
+                        <img src="images/WallOfConfusion_Release.png" alt="An 'over-the-wall' release" class="col-3" />
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <img src="images/lifecycle.png" alt="Biz - Dev - Ops" class="col-6" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>DevOps</h2>
                     <h4>John Willis, Damon Edwards ~2009</h4>
                     <ul class="acronym">
                         <li class="C">Culture</li>
@@ -56,7 +71,10 @@
                         <li class="M">Measurement</li>
                         <li class="S">Sharing</li>
                     </ul>
-                    <hr class="bg-white" />
+                </section>
+
+                <section>
+                    <h2>DevOps</h2>
                     <a href="https://stevedesmond.ca/talks/devopsdayspdx" target="_blank">
                         Steve Desmond .ca / talks / Dev Ops Days PDX
                     </a>
@@ -135,13 +153,13 @@
                     <ul class="fragment">
                         <li>1:1 Codebase : App</li>
                         <ul>
-                            <li>Multiple codebases?</li>
-                            <ul>
-                                <li>Not an app, but a distributed system</li>
-                            </ul>
                             <li>Multiple apps?</li>
                             <ul>
                                 <li>Split common code out into standalone libraries</li>
+                            </ul>
+                            <li>Multiple codebases?</li>
+                            <ul>
+                                <li>Not an app, but a distributed system</li>
                             </ul>
                         </ul>
                     </ul>
@@ -184,7 +202,7 @@
                     <h2>III. Config</h2>
                     <h4>Store config in the environment</h4>
                     <blockquote>Config is everything that is likely to vary between deploys</blockquote>
-                    <ul>
+                    <ul class="fragment">
                         <li>Connection strings</li>
                         <li>Credentials</li>
                         <li>URLs</li>
@@ -201,7 +219,7 @@
                 <section>
                     <h2>III. Config</h2>
                     <blockquote>The twelve-factor app stores config in environment variables</blockquote>
-                    <ul>
+                    <ul class="fragment">
                         <li>granular</li>
                         <li>orthogonal</li>
                         <li>never grouped together as “environments”</li>
@@ -209,21 +227,21 @@
                             <li>independently managed for each deploy</li>
                         </ul>
                     </ul>
-                    <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.
-                    </blockquote>
                 </section>
 
                 <section>
                     <h2>III. Config</h2>
-                    <ul>
-                        <li>Dev</li>
-                        <li>QA</li>
-                        <li>Staging</li>
-                        <li>Production</li>
-                        <li class="fragment">Demo</li>
-                    </ul>
+                    <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.
+                    </blockquote>
                     <p class="fragment text-center">12 Factor says nothing about <b><i>how</i></b> environment variables
                         get set</h5>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
+                                    style="background: transparent;" />
+                            </div>
+                        </div>
                 </section>
 
                 <section>
@@ -231,7 +249,7 @@
                     <h4>Treat backing services as attached resources</h4>
                     <div class="row">
                         <div class="col-1"></div>
-                        <div class="col-5">
+                        <div class="col-5 fragment">
                             <ul>
                                 <li>datastores (MySQL)</li>
                                 <li>messaging/queueing (RabbitMQ)</li>
@@ -253,7 +271,7 @@
                     <h2>IV. Backing services</h2>
                     <blockquote>A twelve-factor app makes no distinction between local and third party services
                     </blockquote>
-                    <h4>Swap local/third-party services without code changes</h4>
+                    <h4>Goal: swap local/third-party services without code changes</h4>
                 </section>
 
                 <section>
@@ -318,17 +336,22 @@
                 </section>
 
                 <section>
-                    <h2>VII. Port binding</h2>
-                    <h4>Export services via port binding</h4>
-                    <blockquote>The twelve-factor app is completely self-contained and does not rely on runtime
-                        injection of a webserver into the execution environment to create a web-facing service. The web
-                        app exports HTTP as a service by binding to a port, and listening to requests coming in on that
-                        port.
-                    </blockquote>
+                    <h2>VI. Processes</h2>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <img src="images/ben-d.jpg" alt="Slide from Ben Darfler's talk last month" class="col-8" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>VI. Processes</h2>
+                    <h4>Execute the app as one or more stateless processes</h4>
+                    <h3>Process ~ Microservice</h3>
                 </section>
 
                 <section>
                     <h2>VII. Port binding</h2>
+                    <h4>Export services via port binding</h4>
                     <ul>
                         <li>
                             <code>node --port 5000</code>
@@ -344,8 +367,8 @@
                         </li>
                     </ul>
                     <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-4">
+                        <div class="col-5"></div>
+                        <div class="col-2">
                             <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
                                 style="background: transparent;" />
                         </div>
@@ -374,7 +397,7 @@
                 <section>
                     <h2>IX. Disposability</h2>
                     <h4>Maximize robustness with fast startup and graceful shutdown</h4>
-                    <ul>
+                    <ul class="fragment">
                         <li>started or stopped at a moment’s notice</li>
                         <li>minimize startup time</li>
                         <ul>
@@ -395,12 +418,13 @@
                 <section>
                     <h2>X. Dev/prod parity</h2>
                     <h4>Keep development, staging, and production as similar as possible</h4>
-                    <ul>
+                    <ul class="fragment">
                         <li>Time gap: weeks down to hours</li>
                         <li>Personnel gap: no specializations</li>
                         <li>Tools gap: same environments</li>
                     </ul>
-                    <blockquote>resist the urge to use different backing services between development and production
+                    <blockquote class="fragment">resist the urge to use different backing services between development
+                        and production
                     </blockquote>
                     <div class="row">
                         <div class="col-5"></div>
@@ -414,37 +438,42 @@
                 <section>
                     <h2>XI. Logs</h2>
                     <h4>Treat logs as event streams</h4>
-                    <ul>
+                    <ul class="fragment">
                         <li>no concern with routing or storage of its output stream</li>
                         <li>should not attempt to write to or manage logfiles</li>
                         <li>each running process writes its event stream, unbuffered, to <code>stdout</code></li>
                         <li>each process’ stream will be captured by the execution environment</li>
                     </ul>
+                    <div class="row">
+                        <div class="col-5"></div>
+                        <div class="col-2">
+                            <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
+                                style="background: transparent;" />
+                        </div>
+                    </div>
                 </section>
 
                 <section>
                     <h2>XII. Admin processes</h2>
                     <h4>Run admin/management tasks as one-off processes</h4>
-                    <ul>
+                    <p class="text-center">
+                        <code>rake db:migrate</code>
+                    </p>
+                    <ul class="fragment">
                         <li>run in an identical environment</li>
                         <li>must ship with application code</li>
                         <li>same dependency isolation techniques</li>
                     </ul>
-                    <p class="text-center">
-                        <code>rake db:migrate</code>
-                    </p>
                 </section>
 
                 <section>
                     <h2>XII. Admin processes</h2>
                     <h4>Run admin/management tasks as one-off processes</h4>
-                    <p class="text-center">
-                    </p>
-                    <ul style="list-style: none;">
+                    <ul class="fragment" style="list-style: none;">
                         <li>
                             <i class="fa fa-times text-danger"></i>
                             &nbsp;&nbsp;
-                            Do not ssh into production
+                            Do not <code>ssh</code> into production
                         </li>
                         <li>
                             <i class="fa fa-check text-success"></i>
@@ -461,22 +490,60 @@
 
                 <section>
                     <h2>The Twelve Factors</h2>
-                    <ol type="I" class="col-4">
-                        <li>Codebase</li>
-                        <li>Dependencies</li>
-                        <li>Config</li>
-                        <li>Backing services</li>
-                        <li>Build, release, run</li>
-                        <li>Processes</li>
-                    </ol>
-                    <ol type="I" start="7" class="col-3">
-                        <li>Port binding</li>
-                        <li>Concurrency</li>
-                        <li>Disposability</li>
-                        <li>Dev/prod parity</li>
-                        <li>Logs</li>
-                        <li>Admin processes</li>
-                    </ol>
+                    <div class="row small">
+                        <ol type="I" class="col-5">
+                            <li>Codebase</li>
+                            <ul>
+                                <li>1:1, single deploy branch</li>
+                            </ul>
+                            <li>Dependencies</li>
+                            <ul>
+                                <li>Use package manager</li>
+                            </ul>
+                            <li>Config</li>
+                            <ul>
+                                <li>Environment variables</li>
+                            </ul>
+                            <li>Backing services</li>
+                            <ul>
+                                <li>Treat local/remote the same</li>
+                            </ul>
+                            <li>Build, release, run</li>
+                            <ul>
+                                <li>Separate these steps</li>
+                            </ul>
+                            <li>Processes</li>
+                            <ul>
+                                <li>Stateless, share nothing</li>
+                            </ul>
+                        </ol>
+                        <ol type="I" start="7" class="col-5">
+                            <li>Port binding</li>
+                            <ul>
+                                <li>Communicate via ports, not server modules</li>
+                            </ul>
+                            <li>Concurrency</li>
+                            <ul>
+                                <li>Scale out via processes</li>
+                            </ul>
+                            <li>Disposability</li>
+                            <ul>
+                                <li>Fast startup, shutdown</li>
+                            </ul>
+                            <li>Dev/prod parity</li>
+                            <ul>
+                                <li>As close to identical as possible</li>
+                            </ul>
+                            <li>Logs</li>
+                            <ul>
+                                <li>Stream to <code>stdout</code></li>
+                            </ul>
+                            <li>Admin processes</li>
+                            <ul>
+                                <li>Run as one-off processes</li>
+                            </ul>
+                        </ol>
+                    </div>
                 </section>
 
                 <section>
