@@ -1,771 +1,965 @@
 <!doctype html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>12 Factor Apps</title>
+    <title>12 Factor Apps</title>
 
-        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/black.css">
-        <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/index.css">
 
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName('head')[0].appendChild(link);
-        </script>
-    </head>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
 
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <section>
-                    <h1>Twelve-Factor Apps</h1>
-                    <h2>A DevOps Olive Branch</h2>
-                    <h3>Steve Desmond</h3>
-                    <h4>Ithaca Web People &ndash; June 4, 2019</h4>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Twelve-Factor Apps</h1>
+                <h2>A DevOps Olive Branch</h2>
+                <h3>Steve Desmond</h3>
+                <h4>Ithaca Web People &ndash; June 4, 2019</h4>
 
-                    <aside class="notes">
-                        <ul>
-                            <li>Thanks</li>
-                            <li>About me</li>
-                            <li>Title</li>
-                            <li>First things first</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h3>"DevOps"</h3>
-                    <div class="row">
-                        <div class="col-3"></div>
-                        <div class="col-6">
-                            <img src="images/inigo.jpg" class="col-12"
-                                alt="Inigo Montoya saying &quot;You keep using that word. I do not think it means what you think it means.&quot;" />
-                        </div>
-                    </div>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Need to define DevOps</li>
-                            <li>A lot of misconceptions</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <img src="images/iwp-ci.png"
-                        alt="Steve talking at Ithaca Web People about Continuous Integration" />
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Favorite slide, BTW</li>
-                            <li>May remember CI talk, 2016</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>DevOps vs Traditional IT</h2>
-                    <div class="row">
-                        <div class="col-2"></div>
-                        <img src="images/WallOfConfusion.png" alt="Dev and Ops want different things" class="col-3" />
-                        <div class="col-2"></div>
-                        <img src="images/WallOfConfusion_Release.png" alt="An 'over-the-wall' release" class="col-3" />
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-3"></div>
-                        <img src="images/lifecycle.png" alt="Biz - Dev - Ops" class="col-6 fragment" />
-                    </div>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Solution to a problem</li>
-                            <li>Problem is traditional IT org arrangement</li>
-                            <li>Devs build, hand off to ops to deploy/run</li>
-                            <li>Not really the best approach</li>
-                            <li>Agile analogy</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>DevOps History</h2>
-
-                    <div class="card fragment bg-dark">
-                        <h4>Andrew Schafer, Patrick Dubois (Agile Toronto, 2008)</h4>
-                        <p class="text-center">"Agile Infrastructure" / "Agile System Administration"</p>
-                    </div>
-
-                    <div class="card fragment bg-light text-dark">
-                        <h4 class="text-dark">John Allspaw, Paul Hammond (Velocity, 2009)</h4>
-                        <p class="text-center">"10 Deploys per Day: Dev and Ops Cooperation at Flickr"</p>
-                    </div>
-
-                    <div class="card fragment bg-dark">
-                        <h4>Patrick Dubois, Kris Buytaert (Ghent, 2009)</h4>
-                        <p class="text-center">"DevOpsDays" Conference</p>
-                    </div>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Good analogy, initial name</li>
-                            <li>Rom com joke?</li>
-                            <li>10 deploys talk = groundbreaking for its time</li>
-                            <li>Later that year, DevOps officially gets its name</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>DevOps, Defined</h2>
-
-                    <h4>John Willis, Damon Edwards (2010)</h4>
-                    <p class="text-center">"CAMS Model"</p>
-
-                    <ul class="acronym fragment">
-                        <li class="C">Culture</li>
-                        <li class="A">Automation</li>
-                        <li class="M">Measurement</li>
-                        <li class="S">Sharing</li>
-                    </ul>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Generally agreed upon</li>
-                            <li>Relate to Agile Manifesto in Snowbird</li>
-                            <li>Go through the acronym</li>
-                            <li>Some add L for Lean Management</li>
-                            <li>Everyone focuses on automation</li>
-                            <li>Something an org does, not a person</li>
-                            <li>Individual can do the last 3, but not first</li>
-                            <li>Not a role or a title</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>"Adventures in Enterprise"</h2>
-                    <a href="https://stevedesmond.ca/talks/devopsdayspdx" target="_blank">
-                        Steve Desmond .ca / talks / Dev Ops Days PDX
-                    </a>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Enough background</li>
-                            <li>Want to hear about more broadly?</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>"The Twelve-Factor App"</h2>
-                    <h3>
-                        <a href="https://12factor.net">https://12factor.net</a>
-                        (Heroku, ~2011)
-                    </h3>
-                    <h4>A methodology for building software-as-a-service apps</h4>
-                    <table>
-                        <tr class="fragment">
-                            <td class="small">Declarative formats for setup automation</td>
-                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                            <td class="small">Minimizes time and cost for new developers</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td class="small">Clean contract with the OS</td>
-                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                            <td class="small">Maximizes portability</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td class="small">Deployable on modern cloud platforms</td>
-                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                            <td class="small">Minimizes servers and sysadmins</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td class="small">Repeatable builds/deployments</td>
-                            <td class="small"><i class="fa fa-long-arrow-right"></i></td>
-                            <td class="small">Minimizes diff between dev and prod, enables CD</td>
-                        </tr>
-                        <tr class="fragment">
-                            <td colspan="3" class="small">
-                                Scalable without significant changes to tooling, architecture, or practices
-                            </td>
-                        </tr>
-                    </table>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Keep all DevOps stuff in mind</li>
-                            <li>5 overarching principles</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h1>2011</h1>
+                <aside class="notes">
                     <ul>
-                        <li>Cloud? <span class="fragment">(2007)</span></li>
-                        <li>GitHub? <span class="fragment">(2008)</span></li>
-                        <li>DevOps? <span class="fragment">(2009)</span></li>
-                        <li>Continuous Delivery? <span class="fragment">(2010)</span></li>
-                        <li>Docker? <span class="fragment">(2013)</span></li>
+                        <li>Thanks</li>
+                        <li>About me</li>
+                        <li>Title</li>
+                        <li>First things first</li>
                     </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h3>"DevOps"</h3>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <img src="images/inigo.jpg" class="col-12" alt="Inigo Montoya saying &quot;You keep using that word. I do not think it means what you think it means.&quot;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Need to define DevOps</li>
+                        <li>A lot of misconceptions</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <img src="images/iwp-ci.png" alt="Steve talking at Ithaca Web People about Continuous Integration" />
+
+                <aside class="notes">
+                    <ul>
+                        <li>Favorite slide, BTW</li>
+                        <li>May remember CI talk, 2016</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>DevOps vs Traditional IT</h2>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <img src="images/WallOfConfusion.png" alt="Dev and Ops want different things" class="col-3" />
+                    <div class="col-2"></div>
+                    <img src="images/WallOfConfusion_Release.png" alt="An 'over-the-wall' release" class="col-3" />
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-3"></div>
+                    <img src="images/lifecycle.png" alt="Biz - Dev - Ops" class="col-6 fragment" />
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Solution to a problem</li>
+                        <li>Problem is traditional IT org arrangement</li>
+                        <li>Devs build, hand off to ops to deploy/run</li>
+                        <li>Not really the best approach</li>
+                        <li>Agile analogy</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>DevOps History</h2>
+
+                <div class="card fragment bg-dark">
+                    <h4>Andrew Schafer, Patrick Dubois (Agile Toronto, 2008)</h4>
+                    <p class="text-center">"Agile Infrastructure" / "Agile System Administration"</p>
+                </div>
+
+                <div class="card fragment bg-light text-dark">
+                    <h4 class="text-dark">John Allspaw, Paul Hammond (Velocity, 2009)</h4>
+                    <p class="text-center">"10 Deploys per Day: Dev and Ops Cooperation at Flickr"</p>
+                </div>
+
+                <div class="card fragment bg-dark">
+                    <h4>Patrick Dubois, Kris Buytaert (Ghent, 2009)</h4>
+                    <p class="text-center">"DevOpsDays" Conference</p>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Good analogy, initial name</li>
+                        <li>Rom com joke?</li>
+                        <li>10 deploys talk = groundbreaking for its time</li>
+                        <li>Later that year, DevOps officially gets its name</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>DevOps, Defined</h2>
+
+                <h4>John Willis, Damon Edwards (2010)</h4>
+                <p class="text-center">"CAMS Model"</p>
+
+                <ul class="acronym fragment">
+                    <li class="C">Culture</li>
+                    <li class="A">Automation</li>
+                    <li class="M">Measurement</li>
+                    <li class="S">Sharing</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Generally agreed upon</li>
+                        <li>Relate to Agile Manifesto in Snowbird</li>
+                        <li>Go through the acronym</li>
+                        <li>Some add L for Lean Management</li>
+                        <li>Everyone focuses on automation</li>
+                        <li>Something an org does, not a person</li>
+                        <li>Individual can do the last 3, but not first</li>
+                        <li>Not a role or a title</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>"Adventures in Enterprise"</h2>
+                <a href="https://stevedesmond.ca/talks/devopsdayspdx" target="_blank">
+                    Steve Desmond .ca / talks / Dev Ops Days PDX
+                </a>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Enough background</li>
+                        <li>Want to hear about more broadly?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>"The Twelve-Factor App"</h2>
+                <h3>
+                    <a href="https://12factor.net">https://12factor.net</a>
+                    (Heroku, ~2011)
+                </h3>
+                <h4>A methodology for building software-as-a-service apps</h4>
+                <table>
+                    <tr class="fragment">
+                        <td class="small">Declarative formats for setup automation</td>
+                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                        <td class="small">Minimizes time and cost for new developers</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td class="small">Clean contract with the OS</td>
+                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                        <td class="small">Maximizes portability</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td class="small">Deployable on modern cloud platforms</td>
+                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                        <td class="small">Minimizes servers and sysadmins</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td class="small">Repeatable builds/deployments</td>
+                        <td class="small"><i class="fa fa-long-arrow-right"></i></td>
+                        <td class="small">Minimizes diff between dev and prod, enables CD</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td colspan="3" class="small">
+                            Scalable without significant changes to tooling, architecture, or practices
+                        </td>
+                    </tr>
+                </table>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Keep all DevOps stuff in mind</li>
+                        <li>5 overarching principles</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h1>2011</h1>
+                <ul>
+                    <li>Cloud? <span class="fragment">(2007)</span></li>
+                    <li>GitHub? <span class="fragment">(2008)</span></li>
+                    <li>DevOps? <span class="fragment">(2009)</span></li>
+                    <li>Continuous Delivery? <span class="fragment">(2010)</span></li>
+                    <li>Docker? <span class="fragment">(2013)</span></li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>"Let's talk about 2011"</li>
+                        <li>8 years ago</li>
+                        <li>Go through initial releases</li>
+                        <li>Keep these in mind as well</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>The Twelve Factors</h2>
+                <ol type="I" class="col-4">
+                    <li>Codebase</li>
+                    <li>Dependencies</li>
+                    <li>Config</li>
+                    <li>Backing services</li>
+                    <li>Build, release, run</li>
+                    <li>Processes</li>
+                </ol>
+                <ol type="I" start="7" class="col-3">
+                    <li>Port binding</li>
+                    <li>Concurrency</li>
+                    <li>Disposability</li>
+                    <li>Dev/prod parity</li>
+                    <li>Logs</li>
+                    <li>Admin processes</li>
+                </ol>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Go through each, name them all</li>
+                        <li>Feel free to stop me and ask as we go</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>I. Codebase</h2>
+                <h4>One codebase tracked in revision control, many deploys</h4>
+                <ul class="fragment">
+                    <li>1:1 Codebase : App</li>
+                    <ul>
+                        <li>Multiple apps?</li>
+                        <ul>
+                            <li>Split common code out into standalone libraries</li>
+                        </ul>
+                        <li>Multiple codebases?</li>
+                        <ul>
+                            <li>Not an app, but a distributed system</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <h5>
+                    <i class="fragment fa fa-5x fa-github"></i>
+                </h5>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Anyone not using source control?</li>
+                        <li>Survey git vs SVN vs others (Mercurial, Perforce)</li>
+                        <li>Pretty much a given in 2019</li>
+                        <li>Still, not always straightforward</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>I. Codebase</h2>
+                <h4>Dev / Staging / QA / Prod branches?</h4>
+                <i class="fragment fa fa-5x fa-times text-danger"></i>
+                <p class="fragment text-center">All environments from trunk / master</p>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Ask if anyone still does this</li>
+                        <li>Explain SVN vs git</li>
+                        <li>Why? Consistency</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>II. Dependencies</h2>
+                <h4>Explicitly declare and isolate dependencies</h4>
+                <blockquote class="fragment">A twelve-factor app never relies on implicit existence of system-wide
+                    packages</blockquote>
+                <p class="fragment text-center">Use your package manager!</p>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Show quote</li>
+                        <li>"What does this mean?" => Fragment</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>II. Dependencies</h2>
+                <blockquote>Twelve-factor apps also do not rely on the implicit existence of any system tools.
+                </blockquote>
+                <blockquote>If the app needs to shell out to a system tool, that tool should be vendored into the
+                    app.</blockquote>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Read quotes</li>
+                        <li>curl example</li>
+                        <li>Last one fuzzy now, due to Docker</li>
+                        <li>Why? Consistency</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>III. Config</h2>
+                <h4>Store config in the environment</h4>
+                <blockquote>Config is everything that is likely to vary between deploys</blockquote>
+                <ul class="fragment">
+                    <li>Connection strings</li>
+                    <li>Credentials</li>
+                    <li>URLs</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Headers</li>
+                        <li>What do we mean by config / environment?</li>
+                        <li>List</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>III. Config</h2>
+                <blockquote>Does not include internal application config, such as <code>config/routes.rb</code> in
+                    Rails</blockquote>
+                <h4>Config that does not vary between deploys is best done in the code</h4>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Conversely...</li>
+                        <li>e.g. static assets, CMS (unless draft content)</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>III. Config</h2>
+                <blockquote>The twelve-factor app stores config in environment variables</blockquote>
+                <ul class="fragment">
+                    <li>granular</li>
+                    <li>orthogonal</li>
+                    <li>never grouped together as “environments”</li>
+                    <ul>
+                        <li>independently managed for each deploy</li>
+                    </ul>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Read quote</li>
+                        <li>Why?</li>
+                        <li>List</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>III. Config</h2>
+                <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.
+                </blockquote>
+                <p class="fragment text-center">12 Factor says nothing about <b><i>how</i></b> environment variables
+                    get set</p>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Scale quote, e.g. new demo environment</li>
+                        <li>Why env? Consistency: same across OSs/platforms/languages, vs JSON/XML/YAML</li>
+                        <li>"Here's the thing": how?</li>
+                        <li>Docker makes this easy, built into its design</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>IV. Backing services</h2>
+                <h4>Treat backing services as attached resources</h4>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-5 fragment">
+                        <ul>
+                            <li>datastores (MySQL)</li>
+                            <li>messaging/queueing (RabbitMQ)</li>
+                            <li>SMTP (Postfix)
+                            <li>caching (Memcached)</li>
+                        </ul>
+                    </div>
+                    <div class="col-5 fragment">
+                        <ul>
+                            <li>metrics (New Relic, Loggly)</li>
+                            <li>assets (S3)</li>
+                            <li>public APIs (Twitter, Google Maps)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>"What are backing services?"</li>
+                        <li>List</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>IV. Backing services</h2>
+                <blockquote>A twelve-factor app makes no distinction between local and third party services
+                </blockquote>
+                <h4>Goal: swap local/third-party services without code changes</h4>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Read slide</li>
+                        <li>"How do we do this?"</li>
+                        <li>Use common web protocols</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>IV. Backing services</h2>
+                <img src="images/services.png" alt="Example of backing services as attached resources" class="bg-white" />
+
+                <aside class="notes">
+                    <ul>
+                        <li>Explain image</li>
+                        <li>Why? Consistency + isolating problems</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>V. Build, release, run</h2>
+                <h4>Strictly separate build and run stages</h4>
+                <ol>
+                    <li class="fragment">
+                        <b>Build</b>
+                        <ul>
+                            <li>converts a code repo into an executable bundle</li>
+                            <li>fetches vendors dependencies and compiles binaries and assets</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">
+                        <b>Release</b>
+                        <ul>
+                            <li>combines build with the deploy’s current config</li>
+                            <li>ready for immediate execution in the execution environment</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">
+                        <b>Run</b>
+                        <ul>
+                            <li>runs the app in the execution environment</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <aside class="notes">
+                    <ul>
+                        <li>My favorite: foundation for CD</li>
+                        <li>Go through steps</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>V. Build, release, run</h2>
+                <img src="images/build.png" alt="Diagram of build and release steps" class="bg-white" />
+
+                <aside class="notes">
+                    <ul>
+                        <li>"What does that look like?"</li>
+                        <li>Explain image</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>V. Build, release, run</h2>
+                <img src="images/deploy.png" alt="Diagram of deploy steps" class="bg-white" />
+
+                <aside class="notes">
+                    <ul>
+                        <li>"Here's where it gets fun"</li>
+                        <li>Explain image</li>
+                        <li>Why? Consistency: exact same code in all environments (point to step 1)</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+
+            </section>
+
+            <section>
+                <h2>VI. Processes</h2>
+                <h4>Execute the app as one or more stateless processes</h4>
+                <blockquote class="fragment">Any data that needs to persist must be stored in a stateful backing
+                    service, typically a database.</blockquote>
+                <blockquote class="fragment">Sticky sessions are a violation of twelve-factor and should never be
+                    used or relied upon.</blockquote>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Read slide</li>
+                        <li>Reason: scaling to multiple instances</li>
+                        <li>"What does that look like?"</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>VI. Processes</h2>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white col-6" />
 
                     <aside class="notes">
                         <ul>
-                            <li>"Let's talk about 2011"</li>
-                            <li>8 years ago</li>
-                            <li>Go through initial releases</li>
-                            <li>Keep these in mind as well</li>
+                            <li>Explain image</li>
+                            <li>Sticky session example</li>
                         </ul>
                     </aside>
-                </section>
+                </div>
+            </section>
 
-                <section>
-                    <h2>The Twelve Factors</h2>
-                    <ol type="I" class="col-4">
+            <section>
+                <h2>VI. Processes</h2>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <img src="images/ben-d.jpg" alt="Slide from Ben Darfler's talk last month" class="col-8" />
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Look familiar?</li>
+                            <li>Bens's slide from last month</li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+
+            <section>
+                <h2>VI. Processes</h2>
+                <h4>Execute the app as one or more stateless processes</h4>
+                <h3>Process ~ Microservice</h3>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Microservices also ~2011</li>
+                        <li>Ideas similar, not identical</li>
+                        <li>Processes likely on same machine</li>
+                        <li>Threading vs forking debate</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>VII. Port binding</h2>
+                <h4>Export services via port binding</h4>
+                <ul>
+                    <li>
+                        <code>node --port 5000</code>
+                    </li>
+                    <li>
+                        <code>rails server -p 5000</code>
+                    </li>
+                    <li>
+                        <code>php -S http://localhost:5000</code>
+                    </li>
+                    <li>
+                        <code>dotnet --urls http://*:5000</code>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Pretty straightforward these days</li>
+                        <li>Most if not all languages have this built-in now</li>
+                        <li>e.g. Apache mod_php, Jetty, etc.</li>
+                        <li>Why? Consistency, less external config</li>
+                        <li>How Docker does it, also hides/abstracts it</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>VIII. Concurrency</h2>
+                <h4>Scale out via the process model</h4>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <img src="images/processes.png" alt="Example array of processes in an app" class="bg-white col-4" />
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Closely related to "Processes"</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>VIII. Concurrency</h2>
+                <h4>Scale out via the process model</h4>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <img src="images/ben-d.jpg" alt="Slide from Ben Darfler's talk last month" class="col-8" />
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Same image</li>
+                        <li>Why? Resiliency, non-blocked threads</li>
+                        <li>Does mean new load balancing layer somewhere</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>IX. Disposability</h2>
+                <h4>Maximize robustness with fast startup and graceful shutdown</h4>
+                <ul class="fragment">
+                    <li>started or stopped at a moment’s notice</li>
+                    <li>minimize startup time</li>
+                    <ul>
+                        <li>a few seconds from launch until ready for requests</li>
+                    </ul>
+                    <li>shut down gracefully when they receive a SIGTERM</li>
+                    <li>robust against sudden death</li>
+                </ul>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Along similar lines of resiliency</li>
+                        <li>Read slide</li>
+                        <li>Docker / Orchestration makes this easier</li>
+                        <li>Why? Quick scaling, robustness against failure</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>X. Dev/prod parity</h2>
+                <h4>Keep development, staging, and production as similar as possible</h4>
+                <ul class="fragment">
+                    <li>Time gap: weeks down to hours</li>
+                    <li>Personnel gap: no specializations</li>
+                    <li>Tools gap: same environments</li>
+                </ul>
+                <blockquote class="fragment">resist the urge to use different backing services between development
+                    and production
+                </blockquote>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Talking about consistency all along, straightforward</li>
+                        <li>Except: don't stub services</li>
+                        <li>Why? Consistency, find problems sooner</li>
+                        <li>Questions?</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>XI. Logs</h2>
+                <h4>Treat logs as event streams</h4>
+                <ul class="fragment">
+                    <li>no concern with routing or storage of its output stream</li>
+                    <li>should not attempt to write to or manage logfiles</li>
+                    <li>each running process writes its event stream, unbuffered, to <code>stdout</code></li>
+                    <li>each process’ stream will be captured by the execution environment</li>
+                </ul>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <img class="fragment col-12" src="images/docker.svg" alt="Docker logo" style="background: transparent;" />
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Good example of workflow difference between dev/prod, or small vs large orgs</li>
+                        <li>Read fragment</li>
+                        <li>Multiple processes on multiple machines, which one?</li>
+                        <li>Why? Aggregators</li>
+                        <li>One more time: Docker</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>XII. Admin processes</h2>
+                <h4>Run admin/management tasks as one-off processes</h4>
+                <p class="text-center">
+                    <code>rake db:migrate</code>
+                </p>
+                <ul class="fragment">
+                    <li>run in an identical environment</li>
+                    <li>must ship with application code</li>
+                    <li>same dependency isolation techniques</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Only one I disagree with (mostly)</li>
+                        <li>Read fragment</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>XII. Admin processes</h2>
+                <h4>Run admin/management tasks as one-off processes</h4>
+                <ul class="fragment" style="list-style: none;">
+                    <li>
+                        <i class="fa fa-times text-danger"></i>
+                        &nbsp;&nbsp;
+                        Do not <code>ssh</code> into production
+                    </li>
+                    <li>
+                        <i class="fa fa-check text-success"></i>
+                        &nbsp;
+                        Automate it as part of deployment
+                    </li>
+                    <li>
+                        <i class="fa fa-check text-success"></i>
+                        &nbsp;
+                        Make it a feature of your app
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Why disagree? 2019</li>
+                        <li>Read fragment</li>
+                        <li>Migration fails = deployment fails</li>
+                        <li>Feature = testable</li>
+                        <li>Why? CAMS A = automate</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>The Twelve Factors</h2>
+                <div class="row small">
+                    <ol type="I" class="col-5">
                         <li>Codebase</li>
+                        <ul>
+                            <li>1:1, single deploy branch</li>
+                        </ul>
                         <li>Dependencies</li>
+                        <ul>
+                            <li>Use package manager</li>
+                        </ul>
                         <li>Config</li>
+                        <ul>
+                            <li>Environment variables</li>
+                        </ul>
                         <li>Backing services</li>
+                        <ul>
+                            <li>Treat local/remote the same</li>
+                        </ul>
                         <li>Build, release, run</li>
+                        <ul>
+                            <li>Separate these steps</li>
+                        </ul>
                         <li>Processes</li>
+                        <ul>
+                            <li>Stateless, share nothing</li>
+                        </ul>
                     </ol>
-                    <ol type="I" start="7" class="col-3">
+                    <ol type="I" start="7" class="col-5">
                         <li>Port binding</li>
+                        <ul>
+                            <li>Communicate via ports, not server modules</li>
+                        </ul>
                         <li>Concurrency</li>
+                        <ul>
+                            <li>Scale out via processes</li>
+                        </ul>
                         <li>Disposability</li>
+                        <ul>
+                            <li>Fast startup, shutdown</li>
+                        </ul>
                         <li>Dev/prod parity</li>
+                        <ul>
+                            <li>As close to identical as possible</li>
+                        </ul>
                         <li>Logs</li>
+                        <ul>
+                            <li>Stream to <code>stdout</code></li>
+                        </ul>
                         <li>Admin processes</li>
+                        <ul>
+                            <li>Run as one-off processes</li>
+                        </ul>
                     </ol>
+                </div>
 
-                    <aside class="notes">
-                        <ul>
-                            <li>Go through each, name them all</li>
-                            <li>Feel free to stop me and ask as we go</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>I. Codebase</h2>
-                    <h4>One codebase tracked in revision control, many deploys</h4>
-                    <ul class="fragment">
-                        <li>1:1 Codebase : App</li>
-                        <ul>
-                            <li>Multiple apps?</li>
-                            <ul>
-                                <li>Split common code out into standalone libraries</li>
-                            </ul>
-                            <li>Multiple codebases?</li>
-                            <ul>
-                                <li>Not an app, but a distributed system</li>
-                            </ul>
-                        </ul>
-                    </ul>
-                    <h5>
-                        <i class="fragment fa fa-5x fa-github"></i>
-                    </h5>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Anyone not using source control?</li>
-                            <li>Survey git vs SVN vs others (Mercurial, Perforce)</li>
-                            <li>Pretty much a given in 2019</li>
-                            <li>Still, not always straightforward</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>I. Codebase</h2>
-                    <h4>Dev / Staging / QA / Prod branches?</h4>
-                    <i class="fragment fa fa-5x fa-times text-danger"></i>
-                    <p class="fragment text-center">All environments from trunk / master</p>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Ask if anyone still does this</li>
-                            <li>Explain SVN vs git</li>
-                            <li>Questions?</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>II. Dependencies</h2>
-                    <h4>Explicitly declare and isolate dependencies</h4>
-                    <blockquote class="fragment">A twelve-factor app never relies on implicit existence of system-wide
-                        packages</blockquote>
-                    <p class="fragment text-center">Use your package manager!</p>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Show quote</li>
-                            <li>"What does this mean?"</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>II. Dependencies</h2>
-                    <blockquote>Twelve-factor apps also do not rely on the implicit existence of any system tools.
-                    </blockquote>
-                    <blockquote>If the app needs to shell out to a system tool, that tool should be vendored into the
-                        app.</blockquote>
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-4">
-                            <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
-                                style="background: transparent;" />
-                        </div>
-                    </div>
-
-                    <aside class="notes">
-                        <ul>
-                            <li>Read quotes</li>
-                            <li>curl example</li>
-                            <li>Last one fuzzy now, due to Docker</li>
-                            <li>Questions?</li>
-                        </ul>
-                    </aside>
-                </section>
-
-                <section>
-                    <h2>III. Config</h2>
-                    <h4>Store config in the environment</h4>
-                    <blockquote>Config is everything that is likely to vary between deploys</blockquote>
-                    <ul class="fragment">
-                        <li>Connection strings</li>
-                        <li>Credentials</li>
-                        <li>URLs</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>III. Config</h2>
-                    <blockquote>Does not include internal application config, such as <code>config/routes.rb</code> in
-                        Rails</blockquote>
-                    <h4>Config that does not vary between deploys is best done in the code</h4>
-                </section>
-
-                <section>
-                    <h2>III. Config</h2>
-                    <blockquote>The twelve-factor app stores config in environment variables</blockquote>
-                    <ul class="fragment">
-                        <li>granular</li>
-                        <li>orthogonal</li>
-                        <li>never grouped together as “environments”</li>
-                        <ul>
-                            <li>independently managed for each deploy</li>
-                        </ul>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>III. Config</h2>
-                    <blockquote>Scales up smoothly as the app naturally expands into more deploys over its lifetime.
-                    </blockquote>
-                    <p class="fragment text-center">12 Factor says nothing about <b><i>how</i></b> environment variables
-                        get set</h5>
-                        <div class="row">
-                            <div class="col-4"></div>
-                            <div class="col-4">
-                                <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
-                                    style="background: transparent;" />
-                            </div>
-                        </div>
-                </section>
-
-                <section>
-                    <h2>IV. Backing services</h2>
-                    <h4>Treat backing services as attached resources</h4>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-5 fragment">
-                            <ul>
-                                <li>datastores (MySQL)</li>
-                                <li>messaging/queueing (RabbitMQ)</li>
-                                <li>SMTP (Postfix)
-                                <li>caching (Memcached)</li>
-                            </ul>
-                        </div>
-                        <div class="col-5 fragment">
-                            <ul>
-                                <li>metrics (New Relic, Loggly)</li>
-                                <li>assets (S3)</li>
-                                <li>public APIs (Twitter, Google Maps)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>IV. Backing services</h2>
-                    <blockquote>A twelve-factor app makes no distinction between local and third party services
-                    </blockquote>
-                    <h4>Goal: swap local/third-party services without code changes</h4>
-                </section>
-
-                <section>
-                    <h2>IV. Backing services</h2>
-                    <img src="images/services.png" alt="Example of backing services as attached resources"
-                        class="bg-white" />
-                </section>
-
-                <section>
-                    <h2>V. Build, release, run</h2>
-                    <h4>Strictly separate build and run stages</h4>
-                    <ol>
-                        <li>
-                            <b>Build</b>
-                            <ul>
-                                <li>converts a code repo into an executable bundle</li>
-                                <li>fetches vendors dependencies and compiles binaries and assets</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <b>Release</b>
-                            <ul>
-                                <li>combines build with the deploy’s current config</li>
-                                <li>ready for immediate execution in the execution environment</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <b>Run</b>
-                            <ul>
-                                <li>runs the app in the execution environment</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
-
-                <section>
-                    <h2>V. Build, release, run</h2>
-                    <img src="images/build.png" alt="Diagram of build and release steps" class="bg-white" />
-                </section>
-
-                <section>
-                    <h2>V. Build, release, run</h2>
-                    <img src="images/deploy.png" alt="Diagram of deploy steps" class="bg-white" />
-                </section>
-
-                <section>
-                    <h2>VI. Processes</h2>
-                    <h4>Execute the app as one or more stateless processes</h4>
-                    <blockquote class="fragment">Any data that needs to persist must be stored in a stateful backing
-                        service, typically a database.</blockquote>
-                    <blockquote class="fragment">Sticky sessions are a violation of twelve-factor and should never be
-                        used or relied upon.</blockquote>
-                </section>
-
-                <section>
-                    <h2>VI. Processes</h2>
-                    <div class="row">
-                        <div class="col-3"></div>
-                        <img src="images/processes.png" alt="Example array of processes in an app"
-                            class="bg-white col-6" />
-                    </div>
-                </section>
-
-                <section>
-                    <h2>VI. Processes</h2>
-                    <div class="row">
-                        <div class="col-2"></div>
-                        <img src="images/ben-d.jpg" alt="Slide from Ben Darfler's talk last month" class="col-8" />
-                    </div>
-                </section>
-
-                <section>
-                    <h2>VI. Processes</h2>
-                    <h4>Execute the app as one or more stateless processes</h4>
-                    <h3>Process ~ Microservice</h3>
-                </section>
-
-                <section>
-                    <h2>VII. Port binding</h2>
-                    <h4>Export services via port binding</h4>
+                <aside class="notes">
                     <ul>
-                        <li>
-                            <code>node --port 5000</code>
-                        </li>
-                        <li>
-                            <code>rails server -p 5000</code>
-                        </li>
-                        <li>
-                            <code>php -S http://localhost:5000</code>
-                        </li>
-                        <li>
-                            <code>dotnet --urls http://*:5000</code>
-                        </li>
+                        <li>Summary, won't go through all again</li>
+                        <li>Take a photo, or slides online</li>
                     </ul>
-                    <div class="row">
-                        <div class="col-5"></div>
-                        <div class="col-2">
-                            <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
-                                style="background: transparent;" />
-                        </div>
-                    </div>
-                </section>
+                </aside>
+            </section>
 
-                <section>
-                    <h2>VIII. Concurrency</h2>
-                    <h4>Scale out via the process model</h4>
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <img src="images/processes.png" alt="Example array of processes in an app"
-                            class="bg-white col-4" />
+            <section>
+                <img src="images/sdsd.svg" class="transparent" alt="Steve Desmond Software Development" />
+                <div class="row">
+                    <div class="col-2"></div>
+                    <img class="col-3" src="images/steve.jpg" alt="Steve" />
+                    <div class="col-1"></div>
+                    <div class="col-5 text-left">
+                        <p>
+                            <a class="white" href="https://stevedesmond.ca" target="_blank">
+                                <i class="fa fa-globe"></i> stevedesmond.ca
+                            </a>
+                        </p>
+                        <p>
+                            <a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
+                                <i class="fa fa-github"></i> stevedesmond-ca
+                            </a>
+                        </p>
+                        <p>
+                            <a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
+                                <i class="fa fa-twitter"></i> stevedesmond_ca
+                            </a>
+                        </p>
+                        <p>
+                            <a class="white" href="mailto:hi@stevedesmond.ca">
+                                <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
+                            </a>
+                        </p>
                     </div>
-                </section>
+                </div>
 
-                <section>
-                    <h2>VIII. Concurrency</h2>
-                    <h4>Scale out via the process model</h4>
-                    <div class="row">
-                        <div class="col-2"></div>
-                        <img src="images/ben-d.jpg" alt="Slide from Ben Darfler's talk last month" class="col-8" />
-                    </div>
-                </section>
-
-                <section>
-                    <h2>IX. Disposability</h2>
-                    <h4>Maximize robustness with fast startup and graceful shutdown</h4>
-                    <ul class="fragment">
-                        <li>started or stopped at a moment’s notice</li>
-                        <li>minimize startup time</li>
-                        <ul>
-                            <li>a few seconds from launch until ready for requests</li>
-                        </ul>
-                        <li>shut down gracefully when they receive a SIGTERM</li>
-                        <li>robust against sudden death</li>
+                <aside class="notes">
+                    <ul>
+                        <li>Me, I help companies build better software</li>
                     </ul>
-                    <div class="row">
-                        <div class="col-5"></div>
-                        <div class="col-2">
-                            <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
-                                style="background: transparent;" />
-                        </div>
-                    </div>
-                </section>
+                </aside>
+            </section>
 
-                <section>
-                    <h2>X. Dev/prod parity</h2>
-                    <h4>Keep development, staging, and production as similar as possible</h4>
-                    <ul class="fragment">
-                        <li>Time gap: weeks down to hours</li>
-                        <li>Personnel gap: no specializations</li>
-                        <li>Tools gap: same environments</li>
+            <section>
+                <h1>
+                    <i class="fa fa-question-circle-o"></i>s
+                </h1>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Any closing questions / concerns / arguments / rants?</li>
                     </ul>
-                    <blockquote class="fragment">resist the urge to use different backing services between development
-                        and production
-                    </blockquote>
-                    <div class="row">
-                        <div class="col-5"></div>
-                        <div class="col-2">
-                            <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
-                                style="background: transparent;" />
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>XI. Logs</h2>
-                    <h4>Treat logs as event streams</h4>
-                    <ul class="fragment">
-                        <li>no concern with routing or storage of its output stream</li>
-                        <li>should not attempt to write to or manage logfiles</li>
-                        <li>each running process writes its event stream, unbuffered, to <code>stdout</code></li>
-                        <li>each process’ stream will be captured by the execution environment</li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-5"></div>
-                        <div class="col-2">
-                            <img class="fragment col-12" src="images/docker.svg" alt="Docker logo"
-                                style="background: transparent;" />
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>XII. Admin processes</h2>
-                    <h4>Run admin/management tasks as one-off processes</h4>
-                    <p class="text-center">
-                        <code>rake db:migrate</code>
-                    </p>
-                    <ul class="fragment">
-                        <li>run in an identical environment</li>
-                        <li>must ship with application code</li>
-                        <li>same dependency isolation techniques</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>XII. Admin processes</h2>
-                    <h4>Run admin/management tasks as one-off processes</h4>
-                    <ul class="fragment" style="list-style: none;">
-                        <li>
-                            <i class="fa fa-times text-danger"></i>
-                            &nbsp;&nbsp;
-                            Do not <code>ssh</code> into production
-                        </li>
-                        <li>
-                            <i class="fa fa-check text-success"></i>
-                            &nbsp;
-                            Automate it as part of deployment
-                        </li>
-                        <li>
-                            <i class="fa fa-check text-success"></i>
-                            &nbsp;
-                            Make it a feature of your app
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>The Twelve Factors</h2>
-                    <div class="row small">
-                        <ol type="I" class="col-5">
-                            <li>Codebase</li>
-                            <ul>
-                                <li>1:1, single deploy branch</li>
-                            </ul>
-                            <li>Dependencies</li>
-                            <ul>
-                                <li>Use package manager</li>
-                            </ul>
-                            <li>Config</li>
-                            <ul>
-                                <li>Environment variables</li>
-                            </ul>
-                            <li>Backing services</li>
-                            <ul>
-                                <li>Treat local/remote the same</li>
-                            </ul>
-                            <li>Build, release, run</li>
-                            <ul>
-                                <li>Separate these steps</li>
-                            </ul>
-                            <li>Processes</li>
-                            <ul>
-                                <li>Stateless, share nothing</li>
-                            </ul>
-                        </ol>
-                        <ol type="I" start="7" class="col-5">
-                            <li>Port binding</li>
-                            <ul>
-                                <li>Communicate via ports, not server modules</li>
-                            </ul>
-                            <li>Concurrency</li>
-                            <ul>
-                                <li>Scale out via processes</li>
-                            </ul>
-                            <li>Disposability</li>
-                            <ul>
-                                <li>Fast startup, shutdown</li>
-                            </ul>
-                            <li>Dev/prod parity</li>
-                            <ul>
-                                <li>As close to identical as possible</li>
-                            </ul>
-                            <li>Logs</li>
-                            <ul>
-                                <li>Stream to <code>stdout</code></li>
-                            </ul>
-                            <li>Admin processes</li>
-                            <ul>
-                                <li>Run as one-off processes</li>
-                            </ul>
-                        </ol>
-                    </div>
-                </section>
-
-                <section>
-                    <img src="images/sdsd.svg" class="transparent" alt="Steve Desmond Software Development" />
-                    <div class="row">
-                        <div class="col-2"></div>
-                        <img class="col-3" src="images/steve.jpg" alt="Steve" />
-                        <div class="col-1"></div>
-                        <div class="col-5 text-left">
-                            <p>
-                                <a class="white" href="https://stevedesmond.ca" target="_blank">
-                                    <i class="fa fa-globe"></i> stevedesmond.ca
-                                </a>
-                            </p>
-                            <p>
-                                <a class="white" href="https://github.com/stevedesmond-ca" target="_blank">
-                                    <i class="fa fa-github"></i> stevedesmond-ca
-                                </a>
-                            </p>
-                            <p>
-                                <a class="white" href="https://twitter.com/stevedesmond_ca" target="_blank">
-                                    <i class="fa fa-twitter"></i> stevedesmond_ca
-                                </a>
-                            </p>
-                            <p>
-                                <a class="white" href="mailto:hi@stevedesmond.ca">
-                                    <i class="fa fa-envelope-o"></i> hi@stevedesmond.ca
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h1>
-                        <i class="fa fa-question-circle-o"></i>s
-                    </h1>
-                </section>
-            </div>
-
-            <footer>
-                <small>
-                    <a href="https://twitter.com/stevedesmond_ca" class="white" target="_blank">
-                        @stevedesmond_ca
-                    </a>
-                </small>
-                <small>
-                    <a href="https://twitter.com/hashtag/IthacaWebPeople" class="white" target="_blank">
-                        #Ithaca Web People
-                    </a>
-                </small>
-                <small></small>
-            </footer>
+                </aside>
+            </section>
         </div>
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
 
-        <script>
+        <footer>
+            <small>
+                <a href="https://twitter.com/stevedesmond_ca" class="white" target="_blank">
+                    @stevedesmond_ca
+                </a>
+            </small>
+            <small>
+                <a href="https://twitter.com/hashtag/IthacaWebPeople" class="white" target="_blank">
+                    #Ithaca Web People
+                </a>
+            </small>
+            <small></small>
+        </footer>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-            Reveal.initialize({
-                controls: true,
-                history: true,
-                progress: false,
+    <script>
 
-                width: 1280,
-                height: 720,
+        Reveal.initialize({
+            controls: true,
+            history: true,
+            progress: false,
 
-                transition: 'slide',
+            width: 1280,
+            height: 720,
 
-                dependencies: [
-                    { src: 'plugin/markdown/marked.js' },
-                    { src: 'plugin/markdown/markdown.js' },
-                    { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-                ]
-            });
-        </script>
-    </body>
+            transition: 'slide',
+
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
 
 </html>
