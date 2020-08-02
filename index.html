@@ -1,40 +1,240 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+	<title>Performance Is Accessibility</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="node_modules/notosans/noto.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Performance Is Accessibility</h1>
+				<h2>Steve Desmond</h2>
+				<h3>Ithaca Web People</h3>
+				<h4>August 3, 2020</h4>
+			</section>
+
+			<section>
+				<h3>Do I like talking about performance?</h3>
+				<img src="images/iwp-perf.png" alt="Title slide of previous IWP performance talk" />
+			</section>
+
+			<section>
+				<h3>What does accessibility mean to you?</h3>
+				<blockquote class="fragment">
+					Accounting for our differences
+					<br />
+					to help a more diverse community
+					<br />
+					accomplish their goals
+				</blockquote>
+			</section>
+
+			<section>
+				<h2>Accessibility Considerations</h2>
+				<ul>
+					<li class="fragment">Physical abilities</li>
+					<ul>
+						<li class="fragment">Sight</li>
+						<li class="fragment">Motor skills</li>
+					</ul>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h3>Xbox Adaptive Controller</h3>
+					<img src="images/xbox1.jpg" alt="Xbox Adaptive Controller front view" />
+				</section>
+
+				<section>
+					<img src="images/xbox2.jpg" alt="Xbox Adaptive Controller rear view" />
+				</section>
+
+				<section>
+					<img src="images/xbox3.png" alt="Xbox Adaptive Controller with adapters" />
+				</section>
+
+				<section>
+					<img src="images/xbox4.png" alt="Xbox Adaptive Controller with many adapters" />
+				</section>
+
+				<section>
+					<img src="images/xbox5.png" alt="Xbox Adaptive Controller with grip mount" />
+				</section>
+
+				<section>
+					<img src="images/xbox6.png" alt="Gamer using an Xbox Adaptive Controller with adapters" />
+				</section>
+			</section>
+
+			<section>
+				<h2>Accessibility Considerations</h2>
+				<ul>
+					<li>Physical abilities</li>
+					<ul>
+						<li>Sight</li>
+						<li>Motor skills</li>
+					</ul>
+					<li class="fragment">Cognitive differences</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Response Times</h3>
+				<h4>The 3 Important Limits</h4>
+				<h5>Nielsen Norman Group</h5>
+
+				<ul class="flex">
+					<li class="fragment">
+						<b>0.1 seconds</b>
+						<br />
+						"instantaneous"
+						<br />
+						<i>(no special feedback necessary)</i>
+					</li>
+					<li class="fragment">
+						<b>1.0 seconds</b>
+						<br />
+						"uninterrupted flow of thought"
+						<br />
+						<i>(lost feeling of operating directly on data)</i>
+					</li>
+					<li class="fragment">
+						<b>10 seconds</b>
+						<br />
+						"limit for keeping user's attention"
+						<br />
+						<i>(users will want to perform other tasks while waiting)</i>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Response Times</h3>
+				<h4>The 3 Important Limits</h4>
+				<h5>Nielsen Norman Group</h5>
+
+				<p>&nbsp;</p>
+
+				<blockquote class="fragment">
+					Neurotypical?
+				</blockquote>
+				<blockquote class="fragment">
+					ADD / ADHD?
+				</blockquote>
+
+				<a class="fragment" target="_blank"
+					href="https://thenextweb.com/podium/2020/04/06/designing-for-cognitive-accessibility-where-to-begin/">
+					https://thenextweb.com/podium/2020/04/06/designing-for-cognitive-accessibility-where-to-begin/
+				</a>
+			</section>
+
+			<section>
+				<h2>Accessibility Considerations</h2>
+				<ul>
+					<li>Physical abilities</li>
+					<ul>
+						<li>Sight</li>
+						<li>Motor skills</li>
+					</ul>
+					<li>Cognitive differences</li>
+					<li class="fragment">Economic disparities</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Phone CPU performance by tier</h3>
+				<img src="images/cpu-chart.jpg" alt="Geekbench single-core scores over time" />
+				<a href="https://twitter.com/slightlylate/status/1233275220275818498" target="_blank">
+					https://twitter.com/slightlylate/status/1233275220275818498
+				</a>
+			</section>
+
+			<section>
+				(demo)
+			</section>
+
+			<section>
+				<h2>Accessibility Considerations</h2>
+				<ul>
+					<li>Physical abilities</li>
+					<ul>
+						<li>Sight</li>
+						<li>Motor skills</li>
+					</ul>
+					<li>Cognitive differences</li>
+					<li>Economic disparities</li>
+					<li class="fragment">...</li>
+					<li class="fragment">?</li>
+				</ul>
+			</section>
+
+			<section class="eco-green">
+				<div class="flex">
+					<img class="logo" src="images/logo.png" alt="ecoAPM logo" />
+					<div class="details">
+						Open Source
+						<br />
+						Application Performance Management
+						<br />
+						For The Planet
+						<hr />
+						ecoAPM.com
+						<br />
+						Steve @ ecoAPM .com
+					</div>
+				</div>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		let fullscreen = false;
+		async function toggleFullscreen(e) {
+			if (fullscreen) {
+				e.target.innerHTML = '+';
+				await document.exitFullscreen();
+			}
+			else {
+				await document.documentElement.requestFullscreen();
+				e.target.innerHTML = '-';
+			}
+
+			fullscreen = !fullscreen;
+		}
+
+		async function run() {
+			await Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				width: 1280,
+				height: 800,
+				controlsTutorial: false
 			});
-		</script>
-	</body>
+
+			document.querySelector('aside.controls').innerHTML +=
+				'<button type="button" id="fullscreen" class="enabled" onclick="toggleFullscreen(event)">+</button>';
+		}
+		run();
+	</script>
+</body>
+
 </html>

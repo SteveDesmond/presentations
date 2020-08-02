@@ -1,0 +1,57 @@
+#fullscreen {
+    margin-left: -3.5rem;
+    margin-top: -3.5rem;
+    font-size: 16px;
+    text-align: center;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    text-transform: none;
+}
+
+.reveal i {
+    font-style: italic;
+}
+
+.reveal img {
+    max-height: 65vh;
+}
+
+.reveal .flex {
+    display: flex;
+    align-items: center;
+}
+
+.reveal ul.flex {
+    list-style: none;
+}
+
+.reveal ul.flex li {
+    margin: 1rem;
+}
+
+.eco-green {
+    background-color: #538d437f;
+}
+
+.eco-green img.logo {
+    background-color: #538d43;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0 0 1rem 1rem white;
+}
+
+.eco-green .details {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 100;
+    text-align: left;
+}
+
+.eco-green hr {
+    color: #ffffffbf;
+}
